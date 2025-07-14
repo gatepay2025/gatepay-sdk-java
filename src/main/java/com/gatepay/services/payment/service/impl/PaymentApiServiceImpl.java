@@ -5,7 +5,7 @@ import com.gatepay.core.signature.Head;
 import com.gatepay.core.signature.Signer;
 import com.gatepay.payment.model.request.OperateOrderRequest;
 import com.gatepay.payment.model.response.QueryOrderResponse;
-import com.gatepay.services.payment.service.api.PayApiService;
+import com.gatepay.services.payment.service.api.PaymentApiService;
 
 import java.io.IOException;
 import java.net.URI;
@@ -14,12 +14,12 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 
-public class PayApiServiceImpl implements PayApiService {
+public class PaymentApiServiceImpl implements PaymentApiService {
 
     private final HttpClient httpClient;
     private final ObjectMapper objectMapper;
 
-    public PayApiServiceImpl(HttpClient httpClient, ObjectMapper objectMapper) {
+    public PaymentApiServiceImpl(HttpClient httpClient, ObjectMapper objectMapper) {
         this.httpClient = httpClient;
         this.objectMapper = objectMapper;
     }
