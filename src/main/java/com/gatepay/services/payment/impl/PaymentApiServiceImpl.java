@@ -1,11 +1,11 @@
-package com.gatepay.services.payment.service.impl;
+package com.gatepay.services.payment.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gatepay.core.signature.Head;
 import com.gatepay.core.signature.Signer;
-import com.gatepay.payment.model.request.OperateOrderRequest;
-import com.gatepay.payment.model.response.QueryOrderResponse;
-import com.gatepay.services.payment.service.api.PaymentApiService;
+import com.gatepay.model.payment.request.OperateOrderRequest;
+import com.gatepay.model.payment.response.QueryOrderResponse;
+import com.gatepay.services.payment.api.PaymentApiService;
 
 import java.io.IOException;
 import java.net.URI;
