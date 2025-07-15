@@ -1,0 +1,42 @@
+package com.gatepay.model.address.response;
+
+public class CreateAddressRefundResponse {
+
+    private String refundRequestId;
+    private String prepayId;
+    private String orderAmount;
+    private String refundAmount;
+
+
+    public String getRefundRequestId() {
+        return refundRequestId;
+    }
+
+    public void setRefundRequestId(String refundRequestId) {
+        this.refundRequestId = refundRequestId;
+    }
+
+    public String getPrepayId() {
+        return prepayId;
+    }
+
+    public void setPrepayId(String prepayId) {
+        this.prepayId = prepayId;
+    }
+
+    public String getOrderAmount() {
+        return orderAmount;
+    }
+
+    public void setOrderAmount(String orderAmount) {
+        this.orderAmount = orderAmount;
+    }
+
+    public String getRefundAmount() {
+        return refundAmount;
+    }
+
+    public void setRefundAmount(String refundAmount) {
+        this.refundAmount = refundAmount;
+    }
+}
