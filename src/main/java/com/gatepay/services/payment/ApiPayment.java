@@ -1,11 +1,10 @@
-package com.gatepay.services.payment.impl;
+package com.gatepay.services.payment;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gatepay.core.signature.Head;
 import com.gatepay.core.signature.Signer;
 import com.gatepay.model.payment.request.OperateOrderRequest;
 import com.gatepay.model.payment.response.QueryOrderResponse;
-import com.gatepay.services.payment.api.PaymentApiService;
 
 import java.io.IOException;
 import java.net.URI;
@@ -14,18 +13,17 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 
-public class PaymentApiServiceImpl implements PaymentApiService {
+public class ApiPayment {
 
     private final HttpClient httpClient;
     private final ObjectMapper objectMapper;
 
-    public PaymentApiServiceImpl(HttpClient httpClient, ObjectMapper objectMapper) {
+    public ApiPayment(HttpClient httpClient, ObjectMapper objectMapper) {
         this.httpClient = httpClient;
         this.objectMapper = objectMapper;
     }
 
 
-    @Override
     public QueryOrderResponse getOrder(OperateOrderRequest request) throws Exception {
         try {
             String requestBody = objectMapper.writeValueAsString(request);

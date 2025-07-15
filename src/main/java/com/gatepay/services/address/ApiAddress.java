@@ -1,6 +1,6 @@
 package com.gatepay.services.address;
 
-public class AddressApiService {
+public class ApiAddress {
 
 
 
