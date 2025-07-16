@@ -1,8 +1,8 @@
-package com.gatepay.model.address.request;
+package com.gatepay.service.address.model.request;
 
 import com.gatepay.common.BaseRequest;
 
-public class SupportedConvertCurrenciesReq extends BaseRequest {
+public class ChainsReq extends BaseRequest {
 
     private String currency;
 

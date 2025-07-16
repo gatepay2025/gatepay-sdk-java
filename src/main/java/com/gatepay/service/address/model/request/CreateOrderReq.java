@@ -1,19 +1,19 @@
-package com.gatepay.model.address.request;
+package com.gatepay.service.address.model.request;
 
 import com.gatepay.common.BaseRequest;
 
 import java.math.BigDecimal;
 
 
-public class CreateOrderRequest extends BaseRequest {
+public class CreateOrderReq extends BaseRequest {
 
     private String merchantTradeNo;
     private String currency;
     private BigDecimal orderAmount;
     private String payCurrency;           // 非地址支付的payCurrency在实际付款时确定，地址支付的payCurrency在下单时候确定
     private String actualCurrency;        // merchant actual currency
-    private EnvRequest env;
-    private GoodsRequest goods;
+    private EnvReq env;
+    private GoodsReq goods;
     private int orderExpireTime;
     private String returnUrl;
     private String cancelUrl;
@@ -63,19 +63,19 @@ public class CreateOrderRequest extends BaseRequest {
         this.actualCurrency = actualCurrency;
     }
 
-    public EnvRequest getEnv() {
+    public EnvReq getEnv() {
         return env;
     }
 
-    public void setEnv(EnvRequest env) {
+    public void setEnv(EnvReq env) {
         this.env = env;
     }
 
-    public GoodsRequest getGoods() {
+    public GoodsReq getGoods() {
         return goods;
     }
 
-    public void setGoods(GoodsRequest goods) {
+    public void setGoods(GoodsReq goods) {
         this.goods = goods;
     }
 

@@ -1,6 +1,6 @@
-package com.gatepay.model.address.request;
+package com.gatepay.service.address.model.request;
 
-public class EnvRequest {
+public class EnvReq {
 
     private String terminalType;
     private String scene;

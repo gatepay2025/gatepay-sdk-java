@@ -1,6 +1,6 @@
-package com.gatepay.model.address.request;
+package com.gatepay.service.address.model.request;
 
-public class GoodsRequest {
+public class GoodsReq {
 
     private String goodsName;
     private String goodsDetail;

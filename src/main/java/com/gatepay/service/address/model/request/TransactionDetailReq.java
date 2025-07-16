@@ -1,4 +1,4 @@
-package com.gatepay.model.address.request;
+package com.gatepay.service.address.model.request;
 
 import com.gatepay.common.BaseRequest;
 

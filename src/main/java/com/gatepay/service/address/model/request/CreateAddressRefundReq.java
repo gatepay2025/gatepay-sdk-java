@@ -1,10 +1,10 @@
-package com.gatepay.model.address.request;
+package com.gatepay.service.address.model.request;
 
 import com.gatepay.common.BaseRequest;
 
 import java.math.BigDecimal;
 
-public class CreateAddressRefundRequest extends BaseRequest {
+public class CreateAddressRefundReq extends BaseRequest {
 
     private String refundRequestId;
     private String prepayId;
