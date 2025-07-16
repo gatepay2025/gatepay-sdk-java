@@ -3,7 +3,7 @@ package com.gatepay.common;
 public class GatePayConstants {
 
     // 请求地址相关
-    public static final String DEFAULT_END_POINT = "http://dev.halftrust.xyz/gfpay";
+    public static final String END_POINT_DEFAULT = "http://dev.halftrust.xyz/gfpay";
     public static final String END_POINT_ADDRESS_CHAINS = "/v1/pay/address/chains";
     public static final String END_POINT_ADDRESS_CURRENCIES = "/v1/pay/address/currencies";
     public static final String END_POINT_ADDRESS_SUPPORTED_CONVERT_CURRENCIES = "/v1/pay/address/supportedconvertcurrencies";
@@ -12,6 +12,18 @@ public class GatePayConstants {
     public static final String END_POINT_ADDRESS_CREATE_REFUND = "/v1/pay/address/refund";
     public static final String END_POINT_ADDRESS_CREATE_REFUND_CONVERT = "/v1/pay/address/refundconvert";
     public static final String END_POINT_ADDRESS_TRANSACTION_DETAIL = "/v1/pay/address/transactiondetail";
+
+    // web 相关
+    public static final String END_POINT_PAY_ORDER = "/v1/pay/order";
+    public static final String END_POINT_PAY_ORDER_CLOSE = "/v1/pay/order/close";
+    public static final String END_POINT_PAY_ORDER_QUERY = "/v1/pay/order/query";
+
+
+
+
+
+
+
     public static final String END_POINT_OPEN_SDK = "/v1/pay/open/sdk";
 
     // 请求方法相关
