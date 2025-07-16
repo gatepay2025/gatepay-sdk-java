@@ -1,4 +1,4 @@
-package com.gatepay.model.payment.response;
+package com.gatepay.service.payment.model.response;
 
 public class QueryOrderResponse {
 
