@@ -4,11 +4,12 @@ public class GatePayConstants {
 
     // 请求地址相关
     public static final String DEFAULT_END_POINT = "http://dev.halftrust.xyz/gfpay";
-
     public static final String END_POINT_ADDRESS_CHAINS = "/v1/pay/address/chains";
+    public static final String END_POINT_ADDRESS_CURRENCIES = "/v1/pay/address/currencies";
+    public static final String END_POINT_SUPPORTED_CONVERT_CURRENCIES = "/v1/pay/address/supportedconvertcurrencies";
     public static final String END_POINT_OPEN_SDK = "/v1/pay/open/sdk";
 
-
+    // 请求方法相关
     public static final String SCHEME_HTTP = "http";
     public static final String SCHEME_HTTPS = "https";
     public static final String METHOD_GET = "GET";
@@ -19,10 +20,36 @@ public class GatePayConstants {
     public static final String METHOD_HEAD = "HEAD";
 
 
-    public static final String APPLICATION_JSON = "application/json";
-    public static final String ACCEPT = "Accept";                 // Header 中的 Accept 字段
-    public static final String CONTENT_TYPE = "Content-Type";     // Header 中的 ContentType 字段
-    public static final String USER_AGENT = "User-Agent";
+
+    // 请求头相关
+    public static final String HEADER_CONTENT_TYPE = "Content-Type";
+    public static final String HEADER_APPLICATION_JSON = "application/json";
+    public static final String HEADER_ACCEPT = "Accept";                 // Header 中的 Accept 字段
+    public static final String HEADER_USER_AGENT = "User-Agent";
+
+
+
+    public static final String HEADER_GATEPAY_API_KEY = "X-GatePay-Certificate-SN";
+    public static final String HEADER_GATEPAY_CLIENT_ID = "X-GatePay-Certificate-ClientId";
+    public static final String HEADER_GATEPAY_TIMESTAMP = "X-GatePay-Timestamp";
+    public static final String HEADER_GATEPAY_NONCE = "X-GatePay-Nonce";
+    public static final String HEADER_GATEPAY_SIGNATURE = "X-GatePay-Signature";
+    public static final String HEADER_GATE_MERCHANT_ID = "X-GatePay-ChannelId";
+    public static final String HEADER_GATE_CLIENT_ID = "X-GatePay-ClientId";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     public static final String VERSION = "0.0.1";                 // SDK 版本号
