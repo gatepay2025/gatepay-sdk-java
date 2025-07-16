@@ -2,9 +2,11 @@ package com.gatepay.service.address.model.request;
 
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.GatePayConstants;
+import com.gatepay.common.annotation.GatePayRequestParam;
 
 public class TransactionDetailReq extends BaseRequest {
 
+    @GatePayRequestParam
     private String prepayId;
 
     public TransactionDetailReq() {
