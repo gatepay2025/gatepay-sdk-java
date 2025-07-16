@@ -14,7 +14,7 @@ public class CreateOrderReq extends BaseRequest {
     private String actualCurrency;        // merchant actual currency
     private EnvReq env;
     private GoodsReq goods;
-    private int orderExpireTime;
+    private long orderExpireTime;
     private String returnUrl;
     private String cancelUrl;
     private int merchantUserId;
@@ -79,11 +79,11 @@ public class CreateOrderReq extends BaseRequest {
         this.goods = goods;
     }
 
-    public int getOrderExpireTime() {
+    public long getOrderExpireTime() {
         return orderExpireTime;
     }
 
-    public void setOrderExpireTime(int orderExpireTime) {
+    public void setOrderExpireTime(long orderExpireTime) {
         this.orderExpireTime = orderExpireTime;
     }
 

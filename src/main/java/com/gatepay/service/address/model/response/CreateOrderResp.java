@@ -2,12 +2,12 @@ package com.gatepay.service.address.model.response;
 
 import com.gatepay.service.address.model.Chain;
 
-public class AddrOrderResp {
+public class CreateOrderResp {
 
     private String prepayID;
     private String terminalType;
     private int expireTime;
-    private Chain chainInfo;
+    private Chain chain;
 
 
     public String getPrepayID() {
@@ -34,12 +34,12 @@ public class AddrOrderResp {
         this.expireTime = expireTime;
     }
 
-    public Chain getChainInfo() {
-        return chainInfo;
+    public Chain getChain() {
+        return chain;
     }
 
-    public void setChainInfo(Chain chainInfo) {
-        this.chainInfo = chainInfo;
+    public void setChain(Chain chain) {
+        this.chain = chain;
     }
 
 }
