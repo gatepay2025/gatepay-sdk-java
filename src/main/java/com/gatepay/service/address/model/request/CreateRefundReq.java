@@ -1,6 +1,7 @@
 package com.gatepay.service.address.model.request;
 
 import com.gatepay.common.BaseRequest;
+import com.gatepay.common.GatePayConstants;
 
 
 public class CreateRefundReq extends BaseRequest {
@@ -10,6 +11,11 @@ public class CreateRefundReq extends BaseRequest {
     private String refundAmount;
     private String refundReason;
     private int receiverId;
+
+
+    public CreateRefundReq() {
+        this.requestUrl = super.requestUrl + GatePayConstants.END_POINT_ADDRESS_CREATE_REFUND;
+    }
 
 
     public String getRefundRequestId() {

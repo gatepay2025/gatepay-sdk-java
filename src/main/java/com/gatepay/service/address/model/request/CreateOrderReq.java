@@ -1,6 +1,7 @@
 package com.gatepay.service.address.model.request;
 
 import com.gatepay.common.BaseRequest;
+import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.model.EnvReq;
 import com.gatepay.common.model.GoodsReq;
 
@@ -22,6 +23,10 @@ public class CreateOrderReq extends BaseRequest {
     private String fullCurrType;
     private String channelId;             // 客户渠道名称
 
+
+    public CreateOrderReq() {
+        this.requestUrl = super.requestUrl + GatePayConstants.END_POINT_ADDRESS_CREATE_ORDER;
+    }
 
     public String getMerchantTradeNo() {
         return merchantTradeNo;

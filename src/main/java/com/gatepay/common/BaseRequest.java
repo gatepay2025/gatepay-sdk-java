@@ -6,6 +6,7 @@ import java.util.Map;
 
 public class BaseRequest {
 
+    protected String requestUrl = GatePayConstants.END_POINT_DEFAULT;
     private Map<String, String> headers;
     private String version;
 
@@ -18,6 +19,18 @@ public class BaseRequest {
         this.version = version;
     }
 
+
+    public String getRequestUrl() {
+        return requestUrl;
+    }
+
+    public void setRequestUrl(String requestUrl) {
+        this.requestUrl = requestUrl;
+    }
+
+    public void setHeaders(Map<String, String> headers) {
+        this.headers = headers;
+    }
 
     public String getVersion() {
         return this.version;

@@ -1,19 +1,16 @@
-package com.gatepay.service.address.model.request;
+package com.gatepay.service.web.model.request;
 
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.GatePayConstants;
-
 
 public class QueryOrderReq extends BaseRequest {
 
     private String prepayId;
     private String merchantTradeNo;
 
-
     public QueryOrderReq() {
-        this.requestUrl = super.requestUrl + GatePayConstants.END_POINT_ADDRESS_QUERY_ORDER;
+        this.requestUrl = super.requestUrl + GatePayConstants.END_POINT_PAY_ORDER_QUERY;
     }
-
 
     public String getPrepayId() {
         return prepayId;
@@ -30,4 +27,5 @@ public class QueryOrderReq extends BaseRequest {
     public void setMerchantTradeNo(String merchantTradeNo) {
         this.merchantTradeNo = merchantTradeNo;
     }
+
 }

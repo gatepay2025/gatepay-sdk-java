@@ -1,6 +1,7 @@
 package com.gatepay.service.address.model.request;
 
 import com.gatepay.common.BaseRequest;
+import com.gatepay.common.GatePayConstants;
 
 import java.math.BigDecimal;
 
@@ -15,6 +16,11 @@ public class CreateRefundConvertReq extends BaseRequest {
     private String refundPayAmount;
     private String refundReason;
     private int receiverId;
+
+
+    public CreateRefundConvertReq() {
+        this.requestUrl = GatePayConstants.END_POINT_DEFAULT + GatePayConstants.END_POINT_ADDRESS_CREATE_REFUND_CONVERT;
+    }
 
 
     public String getRefundRequestId() {

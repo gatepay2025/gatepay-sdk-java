@@ -1,4 +1,4 @@
-package com.gatepay.service.address.model.request;
+package com.gatepay.common.model;
 
 public class GoodsReq {
 
