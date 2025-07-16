@@ -7,7 +7,8 @@ public class GatePayConstants {
     public static final String END_POINT_ADDRESS_CHAINS = "/v1/pay/address/chains";
     public static final String END_POINT_ADDRESS_CURRENCIES = "/v1/pay/address/currencies";
     public static final String END_POINT_ADDRESS_SUPPORTED_CONVERT_CURRENCIES = "/v1/pay/address/supportedconvertcurrencies";
-    public static final String END_POINT_ADDRESS_CREATE = "/v1/pay/address/create";
+    public static final String END_POINT_ADDRESS_CREATE_ORDER = "/v1/pay/address/create";
+    public static final String END_POINT_ADDRESS_QUERY_ORDER = "/v1/pay/address/query";
     public static final String END_POINT_OPEN_SDK = "/v1/pay/open/sdk";
 
     // 请求方法相关
