@@ -2,7 +2,7 @@ package com.gatepay.service.address.model.response;
 
 import com.gatepay.service.address.model.Chain;
 
-public class AddrOrderResponse {
+public class AddrOrderResp {
 
     private String prepayID;
     private String terminalType;

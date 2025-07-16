@@ -2,7 +2,7 @@ package com.gatepay.service.address.model.response;
 
 import java.math.BigDecimal;
 
-public class CreateAddressRefundConvertResponse {
+public class CreateAddressRefundConvertResp {
 
     private String refundRequestId;
     private String prepayId;

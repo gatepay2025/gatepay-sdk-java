@@ -1,6 +1,6 @@
 package com.gatepay.service.address.model.response;
 
-public class SupportedCurrenciesResponse {
+public class SupportedCurrenciesResp {
 
     private String[] currencies;
 

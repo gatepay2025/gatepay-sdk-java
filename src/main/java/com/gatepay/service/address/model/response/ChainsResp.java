@@ -1,6 +1,6 @@
 package com.gatepay.service.address.model.response;
 
-public class ChainsResponse {
+public class ChainsResp {
 
     private String currency;
     private ChainNameItem[] chains;
