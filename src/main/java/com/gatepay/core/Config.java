@@ -12,7 +12,7 @@ public class Config {
 
 
     public Config() {
-        this.scheme = "https";
+        this.scheme = GatePayConstants.SCHEME_HTTPS;
         this.endpoint = GatePayConstants.END_POINT_DEFAULT;
         this.timeout = Duration.ofSeconds(30);
     }

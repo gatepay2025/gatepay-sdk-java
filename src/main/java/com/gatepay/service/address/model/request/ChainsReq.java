@@ -2,13 +2,16 @@ package com.gatepay.service.address.model.request;
 
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.GatePayConstants;
+import com.gatepay.common.annotation.GatePayRequestParam;
 
 public class ChainsReq extends BaseRequest {
 
+    @GatePayRequestParam(required = true)
     private String currency;
 
     public ChainsReq() {
         this.requestUrl = GatePayConstants.END_POINT_ADDRESS_CHAINS;
+        this.requestMethod = GatePayConstants.METHOD_GET;
     }
 
     public String getCurrency() {

@@ -1,12 +1,60 @@
 package com.gatepay.core;
 
+import com.gatepay.common.BaseRequest;
+import com.gatepay.common.GatePayConstants;
+import com.gatepay.common.annotation.GatePayRequestParam;
+import com.gatepay.core.signature.Signer;
+
+import java.lang.reflect.Field;
+import java.net.URI;
 import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.time.Duration;
+
 
 public class Client {
 
-    private HttpClient httpClient;
-    private Credential credential;
-    private Config config;
+    private static HttpClient httpClient;
+    private static Credential credential;
+    private static Config config;
+
+    static {
+        config = new Config();
+        credential = new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=");
+    }
+
+    public static HttpClient generateHttpClient() {
+        return HttpClient.newBuilder()
+                .version(HttpClient.Version.HTTP_2)
+                .connectTimeout(Duration.ofSeconds(30))
+                .build();
+    }
+
+    public static <T extends BaseRequest> HttpRequest generateHttpRequest(T request, long timestamp, String nonce, String queryString) throws IllegalAccessException {
+        HttpRequest.Builder builder = HttpRequest.newBuilder()
+                .header(GatePayConstants.HEADER_CONTENT_TYPE, "application/json")
+                .header(GatePayConstants.HEADER_GATEPAY_TIMESTAMP, String.valueOf(timestamp))
+                .header(GatePayConstants.HEADER_GATEPAY_NONCE, nonce)
+                .header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Signer.verifySignature(String.valueOf(timestamp), nonce, queryString, credential.getSecretKey()))
+                .header(GatePayConstants.HEADER_GATEPAY_CERTIFICATE_CLIENT_ID, "mZ96D37oKk-HrWJc");   // apiKey)
+        if (GatePayConstants.METHOD_GET.equals(request.getRequestMethod())) {
+            String paramStr = "";
+            Field[] declaredFields = request.getClass().getDeclaredFields();
+            if (declaredFields != null && declaredFields.length > 0)  {
+                for (Field field : declaredFields) {
+                    field.setAccessible(Boolean.TRUE);
+                    if (field.isAnnotationPresent(GatePayRequestParam.class) && field.get(request) != null) {
+                        paramStr = paramStr == "" ? paramStr + "?" : paramStr + "&";
+                        paramStr = paramStr + field.getName() + "=" + field.get(request);
+                    }
+                }
+            }
+            builder.uri(URI.create(config.getEndpoint() + request.getRequestUrl() + paramStr));
+            return builder.GET().build();
+        }
+        return builder.POST(HttpRequest.BodyPublishers.ofString(request.toString())).build();
+    }
+
 
 
     public HttpClient getHttpClient() {
