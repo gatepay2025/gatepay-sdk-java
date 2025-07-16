@@ -1,4 +1,4 @@
-package com.gatepay.model.address;
+package com.gatepay.service.address.model;
 
 import java.math.BigDecimal;
 
