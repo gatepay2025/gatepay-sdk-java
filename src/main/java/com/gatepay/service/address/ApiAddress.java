@@ -2,16 +2,21 @@ package com.gatepay.service.address;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.gatepay.common.BaseRequest;
+import com.gatepay.common.Client;
 import com.gatepay.common.GatePayConstants;
+import com.gatepay.core.signature.Nonce;
 import com.gatepay.core.signature.Signer;
 import com.gatepay.service.address.model.request.*;
 import com.gatepay.service.address.model.response.*;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,18 +54,17 @@ public class ApiAddress {
      * @return
      */
     public ChainsResp getAddressChains(ChainsReq request) {
-        // 构建请求URL
-        String url = GatePayConstants.DEFAULT_END_POINT + GatePayConstants.END_POINT_ADDRESS_CHAINS + "?currency=" + request.getCurrency();
+        String url = request.getRequestUrl() + "?currency=" + request.getCurrency();
         String queryString = ""; // buildQueryStrByGet(null);
         String secretKey = "Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=";
-        //String url = baseUrl + endpoint + (queryString.isEmpty() ? "" : "?" + queryString);
+        String nonce = Nonce.generateNonce(9);
 
         // 构建请求头
         long timestamp = System.currentTimeMillis();
-        String signature = Signer.verifySignature(String.valueOf(System.currentTimeMillis()), "1234567890", queryString, secretKey);
+        String signature = Signer.verifySignature(String.valueOf(System.currentTimeMillis()), nonce, queryString, secretKey);
 
         // 发送请求
-        HttpRequest httpRequest = generateHttpRequest(url, timestamp, signature);
+        HttpRequest httpRequest = Client.generateHttpRequestBuilder(url, timestamp, nonce, signature).GET().build();
         try {
             HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body().toString());
@@ -79,18 +83,17 @@ public class ApiAddress {
      */
     public CurrenciesResp getAddressCurrencies() {
         // 构建请求URL
-        String url = GatePayConstants.DEFAULT_END_POINT + GatePayConstants.END_POINT_ADDRESS_CURRENCIES;
+        String url = GatePayConstants.END_POINT_DEFAULT + GatePayConstants.END_POINT_ADDRESS_CURRENCIES;
 
         String queryString = "";  // buildQueryString(null);
         String secretKey = "Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=";
-        //String url = baseUrl + endpoint + (queryString.isEmpty() ? "" : "?" + queryString);
 
         // 构建请求头
         long timestamp = System.currentTimeMillis();
         String signature = Signer.verifySignature(String.valueOf(System.currentTimeMillis()), "1234567890", queryString, secretKey);
 
         // 发送请求
-        HttpRequest httpRequest = generateHttpRequest(url, timestamp, signature);
+        HttpRequest httpRequest = Client.generateHttpRequestBuilder(url, timestamp, "", signature).GET().build();
 
         try {
             HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
@@ -116,18 +119,19 @@ public class ApiAddress {
      */
     public SupportedConvertCurrenciesResp getSupportedConvertCurrencies(SupportedConvertCurrenciesReq request) {
         // 构建请求URL
-        String url = GatePayConstants.DEFAULT_END_POINT + GatePayConstants.END_POINT_ADDRESS_SUPPORTED_CONVERT_CURRENCIES + "?currency=" + request.getCurrency();
+        String url = request.getRequestUrl() + "?currency=" + request.getCurrency();
 
         String queryString = "";  // buildQueryString(null);
         String secretKey = "Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=";
         //String url = baseUrl + endpoint + (queryString.isEmpty() ? "" : "?" + queryString);
+        String nonce = "";
 
         // 构建请求头
         long timestamp = System.currentTimeMillis();
         String signature = Signer.verifySignature(String.valueOf(timestamp), "1234567890", queryString, secretKey);
 
         // 发送请求
-        HttpRequest httpRequest = generateHttpRequest(url, timestamp, signature);
+        HttpRequest httpRequest = Client.generateHttpRequestBuilder(url, timestamp, nonce, signature).GET().build();
         try {
             HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body().toString());
@@ -147,11 +151,8 @@ public class ApiAddress {
      */
     public CreateOrderResp createOrder(CreateOrderReq request) throws JsonProcessingException {
         // 构建请求URL
-        String url = GatePayConstants.DEFAULT_END_POINT + GatePayConstants.END_POINT_ADDRESS_CREATE_ORDER;
-
         String queryString = objectMapper.writeValueAsString(request);  // buildQueryString(null);
         String secretKey = "Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=";
-        //String url = baseUrl + endpoint + (queryString.isEmpty() ? "" : "?" + queryString);
 
         // 构建请求头
         long timestamp = 1752742852L;// System.currentTimeMillis();
@@ -159,7 +160,7 @@ public class ApiAddress {
 
         // 发送请求
         HttpRequest httpRequest = HttpRequest.newBuilder()
-                .uri(URI.create(url))
+                .uri(URI.create(request.getRequestUrl()))
                 .header(GatePayConstants.HEADER_CONTENT_TYPE, "application/json")
                 .header(GatePayConstants.HEADER_GATEPAY_TIMESTAMP, String.valueOf(timestamp))
                 .header(GatePayConstants.HEADER_GATEPAY_NONCE, "1234567890")
@@ -187,7 +188,7 @@ public class ApiAddress {
      */
     public QueryOrderResp queryOrder(QueryOrderReq request) {
         // 构建请求URL
-        String url = GatePayConstants.DEFAULT_END_POINT + GatePayConstants.END_POINT_ADDRESS_QUERY_ORDER + "?prepayId=" + request.getPrepayId() + "&merchantTradeNo=" + request.getMerchantTradeNo();
+        String url = request.getRequestUrl() + "?prepayId=" + request.getPrepayId() + "&merchantTradeNo=" + request.getMerchantTradeNo();
 
         String queryString = "";  // buildQueryString(null);
         String secretKey = "Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=";
@@ -198,7 +199,7 @@ public class ApiAddress {
         String signature = Signer.verifySignature(String.valueOf(System.currentTimeMillis()), "1234567890", queryString, secretKey);
 
         // 发送请求
-        HttpRequest httpRequest = generateHttpRequest(url, timestamp, signature);
+        HttpRequest httpRequest = Client.generateHttpRequestBuilder(url, timestamp, "", signature).GET().build();
         try {
             HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body().toString());
@@ -218,7 +219,6 @@ public class ApiAddress {
      */
     public CreateRefundResp createRefund(CreateRefundReq request) throws JsonProcessingException {
         // 构建请求URL
-        String url = GatePayConstants.DEFAULT_END_POINT + GatePayConstants.END_POINT_ADDRESS_CREATE_REFUND;
         String secretKey = "Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=";
 
         // 构建请求头
@@ -229,7 +229,7 @@ public class ApiAddress {
 
         // 发送请求
         HttpRequest httpRequest = HttpRequest.newBuilder()
-                .uri(URI.create(url))
+                .uri(URI.create(request.getRequestUrl()))
                 .header(GatePayConstants.HEADER_CONTENT_TYPE, "application/json")
                 .header(GatePayConstants.HEADER_GATEPAY_TIMESTAMP, String.valueOf(timestamp))
                 .header(GatePayConstants.HEADER_GATEPAY_NONCE, "1234567890")
@@ -256,29 +256,44 @@ public class ApiAddress {
      * @return
      * @throws JsonProcessingException
      */
-    public CreateRefundConvertResp createRefundConvert(CreateRefundConvertReq request) throws JsonProcessingException {
+    public CreateRefundConvertResp createRefundConvert(CreateRefundConvertReq request) throws IOException, InterruptedException {
         // 构建请求URL
-        String url = GatePayConstants.DEFAULT_END_POINT + GatePayConstants.END_POINT_ADDRESS_CREATE_REFUND_CONVERT;
         String secretKey = "Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=";
 
         // 构建请求头
-        long timestamp = System.currentTimeMillis();
+        // long timestamp = System.currentTimeMillis();
 
-        String queryString = objectMapper.writeValueAsString(request);
-        String signature = Signer.verifySignature(String.valueOf(timestamp), "1234567890", queryString, secretKey);
+        String requestBody = objectMapper.writeValueAsString(request);
+        // String signature = Signer.verifySignature(String.valueOf(timestamp), "1234567890", queryString, secretKey);
 
-        // 发送请求
-        HttpRequest httpRequest = HttpRequest.newBuilder()
-                .uri(URI.create(url))
-                .header(GatePayConstants.HEADER_CONTENT_TYPE, "application/json")
-                .header(GatePayConstants.HEADER_GATEPAY_TIMESTAMP, String.valueOf(timestamp))
-                .header(GatePayConstants.HEADER_GATEPAY_NONCE, "1234567890")
-                .header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, signature)
-                .header(GatePayConstants.HEADER_GATEPAY_CERTIFICATE_CLIENT_ID, "mZ96D37oKk-HrWJc")   // apiKey)
-                .POST(HttpRequest.BodyPublishers.ofString(objectMapper.writeValueAsString(request)))
-                .build();
+        String timestamp = String.valueOf(Instant.now().getEpochSecond());
+        String nonce = Nonce.generateNonce(32);
+
+        // Generate signature
+        String signature = Signer.generateSignature(timestamp, nonce, requestBody, secretKey);
+
+        HttpRequest.Builder requestBuilder = HttpRequest.newBuilder()
+                .uri(URI.create(request.getRequestUrl()))
+                .timeout(Duration.ofSeconds(10))
+                .header("Content-Type", "application/json")
+                .header("X-Gate-Pay-Api-Key", apiKey)
+                .header("X-Gate-Pay-Client-Id", "mZ96D37oKk-HrWJc")
+                .header(GatePayConstants.HEADER_GATEPAY_TIMESTAMP, timestamp)
+                .header(GatePayConstants.HEADER_GATEPAY_NONCE, nonce)
+                .header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, signature);
+        if (request instanceof BaseRequest) {
+            Map<String, String> headers = ((BaseRequest) request).getHeaders();
+            if (headers != null) {
+                headers.forEach(requestBuilder::header);
+            }
+        }
+        requestBuilder.method("POST", HttpRequest.BodyPublishers.ofString(requestBody));
+
         try {
-            HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+            HttpResponse<String> response = httpClient.send(
+                    requestBuilder.build(),
+                    HttpResponse.BodyHandlers.ofString()
+            );
             System.out.println(response.body().toString());
         } catch (Exception e) {
             e.printStackTrace();
@@ -295,18 +310,18 @@ public class ApiAddress {
      */
     public TransactionDetailResp transactionDetail(TransactionDetailReq request) {
         // 构建请求URL
-        String url = GatePayConstants.DEFAULT_END_POINT + GatePayConstants.END_POINT_ADDRESS_TRANSACTION_DETAIL + "?prepayId=" + request.getPrepayId();
+        String url = request.getRequestUrl() + "?prepayId=" + request.getPrepayId();
 
         String queryString = "";  // buildQueryString(null);
         String secretKey = "Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=";
-        //String url = baseUrl + endpoint + (queryString.isEmpty() ? "" : "?" + queryString);
+        String nonce = "";
 
         // 构建请求头
         long timestamp = System.currentTimeMillis();
         String signature = Signer.verifySignature(String.valueOf(System.currentTimeMillis()), "1234567890", queryString, secretKey);
 
         // 发送请求
-        HttpRequest httpRequest = generateHttpRequest(url, timestamp, signature);
+        HttpRequest httpRequest = Client.generateHttpRequestBuilder(url, timestamp, nonce, signature).GET().build();
         try {
             HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body().toString());
@@ -318,23 +333,6 @@ public class ApiAddress {
         return new TransactionDetailResp();
     }
 
-
-
-
-
-
-
-    private HttpRequest generateHttpRequest(String url, long timestamp, String signature) {
-        return HttpRequest.newBuilder()
-                .uri(URI.create(url))
-                .header(GatePayConstants.HEADER_CONTENT_TYPE, "application/json")
-                .header(GatePayConstants.HEADER_GATEPAY_TIMESTAMP, String.valueOf(timestamp))
-                .header(GatePayConstants.HEADER_GATEPAY_NONCE, "1234567890")
-                .header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, signature)
-                .header(GatePayConstants.HEADER_GATEPAY_CERTIFICATE_CLIENT_ID, "mZ96D37oKk-HrWJc")   // apiKey)
-                .GET()
-                .build();
-    }
 
 
 
