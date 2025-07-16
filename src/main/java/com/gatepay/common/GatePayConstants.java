@@ -6,7 +6,8 @@ public class GatePayConstants {
     public static final String DEFAULT_END_POINT = "http://dev.halftrust.xyz/gfpay";
     public static final String END_POINT_ADDRESS_CHAINS = "/v1/pay/address/chains";
     public static final String END_POINT_ADDRESS_CURRENCIES = "/v1/pay/address/currencies";
-    public static final String END_POINT_SUPPORTED_CONVERT_CURRENCIES = "/v1/pay/address/supportedconvertcurrencies";
+    public static final String END_POINT_ADDRESS_SUPPORTED_CONVERT_CURRENCIES = "/v1/pay/address/supportedconvertcurrencies";
+    public static final String END_POINT_ADDRESS_CREATE = "/v1/pay/address/create";
     public static final String END_POINT_OPEN_SDK = "/v1/pay/open/sdk";
 
     // 请求方法相关
@@ -30,11 +31,11 @@ public class GatePayConstants {
 
 
     public static final String HEADER_GATEPAY_API_KEY = "X-GatePay-Certificate-SN";
-    public static final String HEADER_GATEPAY_CLIENT_ID = "X-GatePay-Certificate-ClientId";
+    public static final String HEADER_GATEPAY_CERTIFICATE_CLIENT_ID = "X-GatePay-Certificate-ClientId";
     public static final String HEADER_GATEPAY_TIMESTAMP = "X-GatePay-Timestamp";
     public static final String HEADER_GATEPAY_NONCE = "X-GatePay-Nonce";
     public static final String HEADER_GATEPAY_SIGNATURE = "X-GatePay-Signature";
-    public static final String HEADER_GATE_MERCHANT_ID = "X-GatePay-ChannelId";
+    public static final String HEADER_GATE_CHANNEL_ID = "X-GatePay-ChannelId";
     public static final String HEADER_GATE_CLIENT_ID = "X-GatePay-ClientId";
 
 
