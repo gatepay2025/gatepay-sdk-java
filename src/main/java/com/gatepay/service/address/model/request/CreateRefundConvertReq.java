@@ -5,14 +5,14 @@ import com.gatepay.common.BaseRequest;
 import java.math.BigDecimal;
 
 
-public class CreateAddressRefundConvertReq extends BaseRequest {
+public class CreateRefundConvertReq extends BaseRequest {
 
     private String refundRequestId;
     private String prepayId;
     private String refundOrderCurrency;
-    private BigDecimal refundOrderAmount;
+    private String refundOrderAmount;
     private String refundPayCurrency;
-    private BigDecimal refundPayAmount;
+    private String refundPayAmount;
     private String refundReason;
     private int receiverId;
 
@@ -41,11 +41,11 @@ public class CreateAddressRefundConvertReq extends BaseRequest {
         this.refundOrderCurrency = refundOrderCurrency;
     }
 
-    public BigDecimal getRefundOrderAmount() {
+    public String getRefundOrderAmount() {
         return refundOrderAmount;
     }
 
-    public void setRefundOrderAmount(BigDecimal refundOrderAmount) {
+    public void setRefundOrderAmount(String refundOrderAmount) {
         this.refundOrderAmount = refundOrderAmount;
     }
 
@@ -57,11 +57,11 @@ public class CreateAddressRefundConvertReq extends BaseRequest {
         this.refundPayCurrency = refundPayCurrency;
     }
 
-    public BigDecimal getRefundPayAmount() {
+    public String getRefundPayAmount() {
         return refundPayAmount;
     }
 
-    public void setRefundPayAmount(BigDecimal refundPayAmount) {
+    public void setRefundPayAmount(String refundPayAmount) {
         this.refundPayAmount = refundPayAmount;
     }
 
