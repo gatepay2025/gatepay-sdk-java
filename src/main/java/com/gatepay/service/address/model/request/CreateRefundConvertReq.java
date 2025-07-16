@@ -19,7 +19,7 @@ public class CreateRefundConvertReq extends BaseRequest {
 
 
     public CreateRefundConvertReq() {
-        this.requestUrl = GatePayConstants.END_POINT_DEFAULT + GatePayConstants.END_POINT_ADDRESS_CREATE_REFUND_CONVERT;
+        this.requestUrl = GatePayConstants.END_POINT_ADDRESS_CREATE_REFUND_CONVERT;
     }
 
 

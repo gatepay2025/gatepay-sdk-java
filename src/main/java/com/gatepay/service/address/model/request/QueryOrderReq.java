@@ -11,7 +11,7 @@ public class QueryOrderReq extends BaseRequest {
 
 
     public QueryOrderReq() {
-        this.requestUrl = super.requestUrl + GatePayConstants.END_POINT_ADDRESS_QUERY_ORDER;
+        this.requestUrl = GatePayConstants.END_POINT_ADDRESS_QUERY_ORDER;
     }
 
 

@@ -8,7 +8,7 @@ public class SupportedConvertCurrenciesReq extends BaseRequest {
     private String currency;
 
     public SupportedConvertCurrenciesReq() {
-        this.requestUrl = super.requestUrl + GatePayConstants.END_POINT_ADDRESS_SUPPORTED_CONVERT_CURRENCIES;
+        this.requestUrl = GatePayConstants.END_POINT_ADDRESS_SUPPORTED_CONVERT_CURRENCIES;
     }
 
     public String getCurrency() {

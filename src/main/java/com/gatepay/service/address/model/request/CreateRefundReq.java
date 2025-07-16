@@ -14,7 +14,7 @@ public class CreateRefundReq extends BaseRequest {
 
 
     public CreateRefundReq() {
-        this.requestUrl = super.requestUrl + GatePayConstants.END_POINT_ADDRESS_CREATE_REFUND;
+        this.requestUrl = GatePayConstants.END_POINT_ADDRESS_CREATE_REFUND;
     }
 
 

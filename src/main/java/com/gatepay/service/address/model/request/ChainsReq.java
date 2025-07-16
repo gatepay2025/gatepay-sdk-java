@@ -8,7 +8,7 @@ public class ChainsReq extends BaseRequest {
     private String currency;
 
     public ChainsReq() {
-        this.requestUrl = super.requestUrl + GatePayConstants.END_POINT_ADDRESS_CHAINS;
+        this.requestUrl = GatePayConstants.END_POINT_ADDRESS_CHAINS;
     }
 
     public String getCurrency() {

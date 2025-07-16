@@ -8,7 +8,7 @@ public class TransactionDetailReq extends BaseRequest {
     private String prepayId;
 
     public TransactionDetailReq() {
-        this.requestUrl = super.requestUrl + GatePayConstants.END_POINT_ADDRESS_TRANSACTION_DETAIL;
+        this.requestUrl = GatePayConstants.END_POINT_ADDRESS_TRANSACTION_DETAIL;
     }
 
     public String getPrepayId() {
