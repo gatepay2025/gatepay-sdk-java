@@ -1,8 +1,13 @@
-package com.gatepay.core;
+package com.gatepay.common;
 
-public class Constants {
+public class GatePayConstants {
 
+    // 请求地址相关
     public static final String DEFAULT_END_POINT = "http://dev.halftrust.xyz/gfpay";
+
+    public static final String END_POINT_ADDRESS_CHAINS = "/v1/pay/address/chains";
+    public static final String END_POINT_OPEN_SDK = "/v1/pay/open/sdk";
+
 
     public static final String SCHEME_HTTP = "http";
     public static final String SCHEME_HTTPS = "https";
