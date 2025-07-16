@@ -1,5 +1,7 @@
 package com.gatepay.core;
 
+import com.gatepay.constants.EndPoints;
+
 import java.time.Duration;
 
 public class Config {
@@ -11,7 +13,7 @@ public class Config {
 
     public Config() {
         this.scheme = "https";
-        this.endpoint = Constants.DEFAULT_END_POINT;
+        this.endpoint = EndPoints.DEFAULT_END_POINT;
         this.timeout = Duration.ofSeconds(30);
     }
 
