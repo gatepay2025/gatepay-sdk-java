@@ -2,13 +2,12 @@ package com.gatepay.service.address.model.request;
 
 import com.gatepay.common.BaseRequest;
 
-import java.math.BigDecimal;
 
-public class CreateAddressRefundReq extends BaseRequest {
+public class CreateRefundReq extends BaseRequest {
 
     private String refundRequestId;
     private String prepayId;
-    private BigDecimal refundAmount;
+    private String refundAmount;
     private String refundReason;
     private int receiverId;
 
@@ -29,11 +28,11 @@ public class CreateAddressRefundReq extends BaseRequest {
         this.prepayId = prepayId;
     }
 
-    public BigDecimal getRefundAmount() {
+    public String getRefundAmount() {
         return refundAmount;
     }
 
-    public void setRefundAmount(BigDecimal refundAmount) {
+    public void setRefundAmount(String refundAmount) {
         this.refundAmount = refundAmount;
     }
 

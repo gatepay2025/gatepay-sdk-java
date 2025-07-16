@@ -1,6 +1,6 @@
 package com.gatepay.service.address.model.response;
 
-public class CreateAddressRefundResp {
+public class CreateRefundResp {
 
     private String refundRequestId;
     private String prepayId;
