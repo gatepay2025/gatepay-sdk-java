@@ -1,4 +1,4 @@
-package com.gatepay.core.utils;
+package com.gatepay.utils;
 
 import java.util.List;
 
