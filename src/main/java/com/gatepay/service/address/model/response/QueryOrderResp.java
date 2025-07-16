@@ -4,7 +4,7 @@ import com.gatepay.service.address.model.ChainTransactionInfo;
 
 import java.math.BigDecimal;
 
-public class QueryAddressOrderResp {
+public class QueryOrderResp {
 
     private String prepayId;
     private int merchantID;

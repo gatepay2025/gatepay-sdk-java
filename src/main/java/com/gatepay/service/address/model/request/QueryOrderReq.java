@@ -3,7 +3,7 @@ package com.gatepay.service.address.model.request;
 import com.gatepay.common.BaseRequest;
 
 
-public class QueryAddressOrderReq extends BaseRequest {
+public class QueryOrderReq extends BaseRequest {
 
     private String prepayId;
     private String merchantTradeNo;
