@@ -11,6 +11,7 @@ public class GatePayConstants {
     public static final String END_POINT_ADDRESS_QUERY_ORDER = "/v1/pay/address/query";
     public static final String END_POINT_ADDRESS_CREATE_REFUND = "/v1/pay/address/refund";
     public static final String END_POINT_ADDRESS_CREATE_REFUND_CONVERT = "/v1/pay/address/refundconvert";
+    public static final String END_POINT_ADDRESS_TRANSACTION_DETAIL = "/v1/pay/address/transactiondetail";
     public static final String END_POINT_OPEN_SDK = "/v1/pay/open/sdk";
 
     // 请求方法相关
