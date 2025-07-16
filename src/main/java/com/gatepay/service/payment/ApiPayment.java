@@ -1,10 +1,10 @@
-package com.gatepay.services.payment;
+package com.gatepay.service.payment;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gatepay.core.signature.Head;
+import com.gatepay.common.GatePayConstants;
 import com.gatepay.core.signature.Signer;
-import com.gatepay.model.payment.request.OperateOrderRequest;
-import com.gatepay.model.payment.response.QueryOrderResponse;
+import com.gatepay.service.payment.model.request.OperateOrderRequest;
+import com.gatepay.service.payment.model.response.QueryOrderResponse;
 
 import java.io.IOException;
 import java.net.URI;
@@ -27,17 +27,17 @@ public class ApiPayment {
     public QueryOrderResponse getOrder(OperateOrderRequest request) throws Exception {
         try {
             String requestBody = objectMapper.writeValueAsString(request);
-            String signature = Signer.verifySignature();
+            String signature = Signer.verifySignature("", "", "", "");
 
             HttpRequest httpRequest = HttpRequest.newBuilder()
                     .uri(URI.create("baseUrl" + "/api/v1/payment/query"))
                     .header("Content-Type", "application/json")
-                    .header(Head.HEADER_GATEPAY_API_KEY, "apiKey")
-                    .header(Head.HEADER_GATEPAY_CLIENT_ID, "clientId")
-                    .header(Head.HEADER_GATE_MERCHANT_ID, "merchantId")
-                    .header(Head.HEADER_GATEPAY_TIMESTAMP, "timestamp")
-                    .header(Head.HEADER_GATEPAY_NONCE, "nonce")
-                    .header(Head.HEADER_GATEPAY_SIGNATURE, signature)
+                    .header(GatePayConstants.HEADER_GATEPAY_API_KEY, "apiKey")
+                    .header(GatePayConstants.HEADER_GATEPAY_CLIENT_ID, "clientId")
+                    .header(GatePayConstants.HEADER_GATE_MERCHANT_ID, "merchantId")
+                    .header(GatePayConstants.HEADER_GATEPAY_TIMESTAMP, "timestamp")
+                    .header(GatePayConstants.HEADER_GATEPAY_NONCE, "nonce")
+                    .header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, signature)
                     .POST(HttpRequest.BodyPublishers.ofString(requestBody))
                     .build();
 
