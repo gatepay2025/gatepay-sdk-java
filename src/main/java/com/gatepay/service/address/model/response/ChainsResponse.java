@@ -1,4 +1,4 @@
-package com.gatepay.model.address.response;
+package com.gatepay.service.address.model.response;
 
 public class ChainsResponse {
 

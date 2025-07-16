@@ -1,6 +1,6 @@
-package com.gatepay.model.address.response;
+package com.gatepay.service.address.model.response;
 
-import com.gatepay.model.address.Chain;
+import com.gatepay.service.address.model.Chain;
 
 public class AddrOrderResponse {
 

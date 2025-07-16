@@ -1,30 +1,26 @@
-package com.gatepay.model.address.response;
+package com.gatepay.service.address.model.response;
 
-import com.gatepay.model.address.ChainTransactionInfo;
+import com.gatepay.service.address.model.TransactionDetail;
 
-import java.math.BigDecimal;
-
-public class QueryAddressOrderResp {
+public class TransactionDetailResponse {
 
     private String prepayId;
-    private int merchantID;
+    private int merchantId;
     private String merchantTradeNo;
     private String transactionId;
     private String goodsName;
     private String currency;
     private String orderAmount;
     private String payCurrency;
-    private BigDecimal payAmount;
-    private BigDecimal rate;
+    private String payAmount;
     private String status;
-    private int createTime;
-    private int expireTime;
+    private String utcCreateTime;
+    private String utcExpireTime;
+    private String utcUpdateTime;
     private int transactTime;
     private String orderName;
-    private ChainTransactionInfo transactionInfo;
-    private String channelId;         // 客户渠道名称
-    private String address;           // 地址
-    private String chain;             // 网络
+    private TransactionDetail transactionDetail;
+    private String channelId;
 
 
     public String getPrepayId() {
@@ -35,12 +31,12 @@ public class QueryAddressOrderResp {
         this.prepayId = prepayId;
     }
 
-    public int getMerchantID() {
-        return merchantID;
+    public int getMerchantId() {
+        return merchantId;
     }
 
-    public void setMerchantID(int merchantID) {
-        this.merchantID = merchantID;
+    public void setMerchantId(int merchantId) {
+        this.merchantId = merchantId;
     }
 
     public String getMerchantTradeNo() {
@@ -91,20 +87,12 @@ public class QueryAddressOrderResp {
         this.payCurrency = payCurrency;
     }
 
-    public BigDecimal getPayAmount() {
+    public String getPayAmount() {
         return payAmount;
     }
 
-    public void setPayAmount(BigDecimal payAmount) {
+    public void setPayAmount(String payAmount) {
         this.payAmount = payAmount;
-    }
-
-    public BigDecimal getRate() {
-        return rate;
-    }
-
-    public void setRate(BigDecimal rate) {
-        this.rate = rate;
     }
 
     public String getStatus() {
@@ -115,20 +103,28 @@ public class QueryAddressOrderResp {
         this.status = status;
     }
 
-    public int getCreateTime() {
-        return createTime;
+    public String getUtcCreateTime() {
+        return utcCreateTime;
     }
 
-    public void setCreateTime(int createTime) {
-        this.createTime = createTime;
+    public void setUtcCreateTime(String utcCreateTime) {
+        this.utcCreateTime = utcCreateTime;
     }
 
-    public int getExpireTime() {
-        return expireTime;
+    public String getUtcExpireTime() {
+        return utcExpireTime;
     }
 
-    public void setExpireTime(int expireTime) {
-        this.expireTime = expireTime;
+    public void setUtcExpireTime(String utcExpireTime) {
+        this.utcExpireTime = utcExpireTime;
+    }
+
+    public String getUtcUpdateTime() {
+        return utcUpdateTime;
+    }
+
+    public void setUtcUpdateTime(String utcUpdateTime) {
+        this.utcUpdateTime = utcUpdateTime;
     }
 
     public int getTransactTime() {
@@ -147,12 +143,12 @@ public class QueryAddressOrderResp {
         this.orderName = orderName;
     }
 
-    public ChainTransactionInfo getTransactionInfo() {
-        return transactionInfo;
+    public TransactionDetail getTransactionDetail() {
+        return transactionDetail;
     }
 
-    public void setTransactionInfo(ChainTransactionInfo transactionInfo) {
-        this.transactionInfo = transactionInfo;
+    public void setTransactionDetail(TransactionDetail transactionDetail) {
+        this.transactionDetail = transactionDetail;
     }
 
     public String getChannelId() {
@@ -161,22 +157,6 @@ public class QueryAddressOrderResp {
 
     public void setChannelId(String channelId) {
         this.channelId = channelId;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getChain() {
-        return chain;
-    }
-
-    public void setChain(String chain) {
-        this.chain = chain;
     }
 
 }
