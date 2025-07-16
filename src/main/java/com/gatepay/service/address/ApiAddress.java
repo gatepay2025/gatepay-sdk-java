@@ -255,7 +255,7 @@ public class ApiAddress {
         // 构建请求头
         long timestamp = System.currentTimeMillis();
 
-        String queryString = ""; // buildQueryStr(null);
+        String queryString = objectMapper.writeValueAsString(request);
         String signature = Signer.verifySignature(String.valueOf(timestamp), "1234567890", queryString, secretKey);
 
         // 发送请求
