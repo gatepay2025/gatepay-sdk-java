@@ -4,10 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.core.signature.Signer;
-import com.gatepay.service.address.model.request.ChainsReq;
-import com.gatepay.service.address.model.request.CreateOrderReq;
-import com.gatepay.service.address.model.request.QueryOrderReq;
-import com.gatepay.service.address.model.request.SupportedConvertCurrenciesReq;
+import com.gatepay.service.address.model.request.*;
 import com.gatepay.service.address.model.response.*;
 
 import java.net.URI;
@@ -15,6 +12,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -205,7 +203,10 @@ public class ApiAddress {
 
 
     /**
-     * 查询地址支付订单
+     * 查询地址支付订单详情
+     *
+     * @param request
+     * @return
      */
     public QueryOrderResp queryOrder(QueryOrderReq request) {
         // 构建请求URL
@@ -242,6 +243,41 @@ public class ApiAddress {
 
 
 
+    /**
+     * 创建非闪兑支付单退款
+     *
+     */
+    public CreateRefundResp createRefund(CreateRefundReq request) throws JsonProcessingException {
+        // 构建请求URL
+        String url = GatePayConstants.DEFAULT_END_POINT + GatePayConstants.END_POINT_ADDRESS_CREATE_REFUND;
+        String secretKey = "Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=";
+
+        // 构建请求头
+        long timestamp = System.currentTimeMillis();
+
+        String queryString = ""; // buildQueryStr(null);
+        String signature = Signer.verifySignature(String.valueOf(timestamp), "1234567890", queryString, secretKey);
+
+        // 发送请求
+        HttpRequest httpRequest = HttpRequest.newBuilder()
+                .uri(URI.create(url))
+                .header(GatePayConstants.HEADER_CONTENT_TYPE, "application/json")
+                .header(GatePayConstants.HEADER_GATEPAY_TIMESTAMP, String.valueOf(timestamp))
+                .header(GatePayConstants.HEADER_GATEPAY_NONCE, "1234567890")
+                .header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, signature)
+                .header(GatePayConstants.HEADER_GATEPAY_CERTIFICATE_CLIENT_ID, "mZ96D37oKk-HrWJc")   // apiKey)
+                .POST(HttpRequest.BodyPublishers.ofString(objectMapper.writeValueAsString(request)))
+                .build();
+        try {
+            HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+            System.out.println(response.body().toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // 解析响应
+        return new CreateRefundResp();
+    }
 
 
 
@@ -262,7 +298,7 @@ public class ApiAddress {
      * @param params 参数映射
      * @return 查询字符串
      */
-    private String buildQueryStrByGet(Map<String, String> params) {
+    private String buildQueryStr(Map<String, String> params) {
         if (params.isEmpty()) {
             return "";
         }
