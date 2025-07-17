@@ -18,7 +18,7 @@ public class GatePayConstants {
     public static final String END_POINT_PAY_ORDER_CLOSE = "/v1/pay/order/close";
     public static final String END_POINT_PAY_ORDER_QUERY = "/v1/pay/order/query";
     public static final String END_POINT_PAY_CREATE_REFUND = "/v1/pay/order/refund";
-
+    public static final String END_POINT_PAY_QUERY_REFUND = "/v1/pay/order/refund/query";
 
 
 

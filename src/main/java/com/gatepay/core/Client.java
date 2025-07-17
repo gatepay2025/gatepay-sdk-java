@@ -1,5 +1,7 @@
 package com.gatepay.core;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.annotation.GatePayParam;
@@ -30,7 +32,7 @@ public class Client {
                 .build();
     }
 
-    public static <T extends BaseRequest> HttpRequest generateHttpRequest(T request, long timestamp, String nonce, String queryString) throws IllegalAccessException {
+    public static <T extends BaseRequest> HttpRequest generateHttpRequest(T request, long timestamp, String nonce, String queryString) throws IllegalAccessException, JsonProcessingException {
         HttpRequest.Builder builder = HttpRequest.newBuilder()
                 .header(GatePayConstants.HEADER_CONTENT_TYPE, "application/json")
                 .header(GatePayConstants.HEADER_GATEPAY_TIMESTAMP, String.valueOf(timestamp))
@@ -52,7 +54,9 @@ public class Client {
             builder.uri(URI.create(config.getEndpoint() + request.getRequestUrl() + paramStr));
             return builder.GET().build();
         }
-        return builder.POST(HttpRequest.BodyPublishers.ofString(request.toString())).build();
+        builder.header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Signer.generateSignature(String.valueOf(timestamp), nonce, queryString, credential.getSecretKey()));
+        builder.uri(URI.create(config.getEndpoint() + request.getRequestUrl()));
+        return builder.POST(HttpRequest.BodyPublishers.ofString(new ObjectMapper().writeValueAsString(request))).build();
     }
 
 

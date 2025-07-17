@@ -4,14 +4,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gatepay.core.Client;
 import com.gatepay.core.signature.Nonce;
-import com.gatepay.service.web.model.request.CloseOrderReq;
-import com.gatepay.service.web.model.request.CreateOrderReq;
-import com.gatepay.service.web.model.request.CreateRefundReq;
-import com.gatepay.service.web.model.request.QueryOrderReq;
-import com.gatepay.service.web.model.response.CloseOrderResp;
-import com.gatepay.service.web.model.response.CreateOrderResp;
-import com.gatepay.service.web.model.response.CreateRefundResp;
-import com.gatepay.service.web.model.response.QueryOrderResp;
+import com.gatepay.service.web.model.request.*;
+import com.gatepay.service.web.model.response.*;
 
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -85,8 +79,8 @@ public class ApiWeb {
      * 创建退款订单
      */
     public CreateRefundResp createRefund(CreateRefundReq request) {
-        String queryString = "";  // buildQueryString(null);
         try {
+            String queryString = new ObjectMapper().writeValueAsString(request);
             HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
             HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body().toString());
@@ -94,6 +88,22 @@ public class ApiWeb {
             e.printStackTrace();
         }
         return new CreateRefundResp();
+    }
+
+
+    /**
+     * 查询退款订单
+     */
+    public QueryRefundResp queryRefund(QueryRefundReq request) {
+        try {
+            String queryString = new ObjectMapper().writeValueAsString(request);
+            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
+            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
+            System.out.println(response.body().toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new QueryRefundResp();
     }
 
 }
