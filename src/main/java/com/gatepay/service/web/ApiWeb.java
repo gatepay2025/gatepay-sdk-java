@@ -116,4 +116,19 @@ public class ApiWeb {
         return new CreateBatchTransferResp();
     }
 
+
+    /**
+     * 查询批量转账
+     */
+    public QueryBatchTransferResp queryBatchTransfer(QueryBatchTransferReq request) {
+        try {
+            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
+            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
+            System.out.println(response.body().toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new QueryBatchTransferResp();
+    }
+
 }
