@@ -28,7 +28,7 @@ public class Client {
     public static HttpClient generateHttpClient() {
         return HttpClient.newBuilder()
                 .version(HttpClient.Version.HTTP_2)
-                .connectTimeout(Duration.ofSeconds(30))
+                .connectTimeout(Duration.ofSeconds(60))
                 .build();
     }
 
