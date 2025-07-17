@@ -3,7 +3,6 @@ package com.gatepay.service.address.model.request;
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.GatePayConstants;
 
-import java.math.BigDecimal;
 
 
 public class CreateRefundConvertReq extends BaseRequest {

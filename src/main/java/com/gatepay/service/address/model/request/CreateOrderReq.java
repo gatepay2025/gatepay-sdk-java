@@ -26,7 +26,10 @@ public class CreateOrderReq extends BaseRequest {
 
     public CreateOrderReq() {
         this.requestUrl = GatePayConstants.END_POINT_ADDRESS_CREATE_ORDER;
+        this.requestMethod = GatePayConstants.METHOD_POST;
     }
+
+
 
     public String getMerchantTradeNo() {
         return merchantTradeNo;

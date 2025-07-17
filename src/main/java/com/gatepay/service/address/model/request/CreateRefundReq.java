@@ -2,19 +2,30 @@ package com.gatepay.service.address.model.request;
 
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.GatePayConstants;
+import com.gatepay.common.annotation.GatePayParam;
 
 
 public class CreateRefundReq extends BaseRequest {
 
+    @GatePayParam
     private String refundRequestId;
+
+    @GatePayParam
     private String prepayId;
+
+    @GatePayParam
     private String refundAmount;
+
+    @GatePayParam
     private String refundReason;
+
+    @GatePayParam
     private int receiverId;
 
 
     public CreateRefundReq() {
         this.requestUrl = GatePayConstants.END_POINT_ADDRESS_CREATE_REFUND;
+        this.requestMethod = GatePayConstants.METHOD_POST;
     }
 
 
