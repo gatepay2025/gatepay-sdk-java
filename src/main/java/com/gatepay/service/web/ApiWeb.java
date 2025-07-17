@@ -101,4 +101,19 @@ public class ApiWeb {
         return new QueryRefundResp();
     }
 
+
+    /**
+     * 创建批量转账
+     */
+    public CreateBatchTransferResp createBatchTransfer(CreateBatchTransferReq request) {
+        try {
+            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
+            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
+            System.out.println(response.body().toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new CreateBatchTransferResp();
+    }
+
 }
