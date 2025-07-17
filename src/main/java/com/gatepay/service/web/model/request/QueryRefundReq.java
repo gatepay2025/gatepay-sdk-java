@@ -1,8 +1,9 @@
 package com.gatepay.service.web.model.request;
 
 import com.gatepay.common.BaseRequest;
-import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.annotation.GatePayParam;
+import com.gatepay.common.enums.GatePayApi;
+
 
 public class QueryRefundReq extends BaseRequest {
 
@@ -10,8 +11,7 @@ public class QueryRefundReq extends BaseRequest {
     private String refundRequestId;
 
     public QueryRefundReq() {
-        this.requestUrl = GatePayConstants.END_POINT_PAY_QUERY_REFUND;
-        this.requestMethod = GatePayConstants.METHOD_POST;
+        this.api = GatePayApi.PAY_QUERY_REFUND;
     }
 
     public String getRefundRequestId() {

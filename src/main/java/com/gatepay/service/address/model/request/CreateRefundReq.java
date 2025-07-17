@@ -3,6 +3,7 @@ package com.gatepay.service.address.model.request;
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.annotation.GatePayParam;
+import com.gatepay.common.enums.GatePayApi;
 
 
 public class CreateRefundReq extends BaseRequest {
@@ -24,8 +25,7 @@ public class CreateRefundReq extends BaseRequest {
 
 
     public CreateRefundReq() {
-        this.requestUrl = GatePayConstants.END_POINT_ADDRESS_CREATE_REFUND;
-        this.requestMethod = GatePayConstants.METHOD_POST;
+        this.api = GatePayApi.ADDRESS_CREATE_REFUND_CONVERT;
     }
 
 

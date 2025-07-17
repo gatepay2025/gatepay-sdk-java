@@ -1,8 +1,9 @@
 package com.gatepay.service.web.model.request;
 
 import com.gatepay.common.BaseRequest;
-import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.annotation.GatePayParam;
+import com.gatepay.common.enums.GatePayApi;
+
 
 public class QueryOrderReq extends BaseRequest {
 
@@ -14,8 +15,7 @@ public class QueryOrderReq extends BaseRequest {
 
 
     public QueryOrderReq() {
-        this.requestUrl = GatePayConstants.END_POINT_PAY_ORDER_QUERY;
-        this.requestMethod = GatePayConstants.METHOD_GET;
+        this.api = GatePayApi.PAY_ORDER_QUERY;
     }
 
 

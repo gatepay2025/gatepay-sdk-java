@@ -1,6 +1,7 @@
 package com.gatepay.service.web.model.request;
 
 import com.gatepay.common.BaseRequest;
+import com.gatepay.common.enums.GatePayApi;
 import com.gatepay.service.web.model.BatchOrder;
 
 
@@ -16,6 +17,9 @@ public class CreateBatchTransferReq extends BaseRequest {
     private BatchOrder[] batchorderList;
 
 
+    public CreateBatchTransferReq() {
+        this.api = GatePayApi.PAY_CREATE_BATCH_TRANSFER;
+    }
 
 
     public String getBatchid() {
