@@ -1,6 +1,8 @@
 package com.gatepay.service.address.model.response;
 
-public class CurrenciesResp {
+import com.gatepay.common.BaseResponse;
+
+public class CurrenciesResp extends BaseResponse {
 
 
 

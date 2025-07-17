@@ -1,10 +1,11 @@
 package com.gatepay.service.address.model.response;
 
+import com.gatepay.common.BaseResponse;
 import com.gatepay.service.address.model.ChainTransactionInfo;
 
 import java.math.BigDecimal;
 
-public class QueryOrderResp {
+public class QueryOrderResp extends BaseResponse {
 
     private String prepayId;
     private int merchantID;

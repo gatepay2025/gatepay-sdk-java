@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gatepay.core.Client;
 import com.gatepay.core.signature.Nonce;
+import com.gatepay.service.AbstractService;
 import com.gatepay.service.address.model.request.*;
 import com.gatepay.service.address.model.response.*;
 
@@ -16,7 +17,7 @@ import java.util.Map;
  * 地址支付接口
  *
  */
-public class ApiAddress {
+public class ApiAddress extends AbstractService {
 
     private final String apiKey;
     private final ObjectMapper objectMapper;
@@ -38,14 +39,11 @@ public class ApiAddress {
      */
     public ChainsResp getAddressChains(ChainsReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, ChainsResp.class);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        // 解析响应
-        return new ChainsResp();
     }
 
 
@@ -55,13 +53,11 @@ public class ApiAddress {
      */
     public CurrenciesResp getAddressCurrencies() {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(new CurrenciesReq(), System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(new CurrenciesReq(), CurrenciesResp.class);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return new CurrenciesResp();
     }
 
 
@@ -77,13 +73,11 @@ public class ApiAddress {
      */
     public SupportedConvertCurrenciesResp getSupportedConvertCurrencies(SupportedConvertCurrenciesReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, SupportedConvertCurrenciesResp.class);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return new SupportedConvertCurrenciesResp();
     }
 
 
@@ -94,13 +88,11 @@ public class ApiAddress {
      */
     public CreateOrderResp createOrder(CreateOrderReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, CreateOrderResp.class);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return new CreateOrderResp();
     }
 
 
@@ -112,14 +104,11 @@ public class ApiAddress {
      */
     public QueryOrderResp queryOrder(QueryOrderReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, QueryOrderResp.class);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        // 解析响应
-        return new QueryOrderResp();
     }
 
 
@@ -130,13 +119,11 @@ public class ApiAddress {
      */
     public CreateRefundResp createRefund(CreateRefundReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, CreateRefundResp.class);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return new CreateRefundResp();
     }
 
 
@@ -149,13 +136,11 @@ public class ApiAddress {
      */
     public CreateRefundConvertResp createRefundConvert(CreateRefundConvertReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, CreateRefundConvertResp.class);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return new CreateRefundConvertResp();
     }
 
 

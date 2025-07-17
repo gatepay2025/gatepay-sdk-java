@@ -1,8 +1,10 @@
 package com.gatepay.service.address.model.response;
 
+import com.gatepay.common.BaseResponse;
+
 import java.math.BigDecimal;
 
-public class CreateRefundConvertResp {
+public class CreateRefundConvertResp extends BaseResponse {
 
     private String refundRequestId;
     private String prepayId;

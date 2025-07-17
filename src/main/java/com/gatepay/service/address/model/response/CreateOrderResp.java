@@ -1,8 +1,9 @@
 package com.gatepay.service.address.model.response;
 
+import com.gatepay.common.BaseResponse;
 import com.gatepay.service.address.model.Chain;
 
-public class CreateOrderResp {
+public class CreateOrderResp extends BaseResponse {
 
     private String prepayID;
     private String terminalType;
