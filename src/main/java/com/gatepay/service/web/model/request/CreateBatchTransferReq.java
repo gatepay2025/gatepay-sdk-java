@@ -11,6 +11,7 @@ public class CreateBatchTransferReq extends BaseRequest {
     private String merchant_batch_no;
     private String bizscene;
     private String merchant_id;
+    private String client_id;
     private String currency;
     private String name;
     private String description;
@@ -52,6 +53,14 @@ public class CreateBatchTransferReq extends BaseRequest {
 
     public void setMerchant_id(String merchant_id) {
         this.merchant_id = merchant_id;
+    }
+
+    public String getClient_id() {
+        return client_id;
+    }
+
+    public void setClient_id(String client_id) {
+        this.client_id = client_id;
     }
 
     public String getCurrency() {

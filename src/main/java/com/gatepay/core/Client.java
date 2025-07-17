@@ -37,6 +37,7 @@ public class Client {
                 .header(GatePayConstants.HEADER_CONTENT_TYPE, "application/json")
                 .header(GatePayConstants.HEADER_GATEPAY_TIMESTAMP, String.valueOf(timestamp))
                 .header(GatePayConstants.HEADER_GATEPAY_NONCE, nonce)
+                // TODO: set new api key
                 .header(GatePayConstants.HEADER_GATEPAY_CERTIFICATE_CLIENT_ID, "mZ96D37oKk-HrWJc");   // apiKey)
         if (GatePayConstants.METHOD_GET.equals(request.getApi().getHttpMethod())) {
             String paramStr = "";
