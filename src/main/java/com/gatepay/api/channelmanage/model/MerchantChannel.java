@@ -1,0 +1,82 @@
+package com.gatepay.api.channelmanage.model;
+
+public class MerchantChannel {
+
+    private String channelId;
+    private String desc;
+
+    // 0: 个人，1：企业
+    private String channelType;
+
+    private String chain;
+    private String address;
+    private long createTime;
+    private long updateTime;
+    private CustomField[] customFields;
+
+
+    public String getChannelId() {
+        return channelId;
+    }
+
+    public void setChannelId(String channelId) {
+        this.channelId = channelId;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getChannelType() {
+        return channelType;
+    }
+
+    public void setChannelType(String channelType) {
+        this.channelType = channelType;
+    }
+
+    public String getChain() {
+        return chain;
+    }
+
+    public void setChain(String chain) {
+        this.chain = chain;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(long createTime) {
+        this.createTime = createTime;
+    }
+
+    public long getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(long updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public CustomField[] getCustomFields() {
+        return customFields;
+    }
+
+    public void setCustomFields(CustomField[] customFields) {
+        this.customFields = customFields;
+    }
+
+}

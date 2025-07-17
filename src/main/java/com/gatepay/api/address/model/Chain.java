@@ -1,9 +1,7 @@
 package com.gatepay.api.address.model;
 
-import com.gatepay.common.BaseRequest;
 
-
-public class Chain extends BaseRequest {
+public class Chain {
 
     private String chainType;
     private String address;
