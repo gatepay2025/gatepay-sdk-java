@@ -1,0 +1,75 @@
+package com.gatepay.api.channelmanage;
+
+import com.gatepay.api.channelmanage.model.CustomField;
+import com.gatepay.api.channelmanage.model.MerchantChannel;
+import com.gatepay.api.channelmanage.model.request.DeleteReq;
+import com.gatepay.api.channelmanage.model.request.ListReq;
+import com.gatepay.api.channelmanage.model.request.SaveReq;
+import com.gatepay.api.channelmanage.model.request.UpdateReq;
+import org.junit.jupiter.api.Test;
+
+
+public class ApiChannelManageTest {
+
+    private ApiChannelManage apiChannelManage = new ApiChannelManage();
+
+
+    @Test
+    public void testSave() {
+        CustomField customField = new CustomField();
+        customField.setCode("87");
+        customField.setName("Mike");
+        customField.setValue("abc");
+        MerchantChannel merchantChannel = new MerchantChannel();
+        merchantChannel.setChannelId("44");
+        merchantChannel.setDesc("velit");
+        merchantChannel.setChannelType("0");
+        merchantChannel.setChain("Lorem sed elit id aliqua");
+        merchantChannel.setAddress("辽宁省 安乡县 芜湖县 幸路681号 93单元");
+        merchantChannel.setCreateTime(1723004848459L);
+        merchantChannel.setUpdateTime(1748005235155L);
+        merchantChannel.setCustomFields(new CustomField[] { customField });
+        SaveReq saveReq = new SaveReq();
+        saveReq.setMerchantChannelList(new MerchantChannel[] { merchantChannel });
+        apiChannelManage.save(saveReq);
+    }
+
+    @Test
+    public void testList() {
+        ListReq listReq = new ListReq();
+        // listReq.setChannelId("100");
+        // listReq.setDesc("test list");
+        // listReq.setChannelType("0");
+        listReq.setPage(1);
+        listReq.setCount(3);
+        apiChannelManage.list(listReq);
+    }
+
+    @Test
+    public void testUpdate() {
+        CustomField customField = new CustomField();
+        customField.setCode("87");
+        customField.setName("Mike");
+        customField.setValue("abc");
+        MerchantChannel merchantChannel = new MerchantChannel();
+        merchantChannel.setChannelId("44");
+        // merchantChannel.setDesc("velit");
+        // merchantChannel.setChannelType("0");
+        // merchantChannel.setChain("Lorem sed elit id aliqua");
+        // merchantChannel.setAddress("辽宁省 安乡县 芜湖县 幸路681号 93单元");
+        // merchantChannel.setCreateTime(1723004848459L);
+        // merchantChannel.setUpdateTime(1748005235155L);
+        // merchantChannel.setCustomFields(new CustomField[] { customField });
+        UpdateReq updateReq = new UpdateReq();
+        updateReq.setMerchantChannelList(new MerchantChannel[] { merchantChannel });
+        apiChannelManage.update(updateReq);
+    }
+
+    @Test
+    public void testDelete() {
+        DeleteReq deleteReq = new DeleteReq();
+        deleteReq.setChannelId("100");
+        apiChannelManage.delete(deleteReq);
+    }
+
+}
