@@ -1,8 +1,11 @@
-package com.gatepay.service.checkout.model;
+package com.gatepay.service.checkout;
 
 import com.gatepay.service.BaseApi;
 import com.gatepay.service.checkout.model.request.CreateOrderReq;
+import com.gatepay.service.checkout.model.request.CreateRefundReq;
 import com.gatepay.service.checkout.model.response.CreateOrderResp;
+import com.gatepay.service.checkout.model.response.CreateRefundResp;
+
 
 /**
  * 收银台支付接口
@@ -28,5 +31,17 @@ public class ApiCheckout extends BaseApi {
     }
 
 
+    /**
+     * 创建退款
+     *
+     */
+    public CreateRefundResp createRefund(CreateRefundReq request) {
+        try {
+            return super.process(request, CreateRefundResp.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
 
 }
