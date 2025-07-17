@@ -2,15 +2,15 @@ package com.gatepay.service.address.model.request;
 
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.GatePayConstants;
-import com.gatepay.common.annotation.GatePayRequestParam;
+import com.gatepay.common.annotation.GatePayParam;
 
 
 public class QueryOrderReq extends BaseRequest {
 
-    @GatePayRequestParam
+    @GatePayParam
     private String prepayId;
 
-    @GatePayRequestParam
+    @GatePayParam
     private String merchantTradeNo;
 
 
