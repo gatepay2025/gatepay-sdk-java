@@ -39,7 +39,7 @@ public class Client {
                 .header(GatePayConstants.HEADER_GATEPAY_NONCE, nonce)
                 // TODO: set new api key
                 .header(GatePayConstants.HEADER_GATEPAY_CERTIFICATE_CLIENT_ID, "mZ96D37oKk-HrWJc");   // apiKey)
-        if (GatePayConstants.METHOD_GET.equals(request.getApi().getHttpMethod())) {
+        if (GatePayConstants.METHOD_GET.equals(request.getApi().getHttpMethod()) || GatePayConstants.METHOD_DELETE.equals(request.getApi().getHttpMethod())) {
             String paramStr = "";
             Field[] declaredFields = request.getClass().getDeclaredFields();
             if (declaredFields != null && declaredFields.length > 0)  {
@@ -53,7 +53,7 @@ public class Client {
             }
             builder.header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Sign.verifySignature(String.valueOf(timestamp), nonce, "", credential.getSecretKey()));
             builder.uri(URI.create(config.getEndpoint() + request.getApi().getUrl() + paramStr));
-            return builder.GET().build();
+            return GatePayConstants.METHOD_GET.equals(request.getApi().getHttpMethod()) ? builder.GET().build() : builder.DELETE().build();
         }
         if (GatePayConstants.METHOD_POST.equals(request.getApi().getHttpMethod())) {
             // TODO: check api key
