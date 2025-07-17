@@ -1,9 +1,11 @@
 package com.gatepay.service.web.model.request;
 
+import com.gatepay.common.BaseRequest;
 import com.gatepay.common.model.EnvReq;
 import com.gatepay.common.model.GoodsReq;
 
-public class CreateOrderReq {
+
+public class CreateOrderReq extends BaseRequest {
 
     private String merchantTradeNo;
     private String currency;
