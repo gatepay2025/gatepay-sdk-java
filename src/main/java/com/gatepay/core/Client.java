@@ -2,7 +2,7 @@ package com.gatepay.core;
 
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.GatePayConstants;
-import com.gatepay.common.annotation.GatePayRequestParam;
+import com.gatepay.common.annotation.GatePayParam;
 import com.gatepay.core.signature.Signer;
 
 import java.lang.reflect.Field;
@@ -43,7 +43,7 @@ public class Client {
             if (declaredFields != null && declaredFields.length > 0)  {
                 for (Field field : declaredFields) {
                     field.setAccessible(Boolean.TRUE);
-                    if (field.isAnnotationPresent(GatePayRequestParam.class) && field.get(request) != null) {
+                    if (field.isAnnotationPresent(GatePayParam.class) && field.get(request) != null) {
                         paramStr = paramStr == "" ? paramStr + "?" : paramStr + "&";
                         paramStr = paramStr + field.getName() + "=" + field.get(request);
                     }

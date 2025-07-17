@@ -12,7 +12,6 @@ import com.gatepay.service.address.model.response.*;
 
 import java.io.IOException;
 import java.net.URI;
-import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
@@ -49,7 +48,6 @@ public class ApiAddress {
      */
     public ChainsResp getAddressChains(ChainsReq request) {
         String queryString = ""; // buildQueryStrByGet(null);
-        // 发送请求
         try {
             HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
             HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
@@ -68,9 +66,6 @@ public class ApiAddress {
      */
     public CurrenciesResp getAddressCurrencies() {
         String queryString = "";  // buildQueryString(null);
-
-        // 构建请求头
-        // 发送请求
         try {
             HttpRequest httpRequest = Client.generateHttpRequest(new CurrenciesReq(), System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
             HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
@@ -78,8 +73,6 @@ public class ApiAddress {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        // 解析响应
         return new CurrenciesResp();
     }
 
@@ -95,9 +88,7 @@ public class ApiAddress {
      * currencies 支持闪兑到订单币种的币种列表
      */
     public SupportedConvertCurrenciesResp getSupportedConvertCurrencies(SupportedConvertCurrenciesReq request) {
-        // 构建请求URL
         String queryString = "";  // buildQueryString(null);
-        // 构建请求头
         try {
             HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
             HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
@@ -105,8 +96,6 @@ public class ApiAddress {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        // 解析响应
         return new SupportedConvertCurrenciesResp();
     }
 
@@ -154,7 +143,6 @@ public class ApiAddress {
      * @return
      */
     public QueryOrderResp queryOrder(QueryOrderReq request) {
-        // 构建请求URL
         String queryString = "";  //
         try {
             HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
@@ -163,7 +151,6 @@ public class ApiAddress {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         // 解析响应
         return new QueryOrderResp();
     }
@@ -266,9 +253,7 @@ public class ApiAddress {
      * @return
      */
     public TransactionDetailResp transactionDetail(TransactionDetailReq request) {
-        // 构建请求URL
         String queryString = "";  // buildQueryString(null);
-
         try {
             HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
             HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
@@ -276,8 +261,6 @@ public class ApiAddress {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        // 解析响应
         return new TransactionDetailResp();
     }
 
