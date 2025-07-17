@@ -1,10 +1,10 @@
-package com.gatepay.service.payment;
+package com.gatepay.api.payment;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gatepay.common.GatePayConstants;
-import com.gatepay.core.signature.Signer;
-import com.gatepay.service.payment.model.request.OperateOrderRequest;
-import com.gatepay.service.payment.model.response.QueryOrderResponse;
+import com.gatepay.core.signature.Sign;
+import com.gatepay.api.payment.model.request.OperateOrderReq;
+import com.gatepay.api.payment.model.response.QueryOrderResp;
 
 import java.io.IOException;
 import java.net.URI;
@@ -24,17 +24,17 @@ public class ApiPayment {
     }
 
 
-    public QueryOrderResponse getOrder(OperateOrderRequest request) throws Exception {
+    public QueryOrderResp getOrder(OperateOrderReq request) throws Exception {
         try {
             String requestBody = objectMapper.writeValueAsString(request);
-            String signature = Signer.verifySignature("", "", "", "");
+            String signature = Sign.verifySignature("", "", "", "");
 
             HttpRequest httpRequest = HttpRequest.newBuilder()
                     .uri(URI.create("baseUrl" + "/api/v1/payment/query"))
                     .header("Content-Type", "application/json")
                     .header(GatePayConstants.HEADER_GATEPAY_API_KEY, "apiKey")
-                    .header(GatePayConstants.HEADER_GATEPAY_CLIENT_ID, "clientId")
-                    .header(GatePayConstants.HEADER_GATE_MERCHANT_ID, "merchantId")
+                    .header(GatePayConstants.HEADER_GATEPAY_CERTIFICATE_CLIENT_ID, "clientId")
+                    .header(GatePayConstants.HEADER_GATE_CHANNEL_ID, "merchantId")
                     .header(GatePayConstants.HEADER_GATEPAY_TIMESTAMP, "timestamp")
                     .header(GatePayConstants.HEADER_GATEPAY_NONCE, "nonce")
                     .header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, signature)
@@ -44,7 +44,7 @@ public class ApiPayment {
             HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
 
             if (response.statusCode() == 200) {
-                return objectMapper.readValue(response.body(), QueryOrderResponse.class);
+                return objectMapper.readValue(response.body(), QueryOrderResp.class);
             } else {
                 throw new RuntimeException("API request failed with status code: " + response.statusCode());
             }
