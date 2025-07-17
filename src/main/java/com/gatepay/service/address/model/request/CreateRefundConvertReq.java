@@ -13,7 +13,7 @@ public class CreateRefundConvertReq extends BaseRequest {
     private String refundPayCurrency;
     private String refundPayAmount;
     private String refundReason;
-    private int receiverId;
+    private long receiverId;
 
 
     public CreateRefundConvertReq() {
@@ -77,7 +77,7 @@ public class CreateRefundConvertReq extends BaseRequest {
         this.refundReason = refundReason;
     }
 
-    public int getReceiverId() {
+    public long getReceiverId() {
         return receiverId;
     }
 

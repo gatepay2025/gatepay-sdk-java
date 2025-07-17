@@ -12,7 +12,7 @@ public class CreateOrderReq extends BaseRequest {
     private String currency;
     private String orderAmount;
     private String payCurrency;
-    private int merchantUserId;
+    private long merchantUserId;
     private GoodsReq goods;
     private String returnUrl;
     private String cancelUrl;
@@ -66,7 +66,7 @@ public class CreateOrderReq extends BaseRequest {
         this.payCurrency = payCurrency;
     }
 
-    public int getMerchantUserId() {
+    public long getMerchantUserId() {
         return merchantUserId;
     }
 

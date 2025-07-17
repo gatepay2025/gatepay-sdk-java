@@ -7,7 +7,7 @@ public class CreateOrderResp extends BaseResponse {
 
     private String prepayID;
     private String terminalType;
-    private int expireTime;
+    private long expireTime;
     private Chain chain;
 
 
@@ -27,7 +27,7 @@ public class CreateOrderResp extends BaseResponse {
         this.terminalType = terminalType;
     }
 
-    public int getExpireTime() {
+    public long getExpireTime() {
         return expireTime;
     }
 

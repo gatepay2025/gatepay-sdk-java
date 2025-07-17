@@ -2,11 +2,11 @@ package com.gatepay.service.web.model;
 
 public class BatchOrder {
 
-    private int user_id;
+    private long user_id;
     private String amount;
 
 
-    public int getUser_id() {
+    public long getUser_id() {
         return user_id;
     }
 

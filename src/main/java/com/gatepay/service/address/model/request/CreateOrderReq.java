@@ -18,7 +18,7 @@ public class CreateOrderReq extends BaseRequest {
     private long orderExpireTime;
     private String returnUrl;
     private String cancelUrl;
-    private int merchantUserId;
+    private long merchantUserId;
     private String chain;
     private String fullCurrType;
     private String channelId;             // 客户渠道名称
@@ -110,7 +110,7 @@ public class CreateOrderReq extends BaseRequest {
         this.cancelUrl = cancelUrl;
     }
 
-    public int getMerchantUserId() {
+    public long getMerchantUserId() {
         return merchantUserId;
     }
 

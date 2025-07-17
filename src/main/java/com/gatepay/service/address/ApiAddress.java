@@ -1,8 +1,7 @@
 package com.gatepay.service.address;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gatepay.service.BaseService;
+import com.gatepay.service.BaseApi;
 import com.gatepay.service.address.model.request.*;
 import com.gatepay.service.address.model.response.*;
 
@@ -13,15 +12,13 @@ import java.util.Map;
  * 地址支付接口
  *
  */
-public class ApiAddress extends BaseService {
+public class ApiAddress extends BaseApi {
 
     private final String apiKey;
-    private final ObjectMapper objectMapper;
 
 
     public ApiAddress(String apiKey) {
         this.apiKey = apiKey;
-        this.objectMapper = new ObjectMapper();
     }
 
 

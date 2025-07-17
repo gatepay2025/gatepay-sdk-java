@@ -6,7 +6,7 @@ import com.gatepay.service.address.model.TransactionDetail;
 public class TransactionDetailResp extends BaseResponse {
 
     private String prepayId;
-    private int merchantId;
+    private long merchantId;
     private String merchantTradeNo;
     private String transactionId;
     private String goodsName;
@@ -18,7 +18,7 @@ public class TransactionDetailResp extends BaseResponse {
     private String utcCreateTime;
     private String utcExpireTime;
     private String utcUpdateTime;
-    private int transactTime;
+    private long transactTime;
     private String orderName;
     private TransactionDetail transactionDetail;
     private String channelId;
@@ -32,7 +32,7 @@ public class TransactionDetailResp extends BaseResponse {
         this.prepayId = prepayId;
     }
 
-    public int getMerchantId() {
+    public long getMerchantId() {
         return merchantId;
     }
 
@@ -128,7 +128,7 @@ public class TransactionDetailResp extends BaseResponse {
         this.utcUpdateTime = utcUpdateTime;
     }
 
-    public int getTransactTime() {
+    public long getTransactTime() {
         return transactTime;
     }
 

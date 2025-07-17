@@ -20,7 +20,7 @@ public class CreateRefundReq extends BaseRequest {
     private String refundReason;
 
     @GatePayParam
-    private int receiverId;
+    private long receiverId;
 
 
     public CreateRefundReq() {
@@ -60,7 +60,7 @@ public class CreateRefundReq extends BaseRequest {
         this.refundReason = refundReason;
     }
 
-    public int getReceiverId() {
+    public long getReceiverId() {
         return receiverId;
     }
 

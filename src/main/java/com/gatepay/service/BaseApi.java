@@ -8,7 +8,7 @@ import com.gatepay.core.signature.Nonce;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class BaseService {
+public class BaseApi {
 
     protected <Req extends BaseRequest, Resp extends BaseResponse> Resp process(Req req, Class<Resp> respClass) {
         try {

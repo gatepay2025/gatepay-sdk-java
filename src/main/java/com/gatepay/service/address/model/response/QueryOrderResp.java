@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 public class QueryOrderResp extends BaseResponse {
 
     private String prepayId;
-    private int merchantID;
+    private long merchantID;
     private String merchantTradeNo;
     private String transactionId;
     private String goodsName;
@@ -18,9 +18,9 @@ public class QueryOrderResp extends BaseResponse {
     private BigDecimal payAmount;
     private BigDecimal rate;
     private String status;
-    private int createTime;
-    private int expireTime;
-    private int transactTime;
+    private long createTime;
+    private long expireTime;
+    private long transactTime;
     private String orderName;
     private ChainTransactionInfo transactionInfo;
     private String channelId;         // 客户渠道名称
@@ -36,7 +36,7 @@ public class QueryOrderResp extends BaseResponse {
         this.prepayId = prepayId;
     }
 
-    public int getMerchantID() {
+    public long getMerchantID() {
         return merchantID;
     }
 
@@ -116,7 +116,7 @@ public class QueryOrderResp extends BaseResponse {
         this.status = status;
     }
 
-    public int getCreateTime() {
+    public long getCreateTime() {
         return createTime;
     }
 
@@ -124,7 +124,7 @@ public class QueryOrderResp extends BaseResponse {
         this.createTime = createTime;
     }
 
-    public int getExpireTime() {
+    public long getExpireTime() {
         return expireTime;
     }
 
@@ -132,7 +132,7 @@ public class QueryOrderResp extends BaseResponse {
         this.expireTime = expireTime;
     }
 
-    public int getTransactTime() {
+    public long getTransactTime() {
         return transactTime;
     }
 
