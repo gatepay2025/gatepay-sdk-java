@@ -32,12 +32,12 @@ public class Client {
                 .build();
     }
 
-    public static <T extends BaseRequest> HttpRequest generateHttpRequest(T request, long timestamp, String nonce, String queryString) throws IllegalAccessException, JsonProcessingException {
+    public static <T extends BaseRequest> HttpRequest generateHttpRequest(T request, long timestamp, String nonce) throws IllegalAccessException, JsonProcessingException {
         HttpRequest.Builder builder = HttpRequest.newBuilder()
                 .header(GatePayConstants.HEADER_CONTENT_TYPE, "application/json")
                 .header(GatePayConstants.HEADER_GATEPAY_TIMESTAMP, String.valueOf(timestamp))
                 .header(GatePayConstants.HEADER_GATEPAY_NONCE, nonce)
-                .header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Signer.verifySignature(String.valueOf(timestamp), nonce, queryString, credential.getSecretKey()))
+                .header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Signer.verifySignature(String.valueOf(timestamp), nonce, "", credential.getSecretKey()))
                 .header(GatePayConstants.HEADER_GATEPAY_CERTIFICATE_CLIENT_ID, "mZ96D37oKk-HrWJc");   // apiKey)
         if (GatePayConstants.METHOD_GET.equals(request.getRequestMethod())) {
             String paramStr = "";
@@ -54,7 +54,7 @@ public class Client {
             builder.uri(URI.create(config.getEndpoint() + request.getRequestUrl() + paramStr));
             return builder.GET().build();
         }
-        builder.header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Signer.generateSignature(String.valueOf(timestamp), nonce, queryString, credential.getSecretKey()));
+        builder.header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Signer.generateSignature(String.valueOf(timestamp), nonce, new ObjectMapper().writeValueAsString(request), credential.getSecretKey()));
         builder.uri(URI.create(config.getEndpoint() + request.getRequestUrl()));
         return builder.POST(HttpRequest.BodyPublishers.ofString(new ObjectMapper().writeValueAsString(request))).build();
     }

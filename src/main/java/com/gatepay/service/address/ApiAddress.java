@@ -43,9 +43,8 @@ public class ApiAddress {
      * @return
      */
     public ChainsResp getAddressChains(ChainsReq request) {
-        String queryString = ""; // buildQueryStrByGet(null);
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
+            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
             HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body().toString());
         } catch (Exception e) {
@@ -61,9 +60,8 @@ public class ApiAddress {
      * @return
      */
     public CurrenciesResp getAddressCurrencies() {
-        String queryString = "";  // buildQueryString(null);
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(new CurrenciesReq(), System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
+            HttpRequest httpRequest = Client.generateHttpRequest(new CurrenciesReq(), System.currentTimeMillis(), Nonce.generateNonce(9));
             HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body().toString());
         } catch (Exception e) {
@@ -84,9 +82,8 @@ public class ApiAddress {
      * currencies 支持闪兑到订单币种的币种列表
      */
     public SupportedConvertCurrenciesResp getSupportedConvertCurrencies(SupportedConvertCurrenciesReq request) {
-        String queryString = "";  // buildQueryString(null);
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
+            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
             HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body().toString());
         } catch (Exception e) {
@@ -139,9 +136,8 @@ public class ApiAddress {
      * @return
      */
     public QueryOrderResp queryOrder(QueryOrderReq request) {
-        String queryString = "";  //
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
+            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
             HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body().toString());
         } catch (Exception e) {
@@ -249,9 +245,8 @@ public class ApiAddress {
      * @return
      */
     public TransactionDetailResp transactionDetail(TransactionDetailReq request) {
-        String queryString = "";  // buildQueryString(null);
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
+            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
             HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body().toString());
         } catch (Exception e) {

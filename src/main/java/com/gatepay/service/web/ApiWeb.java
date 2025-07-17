@@ -29,9 +29,8 @@ public class ApiWeb {
      * 创建订单
      */
     public CreateOrderResp createOrder(CreateOrderReq request) {
-        String queryString = "";  // buildQueryString(null);
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
+            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
             HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body().toString());
         } catch (Exception e) {
@@ -47,9 +46,8 @@ public class ApiWeb {
      * @param request
      */
     public QueryOrderResp queryOrder(QueryOrderReq request) throws JsonProcessingException {
-        String queryString = "";  // buildQueryString(null);
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
+            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
             HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body().toString());
         } catch (Exception e) {
@@ -63,9 +61,8 @@ public class ApiWeb {
      * 关闭订单
      */
     public CloseOrderResp closeOrder(CloseOrderReq request) {
-        String queryString = "";  // buildQueryString(null);
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
+            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
             HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body().toString());
         } catch (Exception e) {
@@ -80,8 +77,7 @@ public class ApiWeb {
      */
     public CreateRefundResp createRefund(CreateRefundReq request) {
         try {
-            String queryString = new ObjectMapper().writeValueAsString(request);
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
+            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
             HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body().toString());
         } catch (Exception e) {
@@ -96,8 +92,7 @@ public class ApiWeb {
      */
     public QueryRefundResp queryRefund(QueryRefundReq request) {
         try {
-            String queryString = new ObjectMapper().writeValueAsString(request);
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9), queryString);
+            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
             HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body().toString());
         } catch (Exception e) {
