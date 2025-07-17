@@ -13,6 +13,7 @@ import java.util.Map;
 
 
 /**
+ * 地址支付接口
  *
  */
 public class ApiAddress {

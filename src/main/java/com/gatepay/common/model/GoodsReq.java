@@ -2,8 +2,17 @@ package com.gatepay.common.model;
 
 public class GoodsReq {
 
+    private String goodsType;
     private String goodsName;
     private String goodsDetail;
+
+    public String getGoodsType() {
+        return goodsType;
+    }
+
+    public void setGoodsType(String goodsType) {
+        this.goodsType = goodsType;
+    }
 
     public String getGoodsName() {
         return goodsName;
