@@ -24,16 +24,12 @@ import java.util.Map;
  */
 public class ApiAddress {
 
-    private final String baseUrl;
     private final String apiKey;
-    private final String apiSecret;
     private final ObjectMapper objectMapper;
 
 
-    public ApiAddress(String baseUrl, String apiKey, String apiSecret) {
-        this.baseUrl = baseUrl;
+    public ApiAddress(String apiKey) {
         this.apiKey = apiKey;
-        this.apiSecret = apiSecret;
         this.objectMapper = new ObjectMapper();
     }
 
