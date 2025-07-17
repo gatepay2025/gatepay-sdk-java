@@ -1,15 +1,25 @@
 package com.gatepay.api.channelmanage.model.request;
 
 import com.gatepay.common.BaseRequest;
+import com.gatepay.common.annotation.GatePayParam;
 import com.gatepay.common.enums.GatePayApi;
 
 
 public class ListReq extends BaseRequest {
 
+    @GatePayParam
     private String channelId;
+
+    @GatePayParam
     private String desc;
+
+    @GatePayParam
     private String channelType;
+
+    @GatePayParam
     private long page;
+
+    @GatePayParam
     private long count;
 
     public ListReq() {
