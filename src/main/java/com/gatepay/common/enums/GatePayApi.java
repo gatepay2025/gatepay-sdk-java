@@ -8,6 +8,7 @@ public enum GatePayApi {
     ADDRESS_SUPPORTED_CONVERT_CURRENCIES("/v1/pay/address/supportedconvertcurrencies", "GET"),
     ADDRESS_CREATE_ORDER("/v1/pay/address/create", "POST"),
     ADDRESS_QUERY_ORDER("/v1/pay/address/query", "GET"),
+    ADDRESS_CREATE_REFUND("/v1/pay/address/refund", "POST"),
     ADDRESS_CREATE_REFUND_CONVERT("/v1/pay/address/refundconvert", "POST"),
     ADDRESS_TRANSACTION_DETAIL("/v1/pay/address/transactiondetail", "GET"),
     PAY_CREATE_ORDER("/v1/pay/order", "POST"),

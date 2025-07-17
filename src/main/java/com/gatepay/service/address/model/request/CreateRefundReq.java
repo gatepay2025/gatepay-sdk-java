@@ -24,7 +24,7 @@ public class CreateRefundReq extends BaseRequest {
 
 
     public CreateRefundReq() {
-        this.api = GatePayApi.ADDRESS_CREATE_REFUND_CONVERT;
+        this.api = GatePayApi.ADDRESS_CREATE_REFUND;
     }
 
 
