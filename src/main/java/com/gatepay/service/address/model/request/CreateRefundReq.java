@@ -1,7 +1,6 @@
 package com.gatepay.service.address.model.request;
 
 import com.gatepay.common.BaseRequest;
-import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.annotation.GatePayParam;
 import com.gatepay.common.enums.GatePayApi;
 
