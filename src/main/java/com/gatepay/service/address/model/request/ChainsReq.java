@@ -6,7 +6,7 @@ import com.gatepay.common.annotation.GatePayRequestParam;
 
 public class ChainsReq extends BaseRequest {
 
-    @GatePayRequestParam(required = true)
+    @GatePayRequestParam
     private String currency;
 
     public ChainsReq() {
