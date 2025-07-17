@@ -4,7 +4,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 @Retention(RetentionPolicy.RUNTIME)
-public @interface GatePayRequestParam {
+public @interface GatePayParam {
 
     boolean required() default true;
 
