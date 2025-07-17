@@ -1,8 +1,8 @@
 package com.gatepay.service.address.model.request;
 
 import com.gatepay.common.BaseRequest;
-import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.annotation.GatePayParam;
+import com.gatepay.common.enums.GatePayApi;
 
 public class ChainsReq extends BaseRequest {
 
@@ -10,8 +10,7 @@ public class ChainsReq extends BaseRequest {
     private String currency;
 
     public ChainsReq() {
-        this.requestUrl = GatePayConstants.END_POINT_ADDRESS_CHAINS;
-        this.requestMethod = GatePayConstants.METHOD_GET;
+        this.api = GatePayApi.ADDRESS_CHAINS;
     }
 
     public String getCurrency() {

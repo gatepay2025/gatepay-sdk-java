@@ -4,11 +4,10 @@ public class GatePayConstants {
 
     // 请求地址相关
     public static final String END_POINT_DEFAULT = "http://dev.halftrust.xyz/gfpay";
-    public static final String END_POINT_ADDRESS_CHAINS = "/v1/pay/address/chains";
-    public static final String END_POINT_ADDRESS_CURRENCIES = "/v1/pay/address/currencies";
-    public static final String END_POINT_ADDRESS_SUPPORTED_CONVERT_CURRENCIES = "/v1/pay/address/supportedconvertcurrencies";
-    public static final String END_POINT_ADDRESS_CREATE_ORDER = "/v1/pay/address/create";
-    public static final String END_POINT_ADDRESS_QUERY_ORDER = "/v1/pay/address/query";
+
+
+
+
     public static final String END_POINT_ADDRESS_CREATE_REFUND = "/v1/pay/address/refund";
     public static final String END_POINT_ADDRESS_CREATE_REFUND_CONVERT = "/v1/pay/address/refundconvert";
     public static final String END_POINT_ADDRESS_TRANSACTION_DETAIL = "/v1/pay/address/transactiondetail";

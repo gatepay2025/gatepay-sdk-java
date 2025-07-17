@@ -1,5 +1,7 @@
 package com.gatepay.common;
 
+import com.gatepay.common.enums.GatePayApi;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,7 +9,7 @@ import java.util.Map;
 public class BaseRequest {
 
     protected String requestUrl = GatePayConstants.END_POINT_DEFAULT;
-    protected String requestMethod;
+    protected GatePayApi api;
     private Map<String, String> headers;
     private String version;
 
@@ -29,12 +31,12 @@ public class BaseRequest {
         this.requestUrl = requestUrl;
     }
 
-    public String getRequestMethod() {
-        return requestMethod;
+    public GatePayApi getApi() {
+        return api;
     }
 
-    public void setRequestMethod(String requestMethod) {
-        this.requestMethod = requestMethod;
+    public void setApi(GatePayApi api) {
+        this.api = api;
     }
 
     public void setHeaders(Map<String, String> headers) {
