@@ -5,12 +5,13 @@ import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 
 
-
-public class Signer {
+public class Sign {
 
     private static final String HMAC_SHA512 = "HmacSHA512";
+    private static final String HMAC_SHA256 = "HmacSHA256";
     public static final String INVALID_SIGNATURE = "invalid signature";
 
 
@@ -122,6 +123,28 @@ public class Signer {
             result |= a[i] ^ b[i];
         }
         return result == 0;
+    }
+
+
+
+    public static String generateSignature(String timestamp, String nonce, String body, String secretKey) {
+        try {
+            // Concatenate timestamp, nonce and body
+            String message = timestamp + nonce + body;
+
+            // Create HMAC-SHA256 instance
+            Mac hmacSha512 = Mac.getInstance(HMAC_SHA512);
+            SecretKeySpec secretKeySpec = new SecretKeySpec(secretKey.getBytes(StandardCharsets.UTF_8), HMAC_SHA512);
+            hmacSha512.init(secretKeySpec);
+
+            // Calculate signature
+            byte[] hash = hmacSha512.doFinal(message.getBytes(StandardCharsets.UTF_8));
+
+            // Encode with Base64
+            return Base64.getEncoder().encodeToString(hash);
+        } catch (NoSuchAlgorithmException | InvalidKeyException e) {
+            throw new RuntimeException("Failed to generate signature", e);
+        }
     }
 
 }

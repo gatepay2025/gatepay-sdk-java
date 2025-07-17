@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.annotation.GatePayParam;
-import com.gatepay.core.signature.Signer;
+import com.gatepay.core.signature.Sign;
 
 import java.lang.reflect.Field;
 import java.net.URI;
@@ -51,13 +51,13 @@ public class Client {
                     }
                 }
             }
-            builder.header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Signer.verifySignature(String.valueOf(timestamp), nonce, "", credential.getSecretKey()));
+            builder.header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Sign.verifySignature(String.valueOf(timestamp), nonce, "", credential.getSecretKey()));
             builder.uri(URI.create(config.getEndpoint() + request.getApi().getUrl() + paramStr));
             return builder.GET().build();
         }
         // TODO: check api key
         builder.header(GatePayConstants.HEADER_GATEPAY_API_KEY, "SkZlbKOqPoMwnxhl");
-        builder.header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Signer.verifySignature(String.valueOf(timestamp), nonce, new ObjectMapper().writeValueAsString(request), credential.getSecretKey()));
+        builder.header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Sign.verifySignature(String.valueOf(timestamp), nonce, new ObjectMapper().writeValueAsString(request), credential.getSecretKey()));
         builder.uri(URI.create(config.getEndpoint() + request.getApi().getUrl()));
         return builder.POST(HttpRequest.BodyPublishers.ofString(new ObjectMapper().writeValueAsString(request))).build();
     }
