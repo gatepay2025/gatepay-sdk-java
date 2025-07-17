@@ -2,14 +2,10 @@ package com.gatepay.service.address;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gatepay.core.Client;
-import com.gatepay.core.signature.Nonce;
-import com.gatepay.service.AbstractService;
+import com.gatepay.service.BaseService;
 import com.gatepay.service.address.model.request.*;
 import com.gatepay.service.address.model.response.*;
 
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.Map;
 
 
@@ -17,7 +13,7 @@ import java.util.Map;
  * 地址支付接口
  *
  */
-public class ApiAddress extends AbstractService {
+public class ApiAddress extends BaseService {
 
     private final String apiKey;
     private final ObjectMapper objectMapper;
@@ -152,13 +148,11 @@ public class ApiAddress extends AbstractService {
      */
     public TransactionDetailResp transactionDetail(TransactionDetailReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, TransactionDetailResp.class);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return new TransactionDetailResp();
     }
 
 

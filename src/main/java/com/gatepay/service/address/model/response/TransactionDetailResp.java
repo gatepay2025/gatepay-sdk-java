@@ -1,8 +1,9 @@
 package com.gatepay.service.address.model.response;
 
+import com.gatepay.common.BaseResponse;
 import com.gatepay.service.address.model.TransactionDetail;
 
-public class TransactionDetailResp {
+public class TransactionDetailResp extends BaseResponse {
 
     private String prepayId;
     private int merchantId;
