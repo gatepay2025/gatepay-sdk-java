@@ -55,11 +55,14 @@ public class Client {
             builder.uri(URI.create(config.getEndpoint() + request.getApi().getUrl() + paramStr));
             return builder.GET().build();
         }
-        // TODO: check api key
-        builder.header(GatePayConstants.HEADER_GATEPAY_API_KEY, "SkZlbKOqPoMwnxhl");
-        builder.header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Sign.verifySignature(String.valueOf(timestamp), nonce, new ObjectMapper().writeValueAsString(request), credential.getSecretKey()));
-        builder.uri(URI.create(config.getEndpoint() + request.getApi().getUrl()));
-        return builder.POST(HttpRequest.BodyPublishers.ofString(new ObjectMapper().writeValueAsString(request))).build();
+        if (GatePayConstants.METHOD_POST.equals(request.getApi().getHttpMethod())) {
+            // TODO: check api key
+            builder.header(GatePayConstants.HEADER_GATEPAY_API_KEY, "SkZlbKOqPoMwnxhl");
+            builder.header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Sign.verifySignature(String.valueOf(timestamp), nonce, new ObjectMapper().writeValueAsString(request), credential.getSecretKey()));
+            builder.uri(URI.create(config.getEndpoint() + request.getApi().getUrl()));
+            return builder.POST(HttpRequest.BodyPublishers.ofString(new ObjectMapper().writeValueAsString(request))).build();
+        }
+        return null;
     }
 
 
