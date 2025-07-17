@@ -1,18 +1,18 @@
 package com.gatepay.service.payment.model.response;
 
-public class QueryOrderResponse {
+public class QueryOrderResp {
 
     private String prepayId;
-    private int merchantId;
+    private long merchantId;
     private String merchantTradeNo;
     private String transactionId;
     private String goodsName;
     private String currency;
     private String orderAmount;
     private String status;
-    private int createTime;
-    private int expireTime;
-    private int transactTime;
+    private long createTime;
+    private long expireTime;
+    private long transactTime;
     private String orderName;
     private String payCurrency;
     private String payAmount;
@@ -36,7 +36,7 @@ public class QueryOrderResponse {
         this.prepayId = prepayId;
     }
 
-    public int getMerchantId() {
+    public long getMerchantId() {
         return merchantId;
     }
 
@@ -92,7 +92,7 @@ public class QueryOrderResponse {
         this.status = status;
     }
 
-    public int getCreateTime() {
+    public long getCreateTime() {
         return createTime;
     }
 
@@ -100,7 +100,7 @@ public class QueryOrderResponse {
         this.createTime = createTime;
     }
 
-    public int getExpireTime() {
+    public long getExpireTime() {
         return expireTime;
     }
 
@@ -108,7 +108,7 @@ public class QueryOrderResponse {
         this.expireTime = expireTime;
     }
 
-    public int getTransactTime() {
+    public long getTransactTime() {
         return transactTime;
     }
 
