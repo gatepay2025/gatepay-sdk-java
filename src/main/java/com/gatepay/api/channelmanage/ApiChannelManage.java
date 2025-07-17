@@ -3,8 +3,10 @@ package com.gatepay.api.channelmanage;
 import com.gatepay.api.BaseApi;
 import com.gatepay.api.channelmanage.model.request.ListReq;
 import com.gatepay.api.channelmanage.model.request.SaveReq;
+import com.gatepay.api.channelmanage.model.request.UpdateReq;
 import com.gatepay.api.channelmanage.model.response.ListResp;
 import com.gatepay.api.channelmanage.model.response.SaveResp;
+import com.gatepay.api.channelmanage.model.response.UpdateResp;
 
 /**
  * 客户渠道管理接口
@@ -34,6 +36,19 @@ public class ApiChannelManage extends BaseApi {
     public ListResp list(ListReq request)  {
         try {
             return super.process(request, ListResp.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * 修改客户渠道
+     *
+     */
+    public UpdateResp update(UpdateReq request) {
+        try {
+            return super.process(request, UpdateResp.class);
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);

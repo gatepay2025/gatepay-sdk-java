@@ -22,6 +22,7 @@ public enum GatePayApi {
     CHECKOUT_CREATE_REFUND("/v1/pay/checkout/refund", "POST"),
     CHANNEL_MANAGE_SAVE("/v1/pay/channelmanage/save", "POST"),
     CHANNEL_MANAGE_LIST("/v1/pay/channelmanage/list", "GET"),
+    CHANNEL_MANAGE_UPDATE("/v1/pay/channelmanage/update", "PUT"),
     ;
 
 
