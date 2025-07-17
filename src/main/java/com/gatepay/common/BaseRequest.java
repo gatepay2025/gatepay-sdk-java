@@ -8,7 +8,6 @@ import java.util.Map;
 
 public class BaseRequest {
 
-    protected String requestUrl = GatePayConstants.END_POINT_DEFAULT;
     protected GatePayApi api;
     private Map<String, String> headers;
     private String version;
@@ -20,15 +19,6 @@ public class BaseRequest {
     public BaseRequest(String version) {
         this.headers = new HashMap<>();
         this.version = version;
-    }
-
-
-    public String getRequestUrl() {
-        return requestUrl;
-    }
-
-    public void setRequestUrl(String requestUrl) {
-        this.requestUrl = requestUrl;
     }
 
     public GatePayApi getApi() {
