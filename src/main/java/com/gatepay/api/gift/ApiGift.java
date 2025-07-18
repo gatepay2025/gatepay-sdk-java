@@ -1,4 +1,4 @@
-package com.gatepay.api.gift.model;
+package com.gatepay.api.gift;
 
 import com.gatepay.api.BaseApi;
 import com.gatepay.api.gift.model.request.CreateReq;

@@ -1,6 +1,5 @@
 package com.gatepay.api.gift;
 
-import com.gatepay.api.gift.model.ApiGift;
 import com.gatepay.api.gift.model.request.CreateReq;
 import org.junit.jupiter.api.Test;
 
