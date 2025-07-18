@@ -24,6 +24,7 @@ public enum GatePayApi {
     CHANNEL_MANAGE_LIST("/v1/pay/channelmanage/list", "GET"),
     CHANNEL_MANAGE_UPDATE("/v1/pay/channelmanage/update", "PUT"),
     CHANNEL_MANAGE_DELETE("/v1/pay/channelmanage/delete", "DELETE"),
+    WITHDRAW_CREATE_ORDER("/v1/pay/withdraw", "POST")
     ;
 
 

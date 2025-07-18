@@ -1,0 +1,35 @@
+package com.gatepay.api.withdraw.model.request;
+
+import com.gatepay.api.withdraw.model.Withdraw;
+import com.gatepay.common.BaseRequest;
+import com.gatepay.common.enums.GatePayApi;
+
+
+public class CreateOrderReq extends BaseRequest {
+
+    private String batch_id;
+    private Withdraw[] withdraw_list;
+
+
+    public CreateOrderReq() {
+        this.api = GatePayApi.WITHDRAW_CREATE_ORDER;
+    }
+
+
+    public String getBatch_id() {
+        return batch_id;
+    }
+
+    public void setBatch_id(String batch_id) {
+        this.batch_id = batch_id;
+    }
+
+    public Withdraw[] getWithdraw_list() {
+        return withdraw_list;
+    }
+
+    public void setWithdraw_list(Withdraw[] withdraw_list) {
+        this.withdraw_list = withdraw_list;
+    }
+
+}
