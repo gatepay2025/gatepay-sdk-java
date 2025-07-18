@@ -1,4 +1,6 @@
 package com.gatepay.api.web.model.response;
 
-public class CloseOrderResp {
+import com.gatepay.common.BaseResponse;
+
+public class CloseOrderResp extends BaseResponse {
 }

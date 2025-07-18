@@ -18,6 +18,7 @@ public enum GatePayApi {
     PAY_QUERY_REFUND("/v1/pay/order/refund/query", "POST"),
     PAY_CREATE_BATCH_TRANSFER("/v1/pay/batch/transfer", "POST"),
     PAY_QUERY_BATCH_TRANSFER("/v1/pay/batch/transfer/query", "POST"),
+    PAY_QUERY_BALANCE("/v1/pay/balance", "GET"),
     CHECKOUT_CREATE_ORDER("/v1/pay/checkout/order", "POST"),
     CHECKOUT_CREATE_REFUND("/v1/pay/checkout/refund", "POST"),
     CHANNEL_MANAGE_SAVE("/v1/pay/channelmanage/save", "POST"),

@@ -1,17 +1,12 @@
 package com.gatepay.api.web;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gatepay.core.Client;
-import com.gatepay.core.signature.Nonce;
+import com.gatepay.api.BaseApi;
 import com.gatepay.api.web.model.request.*;
 import com.gatepay.api.web.model.response.*;
 
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 
-
-public class ApiWeb {
+public class ApiWeb extends BaseApi {
 
     private final String apiKey;
     private final ObjectMapper objectMapper;
@@ -30,13 +25,11 @@ public class ApiWeb {
      */
     public CreateOrderResp createOrder(CreateOrderReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, CreateOrderResp.class);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return new CreateOrderResp();
     }
 
 
@@ -45,15 +38,13 @@ public class ApiWeb {
      *
      * @param request
      */
-    public QueryOrderResp queryOrder(QueryOrderReq request) throws JsonProcessingException {
+    public QueryOrderResp queryOrder(QueryOrderReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, QueryOrderResp.class);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return new QueryOrderResp();
     }
 
 
@@ -62,13 +53,11 @@ public class ApiWeb {
      */
     public CloseOrderResp closeOrder(CloseOrderReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, CloseOrderResp.class);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return new CloseOrderResp();
     }
 
 
@@ -77,13 +66,11 @@ public class ApiWeb {
      */
     public CreateRefundResp createRefund(CreateRefundReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, CreateRefundResp.class);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return new CreateRefundResp();
     }
 
 
@@ -92,13 +79,11 @@ public class ApiWeb {
      */
     public QueryRefundResp queryRefund(QueryRefundReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, QueryRefundResp.class);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return new QueryRefundResp();
     }
 
 
@@ -107,13 +92,11 @@ public class ApiWeb {
      */
     public CreateBatchTransferResp createBatchTransfer(CreateBatchTransferReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, CreateBatchTransferResp.class);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return new CreateBatchTransferResp();
     }
 
 
@@ -122,13 +105,27 @@ public class ApiWeb {
      */
     public QueryBatchTransferResp queryBatchTransfer(QueryBatchTransferReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, QueryBatchTransferResp.class);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return new QueryBatchTransferResp();
+    }
+
+
+    /**
+     * 查询余额
+     *
+     * @param request
+     * @return
+     */
+    public QueryBalanceResp queryBalance(QueryBalanceReq request) {
+        try {
+            return super.process(request, QueryBalanceResp.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
     }
 
 }

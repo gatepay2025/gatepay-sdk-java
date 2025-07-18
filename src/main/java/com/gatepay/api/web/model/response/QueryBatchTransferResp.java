@@ -1,7 +1,6 @@
 package com.gatepay.api.web.model.response;
 
-public class QueryBatchTransferResp {
+import com.gatepay.common.BaseResponse;
 
-
-
+public class QueryBatchTransferResp extends BaseResponse {
 }
