@@ -2,6 +2,7 @@ package com.gatepay.api.withdraw;
 
 import com.gatepay.api.withdraw.model.Withdraw;
 import com.gatepay.api.withdraw.model.request.CreateOrderReq;
+import com.gatepay.api.withdraw.model.request.QueryChainsReq;
 import com.gatepay.api.withdraw.model.request.QueryOrderReq;
 import com.gatepay.api.withdraw.model.request.QueryStatusReq;
 import org.junit.jupiter.api.Test;
@@ -32,6 +33,13 @@ public class ApiWithdrawTest {
         queryOrderReq.setBatch_id("237394559478075555");
         queryOrderReq.setDetail_status("ALL");
         apiWithdraw.queryOrder(queryOrderReq);
+    }
+
+    @Test
+    public void testQueryChains() {
+        QueryChainsReq queryChainsReq = new QueryChainsReq();
+        queryChainsReq.setCurrency("USDT");
+        apiWithdraw.queryChains(queryChainsReq);
     }
 
     @Test

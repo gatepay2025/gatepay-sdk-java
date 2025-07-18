@@ -1,10 +1,12 @@
 package com.gatepay.api.withdraw;
 
 import com.gatepay.api.BaseApi;
+import com.gatepay.api.withdraw.model.request.QueryChainsReq;
 import com.gatepay.api.withdraw.model.request.QueryOrderReq;
 import com.gatepay.api.withdraw.model.request.QueryStatusReq;
 import com.gatepay.api.withdraw.model.response.CreateOrderResp;
 import com.gatepay.api.withdraw.model.request.CreateOrderReq;
+import com.gatepay.api.withdraw.model.response.QueryChainsResp;
 import com.gatepay.api.withdraw.model.response.QueryOrderResp;
 import com.gatepay.api.withdraw.model.response.QueryStatusResp;
 
@@ -42,6 +44,20 @@ public class ApiWithdraw extends BaseApi {
     public QueryOrderResp queryOrder(QueryOrderReq request) {
         try {
             return super.process(request, QueryOrderResp.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    /**
+     * 查询币种支持的链
+     *
+     */
+    public QueryChainsResp queryChains(QueryChainsReq request) {
+        try {
+            super.process(request, QueryChainsResp.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
