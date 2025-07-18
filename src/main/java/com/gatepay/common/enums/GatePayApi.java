@@ -29,6 +29,7 @@ public enum GatePayApi {
     WITHDRQW_CURRENCY_CHAINS("/v1/pay/wallet/currency_chains", "GET"),
     WITHDRAW_QUERY_BALANCE("/v1/pay/wallet/total_balance", "GET"),
     WITHDRAW_QUERY_STATUS("/v1/pay/wallet/withdraw_status", "GET"),
+    QR_CODE_CREATE_ORDER("/v1/pay/transactions/native", "POST"),
     ;
 
 
