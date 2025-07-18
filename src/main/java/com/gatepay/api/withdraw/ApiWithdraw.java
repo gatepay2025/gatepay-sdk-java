@@ -1,17 +1,16 @@
 package com.gatepay.api.withdraw;
 
+import com.gatepay.api.BaseApi;
 import com.gatepay.api.withdraw.model.request.QueryOrderReq;
+import com.gatepay.api.withdraw.model.request.QueryStatusReq;
 import com.gatepay.api.withdraw.model.response.CreateOrderResp;
 import com.gatepay.api.withdraw.model.request.CreateOrderReq;
 import com.gatepay.api.withdraw.model.response.QueryOrderResp;
-import com.gatepay.core.Client;
-import com.gatepay.core.signature.Nonce;
-
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import com.gatepay.api.withdraw.model.response.QueryStatusResp;
 
 
-public class ApiWithdraw {
+
+public class ApiWithdraw extends BaseApi {
 
     /**
      * 创建提现订单
@@ -21,29 +20,46 @@ public class ApiWithdraw {
      */
     public CreateOrderResp createOrder(CreateOrderReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, CreateOrderResp.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return new CreateOrderResp();
+        return null;
     }
 
 
     /**
      * 查询提现订单
      *
+     * detail_status:
+     * ALL 全部子订单
+     * PENDING 待处理子订单
+     * PROCESSING 已提交提现请求，待确认子订单
+     * CHECK 审核中子订单
+     * FAIL 失败子订单
+     * DONE 提现成功子订单
      */
     public QueryOrderResp queryOrder(QueryOrderReq request) {
         try {
-            HttpRequest httpRequest = Client.generateHttpRequest(request, System.currentTimeMillis(), Nonce.generateNonce(9));
-            HttpResponse<String> response = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body().toString());
+            return super.process(request, QueryOrderResp.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return new QueryOrderResp();
+        return null;
+    }
+
+
+    /**
+     * 查询提现状态
+     *
+     */
+    public QueryStatusResp queryStatus(QueryStatusReq request) {
+        try {
+            return super.process(request, QueryStatusResp.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

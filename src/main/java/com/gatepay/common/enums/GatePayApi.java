@@ -26,6 +26,7 @@ public enum GatePayApi {
     CHANNEL_MANAGE_DELETE("/v1/pay/channelmanage/delete", "DELETE"),
     WITHDRAW_CREATE_ORDER("/v1/pay/withdraw", "POST"),
     WITHDRAW_QUERY_ORDER("/v1/pay/withdraw/query", "POST"),
+    WITHDRAW_QUERY_STATUS("/v1/pay/wallet/withdraw_status", "GET"),
     ;
 
 

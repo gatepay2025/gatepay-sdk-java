@@ -34,7 +34,7 @@ public class Client {
 
     public static <T extends BaseRequest> HttpRequest generateHttpRequest(T request, long timestamp, String nonce) throws IllegalAccessException, JsonProcessingException {
         HttpRequest.Builder builder = HttpRequest.newBuilder()
-                .header(GatePayConstants.HEADER_CONTENT_TYPE, "application/json")
+                .header(GatePayConstants.HEADER_CONTENT_TYPE, GatePayConstants.HEADER_APPLICATION_JSON)
                 .header(GatePayConstants.HEADER_GATEPAY_TIMESTAMP, String.valueOf(timestamp))
                 .header(GatePayConstants.HEADER_GATEPAY_NONCE, nonce)
                 // TODO: set new api key
