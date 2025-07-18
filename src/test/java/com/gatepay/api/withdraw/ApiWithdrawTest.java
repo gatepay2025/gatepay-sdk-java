@@ -1,10 +1,7 @@
 package com.gatepay.api.withdraw;
 
 import com.gatepay.api.withdraw.model.Withdraw;
-import com.gatepay.api.withdraw.model.request.CreateOrderReq;
-import com.gatepay.api.withdraw.model.request.QueryChainsReq;
-import com.gatepay.api.withdraw.model.request.QueryOrderReq;
-import com.gatepay.api.withdraw.model.request.QueryStatusReq;
+import com.gatepay.api.withdraw.model.request.*;
 import org.junit.jupiter.api.Test;
 
 public class ApiWithdrawTest {
@@ -43,7 +40,14 @@ public class ApiWithdrawTest {
     }
 
     @Test
-    public void queryStatus() {
+    public void testQueryBalance() {
+        QueryBalanceReq queryChainsReq = new QueryBalanceReq();
+        queryChainsReq.setCurrency("USDT");
+        apiWithdraw.queryBalance(queryChainsReq);
+    }
+
+    @Test
+    public void testQueryStatus() {
         QueryStatusReq queryStatusReq = new QueryStatusReq();
         queryStatusReq.setCurrency("USDT");
         apiWithdraw.queryStatus(queryStatusReq);

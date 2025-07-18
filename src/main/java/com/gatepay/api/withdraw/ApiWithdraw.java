@@ -1,15 +1,8 @@
 package com.gatepay.api.withdraw;
 
 import com.gatepay.api.BaseApi;
-import com.gatepay.api.withdraw.model.request.QueryChainsReq;
-import com.gatepay.api.withdraw.model.request.QueryOrderReq;
-import com.gatepay.api.withdraw.model.request.QueryStatusReq;
-import com.gatepay.api.withdraw.model.response.CreateOrderResp;
-import com.gatepay.api.withdraw.model.request.CreateOrderReq;
-import com.gatepay.api.withdraw.model.response.QueryChainsResp;
-import com.gatepay.api.withdraw.model.response.QueryOrderResp;
-import com.gatepay.api.withdraw.model.response.QueryStatusResp;
-
+import com.gatepay.api.withdraw.model.request.*;
+import com.gatepay.api.withdraw.model.response.*;
 
 
 public class ApiWithdraw extends BaseApi {
@@ -58,6 +51,20 @@ public class ApiWithdraw extends BaseApi {
     public QueryChainsResp queryChains(QueryChainsReq request) {
         try {
             super.process(request, QueryChainsResp.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    /**
+     * 查询个人账户余额
+     *
+     */
+    public QueryBalanceResp queryBalance(QueryBalanceReq request) {
+        try {
+            super.process(request, QueryBalanceResp.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
