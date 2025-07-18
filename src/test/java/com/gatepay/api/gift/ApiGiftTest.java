@@ -1,6 +1,7 @@
 package com.gatepay.api.gift;
 
 import com.gatepay.api.gift.model.request.CreateReq;
+import com.gatepay.api.gift.model.request.ListTempReq;
 import org.junit.jupiter.api.Test;
 
 public class ApiGiftTest {
@@ -16,6 +17,12 @@ public class ApiGiftTest {
         request.setCurrency("USDT");
         request.setAmount("0.99");
         apiGift.create(request);
+    }
+
+    @Test
+    public void testListTemp() {
+        ListTempReq listTempReq = new ListTempReq();
+        apiGift.listTemp(listTempReq);
     }
 
 }

@@ -31,6 +31,7 @@ public enum GatePayApi {
     WITHDRAW_QUERY_STATUS("/v1/pay/wallet/withdraw_status", "GET"),
     QR_CODE_CREATE_ORDER("/v1/pay/transactions/native", "POST"),
     GIFT_CREATE("/v1/pay/gift/create", "POST"),
+    GIFT_LIST_TEMPLATE("/v1/pay/gift/temp/list", "GET"),
     ;
 
 
