@@ -37,6 +37,7 @@ public enum GatePayApi {
     CONVERT_CURRENCY("/v1/pay/convert/currency", "GET"),
     CONVERT_PAIR("/v1/pay/convert/pair", "GET"),
     CONVERT_PREVIEW("/v1/pay/convert/preview", "POST"),
+    CONVERT_CREATE_ORDER("/v1/pay/convert", "POST"),
     ;
 
 
