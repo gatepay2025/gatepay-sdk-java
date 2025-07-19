@@ -23,12 +23,7 @@ public class ApiChannelManage extends BaseApi {
      *
      */
     public SaveResp save(SaveReq request) {
-        try {
-            return super.process(request, SaveResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, SaveResp.class);
     }
 
     /**
@@ -36,12 +31,7 @@ public class ApiChannelManage extends BaseApi {
      *
      */
     public ListResp list(ListReq request)  {
-        try {
-            return super.process(request, ListResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, ListResp.class);
     }
 
     /**
@@ -49,12 +39,7 @@ public class ApiChannelManage extends BaseApi {
      *
      */
     public UpdateResp update(UpdateReq request) {
-        try {
-            return super.process(request, UpdateResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, UpdateResp.class);
     }
 
     /**
@@ -62,12 +47,7 @@ public class ApiChannelManage extends BaseApi {
      *
      */
     public DeleteResp delete(DeleteReq request)  {
-        try {
-            return super.process(request, DeleteResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, DeleteResp.class);
     }
 
 }

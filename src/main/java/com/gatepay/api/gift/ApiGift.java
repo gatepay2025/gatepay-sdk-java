@@ -8,33 +8,23 @@ import com.gatepay.api.gift.model.response.CreateResp;
 import com.gatepay.api.gift.model.response.ListTempResp;
 import com.gatepay.api.gift.model.response.QueryResp;
 
+
+/**
+ * 礼品卡
+ *
+ */
 public class ApiGift extends BaseApi {
 
     public CreateResp create(CreateReq request) {
-        try {
-            return super.process(request, CreateResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, CreateResp.class);
     }
 
     public ListTempResp listTemp(ListTempReq request) {
-        try {
-            return super.process(request, ListTempResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, ListTempResp.class);
     }
 
     public QueryResp query(QueryReq request) {
-        try {
-            return super.process(request, QueryResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, QueryResp.class);
     }
 
 }

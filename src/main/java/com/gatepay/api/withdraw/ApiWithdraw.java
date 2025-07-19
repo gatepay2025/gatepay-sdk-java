@@ -14,12 +14,7 @@ public class ApiWithdraw extends BaseApi {
      * @return
      */
     public CreateOrderResp createOrder(CreateOrderReq request) {
-        try {
-            return super.process(request, CreateOrderResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        return super.process(request, CreateOrderResp.class);
     }
 
 
@@ -35,12 +30,7 @@ public class ApiWithdraw extends BaseApi {
      * DONE 提现成功子订单
      */
     public QueryOrderResp queryOrder(QueryOrderReq request) {
-        try {
-            return super.process(request, QueryOrderResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        return super.process(request, QueryOrderResp.class);
     }
 
 
@@ -49,12 +39,7 @@ public class ApiWithdraw extends BaseApi {
      *
      */
     public QueryChainsResp queryChains(QueryChainsReq request) {
-        try {
-            super.process(request, QueryChainsResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        return super.process(request, QueryChainsResp.class);
     }
 
 
@@ -63,12 +48,7 @@ public class ApiWithdraw extends BaseApi {
      *
      */
     public QueryBalanceResp queryBalance(QueryBalanceReq request) {
-        try {
-            super.process(request, QueryBalanceResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        return super.process(request, QueryBalanceResp.class);
     }
 
 
@@ -77,12 +57,7 @@ public class ApiWithdraw extends BaseApi {
      *
      */
     public QueryStatusResp queryStatus(QueryStatusReq request) {
-        try {
-            return super.process(request, QueryStatusResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        return super.process(request, QueryStatusResp.class);
     }
 
 }

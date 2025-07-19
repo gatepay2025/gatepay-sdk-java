@@ -1,8 +1,10 @@
 package com.gatepay.api.convert;
 
 import com.gatepay.api.BaseApi;
+import com.gatepay.api.convert.model.request.PreviewReq;
 import com.gatepay.api.convert.model.request.QueryCurrencyReq;
 import com.gatepay.api.convert.model.request.QueryPairReq;
+import com.gatepay.api.convert.model.response.PreviewResp;
 import com.gatepay.api.convert.model.response.QueryCurrencyResp;
 import com.gatepay.api.convert.model.response.QueryPairResp;
 
@@ -16,12 +18,7 @@ public class ApiConvert extends BaseApi {
      * @return
      */
     public QueryCurrencyResp queryCurrency(QueryCurrencyReq request) {
-        try {
-            return super.process(request, QueryCurrencyResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, QueryCurrencyResp.class);
     }
 
     /**
@@ -29,12 +26,15 @@ public class ApiConvert extends BaseApi {
      *
      */
     public QueryPairResp queryPair(QueryPairReq request) {
-        try {
-            return super.process(request, QueryPairResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, QueryPairResp.class);
+    }
+
+    /**
+     * 预览报价
+     *
+     */
+    public PreviewResp preview(PreviewReq request) {
+        return super.process(request, PreviewResp.class);
     }
 
 }

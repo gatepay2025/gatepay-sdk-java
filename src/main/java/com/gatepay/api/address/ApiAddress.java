@@ -5,8 +5,6 @@ import com.gatepay.api.BaseApi;
 import com.gatepay.api.address.model.request.*;
 import com.gatepay.api.address.model.response.*;
 
-import java.util.Map;
-
 
 /**
  * 地址支付接口
@@ -31,12 +29,7 @@ public class ApiAddress extends BaseApi {
      * @return
      */
     public ChainsResp getAddressChains(ChainsReq request) {
-        try {
-            return super.process(request, ChainsResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, ChainsResp.class);
     }
 
 
@@ -45,12 +38,7 @@ public class ApiAddress extends BaseApi {
      * @return
      */
     public CurrenciesResp getAddressCurrencies() {
-        try {
-            return super.process(new CurrenciesReq(), CurrenciesResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(new CurrenciesReq(), CurrenciesResp.class);
     }
 
 
@@ -65,12 +53,7 @@ public class ApiAddress extends BaseApi {
      * currencies 支持闪兑到订单币种的币种列表
      */
     public SupportedConvertCurrenciesResp getSupportedConvertCurrencies(SupportedConvertCurrenciesReq request) {
-        try {
-            return super.process(request, SupportedConvertCurrenciesResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, SupportedConvertCurrenciesResp.class);
     }
 
 
@@ -80,12 +63,7 @@ public class ApiAddress extends BaseApi {
      *
      */
     public CreateOrderResp createOrder(CreateOrderReq request) {
-        try {
-            return super.process(request, CreateOrderResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, CreateOrderResp.class);
     }
 
 
@@ -96,12 +74,7 @@ public class ApiAddress extends BaseApi {
      * @return
      */
     public QueryOrderResp queryOrder(QueryOrderReq request) {
-        try {
-            return super.process(request, QueryOrderResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, QueryOrderResp.class);
     }
 
 
@@ -111,12 +84,7 @@ public class ApiAddress extends BaseApi {
      *
      */
     public CreateRefundResp createRefund(CreateRefundReq request) {
-        try {
-            return super.process(request, CreateRefundResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, CreateRefundResp.class);
     }
 
 
@@ -128,12 +96,7 @@ public class ApiAddress extends BaseApi {
      * @throws JsonProcessingException
      */
     public CreateRefundConvertResp createRefundConvert(CreateRefundConvertReq request) {
-        try {
-            return super.process(request, CreateRefundConvertResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, CreateRefundConvertResp.class);
     }
 
 
@@ -144,36 +107,7 @@ public class ApiAddress extends BaseApi {
      * @return
      */
     public TransactionDetailResp transactionDetail(TransactionDetailReq request) {
-        try {
-            return super.process(request, TransactionDetailResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-    }
-
-
-
-
-    /**
-     * 构建查询字符串
-     *
-     * @param params 参数映射
-     * @return 查询字符串
-     */
-    private String buildQueryStr(Map<String, String> params) {
-        if (params.isEmpty()) {
-            return "";
-        }
-
-        StringBuilder sb = new StringBuilder();
-        for (Map.Entry<String, String> entry : params.entrySet()) {
-            if (sb.length() > 0) {
-                sb.append("&");
-            }
-            sb.append(entry.getKey()).append("=").append(entry.getValue());
-        }
-        return sb.toString();
+        return super.process(request, TransactionDetailResp.class);
     }
 
 }

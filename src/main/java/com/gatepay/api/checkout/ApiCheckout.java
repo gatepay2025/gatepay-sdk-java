@@ -22,12 +22,7 @@ public class ApiCheckout extends BaseApi {
      * @return
      */
     public CreateOrderResp createOrder(CreateOrderReq request) {
-        try {
-            return super.process(request, CreateOrderResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, CreateOrderResp.class);
     }
 
 
@@ -36,12 +31,7 @@ public class ApiCheckout extends BaseApi {
      *
      */
     public CreateRefundResp createRefund(CreateRefundReq request) {
-        try {
-            return super.process(request, CreateRefundResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, CreateRefundResp.class);
     }
 
 }

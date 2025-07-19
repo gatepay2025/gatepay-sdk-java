@@ -24,12 +24,7 @@ public class ApiWeb extends BaseApi {
      * 创建订单
      */
     public CreateOrderResp createOrder(CreateOrderReq request) {
-        try {
-            return super.process(request, CreateOrderResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, CreateOrderResp.class);
     }
 
 
@@ -39,12 +34,7 @@ public class ApiWeb extends BaseApi {
      * @param request
      */
     public QueryOrderResp queryOrder(QueryOrderReq request) {
-        try {
-            return super.process(request, QueryOrderResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, QueryOrderResp.class);
     }
 
 
@@ -52,12 +42,7 @@ public class ApiWeb extends BaseApi {
      * 关闭订单
      */
     public CloseOrderResp closeOrder(CloseOrderReq request) {
-        try {
-            return super.process(request, CloseOrderResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, CloseOrderResp.class);
     }
 
 
@@ -65,12 +50,7 @@ public class ApiWeb extends BaseApi {
      * 创建退款订单
      */
     public CreateRefundResp createRefund(CreateRefundReq request) {
-        try {
-            return super.process(request, CreateRefundResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, CreateRefundResp.class);
     }
 
 
@@ -78,12 +58,7 @@ public class ApiWeb extends BaseApi {
      * 查询退款订单
      */
     public QueryRefundResp queryRefund(QueryRefundReq request) {
-        try {
-            return super.process(request, QueryRefundResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, QueryRefundResp.class);
     }
 
 
@@ -91,12 +66,7 @@ public class ApiWeb extends BaseApi {
      * 创建批量转账
      */
     public CreateBatchTransferResp createBatchTransfer(CreateBatchTransferReq request) {
-        try {
-            return super.process(request, CreateBatchTransferResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, CreateBatchTransferResp.class);
     }
 
 
@@ -104,12 +74,7 @@ public class ApiWeb extends BaseApi {
      * 查询批量转账
      */
     public QueryBatchTransferResp queryBatchTransfer(QueryBatchTransferReq request) {
-        try {
-            return super.process(request, QueryBatchTransferResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, QueryBatchTransferResp.class);
     }
 
 
@@ -120,12 +85,7 @@ public class ApiWeb extends BaseApi {
      * @return
      */
     public QueryBalanceResp queryBalance(QueryBalanceReq request) {
-        try {
-            return super.process(request, QueryBalanceResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        return super.process(request, QueryBalanceResp.class);
     }
 
 }

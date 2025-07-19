@@ -5,6 +5,10 @@ import com.gatepay.api.qrcode.model.request.CreateOrderReq;
 import com.gatepay.api.qrcode.model.response.CreateOrderResp;
 
 
+/**
+ * 二维码api
+ *
+ */
 public class ApiQrCode extends BaseApi {
 
     /**
@@ -12,12 +16,7 @@ public class ApiQrCode extends BaseApi {
      *
      */
     public CreateOrderResp createOrder(CreateOrderReq request) {
-        try {
-            super.process(request, CreateOrderResp.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        return super.process(request, CreateOrderResp.class);
     }
 
 }
