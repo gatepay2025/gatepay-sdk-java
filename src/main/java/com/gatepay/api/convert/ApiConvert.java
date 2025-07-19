@@ -9,6 +9,10 @@ import com.gatepay.api.convert.model.response.QueryCurrencyResp;
 import com.gatepay.api.convert.model.response.QueryPairResp;
 
 
+/**
+ * 闪兑接口
+ *
+ */
 public class ApiConvert extends BaseApi {
 
     /**
