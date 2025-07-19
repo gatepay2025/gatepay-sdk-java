@@ -34,6 +34,7 @@ public enum GatePayApi {
     GIFT_CREATE("/v1/pay/gift/create", "POST"),
     GIFT_LIST_TEMPLATE("/v1/pay/gift/temp/list", "GET"),
     GIFT_QUERY("/v1/pay/gift/query", "POST"),
+    CONVERT_CURRENCY("/v1/pay/convert/currency", "GET"),
     ;
 
 
