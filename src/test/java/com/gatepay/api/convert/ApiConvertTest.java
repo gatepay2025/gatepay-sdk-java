@@ -1,9 +1,6 @@
 package com.gatepay.api.convert;
 
-import com.gatepay.api.convert.model.request.CreateOrderReq;
-import com.gatepay.api.convert.model.request.PreviewReq;
-import com.gatepay.api.convert.model.request.QueryCurrencyReq;
-import com.gatepay.api.convert.model.request.QueryPairReq;
+import com.gatepay.api.convert.model.request.*;
 import org.junit.jupiter.api.Test;
 
 
@@ -37,7 +34,7 @@ public class ApiConvertTest {
     }
 
     @Test
-    public void testConvert() {
+    public void testCreateOrder() {
         CreateOrderReq createOrderReq = new CreateOrderReq();
         createOrderReq.setQuoteId("PAY-0e39c719");
         createOrderReq.setClientReqId("10");
@@ -46,7 +43,14 @@ public class ApiConvertTest {
         createOrderReq.setSellAmount("0.23429989");
         createOrderReq.setBuyCurrency("GT");
         createOrderReq.setBuyAmount("0.01");
-        apiConvert.convert(createOrderReq);
+        apiConvert.createOrder(createOrderReq);
+    }
+
+    @Test
+    public void testQueryOrder() {
+        QueryOrderReq queryOrderReq = new QueryOrderReq();
+        queryOrderReq.setOrderId("326850433152987136");
+        apiConvert.queryOrder(queryOrderReq);
     }
 
 }

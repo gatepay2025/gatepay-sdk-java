@@ -38,6 +38,7 @@ public enum GatePayApi {
     CONVERT_PAIR("/v1/pay/convert/pair", "GET"),
     CONVERT_PREVIEW("/v1/pay/convert/preview", "POST"),
     CONVERT_CREATE_ORDER("/v1/pay/convert", "POST"),
+    CONVERT_QUERY_ORDER("/v1/pay/convert/order", "GET"),
     ;
 
 

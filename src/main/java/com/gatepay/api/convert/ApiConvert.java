@@ -1,14 +1,8 @@
 package com.gatepay.api.convert;
 
 import com.gatepay.api.BaseApi;
-import com.gatepay.api.convert.model.request.CreateOrderReq;
-import com.gatepay.api.convert.model.request.PreviewReq;
-import com.gatepay.api.convert.model.request.QueryCurrencyReq;
-import com.gatepay.api.convert.model.request.QueryPairReq;
-import com.gatepay.api.convert.model.response.CreateOrderResp;
-import com.gatepay.api.convert.model.response.PreviewResp;
-import com.gatepay.api.convert.model.response.QueryCurrencyResp;
-import com.gatepay.api.convert.model.response.QueryPairResp;
+import com.gatepay.api.convert.model.request.*;
+import com.gatepay.api.convert.model.response.*;
 
 
 /**
@@ -47,8 +41,16 @@ public class ApiConvert extends BaseApi {
      * 闪兑下单
      *
      */
-    public CreateOrderResp convert(CreateOrderReq request) {
+    public CreateOrderResp createOrder(CreateOrderReq request) {
         return super.process(request, CreateOrderResp.class);
+    }
+
+    /**
+     * 查询闪兑订单
+     *
+     */
+    public QueryOrderResp queryOrder(QueryOrderReq request) {
+        return super.process(request, QueryOrderResp.class);
     }
 
 }
