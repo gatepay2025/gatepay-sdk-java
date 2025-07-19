@@ -33,6 +33,7 @@ public enum GatePayApi {
     QR_CODE_CREATE_ORDER("/v1/pay/transactions/native", "POST"),
     GIFT_CREATE("/v1/pay/gift/create", "POST"),
     GIFT_LIST_TEMPLATE("/v1/pay/gift/temp/list", "GET"),
+    GIFT_QUERY("/v1/pay/gift/query", "POST"),
     ;
 
 

@@ -4,6 +4,7 @@ import com.gatepay.common.GatePayConstants;
 
 import java.time.Duration;
 
+
 public class Config {
 
     private String scheme;

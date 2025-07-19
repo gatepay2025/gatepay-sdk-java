@@ -13,31 +13,19 @@ public class ApiWebTest {
     @Test
     public void testCreateOrder() {
         CreateOrderReq createOrderReq = new CreateOrderReq();
-        try {
-            apiWeb.createOrder(createOrderReq);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        apiWeb.createOrder(createOrderReq);
     }
 
     @Test
     public void testQueryOrder() {
         QueryOrderReq queryOrderReq = new QueryOrderReq();
-        try {
-            apiWeb.queryOrder(queryOrderReq);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        apiWeb.queryOrder(queryOrderReq);
     }
 
     @Test
     public void testCloseOrder() {
         CloseOrderReq closeOrderReq = new CloseOrderReq();
-        try {
-            apiWeb.closeOrder(closeOrderReq);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        apiWeb.closeOrder(closeOrderReq);
     }
 
     @Test
@@ -46,22 +34,14 @@ public class ApiWebTest {
         createRefundReq.setRefundRequestId("4379824792349592517");
         createRefundReq.setPrepayId("188976582282448896");
         createRefundReq.setRefundAmount("0.9");
-        try {
-            apiWeb.createRefund(createRefundReq);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        apiWeb.createRefund(createRefundReq);
     }
 
     @Test
     public void testQueryRefund() {
         QueryRefundReq queryRefundReq = new QueryRefundReq();
         queryRefundReq.setRefundRequestId("483902480932840785");
-        try {
-            apiWeb.queryRefund(queryRefundReq);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        apiWeb.queryRefund(queryRefundReq);
     }
 
     @Test
@@ -79,11 +59,7 @@ public class ApiWebTest {
         createBatchTransferReq.setName("Larry");
         createBatchTransferReq.setDescription("bonus");
         createBatchTransferReq.setBatchorderList(new BatchOrder[]{ batchOrder });
-        try {
-            apiWeb.createBatchTransfer(createBatchTransferReq);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        apiWeb.createBatchTransfer(createBatchTransferReq);
     }
 
     @Test
@@ -92,13 +68,13 @@ public class ApiWebTest {
         queryBatchTransferReq.setBatch_id("93636743354388480");
         queryBatchTransferReq.setMerchant_batch_no("192392929193391");
         queryBatchTransferReq.setDetail_status("ALL");
-        try {
-            apiWeb.queryBatchTransfer(queryBatchTransferReq);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        apiWeb.queryBatchTransfer(queryBatchTransferReq);
     }
 
-
+    @Test
+    public void testQueryBalance() {
+        QueryBalanceReq queryBalanceReq = new QueryBalanceReq();
+        apiWeb.queryBalance(queryBalanceReq);
+    }
 
 }

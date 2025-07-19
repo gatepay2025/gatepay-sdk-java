@@ -2,6 +2,7 @@ package com.gatepay.api.gift;
 
 import com.gatepay.api.gift.model.request.CreateReq;
 import com.gatepay.api.gift.model.request.ListTempReq;
+import com.gatepay.api.gift.model.request.QueryReq;
 import org.junit.jupiter.api.Test;
 
 public class ApiGiftTest {
@@ -23,6 +24,12 @@ public class ApiGiftTest {
     public void testListTemp() {
         ListTempReq listTempReq = new ListTempReq();
         apiGift.listTemp(listTempReq);
+    }
+
+    @Test
+    public void testQuery() {
+        QueryReq queryReq = new QueryReq();
+        apiGift.query(queryReq);
     }
 
 }
