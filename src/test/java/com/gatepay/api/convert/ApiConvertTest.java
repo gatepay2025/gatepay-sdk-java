@@ -1,6 +1,5 @@
 package com.gatepay.api.convert;
 
-import com.gatepay.api.convert.model.ApiConvert;
 import com.gatepay.api.convert.model.request.QueryCurrencyReq;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package com.gatepay.api.convert.model;
+package com.gatepay.api.convert;
 
 import com.gatepay.api.BaseApi;
 import com.gatepay.api.convert.model.request.QueryCurrencyReq;
