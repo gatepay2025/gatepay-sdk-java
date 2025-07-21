@@ -2,7 +2,7 @@ package com.gatepay.api.address.model.response;
 
 import com.gatepay.common.BaseResponse;
 
-public class CreateRefundResp extends BaseResponse {
+public class CreateRefundResp extends BaseResponse<CreateRefundResp> {
 
     private String refundRequestId;
     private String prepayId;
@@ -41,4 +41,5 @@ public class CreateRefundResp extends BaseResponse {
     public void setRefundAmount(String refundAmount) {
         this.refundAmount = refundAmount;
     }
+
 }

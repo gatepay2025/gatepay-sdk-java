@@ -5,6 +5,7 @@ public class BaseResponse<T> {
     private String status;
     private String code;
     private String errorMessage;
+    private String label;
     private T data;
 
     public String getStatus() {
@@ -29,6 +30,14 @@ public class BaseResponse<T> {
 
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
     }
 
     public T getData() {
