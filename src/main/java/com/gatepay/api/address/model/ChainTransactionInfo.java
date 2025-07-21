@@ -1,27 +1,25 @@
 package com.gatepay.api.address.model;
 
-import java.math.BigDecimal;
 
 public class ChainTransactionInfo {
 
-    private BigDecimal doneAmount;
-    private ConfirmItem[] confirmingList;
+    private String done_amount;
+    private ConfirmItem[] confirming_list;
 
 
-    public BigDecimal getDoneAmount() {
-        return doneAmount;
+    public String getDone_amount() {
+        return done_amount;
     }
 
-    public void setDoneAmount(BigDecimal doneAmount) {
-        this.doneAmount = doneAmount;
+    public void setDone_amount(String done_amount) {
+        this.done_amount = done_amount;
     }
 
-    public ConfirmItem[] getConfirmingList() {
-        return confirmingList;
+    public ConfirmItem[] getConfirming_list() {
+        return confirming_list;
     }
 
-    public void setConfirmingList(ConfirmItem[] confirmingList) {
-        this.confirmingList = confirmingList;
+    public void setConfirming_list(ConfirmItem[] confirming_list) {
+        this.confirming_list = confirming_list;
     }
-
 }

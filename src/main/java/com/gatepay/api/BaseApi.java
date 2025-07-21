@@ -1,5 +1,7 @@
 package com.gatepay.api;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.BaseResponse;
 import com.gatepay.common.annotation.GatePayParam;
@@ -13,7 +15,7 @@ import java.net.http.HttpResponse;
 
 public class BaseApi {
 
-    private <Req extends BaseRequest> boolean preprocess(Req req) throws IllegalAccessException {
+    private <Req extends BaseRequest> boolean preProcess(Req req) throws IllegalAccessException {
         for (Field field : req.getClass().getDeclaredFields()) {
             if (field.isAnnotationPresent(GatePayParam.class) && field.getAnnotation(GatePayParam.class).required()) {
                 field.setAccessible(Boolean.TRUE);
@@ -25,13 +27,17 @@ public class BaseApi {
         return Boolean.TRUE;
     }
 
+    private <Resp extends BaseResponse> Resp postProcess(String json, Class<Resp> respClass) throws JsonProcessingException {
+        return new ObjectMapper().readValue(json, respClass);
+    }
+
     protected <Req extends BaseRequest, Resp extends BaseResponse> Resp process(Req req, Class<Resp> respClass) {
         try {
-            preprocess(req);
+            preProcess(req);
             HttpRequest httpRequest = Client.generateHttpRequest(req, System.currentTimeMillis(), Nonce.generateNonce(9));
             HttpResponse<String> httpResponse = Client.generateHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(httpResponse.body().toString());
-            return respClass.newInstance();
+            return postProcess(httpResponse.body().toString(), respClass);
         } catch (Exception e) {
             e.printStackTrace();
         }

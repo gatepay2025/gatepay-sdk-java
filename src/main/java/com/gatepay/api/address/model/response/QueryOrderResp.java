@@ -3,26 +3,25 @@ package com.gatepay.api.address.model.response;
 import com.gatepay.common.BaseResponse;
 import com.gatepay.api.address.model.ChainTransactionInfo;
 
-import java.math.BigDecimal;
 
-public class QueryOrderResp extends BaseResponse {
+public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
 
     private String prepayId;
-    private long merchantID;
+    private long merchantId;
     private String merchantTradeNo;
     private String transactionId;
     private String goodsName;
     private String currency;
     private String orderAmount;
     private String payCurrency;
-    private BigDecimal payAmount;
-    private BigDecimal rate;
+    private String payAmount;
+    private String rate;
     private String status;
     private long createTime;
     private long expireTime;
     private long transactTime;
-    private String orderName;
-    private ChainTransactionInfo transactionInfo;
+    private String order_name;
+    private ChainTransactionInfo transaction_info;
     private String channelId;         // 客户渠道名称
     private String address;           // 地址
     private String chain;             // 网络
@@ -36,12 +35,12 @@ public class QueryOrderResp extends BaseResponse {
         this.prepayId = prepayId;
     }
 
-    public long getMerchantID() {
-        return merchantID;
+    public long getMerchantId() {
+        return merchantId;
     }
 
-    public void setMerchantID(int merchantID) {
-        this.merchantID = merchantID;
+    public void setMerchantId(long merchantId) {
+        this.merchantId = merchantId;
     }
 
     public String getMerchantTradeNo() {
@@ -92,19 +91,19 @@ public class QueryOrderResp extends BaseResponse {
         this.payCurrency = payCurrency;
     }
 
-    public BigDecimal getPayAmount() {
+    public String getPayAmount() {
         return payAmount;
     }
 
-    public void setPayAmount(BigDecimal payAmount) {
+    public void setPayAmount(String payAmount) {
         this.payAmount = payAmount;
     }
 
-    public BigDecimal getRate() {
+    public String getRate() {
         return rate;
     }
 
-    public void setRate(BigDecimal rate) {
+    public void setRate(String rate) {
         this.rate = rate;
     }
 
@@ -120,7 +119,7 @@ public class QueryOrderResp extends BaseResponse {
         return createTime;
     }
 
-    public void setCreateTime(int createTime) {
+    public void setCreateTime(long createTime) {
         this.createTime = createTime;
     }
 
@@ -128,7 +127,7 @@ public class QueryOrderResp extends BaseResponse {
         return expireTime;
     }
 
-    public void setExpireTime(int expireTime) {
+    public void setExpireTime(long expireTime) {
         this.expireTime = expireTime;
     }
 
@@ -136,24 +135,24 @@ public class QueryOrderResp extends BaseResponse {
         return transactTime;
     }
 
-    public void setTransactTime(int transactTime) {
+    public void setTransactTime(long transactTime) {
         this.transactTime = transactTime;
     }
 
-    public String getOrderName() {
-        return orderName;
+    public String getOrder_name() {
+        return order_name;
     }
 
-    public void setOrderName(String orderName) {
-        this.orderName = orderName;
+    public void setOrder_name(String order_name) {
+        this.order_name = order_name;
     }
 
-    public ChainTransactionInfo getTransactionInfo() {
-        return transactionInfo;
+    public ChainTransactionInfo getTransaction_info() {
+        return transaction_info;
     }
 
-    public void setTransactionInfo(ChainTransactionInfo transactionInfo) {
-        this.transactionInfo = transactionInfo;
+    public void setTransaction_info(ChainTransactionInfo transaction_info) {
+        this.transaction_info = transaction_info;
     }
 
     public String getChannelId() {
