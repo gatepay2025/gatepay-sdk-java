@@ -7,13 +7,13 @@ import com.gatepay.common.enums.GatePayApi;
 
 public class ListReq extends BaseRequest {
 
-    @GatePayParam
+    @GatePayParam(required = false)
     private String channelId;
 
-    @GatePayParam
+    @GatePayParam(required = false)
     private String desc;
 
-    @GatePayParam
+    @GatePayParam(required = false)
     private String channelType;
 
     @GatePayParam

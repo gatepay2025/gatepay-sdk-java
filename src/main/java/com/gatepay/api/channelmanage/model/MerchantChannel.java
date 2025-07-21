@@ -9,10 +9,12 @@ public class MerchantChannel {
     private String channelType;
 
     private String chain;
+    private String currency;
     private String address;
     private long createTime;
     private long updateTime;
     private CustomField[] customFields;
+    private String result;
 
 
     public String getChannelId() {
@@ -79,4 +81,19 @@ public class MerchantChannel {
         this.customFields = customFields;
     }
 
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
 }
