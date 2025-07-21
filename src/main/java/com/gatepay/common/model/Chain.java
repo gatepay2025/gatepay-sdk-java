@@ -1,4 +1,4 @@
-package com.gatepay.api.address.model;
+package com.gatepay.common.model;
 
 
 public class Chain {

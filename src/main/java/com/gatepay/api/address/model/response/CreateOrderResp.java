@@ -1,7 +1,7 @@
 package com.gatepay.api.address.model.response;
 
 import com.gatepay.common.BaseResponse;
-import com.gatepay.api.address.model.Chain;
+import com.gatepay.common.model.Chain;
 
 public class CreateOrderResp extends BaseResponse<CreateOrderResp> {
 
