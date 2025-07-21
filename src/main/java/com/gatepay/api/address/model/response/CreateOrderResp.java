@@ -3,20 +3,20 @@ package com.gatepay.api.address.model.response;
 import com.gatepay.common.BaseResponse;
 import com.gatepay.api.address.model.Chain;
 
-public class CreateOrderResp extends BaseResponse {
+public class CreateOrderResp extends BaseResponse<CreateOrderResp> {
 
-    private String prepayID;
+    private String prepayId;
     private String terminalType;
     private long expireTime;
     private Chain chain;
 
 
-    public String getPrepayID() {
-        return prepayID;
+    public String getPrepayId() {
+        return prepayId;
     }
 
-    public void setPrepayID(String prepayID) {
-        this.prepayID = prepayID;
+    public void setPrepayId(String prepayId) {
+        this.prepayId = prepayId;
     }
 
     public String getTerminalType() {
@@ -31,7 +31,7 @@ public class CreateOrderResp extends BaseResponse {
         return expireTime;
     }
 
-    public void setExpireTime(int expireTime) {
+    public void setExpireTime(long expireTime) {
         this.expireTime = expireTime;
     }
 

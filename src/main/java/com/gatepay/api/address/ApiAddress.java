@@ -34,13 +34,13 @@ public class ApiAddress extends BaseApi {
 
 
     /**
+     * 查询支持币种列表
      *
      * @return
      */
     public CurrenciesResp getAddressCurrencies() {
         return super.process(new CurrenciesReq(), CurrenciesResp.class);
     }
-
 
 
     /**
