@@ -7,8 +7,10 @@ import com.gatepay.common.BaseResponse;
 import com.gatepay.common.annotation.GatePayParam;
 import com.gatepay.core.Client;
 import com.gatepay.core.signature.Nonce;
+import com.gatepay.utils.StringUtils;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
@@ -27,7 +29,10 @@ public class BaseApi {
         return Boolean.TRUE;
     }
 
-    private <Resp extends BaseResponse> Resp postProcess(String json, Class<Resp> respClass) throws JsonProcessingException {
+    private <Resp extends BaseResponse> Resp postProcess(String json, Class<Resp> respClass) throws JsonProcessingException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        if (StringUtils.isEmpty(json)) {
+            return respClass.getDeclaredConstructor().newInstance();
+        }
         return new ObjectMapper().readValue(json, respClass);
     }
 

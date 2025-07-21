@@ -2,6 +2,7 @@ package com.gatepay.utils;
 
 import java.util.List;
 
+
 public class StringUtils {
 
     public static String joinStrSepByDoubleQuot(List<String> strList) {
@@ -19,6 +20,10 @@ public class StringUtils {
             return Boolean.FALSE;
         }
         return strs.contains(str);
+    }
+
+    public static boolean isEmpty(String str) {
+        return str == null || str.isEmpty();
     }
 
 }

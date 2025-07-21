@@ -10,6 +10,7 @@ public class ApiQrCodeTest {
     private ApiQrCode apiQrCode = new ApiQrCode();
 
 
+    // self test passed
     @Test
     public void testCreateOrder() {
         EnvReq envReq = new EnvReq();
@@ -18,7 +19,7 @@ public class ApiQrCodeTest {
         goodsReq.setGoodsName("NF2T");
         goodsReq.setGoodsDetail("nef-book");
         CreateOrderReq createOrderReq = new CreateOrderReq();
-        createOrderReq.setMerchantTradeNo("040583084092304592");
+        createOrderReq.setMerchantTradeNo("040583084092304594");
         createOrderReq.setCurrency("USDT");
         createOrderReq.setOrderAmount("0.9");
         createOrderReq.setEnv(envReq);
