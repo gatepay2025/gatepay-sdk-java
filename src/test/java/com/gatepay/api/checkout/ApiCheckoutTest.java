@@ -11,6 +11,7 @@ public class ApiCheckoutTest {
 
     private ApiCheckout apiCheckout = new ApiCheckout();
 
+    // self test passed
     @Test
     public void testCreateOrder() {
         EnvReq envReq = new EnvReq();
@@ -22,7 +23,7 @@ public class ApiCheckoutTest {
         CreateOrderReq request = new CreateOrderReq();
         request.setEnv(envReq);
         request.setGoods(goodsReq);
-        request.setMerchantTradeNo("kt40t9i3t34kt0k09t543922");
+        request.setMerchantTradeNo("kt40t9i3t34kt0k09t543924");
         request.setCurrency("USDT");
         request.setOrderAmount("0.9");
         request.setPayCurrency("USDT");
@@ -35,6 +36,7 @@ public class ApiCheckoutTest {
         apiCheckout.createOrder(request);
     }
 
+    // todo: test
     @Test
     public void testCreateRefund() {
         CreateRefundReq request = new CreateRefundReq();

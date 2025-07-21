@@ -14,6 +14,7 @@ public class ApiChannelManageTest {
     private ApiChannelManage apiChannelManage = new ApiChannelManage();
 
 
+    // todo: Parameter format is wrong or parameter transferring doesn't follow the rules
     @Test
     public void testSave() {
         CustomField customField = new CustomField();
@@ -34,10 +35,11 @@ public class ApiChannelManageTest {
         apiChannelManage.save(saveReq);
     }
 
+    // self test passed
     @Test
     public void testList() {
         ListReq listReq = new ListReq();
-        // listReq.setChannelId("100");
+        listReq.setChannelId("100");
         // listReq.setDesc("test list");
         // listReq.setChannelType("0");
         listReq.setPage(1);
@@ -45,6 +47,7 @@ public class ApiChannelManageTest {
         apiChannelManage.list(listReq);
     }
 
+    // todo: Parameter format is wrong or parameter transferring doesn't follow the rules
     @Test
     public void testUpdate() {
         CustomField customField = new CustomField();
@@ -65,6 +68,7 @@ public class ApiChannelManageTest {
         apiChannelManage.update(updateReq);
     }
 
+    // self test passed
     @Test
     public void testDelete() {
         DeleteReq deleteReq = new DeleteReq();

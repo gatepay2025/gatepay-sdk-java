@@ -8,6 +8,7 @@ public class ApiBillTest {
     private ApiBill apiBill = new ApiBill();
 
 
+    // seft test passed
     @Test
     public void testQueryOrders() {
         QueryOrdersReq queryOrdersReq = new QueryOrdersReq();

@@ -12,7 +12,7 @@ public class ApiAddressTest {
 
     private ApiAddress apiAddress = new ApiAddress("mZ96D37oKk-HrWJc");
 
-
+    // self test passed
     @Test
     public void testGetAddressChains() {
         ChainsReq chainsReq = new ChainsReq();
@@ -20,11 +20,13 @@ public class ApiAddressTest {
         apiAddress.getAddressChains(chainsReq);
     }
 
+    // self test passed
     @Test
     public void testGetAddressCurrencies() {
         apiAddress.getAddressCurrencies();
     }
 
+    // self test passed
     @Test
     public void testGetSupportedConvertCurrencies() {
         SupportedConvertCurrenciesReq supportedConvertCurrenciesReq = new SupportedConvertCurrenciesReq();
@@ -32,6 +34,7 @@ public class ApiAddressTest {
         apiAddress.getSupportedConvertCurrencies(supportedConvertCurrenciesReq);
     }
 
+    // self test passed
     @Test
     public void testCreateOrder() {
         EnvReq envReq = new EnvReq();
@@ -40,7 +43,7 @@ public class ApiAddressTest {
         goodsReq.setGoodsName("测试商品");
         goodsReq.setGoodsDetail("测试商品详情");
         CreateOrderReq createOrderReq = new CreateOrderReq();
-        createOrderReq.setMerchantTradeNo("j4058308409230424822343105");
+        createOrderReq.setMerchantTradeNo("j4058308409230424822343110");
         createOrderReq.setCurrency("USDT");
         createOrderReq.setOrderAmount("9.9");
         createOrderReq.setEnv(envReq);
@@ -60,6 +63,7 @@ public class ApiAddressTest {
     }
 
 
+    // self test passed
     @Test
     public void testQueryOrder() {
         QueryOrderReq queryOrderReq = new QueryOrderReq();
@@ -69,6 +73,7 @@ public class ApiAddressTest {
     }
 
 
+    // todo: test
     @Test
     public void testCreateRefund() {
         CreateRefundReq createRefundReq = new CreateRefundReq();
@@ -85,6 +90,7 @@ public class ApiAddressTest {
     }
 
 
+    // todo: test
     @Test
     public void testCreateRefundConvert() {
         CreateRefundConvertReq createRefundConvertReq = new CreateRefundConvertReq();
@@ -104,6 +110,7 @@ public class ApiAddressTest {
     }
 
 
+    // self test passed
     @Test
     public void testTransactionDetail() {
         TransactionDetailReq transactionDetailReq = new TransactionDetailReq();
