@@ -9,6 +9,7 @@ public class ApiConvertTest {
     private ApiConvert apiConvert =  new ApiConvert();
 
 
+    // self test pass
     @Test
     public void testQueryCurrency() {
         QueryCurrencyReq queryCurrencyReq = new QueryCurrencyReq();
@@ -16,6 +17,8 @@ public class ApiConvertTest {
         apiConvert.queryCurrency(queryCurrencyReq);
     }
 
+
+    // self test pass
     @Test
     public void testQueryPair() {
         QueryPairReq queryPairReq = new QueryPairReq();
@@ -24,6 +27,7 @@ public class ApiConvertTest {
         apiConvert.queryPair(queryPairReq);
     }
 
+    // todo: test, quota not enough
     @Test
     public void testPreview() {
         PreviewReq previewReq = new PreviewReq();
@@ -33,11 +37,12 @@ public class ApiConvertTest {
         apiConvert.preview(previewReq);
     }
 
+    // todo: test, quota not enough
     @Test
     public void testCreateOrder() {
         CreateOrderReq createOrderReq = new CreateOrderReq();
         createOrderReq.setQuoteId("PAY-0e39c719");
-        createOrderReq.setClientReqId("10");
+        createOrderReq.setClientReqId("11");
         createOrderReq.setPrice("0.04268034");
         createOrderReq.setSellCurrency("USDT");
         createOrderReq.setSellAmount("0.23429989");
@@ -46,6 +51,8 @@ public class ApiConvertTest {
         apiConvert.createOrder(createOrderReq);
     }
 
+
+    // todo: test
     @Test
     public void testQueryOrder() {
         QueryOrderReq queryOrderReq = new QueryOrderReq();

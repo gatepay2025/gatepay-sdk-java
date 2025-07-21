@@ -48,6 +48,8 @@ public class ApiConvert extends BaseApi {
     /**
      * 查询闪兑订单
      *
+     * @param request
+     *
      */
     public QueryOrderResp queryOrder(QueryOrderReq request) {
         return super.process(request, QueryOrderResp.class);
