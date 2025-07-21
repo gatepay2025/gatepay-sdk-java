@@ -1,13 +1,12 @@
 package com.gatepay.api.address.model;
 
-import java.math.BigDecimal;
 
 public class TxItem {
 
     private String chain;
     private String address;
     private String fullCurrType;
-    private BigDecimal amount;
+    private String amount;
     private String txId;
     private String utcCreateTime;
     private String utcUpdateTime;
@@ -37,11 +36,11 @@ public class TxItem {
         this.fullCurrType = fullCurrType;
     }
 
-    public BigDecimal getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 

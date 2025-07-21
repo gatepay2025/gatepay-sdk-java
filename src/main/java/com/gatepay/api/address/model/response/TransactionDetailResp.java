@@ -3,7 +3,7 @@ package com.gatepay.api.address.model.response;
 import com.gatepay.common.BaseResponse;
 import com.gatepay.api.address.model.TransactionDetail;
 
-public class TransactionDetailResp extends BaseResponse {
+public class TransactionDetailResp extends BaseResponse<TransactionDetailResp> {
 
     private String prepayId;
     private long merchantId;
@@ -19,7 +19,7 @@ public class TransactionDetailResp extends BaseResponse {
     private String utcExpireTime;
     private String utcUpdateTime;
     private long transactTime;
-    private String orderName;
+    private String order_name;
     private TransactionDetail transactionDetail;
     private String channelId;
 
@@ -36,7 +36,7 @@ public class TransactionDetailResp extends BaseResponse {
         return merchantId;
     }
 
-    public void setMerchantId(int merchantId) {
+    public void setMerchantId(long merchantId) {
         this.merchantId = merchantId;
     }
 
@@ -132,16 +132,16 @@ public class TransactionDetailResp extends BaseResponse {
         return transactTime;
     }
 
-    public void setTransactTime(int transactTime) {
+    public void setTransactTime(long transactTime) {
         this.transactTime = transactTime;
     }
 
-    public String getOrderName() {
-        return orderName;
+    public String getOrder_name() {
+        return order_name;
     }
 
-    public void setOrderName(String orderName) {
-        this.orderName = orderName;
+    public void setOrder_name(String order_name) {
+        this.order_name = order_name;
     }
 
     public TransactionDetail getTransactionDetail() {

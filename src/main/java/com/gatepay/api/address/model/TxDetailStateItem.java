@@ -1,18 +1,17 @@
 package com.gatepay.api.address.model;
 
-import java.math.BigDecimal;
 
 public class TxDetailStateItem {
 
-    private BigDecimal amount;
+    private String amount;
     private TxItem[] txList;
 
 
-    public BigDecimal getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 
