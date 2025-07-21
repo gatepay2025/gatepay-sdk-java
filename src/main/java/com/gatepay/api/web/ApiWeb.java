@@ -1,6 +1,5 @@
 package com.gatepay.api.web;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gatepay.api.BaseApi;
 import com.gatepay.api.web.model.request.*;
 import com.gatepay.api.web.model.response.*;
@@ -9,14 +8,12 @@ import com.gatepay.api.web.model.response.*;
 public class ApiWeb extends BaseApi {
 
     private final String apiKey;
-    private final ObjectMapper objectMapper;
 
 
 
 
     public ApiWeb(String apiKey) {
         this.apiKey = apiKey;
-        this.objectMapper = new ObjectMapper();
     }
 
 

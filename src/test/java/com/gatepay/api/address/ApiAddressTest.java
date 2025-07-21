@@ -5,6 +5,9 @@ import com.gatepay.common.model.GoodsReq;
 import com.gatepay.api.address.model.request.*;
 import org.junit.jupiter.api.Test;
 
+import java.util.Date;
+
+
 public class ApiAddressTest {
 
     private ApiAddress apiAddress = new ApiAddress("mZ96D37oKk-HrWJc");
@@ -37,12 +40,12 @@ public class ApiAddressTest {
         goodsReq.setGoodsName("测试商品");
         goodsReq.setGoodsDetail("测试商品详情");
         CreateOrderReq createOrderReq = new CreateOrderReq();
-        createOrderReq.setMerchantTradeNo("j4058308409230424822343104");
+        createOrderReq.setMerchantTradeNo("j4058308409230424822343105");
         createOrderReq.setCurrency("USDT");
         createOrderReq.setOrderAmount("9.9");
         createOrderReq.setEnv(envReq);
         createOrderReq.setGoods(goodsReq);
-        createOrderReq.setOrderExpireTime(1741951176392L);
+        createOrderReq.setOrderExpireTime(new Date().getTime() + 3 * 60 * 60 * 1000);
         createOrderReq.setReturnUrl("https://www.gate.com/");
         createOrderReq.setCancelUrl("https://www.gate.com/");
         createOrderReq.setMerchantUserId(6790011);
@@ -69,7 +72,7 @@ public class ApiAddressTest {
     @Test
     public void testCreateRefund() {
         CreateRefundReq createRefundReq = new CreateRefundReq();
-        createRefundReq.setRefundRequestId("483902489992841805");
+        createRefundReq.setRefundRequestId("342376781523689472");
         createRefundReq.setPrepayId("189325939234050048");
         createRefundReq.setRefundAmount("19.8");
         createRefundReq.setRefundReason("test refund");
