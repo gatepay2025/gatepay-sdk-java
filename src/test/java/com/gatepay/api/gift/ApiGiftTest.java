@@ -10,6 +10,7 @@ public class ApiGiftTest {
     private ApiGift apiGift = new ApiGift();
 
 
+    // todo: test, GIFT_TEMP_PERMISSION_ERROR
     @Test
     public void testCreate() {
         CreateReq request = new CreateReq();
@@ -20,12 +21,14 @@ public class ApiGiftTest {
         apiGift.create(request);
     }
 
+    // self test passed
     @Test
     public void testListTemp() {
         ListTempReq listTempReq = new ListTempReq();
         apiGift.listTemp(listTempReq);
     }
 
+    // todo: test, GIFT_CARD_NOT_FOUND
     @Test
     public void testQuery() {
         QueryReq queryReq = new QueryReq();
