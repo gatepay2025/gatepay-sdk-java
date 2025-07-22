@@ -9,6 +9,7 @@ public class ApiWithdrawTest {
     private ApiWithdraw apiWithdraw = new ApiWithdraw();
 
 
+    // todo test Parameter format is wrong or parameter transferring doesn't follow the rules
     @Test
     public void testCreateOrder() {
         CreateOrderReq createOrderReq = new CreateOrderReq();
@@ -24,6 +25,7 @@ public class ApiWithdrawTest {
         apiWithdraw.createOrder(createOrderReq);
     }
 
+    // self test passed
     @Test
     public void testQueryOrder() {
         QueryOrderReq queryOrderReq = new QueryOrderReq();
@@ -32,6 +34,7 @@ public class ApiWithdrawTest {
         apiWithdraw.queryOrder(queryOrderReq);
     }
 
+    //
     @Test
     public void testQueryChains() {
         QueryChainsReq queryChainsReq = new QueryChainsReq();

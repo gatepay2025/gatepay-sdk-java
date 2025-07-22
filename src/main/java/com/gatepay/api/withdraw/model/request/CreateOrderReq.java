@@ -9,6 +9,7 @@ public class CreateOrderReq extends BaseRequest {
 
     private String batch_id;
     private Withdraw[] withdraw_list;
+    private String channel_id;
 
 
     public CreateOrderReq() {
@@ -30,6 +31,14 @@ public class CreateOrderReq extends BaseRequest {
 
     public void setWithdraw_list(Withdraw[] withdraw_list) {
         this.withdraw_list = withdraw_list;
+    }
+
+    public String getChannel_id() {
+        return channel_id;
+    }
+
+    public void setChannel_id(String channel_id) {
+        this.channel_id = channel_id;
     }
 
 }

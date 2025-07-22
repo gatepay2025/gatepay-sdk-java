@@ -8,6 +8,16 @@ public class Withdraw {
     private String chain;
     private String address;
     private String memo;
+
+    /*
+    提现手续费的收取方式：
+       如果选择内扣，则手续费将从提现金额中收取，到账金额为提现金额扣除手续费；
+       如果选择外收，则手续费将从账户余额中扣除，到账金额即为提现金额。
+    存量不传默认为内扣的方式
+    类型枚举：
+       0-内扣
+       1-外收
+    */
     private int fee_type;
 
 
