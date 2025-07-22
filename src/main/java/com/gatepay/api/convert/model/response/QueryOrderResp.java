@@ -1,34 +1,35 @@
 package com.gatepay.api.convert.model.response;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseResponse;
-import com.gatepay.core.CustomDeserializer;
+import com.gatepay.common.annotation.GatePayRespData;
 
 import java.math.BigDecimal;
 
+
 public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
 
-    private String order_id;
+    @JsonProperty("order_id")
+    private String orderId;
     private long userId;
     private String sellCurrency;
     private String buyCurrency;
     private String sellAmount;
     private String buyAmount;
-    @JsonIgnore
-    // todo: @JsonDeserialize(using = CustomDeserializer.class)
+
+    @GatePayRespData
     private long status;
     private BigDecimal rate;
     private String quoteId;
     private long createTime;
 
 
-    public String getOrder_id() {
-        return order_id;
+    public String getOrderId() {
+        return orderId;
     }
 
-    public void setOrder_id(String order_id) {
-        this.order_id = order_id;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     public long getUserId() {

@@ -1,4 +1,4 @@
-package com.gatepay.common.model;
+package com.gatepay.common.model.req;
 
 public class GoodsReq {
 

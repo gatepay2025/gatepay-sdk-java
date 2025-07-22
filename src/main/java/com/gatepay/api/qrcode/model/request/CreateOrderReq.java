@@ -2,8 +2,8 @@ package com.gatepay.api.qrcode.model.request;
 
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.enums.GatePayApi;
-import com.gatepay.common.model.EnvReq;
-import com.gatepay.common.model.GoodsReq;
+import com.gatepay.common.model.req.EnvReq;
+import com.gatepay.common.model.req.GoodsReq;
 
 
 public class CreateOrderReq extends BaseRequest {
