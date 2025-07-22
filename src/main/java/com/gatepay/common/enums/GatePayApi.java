@@ -13,7 +13,7 @@ public enum GatePayApi {
     ADDRESS_TRANSACTION_DETAIL("/v1/pay/address/transactiondetail", "GET"),
     PAY_CREATE_ORDER("/v1/pay/order", "POST"),
     PAY_CLOSE_ORDER("/v1/pay/order/close", "POST"),
-    PAY_QUERY_ORDER("/v1/pay/order/query", "GET"),
+    PAY_QUERY_ORDER("/v1/pay/order/query", "POST"),
     PAY_CREATE_REFUND("/v1/pay/order/refund", "POST"),
     PAY_QUERY_REFUND("/v1/pay/order/refund/query", "POST"),
     PAY_CREATE_BATCH_TRANSFER("/v1/pay/batch/transfer", "POST"),
