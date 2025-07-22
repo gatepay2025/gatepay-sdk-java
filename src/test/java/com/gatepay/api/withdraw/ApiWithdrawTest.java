@@ -50,6 +50,7 @@ public class ApiWithdrawTest {
         apiWithdraw.queryBalance(queryChainsReq);
     }
 
+    // todo: test, host not found
     @Test
     public void testQueryStatus() {
         QueryStatusReq queryStatusReq = new QueryStatusReq();
