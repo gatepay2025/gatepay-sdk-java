@@ -5,19 +5,20 @@ import com.gatepay.common.BaseResponse;
 
 public class QueryRefundResp extends BaseResponse<QueryRefundResp> {
 
-    private String refundRequestID;  // 商户退款单id，有商户后端生成保证唯一
+    private String refundRequestId;  // 商户退款单id，有商户后端生成保证唯一
     private String prepayId;  // 订单id，GatePay后端生成
     private String orderAmount;  // 订单金额
     private String refundAmount;  // 退款金额
     private String refundStatus;  // 退款单状态 SUCCESS:退款成功 FAIL:退款失败
+    private String channelId;
 
 
-    public String getRefundRequestID() {
-        return refundRequestID;
+    public String getRefundRequestId() {
+        return refundRequestId;
     }
 
-    public void setRefundRequestID(String refundRequestID) {
-        this.refundRequestID = refundRequestID;
+    public void setRefundRequestId(String refundRequestId) {
+        this.refundRequestId = refundRequestId;
     }
 
     public String getPrepayId() {
@@ -52,4 +53,11 @@ public class QueryRefundResp extends BaseResponse<QueryRefundResp> {
         this.refundStatus = refundStatus;
     }
 
+    public String getChannelId() {
+        return channelId;
+    }
+
+    public void setChannelId(String channelId) {
+        this.channelId = channelId;
+    }
 }

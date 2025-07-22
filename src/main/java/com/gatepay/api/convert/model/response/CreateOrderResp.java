@@ -1,11 +1,13 @@
 package com.gatepay.api.convert.model.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseResponse;
 
 
 public class CreateOrderResp extends BaseResponse<CreateOrderResp> {
 
-    private String order_id;  // 订单ID
+    @JsonProperty("order_id")
+    private String orderId;  // 订单ID
     private String userId;  // 用户ID
     private String sellCurrency;  // 出售币种
     private String buyCurrency;  // 购买币种
@@ -17,12 +19,12 @@ public class CreateOrderResp extends BaseResponse<CreateOrderResp> {
     private String createTime;  // 创建时间
 
 
-    public String getOrder_id() {
-        return order_id;
+    public String getOrderId() {
+        return orderId;
     }
 
-    public void setOrder_id(String order_id) {
-        this.order_id = order_id;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     public String getUserId() {
