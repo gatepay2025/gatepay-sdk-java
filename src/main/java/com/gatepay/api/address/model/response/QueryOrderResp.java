@@ -1,5 +1,6 @@
 package com.gatepay.api.address.model.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseResponse;
 import com.gatepay.api.address.model.ChainTransactionInfo;
 
@@ -20,8 +21,12 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
     private long createTime;
     private long expireTime;
     private long transactTime;
-    private String order_name;
-    private ChainTransactionInfo transaction_info;
+
+    @JsonProperty("order_name")
+    private String orderName;
+
+    @JsonProperty("transaction_info")
+    private ChainTransactionInfo transactionInfo;
     private String channelId;         // 客户渠道名称
     private String address;           // 地址
     private String chain;             // 网络
@@ -139,20 +144,20 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
         this.transactTime = transactTime;
     }
 
-    public String getOrder_name() {
-        return order_name;
+    public String getOrderName() {
+        return orderName;
     }
 
-    public void setOrder_name(String order_name) {
-        this.order_name = order_name;
+    public void setOrderName(String orderName) {
+        this.orderName = orderName;
     }
 
-    public ChainTransactionInfo getTransaction_info() {
-        return transaction_info;
+    public ChainTransactionInfo getTransactionInfo() {
+        return transactionInfo;
     }
 
-    public void setTransaction_info(ChainTransactionInfo transaction_info) {
-        this.transaction_info = transaction_info;
+    public void setTransactionInfo(ChainTransactionInfo transactionInfo) {
+        this.transactionInfo = transactionInfo;
     }
 
     public String getChannelId() {

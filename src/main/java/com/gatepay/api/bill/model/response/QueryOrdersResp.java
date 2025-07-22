@@ -1,14 +1,18 @@
 package com.gatepay.api.bill.model.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseResponse;
 
 public class QueryOrdersResp extends BaseResponse<QueryOrdersResp> {
 
-    private long merchant_id;
+    @JsonProperty("merchant_id")
+    private long merchantId;
     private long total;
     private boolean hasNext;
     private long nextPage;
-    private BalanceHistoryItem[] balance_history_item_list;
+
+    @JsonProperty("balance_history_item_list")
+    private BalanceHistoryItem[] balanceHistoryItemList;
 
 
     private static class BalanceHistoryItem {
@@ -24,7 +28,9 @@ public class QueryOrdersResp extends BaseResponse<QueryOrdersResp> {
         private String status;  // PAID表示成功
         private long payer;  // Gate支付付款用户UID
         private String buyer;  // 对方信息: Web3支付该值为付款地址，非Web3支付为付款人UID
-        private String refund_gate_id;  // 退款订单ID
+
+        @JsonProperty("refund_gate_id")
+        private String refundGateId;  // 退款订单ID
         private String payChannel;  // 支付方式: Web3 支付, Gate 支付
         private String fullChain;  // 支付网络全称
         private String address;  // 商家收款地址
@@ -126,12 +132,12 @@ public class QueryOrdersResp extends BaseResponse<QueryOrdersResp> {
             this.buyer = buyer;
         }
 
-        public String getRefund_gate_id() {
-            return refund_gate_id;
+        public String getRefundGateId() {
+            return refundGateId;
         }
 
-        public void setRefund_gate_id(String refund_gate_id) {
-            this.refund_gate_id = refund_gate_id;
+        public void setRefundGateId(String refundGateId) {
+            this.refundGateId = refundGateId;
         }
 
         public String getPayChannel() {
@@ -167,15 +173,6 @@ public class QueryOrdersResp extends BaseResponse<QueryOrdersResp> {
         }
     }
 
-
-    public long getMerchant_id() {
-        return merchant_id;
-    }
-
-    public void setMerchant_id(long merchant_id) {
-        this.merchant_id = merchant_id;
-    }
-
     public long getTotal() {
         return total;
     }
@@ -200,12 +197,19 @@ public class QueryOrdersResp extends BaseResponse<QueryOrdersResp> {
         this.nextPage = nextPage;
     }
 
-    public BalanceHistoryItem[] getBalance_history_item_list() {
-        return balance_history_item_list;
+    public long getMerchantId() {
+        return merchantId;
     }
 
-    public void setBalance_history_item_list(BalanceHistoryItem[] balance_history_item_list) {
-        this.balance_history_item_list = balance_history_item_list;
+    public void setMerchantId(long merchantId) {
+        this.merchantId = merchantId;
     }
 
+    public BalanceHistoryItem[] getBalanceHistoryItemList() {
+        return balanceHistoryItemList;
+    }
+
+    public void setBalanceHistoryItemList(BalanceHistoryItem[] balanceHistoryItemList) {
+        this.balanceHistoryItemList = balanceHistoryItemList;
+    }
 }

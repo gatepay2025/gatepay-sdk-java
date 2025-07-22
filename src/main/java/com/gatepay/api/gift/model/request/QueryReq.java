@@ -1,5 +1,6 @@
 package com.gatepay.api.gift.model.request;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.annotation.GatePayParam;
 import com.gatepay.common.enums.GatePayApi;
@@ -7,8 +8,9 @@ import com.gatepay.common.enums.GatePayApi;
 
 public class QueryReq extends BaseRequest {
 
+    @JsonProperty("card_number")
     @GatePayParam(required = false)
-    private String card_number;
+    private String cardNumber;
 
     @GatePayParam(required = false)
     private String key;
@@ -17,12 +19,12 @@ public class QueryReq extends BaseRequest {
         this.api = GatePayApi.GIFT_QUERY;
     }
 
-    public String getCard_number() {
-        return card_number;
+    public String getCardNumber() {
+        return cardNumber;
     }
 
-    public void setCard_number(String card_number) {
-        this.card_number = card_number;
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
     }
 
     public String getKey() {

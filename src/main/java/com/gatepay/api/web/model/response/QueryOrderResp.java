@@ -1,6 +1,7 @@
 package com.gatepay.api.web.model.response;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseResponse;
 
 public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
@@ -23,11 +24,21 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
     private String appLogo;
     private String inUsdt;
     private String channelId;
-    private String order_name;
-    private String pay_currency;
-    private String pay_amount;
-    private String channel_type;
-    private String pay_account;
+
+    @JsonProperty("order_name")
+    private String orderName;
+
+    @JsonProperty("pay_currency")
+    private String payCurrency;
+
+    @JsonProperty("pay_amount")
+    private String payAmount;
+
+    @JsonProperty("channel_type")
+    private String channelType;
+
+    @JsonProperty("pay_account")
+    private String payAccount;
 
 
     public String getPrepayId() {
@@ -182,44 +193,43 @@ public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
         this.channelId = channelId;
     }
 
-    public String getOrder_name() {
-        return order_name;
+    public String getOrderName() {
+        return orderName;
     }
 
-    public void setOrder_name(String order_name) {
-        this.order_name = order_name;
+    public void setOrderName(String orderName) {
+        this.orderName = orderName;
     }
 
-    public String getPay_currency() {
-        return pay_currency;
+    public String getPayCurrency() {
+        return payCurrency;
     }
 
-    public void setPay_currency(String pay_currency) {
-        this.pay_currency = pay_currency;
+    public void setPayCurrency(String payCurrency) {
+        this.payCurrency = payCurrency;
     }
 
-    public String getPay_amount() {
-        return pay_amount;
+    public String getPayAmount() {
+        return payAmount;
     }
 
-    public void setPay_amount(String pay_amount) {
-        this.pay_amount = pay_amount;
+    public void setPayAmount(String payAmount) {
+        this.payAmount = payAmount;
     }
 
-    public String getChannel_type() {
-        return channel_type;
+    public String getChannelType() {
+        return channelType;
     }
 
-    public void setChannel_type(String channel_type) {
-        this.channel_type = channel_type;
+    public void setChannelType(String channelType) {
+        this.channelType = channelType;
     }
 
-    public String getPay_account() {
-        return pay_account;
+    public String getPayAccount() {
+        return payAccount;
     }
 
-    public void setPay_account(String pay_account) {
-        this.pay_account = pay_account;
+    public void setPayAccount(String payAccount) {
+        this.payAccount = payAccount;
     }
-
 }

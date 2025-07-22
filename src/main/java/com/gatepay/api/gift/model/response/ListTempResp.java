@@ -1,54 +1,65 @@
 package com.gatepay.api.gift.model.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseResponse;
 
 
 public class ListTempResp extends BaseResponse<ListTempResp[]> {
 
-    private String card_temp_id;
-    private String image_url;
-    private String title_en;
-    private String title_cn;
-    private String cover_type;
+    @JsonProperty("card_temp_id")
+    private String cardTempId;
 
-    public String getCard_temp_id() {
-        return card_temp_id;
+    @JsonProperty("image_url")
+    private String imageUrl;
+
+    @JsonProperty("title_en")
+    private String titleEn;
+
+    @JsonProperty("title_cn")
+    private String titleCn;
+
+    @JsonProperty("cover_type")
+    private String coverType;
+
+
+    public String getCardTempId() {
+        return cardTempId;
     }
 
-    public void setCard_temp_id(String card_temp_id) {
-        this.card_temp_id = card_temp_id;
+    public void setCardTempId(String cardTempId) {
+        this.cardTempId = cardTempId;
     }
 
-    public String getImage_url() {
-        return image_url;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
-    public String getTitle_en() {
-        return title_en;
+    public String getTitleEn() {
+        return titleEn;
     }
 
-    public void setTitle_en(String title_en) {
-        this.title_en = title_en;
+    public void setTitleEn(String titleEn) {
+        this.titleEn = titleEn;
     }
 
-    public String getTitle_cn() {
-        return title_cn;
+    public String getTitleCn() {
+        return titleCn;
     }
 
-    public void setTitle_cn(String title_cn) {
-        this.title_cn = title_cn;
+    public void setTitleCn(String titleCn) {
+        this.titleCn = titleCn;
     }
 
-    public String getCover_type() {
-        return cover_type;
+    public String getCoverType() {
+        return coverType;
     }
 
-    public void setCover_type(String cover_type) {
-        this.cover_type = cover_type;
+    public void setCoverType(String coverType) {
+        this.coverType = coverType;
     }
 
 }

@@ -1,5 +1,6 @@
 package com.gatepay.api.web.model.request;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.annotation.GatePayParam;
 import com.gatepay.common.enums.GatePayApi;
@@ -7,14 +8,17 @@ import com.gatepay.common.enums.GatePayApi;
 
 public class QueryBatchTransferReq extends BaseRequest {
 
+    @JsonProperty("batch_id")
     @GatePayParam
-    private String batch_id;
+    private String batchId;
 
+    @JsonProperty("merchant_batch_no")
     @GatePayParam
-    private String merchant_batch_no;
+    private String merchantBatchNo;
 
+    @JsonProperty("detail_status")
     @GatePayParam
-    private String detail_status;
+    private String detailStatus;
 
 
     public QueryBatchTransferReq() {
@@ -22,28 +26,28 @@ public class QueryBatchTransferReq extends BaseRequest {
     }
 
 
-    public String getBatch_id() {
-        return batch_id;
+    public String getBatchId() {
+        return batchId;
     }
 
-    public void setBatch_id(String batch_id) {
-        this.batch_id = batch_id;
+    public void setBatchId(String batchId) {
+        this.batchId = batchId;
     }
 
-    public String getMerchant_batch_no() {
-        return merchant_batch_no;
+    public String getMerchantBatchNo() {
+        return merchantBatchNo;
     }
 
-    public void setMerchant_batch_no(String merchant_batch_no) {
-        this.merchant_batch_no = merchant_batch_no;
+    public void setMerchantBatchNo(String merchantBatchNo) {
+        this.merchantBatchNo = merchantBatchNo;
     }
 
-    public String getDetail_status() {
-        return detail_status;
+    public String getDetailStatus() {
+        return detailStatus;
     }
 
-    public void setDetail_status(String detail_status) {
-        this.detail_status = detail_status;
+    public void setDetailStatus(String detailStatus) {
+        this.detailStatus = detailStatus;
     }
 
 }

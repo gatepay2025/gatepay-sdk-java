@@ -1,5 +1,6 @@
 package com.gatepay.api.address.model.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseResponse;
 import com.gatepay.api.address.model.TransactionDetail;
 
@@ -19,7 +20,9 @@ public class TransactionDetailResp extends BaseResponse<TransactionDetailResp> {
     private String utcExpireTime;
     private String utcUpdateTime;
     private long transactTime;
-    private String order_name;
+
+    @JsonProperty("order_name")
+    private String orderName;
     private TransactionDetail transactionDetail;
     private String channelId;
 
@@ -136,12 +139,12 @@ public class TransactionDetailResp extends BaseResponse<TransactionDetailResp> {
         this.transactTime = transactTime;
     }
 
-    public String getOrder_name() {
-        return order_name;
+    public String getOrderName() {
+        return orderName;
     }
 
-    public void setOrder_name(String order_name) {
-        this.order_name = order_name;
+    public void setOrderName(String orderName) {
+        this.orderName = orderName;
     }
 
     public TransactionDetail getTransactionDetail() {

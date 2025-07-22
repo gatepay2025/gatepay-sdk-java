@@ -1,5 +1,6 @@
 package com.gatepay.api.bill.model.request;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.annotation.GatePayParam;
 import com.gatepay.common.enums.GatePayApi;
@@ -28,8 +29,9 @@ public class QueryOrdersReq extends BaseRequest {
     @GatePayParam(required = false)
     private String orderIdNo;
 
+    @JsonProperty("financial_type")
     @GatePayParam(required = false)
-    private String financial_type;
+    private String financialType;
 
 
     public QueryOrdersReq() {
@@ -93,12 +95,12 @@ public class QueryOrdersReq extends BaseRequest {
         this.orderIdNo = orderIdNo;
     }
 
-    public String getFinancial_type() {
-        return financial_type;
+    public String getFinancialType() {
+        return financialType;
     }
 
-    public void setFinancial_type(String financial_type) {
-        this.financial_type = financial_type;
+    public void setFinancialType(String financialType) {
+        this.financialType = financialType;
     }
 
 }
