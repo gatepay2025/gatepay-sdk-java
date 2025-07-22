@@ -1,17 +1,21 @@
 package com.gatepay.api.web.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class BatchOrder {
 
-    private long user_id;
+    @JsonProperty("user_id")
+    private long userId;
+
     private String amount;
 
 
-    public long getUser_id() {
-        return user_id;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public String getAmount() {

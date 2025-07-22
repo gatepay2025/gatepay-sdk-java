@@ -1,25 +1,30 @@
 package com.gatepay.api.address.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 public class ChainTransactionInfo {
 
-    private String done_amount;
-    private ConfirmItem[] confirming_list;
+    @JsonProperty("done_amount")
+    private String doneAmount;
+
+    @JsonProperty("confirming_list")
+    private ConfirmItem[] confirmingList;
 
 
-    public String getDone_amount() {
-        return done_amount;
+    public String getDoneAmount() {
+        return doneAmount;
     }
 
-    public void setDone_amount(String done_amount) {
-        this.done_amount = done_amount;
+    public void setDoneAmount(String doneAmount) {
+        this.doneAmount = doneAmount;
     }
 
-    public ConfirmItem[] getConfirming_list() {
-        return confirming_list;
+    public ConfirmItem[] getConfirmingList() {
+        return confirmingList;
     }
 
-    public void setConfirming_list(ConfirmItem[] confirming_list) {
-        this.confirming_list = confirming_list;
+    public void setConfirmingList(ConfirmItem[] confirmingList) {
+        this.confirmingList = confirmingList;
     }
 }

@@ -69,14 +69,14 @@ public class ApiWebTest {
     @Test
     public void testCreateBatchTransfer() {
         BatchOrder batchOrder = new BatchOrder();
-        batchOrder.setUser_id(6790011);
+        batchOrder.setUserId(6790011);
         batchOrder.setAmount("2");
         CreateBatchTransferReq createBatchTransferReq = new CreateBatchTransferReq();
         createBatchTransferReq.setBatchid("13243243242445");
-        createBatchTransferReq.setMerchant_batch_no("192392929193391");
+        createBatchTransferReq.setMerchantBatchNo("192392929193391");
         createBatchTransferReq.setBizscene("REWARDS");
-        createBatchTransferReq.setMerchant_id("10002");
-        createBatchTransferReq.setClient_id("");
+        createBatchTransferReq.setMerchantId("10002");
+        createBatchTransferReq.setClientId("");
         createBatchTransferReq.setCurrency("USDT");
         createBatchTransferReq.setName("Larry");
         createBatchTransferReq.setDescription("bonus");
@@ -88,9 +88,9 @@ public class ApiWebTest {
     @Test
     public void testQueryBatchTransfer() {
         QueryBatchTransferReq queryBatchTransferReq = new QueryBatchTransferReq();
-        queryBatchTransferReq.setBatch_id("93636743354388480");
-        queryBatchTransferReq.setMerchant_batch_no("192392929193391");
-        queryBatchTransferReq.setDetail_status("ALL");
+        queryBatchTransferReq.setBatchId("93636743354388480");
+        queryBatchTransferReq.setMerchantBatchNo("192392929193391");
+        queryBatchTransferReq.setDetailStatus("ALL");
         apiWeb.queryBatchTransfer(queryBatchTransferReq);
     }
 

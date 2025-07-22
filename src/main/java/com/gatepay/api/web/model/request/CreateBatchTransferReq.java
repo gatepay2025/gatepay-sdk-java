@@ -1,5 +1,6 @@
 package com.gatepay.api.web.model.request;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.enums.GatePayApi;
 import com.gatepay.api.web.model.BatchOrder;
@@ -8,10 +9,16 @@ import com.gatepay.api.web.model.BatchOrder;
 public class CreateBatchTransferReq extends BaseRequest {
 
     private String batchid;
-    private String merchant_batch_no;
+
+    @JsonProperty("merchant_batch_no")
+    private String merchantBatchNo;
     private String bizscene;
-    private String merchant_id;
-    private String client_id;
+
+    @JsonProperty("merchant_id")
+    private String merchantId;
+
+    @JsonProperty("client_id")
+    private String clientId;
     private String currency;
     private String name;
     private String description;
@@ -31,36 +38,12 @@ public class CreateBatchTransferReq extends BaseRequest {
         this.batchid = batchid;
     }
 
-    public String getMerchant_batch_no() {
-        return merchant_batch_no;
-    }
-
-    public void setMerchant_batch_no(String merchant_batch_no) {
-        this.merchant_batch_no = merchant_batch_no;
-    }
-
     public String getBizscene() {
         return bizscene;
     }
 
     public void setBizscene(String bizscene) {
         this.bizscene = bizscene;
-    }
-
-    public String getMerchant_id() {
-        return merchant_id;
-    }
-
-    public void setMerchant_id(String merchant_id) {
-        this.merchant_id = merchant_id;
-    }
-
-    public String getClient_id() {
-        return client_id;
-    }
-
-    public void setClient_id(String client_id) {
-        this.client_id = client_id;
     }
 
     public String getCurrency() {
@@ -93,6 +76,30 @@ public class CreateBatchTransferReq extends BaseRequest {
 
     public void setBatchorderList(BatchOrder[] batchorderList) {
         this.batchorderList = batchorderList;
+    }
+
+    public String getMerchantBatchNo() {
+        return merchantBatchNo;
+    }
+
+    public void setMerchantBatchNo(String merchantBatchNo) {
+        this.merchantBatchNo = merchantBatchNo;
+    }
+
+    public String getMerchantId() {
+        return merchantId;
+    }
+
+    public void setMerchantId(String merchantId) {
+        this.merchantId = merchantId;
+    }
+
+    public String getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
     }
 
 }

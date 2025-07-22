@@ -1,5 +1,6 @@
 package com.gatepay.api.address.model.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseResponse;
 
 public class ChainsResp extends BaseResponse<ChainsResp> {
@@ -30,10 +31,17 @@ public class ChainsResp extends BaseResponse<ChainsResp> {
     private static class ChainNameItem {
         private String chain;
         private String currency;
-        private String full_curr_type;
+
+        @JsonProperty("full_curr_type")
+        private String fullCurrType;
+
         private String symbol;
-        private String explorer_url;
-        private String show_chain_name_en;
+
+        @JsonProperty("explorer_url")
+        private String explorerUrl;
+
+        @JsonProperty("show_chain_name_en")
+        private String showChainNameEn;
         private long hasWithdrawMemo;
 
 
@@ -53,14 +61,6 @@ public class ChainsResp extends BaseResponse<ChainsResp> {
             this.currency = currency;
         }
 
-        public String getFull_curr_type() {
-            return full_curr_type;
-        }
-
-        public void setFull_curr_type(String full_curr_type) {
-            this.full_curr_type = full_curr_type;
-        }
-
         public String getSymbol() {
             return symbol;
         }
@@ -69,20 +69,28 @@ public class ChainsResp extends BaseResponse<ChainsResp> {
             this.symbol = symbol;
         }
 
-        public String getExplorer_url() {
-            return explorer_url;
+        public String getFullCurrType() {
+            return fullCurrType;
         }
 
-        public void setExplorer_url(String explorer_url) {
-            this.explorer_url = explorer_url;
+        public void setFullCurrType(String fullCurrType) {
+            this.fullCurrType = fullCurrType;
         }
 
-        public String getShow_chain_name_en() {
-            return show_chain_name_en;
+        public String getExplorerUrl() {
+            return explorerUrl;
         }
 
-        public void setShow_chain_name_en(String show_chain_name_en) {
-            this.show_chain_name_en = show_chain_name_en;
+        public void setExplorerUrl(String explorerUrl) {
+            this.explorerUrl = explorerUrl;
+        }
+
+        public String getShowChainNameEn() {
+            return showChainNameEn;
+        }
+
+        public void setShowChainNameEn(String showChainNameEn) {
+            this.showChainNameEn = showChainNameEn;
         }
 
         public long getHasWithdrawMemo() {
