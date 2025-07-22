@@ -16,6 +16,8 @@ public class CreateRefundReq extends BaseRequest {
     @GatePayParam
     private String refundAmount;
 
+    private String refundReason;
+
 
     public CreateRefundReq() {
         this.api = GatePayApi.PAY_CREATE_REFUND;
@@ -44,6 +46,14 @@ public class CreateRefundReq extends BaseRequest {
 
     public void setRefundAmount(String refundAmount) {
         this.refundAmount = refundAmount;
+    }
+
+    public String getRefundReason() {
+        return refundReason;
+    }
+
+    public void setRefundReason(String refundReason) {
+        this.refundReason = refundReason;
     }
 
 }
