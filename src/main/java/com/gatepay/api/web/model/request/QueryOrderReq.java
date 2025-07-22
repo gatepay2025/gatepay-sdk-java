@@ -7,10 +7,7 @@ import com.gatepay.common.enums.GatePayApi;
 
 public class QueryOrderReq extends BaseRequest {
 
-    @GatePayParam
     private String prepayId;
-
-    @GatePayParam
     private String merchantTradeNo;
 
 
