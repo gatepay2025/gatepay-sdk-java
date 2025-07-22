@@ -34,18 +34,19 @@ public class ApiWithdrawTest {
         apiWithdraw.queryOrder(queryOrderReq);
     }
 
-    //
+    // todo: test, INTERNAL_ERROR
     @Test
     public void testQueryChains() {
         QueryChainsReq queryChainsReq = new QueryChainsReq();
-        queryChainsReq.setCurrency("USDT");
+        queryChainsReq.setCurrency("GT");
         apiWithdraw.queryChains(queryChainsReq);
     }
 
+    // todo: test, no data
     @Test
     public void testQueryBalance() {
         QueryBalanceReq queryChainsReq = new QueryBalanceReq();
-        queryChainsReq.setCurrency("USDT");
+        // queryChainsReq.setCurrency("USDT");
         apiWithdraw.queryBalance(queryChainsReq);
     }
 

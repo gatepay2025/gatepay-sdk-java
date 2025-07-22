@@ -6,7 +6,6 @@ import com.gatepay.common.enums.GatePayApi;
 
 public class QueryBalanceReq extends BaseRequest {
 
-    @GatePayParam
     private String currency;
 
 
