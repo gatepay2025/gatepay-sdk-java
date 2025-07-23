@@ -11,9 +11,8 @@ import java.util.Base64;
 public class Sign {
 
     private static final String HMAC_SHA512 = "HmacSHA512";
-    private static final String HMAC_SHA256 = "HmacSHA256";
+    // private static final String HMAC_SHA256 = "HmacSHA256";
     public static final String INVALID_SIGNATURE = "invalid signature";
-
 
 
     /**
@@ -28,33 +27,6 @@ public class Sign {
     public static String verifySignature(String timestamp, String nonce, String body, String secretKey) {
         String payload = String.format("%s\n%s\n%s\n", timestamp, nonce, body);
         return sign(payload, secretKey);
-    }
-
-    /**
-     * 验证签名是否有效
-     *
-     * @param signingData 签名数据
-     * @param signature   签名
-     * @param key         密钥
-     * @return 如果签名有效返回null，否则返回错误信息
-     */
-    public static String verify(String signingData, String signature, String key) {
-        try {
-            byte[] decodedSignature = hexStringToByteArray(signature);
-
-            Mac hmac = Mac.getInstance(HMAC_SHA512);
-            SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(StandardCharsets.UTF_8), HMAC_SHA512);
-            hmac.init(secretKeySpec);
-            byte[] calculatedSignature = hmac.doFinal(signingData.getBytes(StandardCharsets.UTF_8));
-
-            if (!constantTimeEquals(decodedSignature, calculatedSignature)) {
-                return INVALID_SIGNATURE;
-            }
-
-            return null;
-        } catch (Exception e) {
-            return INVALID_SIGNATURE;
-        }
     }
 
     /**
@@ -126,13 +98,39 @@ public class Sign {
     }
 
 
+    /**
+     * 验证签名是否有效
+     *
+     * @param signingData 签名数据
+     * @param signature   签名
+     * @param key         密钥
+     * @return 如果签名有效返回null，否则返回错误信息
+     */
+    public static String verify(String signingData, String signature, String key) {
+        try {
+            byte[] decodedSignature = hexStringToByteArray(signature);
+
+            Mac hmac = Mac.getInstance(HMAC_SHA512);
+            SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(StandardCharsets.UTF_8), HMAC_SHA512);
+            hmac.init(secretKeySpec);
+            byte[] calculatedSignature = hmac.doFinal(signingData.getBytes(StandardCharsets.UTF_8));
+
+            if (!constantTimeEquals(decodedSignature, calculatedSignature)) {
+                return INVALID_SIGNATURE;
+            }
+
+            return null;
+        } catch (Exception e) {
+            return INVALID_SIGNATURE;
+        }
+    }
 
     public static String generateSignature(String timestamp, String nonce, String body, String secretKey) {
         try {
             // Concatenate timestamp, nonce and body
             String message = timestamp + nonce + body;
 
-            // Create HMAC-SHA256 instance
+            // Create HMAC-SHA instance
             Mac hmacSha512 = Mac.getInstance(HMAC_SHA512);
             SecretKeySpec secretKeySpec = new SecretKeySpec(secretKey.getBytes(StandardCharsets.UTF_8), HMAC_SHA512);
             hmacSha512.init(secretKeySpec);

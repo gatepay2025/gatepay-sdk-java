@@ -1,7 +1,7 @@
 package com.gatepay.api.withdraw;
 
 import com.gatepay.api.withdraw.model.Withdraw;
-import com.gatepay.api.withdraw.model.request.*;
+import com.gatepay.api.withdraw.model.req.*;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.core.Credential;
 import com.gatepay.core.GatePayConfig;

@@ -1,8 +1,8 @@
 package com.gatepay.api.gift;
 
-import com.gatepay.api.gift.model.request.CreateReq;
-import com.gatepay.api.gift.model.request.ListTempReq;
-import com.gatepay.api.gift.model.request.QueryReq;
+import com.gatepay.api.gift.model.req.CreateReq;
+import com.gatepay.api.gift.model.req.ListTempReq;
+import com.gatepay.api.gift.model.req.QueryReq;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.core.Credential;
 import com.gatepay.core.GatePayConfig;

@@ -1,10 +1,10 @@
 package com.gatepay.api.checkout;
 
 import com.gatepay.api.BaseApi;
-import com.gatepay.api.checkout.model.request.CreateOrderReq;
-import com.gatepay.api.checkout.model.request.CreateRefundReq;
-import com.gatepay.api.checkout.model.response.CreateOrderResp;
-import com.gatepay.api.checkout.model.response.CreateRefundResp;
+import com.gatepay.api.checkout.model.req.CreateOrderReq;
+import com.gatepay.api.checkout.model.req.CreateRefundReq;
+import com.gatepay.api.checkout.model.resp.CreateOrderResp;
+import com.gatepay.api.checkout.model.resp.CreateRefundResp;
 import com.gatepay.core.GatePayConfig;
 
 

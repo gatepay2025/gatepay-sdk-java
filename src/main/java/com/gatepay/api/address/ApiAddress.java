@@ -2,8 +2,8 @@ package com.gatepay.api.address;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.gatepay.api.BaseApi;
-import com.gatepay.api.address.model.request.*;
-import com.gatepay.api.address.model.response.*;
+import com.gatepay.api.address.model.req.*;
+import com.gatepay.api.address.model.resp.*;
 import com.gatepay.core.GatePayConfig;
 
 

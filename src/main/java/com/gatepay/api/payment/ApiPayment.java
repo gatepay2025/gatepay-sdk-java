@@ -3,8 +3,8 @@ package com.gatepay.api.payment;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.core.signature.Sign;
-import com.gatepay.api.payment.model.request.OperateOrderReq;
-import com.gatepay.api.payment.model.response.QueryOrderResp;
+import com.gatepay.api.payment.model.req.OperateOrderReq;
+import com.gatepay.api.payment.model.resp.QueryOrderResp;
 
 import java.io.IOException;
 import java.net.URI;

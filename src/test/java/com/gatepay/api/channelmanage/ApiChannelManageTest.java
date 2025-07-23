@@ -2,10 +2,10 @@ package com.gatepay.api.channelmanage;
 
 import com.gatepay.api.channelmanage.model.CustomField;
 import com.gatepay.api.channelmanage.model.MerchantChannel;
-import com.gatepay.api.channelmanage.model.request.DeleteReq;
-import com.gatepay.api.channelmanage.model.request.ListReq;
-import com.gatepay.api.channelmanage.model.request.SaveReq;
-import com.gatepay.api.channelmanage.model.request.UpdateReq;
+import com.gatepay.api.channelmanage.model.req.DeleteReq;
+import com.gatepay.api.channelmanage.model.req.ListReq;
+import com.gatepay.api.channelmanage.model.req.SaveReq;
+import com.gatepay.api.channelmanage.model.req.UpdateReq;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.core.Credential;
 import com.gatepay.core.GatePayConfig;

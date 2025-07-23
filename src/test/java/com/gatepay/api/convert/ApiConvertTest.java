@@ -1,6 +1,6 @@
 package com.gatepay.api.convert;
 
-import com.gatepay.api.convert.model.request.*;
+import com.gatepay.api.convert.model.req.*;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.core.Credential;
 import com.gatepay.core.GatePayConfig;

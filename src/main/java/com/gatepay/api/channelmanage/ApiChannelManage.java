@@ -1,14 +1,14 @@
 package com.gatepay.api.channelmanage;
 
 import com.gatepay.api.BaseApi;
-import com.gatepay.api.channelmanage.model.request.DeleteReq;
-import com.gatepay.api.channelmanage.model.request.ListReq;
-import com.gatepay.api.channelmanage.model.request.SaveReq;
-import com.gatepay.api.channelmanage.model.request.UpdateReq;
-import com.gatepay.api.channelmanage.model.response.DeleteResp;
-import com.gatepay.api.channelmanage.model.response.ListResp;
-import com.gatepay.api.channelmanage.model.response.SaveResp;
-import com.gatepay.api.channelmanage.model.response.UpdateResp;
+import com.gatepay.api.channelmanage.model.req.DeleteReq;
+import com.gatepay.api.channelmanage.model.req.ListReq;
+import com.gatepay.api.channelmanage.model.req.SaveReq;
+import com.gatepay.api.channelmanage.model.req.UpdateReq;
+import com.gatepay.api.channelmanage.model.resp.DeleteResp;
+import com.gatepay.api.channelmanage.model.resp.ListResp;
+import com.gatepay.api.channelmanage.model.resp.SaveResp;
+import com.gatepay.api.channelmanage.model.resp.UpdateResp;
 import com.gatepay.core.GatePayConfig;
 
 /**

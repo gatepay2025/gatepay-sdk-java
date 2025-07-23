@@ -1,8 +1,8 @@
 package com.gatepay.api.convert;
 
 import com.gatepay.api.BaseApi;
-import com.gatepay.api.convert.model.request.*;
-import com.gatepay.api.convert.model.response.*;
+import com.gatepay.api.convert.model.req.*;
+import com.gatepay.api.convert.model.resp.*;
 import com.gatepay.core.GatePayConfig;
 
 
