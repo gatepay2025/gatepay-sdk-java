@@ -42,7 +42,10 @@ import com.gatepay.api.web.ApiWeb;
 import com.gatepay.api.web.model.req.*;
 import com.gatepay.api.web.model.resp.*;
 import com.gatepay.api.withdraw.ApiWithdraw;
-
+import com.gatepay.api.withdraw.model.req.QueryChainsReq;
+import com.gatepay.api.withdraw.model.req.QueryStatusReq;
+import com.gatepay.api.withdraw.model.resp.QueryChainsResp;
+import com.gatepay.api.withdraw.model.resp.QueryStatusResp;
 
 
 public class GatePayClient {
@@ -302,6 +305,50 @@ public class GatePayClient {
      */
     public QueryBalanceResp queryBalance(QueryBalanceReq request) {
         return this.apiWeb.queryBalance(request);
+    }
+
+
+    /**
+     * 创建提现订单
+     */
+    public com.gatepay.api.withdraw.model.resp.CreateOrderResp createWithdrawOrder(com.gatepay.api.withdraw.model.req.CreateOrderReq request) {
+        return this.apiWithdraw.createOrder(request);
+    }
+
+    /**
+     * 查询提现订单
+     *
+     * detail_status:
+     * ALL 全部子订单
+     * PENDING 待处理子订单
+     * PROCESSING 已提交提现请求，待确认子订单
+     * CHECK 审核中子订单
+     * FAIL 失败子订单
+     * DONE 提现成功子订单
+     */
+    public com.gatepay.api.withdraw.model.resp.QueryOrderResp queryWithdrawOrder(com.gatepay.api.withdraw.model.req.QueryOrderReq request) {
+        return this.apiWithdraw.queryOrder(request);
+    }
+
+    /**
+     * 查询币种支持的链
+     */
+    public QueryChainsResp queryWithdrawChains(QueryChainsReq request) {
+        return this.apiWithdraw.queryChains(request);
+    }
+
+    /**
+     * 查询个人账户余额
+     */
+    public com.gatepay.api.withdraw.model.resp.QueryBalanceResp queryWithdrawBalance(com.gatepay.api.withdraw.model.req.QueryBalanceReq request) {
+        return this.apiWithdraw.queryBalance(request);
+    }
+
+    /**
+     * 查询提现状态
+     */
+    public QueryStatusResp queryWithdrawStatus(QueryStatusReq request) {
+        return this.apiWithdraw.queryStatus(request);
     }
 
 }
