@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.gatepay.api.BaseApi;
 import com.gatepay.api.address.model.request.*;
 import com.gatepay.api.address.model.response.*;
+import com.gatepay.core.GatePayConfig;
 
 
 /**
@@ -12,14 +13,9 @@ import com.gatepay.api.address.model.response.*;
  */
 public class ApiAddress extends BaseApi {
 
-    private final String apiKey;
-
-
-    public ApiAddress(String apiKey) {
-        this.apiKey = apiKey;
+    public ApiAddress(GatePayConfig gatePayConfig) {
+        super(gatePayConfig);
     }
-
-
 
 
     /**

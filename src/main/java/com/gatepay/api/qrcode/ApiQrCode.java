@@ -3,6 +3,7 @@ package com.gatepay.api.qrcode;
 import com.gatepay.api.BaseApi;
 import com.gatepay.api.qrcode.model.request.CreateOrderReq;
 import com.gatepay.api.qrcode.model.response.CreateOrderResp;
+import com.gatepay.core.GatePayConfig;
 
 
 /**
@@ -10,6 +11,11 @@ import com.gatepay.api.qrcode.model.response.CreateOrderResp;
  *
  */
 public class ApiQrCode extends BaseApi {
+
+    public ApiQrCode(GatePayConfig gatePayConfig) {
+        super(gatePayConfig);
+    }
+
 
     /**
      * 创建扫码支付订单

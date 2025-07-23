@@ -1,12 +1,22 @@
 package com.gatepay.api.convert;
 
 import com.gatepay.api.convert.model.request.*;
+import com.gatepay.common.GatePayConstants;
+import com.gatepay.core.Credential;
+import com.gatepay.core.GatePayConfig;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 
 public class ApiConvertTest {
 
-    private ApiConvert apiConvert =  new ApiConvert();
+    private static ApiConvert apiConvert;
+
+
+    @BeforeAll
+    public static void init() {
+        apiConvert = new ApiConvert(new GatePayConfig(GatePayConstants.END_POINT_DEFAULT, 30, new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=", "SkZlbKOqPoMwnxhl")));
+    }
 
 
     // self test pass

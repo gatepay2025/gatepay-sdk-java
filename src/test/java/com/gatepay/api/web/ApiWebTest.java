@@ -2,14 +2,23 @@ package com.gatepay.api.web;
 
 import com.gatepay.api.web.model.BatchOrder;
 import com.gatepay.api.web.model.request.*;
-import com.gatepay.common.model.EnvReq;
-import com.gatepay.common.model.GoodsReq;
+import com.gatepay.common.GatePayConstants;
+import com.gatepay.common.model.req.EnvReq;
+import com.gatepay.common.model.req.GoodsReq;
+import com.gatepay.core.Credential;
+import com.gatepay.core.GatePayConfig;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 
 public class ApiWebTest {
 
-    ApiWeb apiWeb = new ApiWeb("mZ96D37oKk-HrWJc");
+    private static ApiWeb apiWeb;
+
+    @BeforeAll
+    public static void init() {
+        apiWeb = new ApiWeb(new GatePayConfig(GatePayConstants.END_POINT_DEFAULT, 30, new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=", "SkZlbKOqPoMwnxhl")));
+    }
 
 
     // self test passed

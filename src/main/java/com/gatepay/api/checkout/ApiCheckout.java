@@ -5,6 +5,7 @@ import com.gatepay.api.checkout.model.request.CreateOrderReq;
 import com.gatepay.api.checkout.model.request.CreateRefundReq;
 import com.gatepay.api.checkout.model.response.CreateOrderResp;
 import com.gatepay.api.checkout.model.response.CreateRefundResp;
+import com.gatepay.core.GatePayConfig;
 
 
 /**
@@ -14,6 +15,11 @@ import com.gatepay.api.checkout.model.response.CreateRefundResp;
  *
  */
 public class ApiCheckout extends BaseApi {
+
+    public ApiCheckout(GatePayConfig gatePayConfig) {
+        super(gatePayConfig);
+    }
+
 
     /**
      * 创建收银台订单

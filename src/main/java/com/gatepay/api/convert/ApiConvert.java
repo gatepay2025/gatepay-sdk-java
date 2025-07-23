@@ -3,6 +3,7 @@ package com.gatepay.api.convert;
 import com.gatepay.api.BaseApi;
 import com.gatepay.api.convert.model.request.*;
 import com.gatepay.api.convert.model.response.*;
+import com.gatepay.core.GatePayConfig;
 
 
 /**
@@ -10,6 +11,11 @@ import com.gatepay.api.convert.model.response.*;
  *
  */
 public class ApiConvert extends BaseApi {
+
+    public ApiConvert(GatePayConfig gatePayConfig) {
+        super(gatePayConfig);
+    }
+
 
     /**
      * 查询可用闪兑币种

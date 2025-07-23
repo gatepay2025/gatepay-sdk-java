@@ -9,6 +9,7 @@ import com.gatepay.api.channelmanage.model.response.DeleteResp;
 import com.gatepay.api.channelmanage.model.response.ListResp;
 import com.gatepay.api.channelmanage.model.response.SaveResp;
 import com.gatepay.api.channelmanage.model.response.UpdateResp;
+import com.gatepay.core.GatePayConfig;
 
 /**
  * 客户渠道管理接口
@@ -17,6 +18,10 @@ import com.gatepay.api.channelmanage.model.response.UpdateResp;
  *
  */
 public class ApiChannelManage extends BaseApi {
+
+    public ApiChannelManage(GatePayConfig gatePayConfig) {
+        super(gatePayConfig);
+    }
 
     /**
      * 新增客户渠道

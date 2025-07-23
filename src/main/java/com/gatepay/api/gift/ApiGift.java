@@ -7,6 +7,7 @@ import com.gatepay.api.gift.model.request.QueryReq;
 import com.gatepay.api.gift.model.response.CreateResp;
 import com.gatepay.api.gift.model.response.ListTempResp;
 import com.gatepay.api.gift.model.response.QueryResp;
+import com.gatepay.core.GatePayConfig;
 
 
 /**
@@ -14,6 +15,11 @@ import com.gatepay.api.gift.model.response.QueryResp;
  *
  */
 public class ApiGift extends BaseApi {
+
+    public ApiGift(GatePayConfig gatePayConfig) {
+        super(gatePayConfig);
+    }
+
 
     public CreateResp create(CreateReq request) {
         return super.process(request, CreateResp.class);

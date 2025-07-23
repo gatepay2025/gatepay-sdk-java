@@ -1,8 +1,12 @@
 package com.gatepay.api.address;
 
-import com.gatepay.common.model.EnvReq;
-import com.gatepay.common.model.GoodsReq;
+import com.gatepay.common.GatePayConstants;
+import com.gatepay.common.model.req.EnvReq;
+import com.gatepay.common.model.req.GoodsReq;
 import com.gatepay.api.address.model.request.*;
+import com.gatepay.core.Credential;
+import com.gatepay.core.GatePayConfig;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.Date;
@@ -10,7 +14,14 @@ import java.util.Date;
 
 public class ApiAddressTest {
 
-    private ApiAddress apiAddress = new ApiAddress("mZ96D37oKk-HrWJc");
+    private static ApiAddress apiAddress;
+
+    @BeforeAll
+    public static void init() {
+        apiAddress = new ApiAddress(new GatePayConfig(GatePayConstants.END_POINT_DEFAULT, 30, new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=", "SkZlbKOqPoMwnxhl")));
+    }
+
+
 
     // self test passed
     @Test

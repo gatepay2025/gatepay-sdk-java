@@ -3,11 +3,23 @@ package com.gatepay.api.gift;
 import com.gatepay.api.gift.model.request.CreateReq;
 import com.gatepay.api.gift.model.request.ListTempReq;
 import com.gatepay.api.gift.model.request.QueryReq;
+import com.gatepay.common.GatePayConstants;
+import com.gatepay.core.Credential;
+import com.gatepay.core.GatePayConfig;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+
 
 public class ApiGiftTest {
 
-    private ApiGift apiGift = new ApiGift();
+    private static ApiGift apiGift;
+
+
+    @BeforeAll
+    public static void init() {
+        apiGift = new ApiGift(new GatePayConfig(GatePayConstants.END_POINT_DEFAULT, 30, new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=", "SkZlbKOqPoMwnxhl")));
+    }
 
 
     // todo: test, GIFT_TEMP_PERMISSION_ERROR

@@ -3,17 +3,13 @@ package com.gatepay.api.web;
 import com.gatepay.api.BaseApi;
 import com.gatepay.api.web.model.request.*;
 import com.gatepay.api.web.model.response.*;
+import com.gatepay.core.GatePayConfig;
 
 
 public class ApiWeb extends BaseApi {
 
-    private final String apiKey;
-
-
-
-
-    public ApiWeb(String apiKey) {
-        this.apiKey = apiKey;
+    public ApiWeb(GatePayConfig gatePayConfig) {
+        super(gatePayConfig);
     }
 
 

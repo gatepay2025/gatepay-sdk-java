@@ -3,9 +3,15 @@ package com.gatepay.api.withdraw;
 import com.gatepay.api.BaseApi;
 import com.gatepay.api.withdraw.model.request.*;
 import com.gatepay.api.withdraw.model.response.*;
+import com.gatepay.core.GatePayConfig;
 
 
 public class ApiWithdraw extends BaseApi {
+
+    public ApiWithdraw(GatePayConfig gatePayConfig) {
+        super(gatePayConfig);
+    }
+
 
     /**
      * 创建提现订单

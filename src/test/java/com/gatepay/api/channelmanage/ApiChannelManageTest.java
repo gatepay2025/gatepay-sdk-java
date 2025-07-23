@@ -6,12 +6,22 @@ import com.gatepay.api.channelmanage.model.request.DeleteReq;
 import com.gatepay.api.channelmanage.model.request.ListReq;
 import com.gatepay.api.channelmanage.model.request.SaveReq;
 import com.gatepay.api.channelmanage.model.request.UpdateReq;
+import com.gatepay.common.GatePayConstants;
+import com.gatepay.core.Credential;
+import com.gatepay.core.GatePayConfig;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 
 public class ApiChannelManageTest {
 
-    private ApiChannelManage apiChannelManage = new ApiChannelManage();
+    private static ApiChannelManage apiChannelManage;
+
+
+    @BeforeAll
+    public static void init() {
+        apiChannelManage = new ApiChannelManage(new GatePayConfig(GatePayConstants.END_POINT_DEFAULT, 30, new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=", "SkZlbKOqPoMwnxhl")));
+    }
 
 
     // todo: Parameter format is wrong or parameter transferring doesn't follow the rules
