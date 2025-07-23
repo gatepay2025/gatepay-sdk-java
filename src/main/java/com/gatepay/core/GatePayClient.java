@@ -2,7 +2,13 @@ package com.gatepay.core;
 
 import com.gatepay.api.address.ApiAddress;
 import com.gatepay.api.address.model.req.*;
+import com.gatepay.api.address.model.req.CreateOrderReq;
+import com.gatepay.api.address.model.req.CreateRefundReq;
+import com.gatepay.api.address.model.req.QueryOrderReq;
 import com.gatepay.api.address.model.resp.*;
+import com.gatepay.api.address.model.resp.CreateOrderResp;
+import com.gatepay.api.address.model.resp.CreateRefundResp;
+import com.gatepay.api.address.model.resp.QueryOrderResp;
 import com.gatepay.api.bill.ApiBill;
 import com.gatepay.api.bill.model.req.QueryOrdersReq;
 import com.gatepay.api.bill.model.resp.QueryOrdersResp;
@@ -33,7 +39,10 @@ import com.gatepay.api.gift.model.resp.QueryResp;
 import com.gatepay.api.payment.ApiPayment;
 import com.gatepay.api.qrcode.ApiQrCode;
 import com.gatepay.api.web.ApiWeb;
+import com.gatepay.api.web.model.req.*;
+import com.gatepay.api.web.model.resp.*;
 import com.gatepay.api.withdraw.ApiWithdraw;
+
 
 
 public class GatePayClient {
@@ -230,6 +239,69 @@ public class GatePayClient {
      */
     public com.gatepay.api.qrcode.model.resp.CreateOrderResp createQrCodeOrder(com.gatepay.api.qrcode.model.req.CreateOrderReq request) {
         return this.apiQrCode.createOrder(request);
+    }
+
+
+
+
+    /**
+     * 创建web支付订单
+     */
+    public com.gatepay.api.web.model.resp.CreateOrderResp createWebOrder(com.gatepay.api.web.model.req.CreateOrderReq request) {
+        return this.apiWeb.createOrder(request);
+    }
+
+
+    /**
+     * 查询订单
+     */
+    public com.gatepay.api.web.model.resp.QueryOrderResp queryWebOrder(com.gatepay.api.web.model.req.QueryOrderReq request) {
+        return this.apiWeb.queryOrder(request);
+    }
+
+
+    /**
+     * 关闭订单
+     */
+    public CloseOrderResp closeWebOrder(CloseOrderReq request) {
+        return this.apiWeb.closeOrder(request);
+    }
+
+
+    /**
+     * 创建退款订单
+     */
+    public com.gatepay.api.web.model.resp.CreateRefundResp createWebRefund(com.gatepay.api.web.model.req.CreateRefundReq request) {
+        return this.apiWeb.createRefund(request);
+    }
+
+
+    /**
+     * 查询退款订单
+     */
+    public QueryRefundResp queryWebRefund(QueryRefundReq request) {
+        return this.apiWeb.queryRefund(request);
+    }
+
+    /**
+     * 创建批量转账
+     */
+    public CreateBatchTransferResp createBatchTransfer(CreateBatchTransferReq request) {
+        return this.apiWeb.createBatchTransfer(request);
+    }
+
+    /**
+     * 查询批量转账
+     */
+    public QueryBatchTransferResp queryBatchTransfer(QueryBatchTransferReq request) {
+        return this.apiWeb.queryBatchTransfer(request);
+    }
+
+    /**
+     * 查询余额
+     */
+    public QueryBalanceResp queryBalance(QueryBalanceReq request) {
+        return this.apiWeb.queryBalance(request);
     }
 
 }
