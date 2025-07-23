@@ -74,8 +74,8 @@ public class BaseApi {
             return postProcess(httpResponse.body().toString(), respClass);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return null;
     }
 
 }
