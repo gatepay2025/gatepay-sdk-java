@@ -32,8 +32,7 @@ public class GatePayHttpClient {
                 .header(GatePayConstants.HEADER_CONTENT_TYPE, GatePayConstants.HEADER_APPLICATION_JSON)
                 .header(GatePayConstants.HEADER_GATEPAY_TIMESTAMP, String.valueOf(timestamp))
                 .header(GatePayConstants.HEADER_GATEPAY_NONCE, nonce)
-                // TODO: set new api key
-                .header(GatePayConstants.HEADER_GATEPAY_CERTIFICATE_CLIENT_ID, "mZ96D37oKk-HrWJc");   // apiKey)
+                .header(GatePayConstants.HEADER_GATEPAY_CERTIFICATE_CLIENT_ID, this.gatePayConfig.getClientId());
         if (GatePayConstants.METHOD_GET.equals(request.getApi().getHttpMethod()) || GatePayConstants.METHOD_DELETE.equals(request.getApi().getHttpMethod())) {
             String paramStr = "";
             Field[] declaredFields = request.getClass().getDeclaredFields();
@@ -51,14 +50,13 @@ public class GatePayHttpClient {
             return GatePayConstants.METHOD_GET.equals(request.getApi().getHttpMethod()) ? builder.GET().build() : builder.DELETE().build();
         }
         if (GatePayConstants.METHOD_POST.equals(request.getApi().getHttpMethod())) {
-            // TODO: check api key
-            builder.header(GatePayConstants.HEADER_GATEPAY_API_KEY, "SkZlbKOqPoMwnxhl");
+            builder.header(GatePayConstants.HEADER_GATEPAY_API_KEY, this.gatePayConfig.getCredential().getApiKey());
             builder.header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Sign.verifySignature(String.valueOf(timestamp), nonce, new ObjectMapper().writeValueAsString(request), this.gatePayConfig.getCredential().getSecretKey()));
             builder.uri(URI.create(this.gatePayConfig.getEndPoint() + request.getApi().getUrl()));
             return builder.POST(HttpRequest.BodyPublishers.ofString(new ObjectMapper().writeValueAsString(request))).build();
         }
         if (GatePayConstants.METHOD_PUT.equals(request.getApi().getHttpMethod())) {
-            builder.header(GatePayConstants.HEADER_GATEPAY_API_KEY, "SkZlbKOqPoMwnxhl");
+            builder.header(GatePayConstants.HEADER_GATEPAY_API_KEY, this.gatePayConfig.getCredential().getApiKey());
             builder.header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Sign.verifySignature(String.valueOf(timestamp), nonce, new ObjectMapper().writeValueAsString(request), this.gatePayConfig.getCredential().getSecretKey()));
             builder.uri(URI.create(this.gatePayConfig.getEndPoint() + request.getApi().getUrl()));
             return builder.PUT(HttpRequest.BodyPublishers.ofString(new ObjectMapper().writeValueAsString(request))).build();
