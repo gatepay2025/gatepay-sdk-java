@@ -24,6 +24,12 @@ import com.gatepay.api.convert.model.resp.PreviewResp;
 import com.gatepay.api.convert.model.resp.QueryCurrencyResp;
 import com.gatepay.api.convert.model.resp.QueryPairResp;
 import com.gatepay.api.gift.ApiGift;
+import com.gatepay.api.gift.model.req.CreateReq;
+import com.gatepay.api.gift.model.req.ListTempReq;
+import com.gatepay.api.gift.model.req.QueryReq;
+import com.gatepay.api.gift.model.resp.CreateResp;
+import com.gatepay.api.gift.model.resp.ListTempResp;
+import com.gatepay.api.gift.model.resp.QueryResp;
 import com.gatepay.api.payment.ApiPayment;
 import com.gatepay.api.qrcode.ApiQrCode;
 import com.gatepay.api.web.ApiWeb;
@@ -187,15 +193,43 @@ public class GatePayClient {
     /**
      * 闪兑下单
      */
-    public com.gatepay.api.convert.model.resp.CreateOrderResp createOrder(com.gatepay.api.convert.model.req.CreateOrderReq request) {
+    public com.gatepay.api.convert.model.resp.CreateOrderResp createConvertOrder(com.gatepay.api.convert.model.req.CreateOrderReq request) {
         return this.apiConvert.createOrder(request);
     }
 
     /**
      * 查询闪兑订单
      */
-    public com.gatepay.api.convert.model.resp.QueryOrderResp queryOrder(com.gatepay.api.convert.model.req.QueryOrderReq request) {
+    public com.gatepay.api.convert.model.resp.QueryOrderResp queryConvertOrder(com.gatepay.api.convert.model.req.QueryOrderReq request) {
         return this.apiConvert.queryOrder(request);
+    }
+
+    /**
+     * 创建礼品卡
+     */
+    public CreateResp createGift(CreateReq request) {
+        return this.apiGift.create(request);
+    }
+
+    /**
+     * 列出礼品卡模板
+     */
+    public ListTempResp listGiftTemp(ListTempReq request) {
+        return this.apiGift.listTemp(request);
+    }
+
+    /**
+     * 查询礼品卡
+     */
+    public QueryResp queryGift(QueryReq request) {
+        return this.apiGift.query(request);
+    }
+
+    /**
+     * 创建扫码支付订单
+     */
+    public com.gatepay.api.qrcode.model.resp.CreateOrderResp createQrCodeOrder(com.gatepay.api.qrcode.model.req.CreateOrderReq request) {
+        return this.apiQrCode.createOrder(request);
     }
 
 }

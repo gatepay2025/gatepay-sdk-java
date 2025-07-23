@@ -21,14 +21,23 @@ public class ApiGift extends BaseApi {
     }
 
 
+    /**
+     * 创建礼品卡
+     */
     public CreateResp create(CreateReq request) {
         return super.process(request, CreateResp.class);
     }
 
+    /**
+     * 列出礼品卡模板
+     */
     public ListTempResp listTemp(ListTempReq request) {
         return super.process(request, ListTempResp.class);
     }
 
+    /**
+     * 查询礼品卡
+     */
     public QueryResp query(QueryReq request) {
         return super.process(request, QueryResp.class);
     }
