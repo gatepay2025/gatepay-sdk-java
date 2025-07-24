@@ -27,6 +27,7 @@ import com.gatepay.common.model.req.EnvReq;
 import com.gatepay.common.model.req.GoodsReq;
 import com.gatepay.core.security.Credential;
 import com.gatepay.utils.RandomUtils;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -51,7 +52,7 @@ public class GatePayClientTest {
     public void testGetAddressChains() {
         ChainsReq chainsReq = new ChainsReq();
         chainsReq.setCurrency("USDT");
-        gatePayClient.getAddressChains(chainsReq);
+        Assertions.assertNotNull(gatePayClient.getAddressChains(chainsReq));
     }
 
     /**
@@ -558,7 +559,8 @@ public class GatePayClientTest {
     public void testQueryWithdrawStatus() {
         QueryStatusReq queryStatusReq = new QueryStatusReq();
         queryStatusReq.setCurrency("USDT");
-        gatePayClient.queryWithdrawStatus(queryStatusReq);
+        new GatePayClient(new GatePayConfig(GatePayConstants.END_POINT_OPEN_PLATFORM, 30, "mZ96D37oKk-HrWJc", new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=", "SkZlbKOqPoMwnxhl")))
+                .queryWithdrawStatus(queryStatusReq);
     }
 
 }

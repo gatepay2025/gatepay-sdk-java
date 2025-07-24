@@ -46,6 +46,8 @@ import com.gatepay.api.withdraw.model.req.QueryChainsReq;
 import com.gatepay.api.withdraw.model.req.QueryStatusReq;
 import com.gatepay.api.withdraw.model.resp.QueryChainsResp;
 import com.gatepay.api.withdraw.model.resp.QueryStatusResp;
+import com.gatepay.common.model.resp.GatePayPageResp;
+import com.gatepay.common.model.resp.GatePayResp;
 
 
 public class GatePayClient {
@@ -79,232 +81,232 @@ public class GatePayClient {
     /**
      * 查询支持链列表
      */
-    public ChainsResp getAddressChains(ChainsReq request) {
-        return this.apiAddress.getAddressChains(request);
+    public GatePayResp<ChainsResp> getAddressChains(ChainsReq request) {
+        return new GatePayResp<>(this.apiAddress.getAddressChains(request));
     }
 
     /**
      * 查询支持币种列表
      */
-    public CurrenciesResp getAddressCurrencies() {
-        return this.apiAddress.getAddressCurrencies();
+    public GatePayResp<CurrenciesResp> getAddressCurrencies() {
+        return new GatePayResp<>(this.apiAddress.getAddressCurrencies());
     }
 
     /**
      * 创建闪兑地址支付单之前，根据订单币种查询支持闪兑的币种，用户从支持闪兑的币种列表中选择实际支付币种创建闪兑支付订单
      */
-    public SupportedConvertCurrenciesResp getAddressSupportedConvertCurrencies(SupportedConvertCurrenciesReq request) {
-        return this.apiAddress.getSupportedConvertCurrencies(request);
+    public GatePayResp<SupportedConvertCurrenciesResp> getAddressSupportedConvertCurrencies(SupportedConvertCurrenciesReq request) {
+        return new GatePayResp<>(this.apiAddress.getSupportedConvertCurrencies(request));
     }
 
     /**
      * 创建地址支付订单/下单
      */
-    public CreateOrderResp createAddressOrder(CreateOrderReq request) {
-        return this.apiAddress.createOrder(request);
+    public GatePayResp<CreateOrderResp> createAddressOrder(CreateOrderReq request) {
+        return new GatePayResp<>(this.apiAddress.createOrder(request));
     }
 
     /**
      * 查询地址支付订单详情
      */
-    public QueryOrderResp queryAddressOrder(QueryOrderReq request) {
-        return this.apiAddress.queryOrder(request);
+    public GatePayResp<QueryOrderResp> queryAddressOrder(QueryOrderReq request) {
+        return new GatePayResp<>(this.apiAddress.queryOrder(request));
     }
 
     /**
      * 创建非闪兑支付单退款
      */
-    public CreateRefundResp createAddressRefund(CreateRefundReq request) {
-        return this.apiAddress.createRefund(request);
+    public GatePayResp<CreateRefundResp> createAddressRefund(CreateRefundReq request) {
+        return new GatePayResp<>(this.apiAddress.createRefund(request));
     }
 
     /**
      * 创建闪兑支付单退款
      */
-    public CreateRefundConvertResp createAddressRefundConvert(CreateRefundConvertReq request) {
-        return this.apiAddress.createRefundConvert(request);
+    public GatePayResp<CreateRefundConvertResp> createAddressRefundConvert(CreateRefundConvertReq request) {
+        return new GatePayResp<>(this.apiAddress.createRefundConvert(request));
     }
 
     /**
      * 查询链上交易详情
      */
-    public TransactionDetailResp addressTransactionDetail(TransactionDetailReq request) {
-        return this.apiAddress.transactionDetail(request);
+    public GatePayResp<TransactionDetailResp> addressTransactionDetail(TransactionDetailReq request) {
+        return new GatePayResp<>(this.apiAddress.transactionDetail(request));
     }
 
     /**
      * 获取资金流水账单
      */
-    public QueryOrdersResp queryBillOrders(QueryOrdersReq request) {
-        return this.apiBill.queryOrders(request);
+    public GatePayResp<QueryOrdersResp> queryBillOrders(QueryOrdersReq request) {
+        return new GatePayResp<>(this.apiBill.queryOrders(request));
     }
 
     /**
      * 新增客户渠道
      */
-    public SaveResp saveChannelManage(SaveReq request) {
-        return this.apiChannelManage.save(request);
+    public GatePayResp<SaveResp> saveChannelManage(SaveReq request) {
+        return new GatePayResp<>(this.apiChannelManage.save(request));
     }
 
     /**
      * 查询客户渠道列表
      */
-    public ListResp listChannelManage(ListReq request)  {
-        return this.apiChannelManage.list(request);
+    public GatePayResp<ListResp> listChannelManage(ListReq request)  {
+        return new GatePayResp<>(this.apiChannelManage.list(request));
     }
 
     /**
      * 修改客户渠道
      */
-    public UpdateResp updateChannelManage(UpdateReq request) {
-        return this.apiChannelManage.update(request);
+    public GatePayResp<UpdateResp> updateChannelManage(UpdateReq request) {
+        return new GatePayResp<>(this.apiChannelManage.update(request));
     }
 
     /**
      * 删除客户渠道
      */
-    public DeleteResp deleteChannelManage(DeleteReq request)  {
-        return this.apiChannelManage.delete(request);
+    public GatePayResp<DeleteResp> deleteChannelManage(DeleteReq request)  {
+        return new GatePayResp<>(this.apiChannelManage.delete(request));
     }
 
     /**
      * 创建收银台订单
      */
-    public com.gatepay.api.checkout.model.resp.CreateOrderResp createCheckoutOrder(com.gatepay.api.checkout.model.req.CreateOrderReq request) {
-        return this.apiCheckout.createOrder(request);
+    public GatePayResp<com.gatepay.api.checkout.model.resp.CreateOrderResp> createCheckoutOrder(com.gatepay.api.checkout.model.req.CreateOrderReq request) {
+        return new GatePayResp<>(this.apiCheckout.createOrder(request));
     }
 
     /**
      * 创建退款
      */
-    public com.gatepay.api.checkout.model.resp.CreateRefundResp createCheckoutRefund(com.gatepay.api.checkout.model.req.CreateRefundReq request) {
-        return this.apiCheckout.createRefund(request);
+    public GatePayResp<com.gatepay.api.checkout.model.resp.CreateRefundResp> createCheckoutRefund(com.gatepay.api.checkout.model.req.CreateRefundReq request) {
+        return new GatePayResp<>(this.apiCheckout.createRefund(request));
     }
 
     /**
      * 查询可用闪兑币种
      */
-    public QueryCurrencyResp queryConvertCurrency(QueryCurrencyReq request) {
-        return this.apiConvert.queryCurrency(request);
+    public GatePayResp<QueryCurrencyResp> queryConvertCurrency(QueryCurrencyReq request) {
+        return new GatePayResp<>(this.apiConvert.queryCurrency(request));
     }
 
     /**
      * 查询可用币种对
      */
-    public QueryPairResp queryConvertPair(QueryPairReq request) {
-        return this.apiConvert.queryPair(request);
+    public GatePayResp<QueryPairResp> queryConvertPair(QueryPairReq request) {
+        return new GatePayResp<>(this.apiConvert.queryPair(request));
     }
 
     /**
      * 预览报价
      */
-    public PreviewResp previewConvert(PreviewReq request) {
-        return this.apiConvert.preview(request);
+    public GatePayResp<PreviewResp> previewConvert(PreviewReq request) {
+        return new GatePayResp<>(this.apiConvert.preview(request));
     }
 
     /**
      * 闪兑下单
      */
-    public com.gatepay.api.convert.model.resp.CreateOrderResp createConvertOrder(com.gatepay.api.convert.model.req.CreateOrderReq request) {
-        return this.apiConvert.createOrder(request);
+    public GatePayResp<com.gatepay.api.convert.model.resp.CreateOrderResp> createConvertOrder(com.gatepay.api.convert.model.req.CreateOrderReq request) {
+        return new GatePayResp<>(this.apiConvert.createOrder(request));
     }
 
     /**
      * 查询闪兑订单
      */
-    public com.gatepay.api.convert.model.resp.QueryOrderResp queryConvertOrder(com.gatepay.api.convert.model.req.QueryOrderReq request) {
-        return this.apiConvert.queryOrder(request);
+    public GatePayResp<com.gatepay.api.convert.model.resp.QueryOrderResp> queryConvertOrder(com.gatepay.api.convert.model.req.QueryOrderReq request) {
+        return new GatePayResp<>(this.apiConvert.queryOrder(request));
     }
 
     /**
      * 创建礼品卡
      */
-    public CreateResp createGift(CreateReq request) {
-        return this.apiGift.create(request);
+    public GatePayResp<CreateResp> createGift(CreateReq request) {
+        return new GatePayResp<>(this.apiGift.create(request));
     }
 
     /**
      * 列出礼品卡模板
      */
-    public ListTempResp listGiftTemp(ListTempReq request) {
-        return this.apiGift.listTemp(request);
+    public GatePayResp<ListTempResp> listGiftTemp(ListTempReq request) {
+        return new GatePayResp<>(this.apiGift.listTemp(request));
     }
 
     /**
      * 查询礼品卡
      */
-    public QueryResp queryGift(QueryReq request) {
-        return this.apiGift.query(request);
+    public GatePayResp<QueryResp> queryGift(QueryReq request) {
+        return new GatePayResp<>(this.apiGift.query(request));
     }
 
     /**
      * 创建扫码支付订单
      */
-    public com.gatepay.api.qrcode.model.resp.CreateOrderResp createQrCodeOrder(com.gatepay.api.qrcode.model.req.CreateOrderReq request) {
-        return this.apiQrCode.createOrder(request);
+    public GatePayResp<com.gatepay.api.qrcode.model.resp.CreateOrderResp> createQrCodeOrder(com.gatepay.api.qrcode.model.req.CreateOrderReq request) {
+        return new GatePayResp<>(this.apiQrCode.createOrder(request));
     }
 
     /**
      * 创建web支付订单
      */
-    public com.gatepay.api.web.model.resp.CreateOrderResp createWebOrder(com.gatepay.api.web.model.req.CreateOrderReq request) {
-        return this.apiWeb.createOrder(request);
+    public GatePayResp<com.gatepay.api.web.model.resp.CreateOrderResp> createWebOrder(com.gatepay.api.web.model.req.CreateOrderReq request) {
+        return new GatePayResp<>(this.apiWeb.createOrder(request));
     }
 
     /**
      * 查询订单
      */
-    public com.gatepay.api.web.model.resp.QueryOrderResp queryWebOrder(com.gatepay.api.web.model.req.QueryOrderReq request) {
-        return this.apiWeb.queryOrder(request);
+    public GatePayResp<com.gatepay.api.web.model.resp.QueryOrderResp> queryWebOrder(com.gatepay.api.web.model.req.QueryOrderReq request) {
+        return new GatePayResp<>(this.apiWeb.queryOrder(request));
     }
 
     /**
      * 关闭订单
      */
-    public CloseOrderResp closeWebOrder(CloseOrderReq request) {
-        return this.apiWeb.closeOrder(request);
+    public GatePayResp<CloseOrderResp> closeWebOrder(CloseOrderReq request) {
+        return new GatePayResp<>(this.apiWeb.closeOrder(request));
     }
 
     /**
      * 创建退款订单
      */
-    public com.gatepay.api.web.model.resp.CreateRefundResp createWebRefund(com.gatepay.api.web.model.req.CreateRefundReq request) {
-        return this.apiWeb.createRefund(request);
+    public GatePayResp<com.gatepay.api.web.model.resp.CreateRefundResp> createWebRefund(com.gatepay.api.web.model.req.CreateRefundReq request) {
+        return new GatePayResp<>(this.apiWeb.createRefund(request));
     }
 
     /**
      * 查询退款订单
      */
-    public QueryRefundResp queryWebRefund(QueryRefundReq request) {
-        return this.apiWeb.queryRefund(request);
+    public GatePayResp<QueryRefundResp> queryWebRefund(QueryRefundReq request) {
+        return new GatePayResp<>(this.apiWeb.queryRefund(request));
     }
 
     /**
      * 创建批量转账
      */
-    public CreateBatchTransferResp createBatchTransfer(CreateBatchTransferReq request) {
-        return this.apiWeb.createBatchTransfer(request);
+    public GatePayResp<CreateBatchTransferResp> createBatchTransfer(CreateBatchTransferReq request) {
+        return new GatePayResp<>(this.apiWeb.createBatchTransfer(request));
     }
 
     /**
      * 查询批量转账
      */
-    public QueryBatchTransferResp queryBatchTransfer(QueryBatchTransferReq request) {
-        return this.apiWeb.queryBatchTransfer(request);
+    public GatePayPageResp<QueryBatchTransferResp> queryBatchTransfer(QueryBatchTransferReq request) {
+        return new GatePayPageResp<>(this.apiWeb.queryBatchTransfer(request));
     }
 
     /**
      * 查询余额
      */
-    public QueryBalanceResp queryBalance(QueryBalanceReq request) {
-        return this.apiWeb.queryBalance(request);
+    public GatePayResp<QueryBalanceResp> queryBalance(QueryBalanceReq request) {
+        return new GatePayResp<>(this.apiWeb.queryBalance(request));
     }
 
     /**
      * 创建提现订单
      */
-    public com.gatepay.api.withdraw.model.resp.CreateOrderResp createWithdrawOrder(com.gatepay.api.withdraw.model.req.CreateOrderReq request) {
-        return this.apiWithdraw.createOrder(request);
+    public GatePayResp<com.gatepay.api.withdraw.model.resp.CreateOrderResp> createWithdrawOrder(com.gatepay.api.withdraw.model.req.CreateOrderReq request) {
+        return new GatePayResp<>(this.apiWithdraw.createOrder(request));
     }
 
     /**
@@ -318,29 +320,29 @@ public class GatePayClient {
      * FAIL 失败子订单
      * DONE 提现成功子订单
      */
-    public com.gatepay.api.withdraw.model.resp.QueryOrderResp queryWithdrawOrder(com.gatepay.api.withdraw.model.req.QueryOrderReq request) {
-        return this.apiWithdraw.queryOrder(request);
+    public GatePayResp<com.gatepay.api.withdraw.model.resp.QueryOrderResp> queryWithdrawOrder(com.gatepay.api.withdraw.model.req.QueryOrderReq request) {
+        return new GatePayResp<>(this.apiWithdraw.queryOrder(request));
     }
 
     /**
      * 查询币种支持的链
      */
-    public QueryChainsResp queryWithdrawChains(QueryChainsReq request) {
-        return this.apiWithdraw.queryChains(request);
+    public GatePayResp<QueryChainsResp> queryWithdrawChains(QueryChainsReq request) {
+        return new GatePayResp<>(this.apiWithdraw.queryChains(request));
     }
 
     /**
      * 查询个人账户余额
      */
-    public com.gatepay.api.withdraw.model.resp.QueryBalanceResp queryWithdrawBalance(com.gatepay.api.withdraw.model.req.QueryBalanceReq request) {
-        return this.apiWithdraw.queryBalance(request);
+    public GatePayResp<com.gatepay.api.withdraw.model.resp.QueryBalanceResp> queryWithdrawBalance(com.gatepay.api.withdraw.model.req.QueryBalanceReq request) {
+        return new GatePayResp<>(this.apiWithdraw.queryBalance(request));
     }
 
     /**
      * 查询提现状态
      */
-    public QueryStatusResp queryWithdrawStatus(QueryStatusReq request) {
-        return this.apiWithdraw.queryStatus(request);
+    public GatePayResp<QueryStatusResp> queryWithdrawStatus(QueryStatusReq request) {
+        return new GatePayResp<>(this.apiWithdraw.queryStatus(request));
     }
 
 }
