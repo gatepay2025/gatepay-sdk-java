@@ -1,4 +1,4 @@
-package com.gatepay.core.api.web.model.resp;
+package com.gatepay.core.api.payment.model.resp;
 
 import com.gatepay.common.BaseResponse;
 

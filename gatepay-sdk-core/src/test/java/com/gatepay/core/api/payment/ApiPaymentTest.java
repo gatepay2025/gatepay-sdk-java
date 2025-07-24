@@ -1,24 +1,24 @@
-package com.gatepay.core.api.web;
+package com.gatepay.core.api.payment;
 
-import com.gatepay.core.api.web.model.BatchOrder;
+import com.gatepay.core.api.payment.model.BatchOrder;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.model.req.EnvReq;
 import com.gatepay.common.model.req.GoodsReq;
 import com.gatepay.common.security.Credential;
 import com.gatepay.common.GatePayConfig;
 import com.gatepay.common.utils.RandomUtils;
-import com.gatepay.core.api.web.model.req.*;
+import com.gatepay.core.api.payment.model.req.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 
-public class ApiWebTest {
+public class ApiPaymentTest {
 
-    private static ApiWeb apiWeb;
+    private static ApiPayment apiPayment;
 
     @BeforeAll
     public static void init() {
-        apiWeb = new ApiWeb(new GatePayConfig(GatePayConstants.END_POINT_DEFAULT, 30, "mZ96D37oKk-HrWJc", new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=", "SkZlbKOqPoMwnxhl")));
+        apiPayment = new ApiPayment(new GatePayConfig(GatePayConstants.END_POINT_DEFAULT, 30, "mZ96D37oKk-HrWJc", new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=", "SkZlbKOqPoMwnxhl")));
     }
 
 
@@ -38,7 +38,7 @@ public class ApiWebTest {
         createOrderReq.setGoods(goodsReq);
         createOrderReq.setExtendInfo("1_elbt01_16882172126048");
         createOrderReq.setChannelId("123");
-        apiWeb.createOrder(createOrderReq);
+        apiPayment.createOrder(createOrderReq);
     }
 
     // self test passed
@@ -46,7 +46,7 @@ public class ApiWebTest {
     public void testQueryOrder() {
         QueryOrderReq queryOrderReq = new QueryOrderReq();
         queryOrderReq.setMerchantTradeNo("1688217212j916");
-        apiWeb.queryOrder(queryOrderReq);
+        apiPayment.queryOrder(queryOrderReq);
     }
 
     // todo: test, GATEPAY_INVALID_ORDER_STATUS_EXPIRED
@@ -54,7 +54,7 @@ public class ApiWebTest {
     public void testCloseOrder() {
         CloseOrderReq closeOrderReq = new CloseOrderReq();
         closeOrderReq.setMerchantTradeNo("1688217212j916");
-        apiWeb.closeOrder(closeOrderReq);
+        apiPayment.closeOrder(closeOrderReq);
     }
 
     // todo: test ORDER_NOT_FOUND
@@ -64,7 +64,7 @@ public class ApiWebTest {
         createRefundReq.setRefundRequestId("4379824792349592517");
         createRefundReq.setPrepayId("188976582282448896");
         createRefundReq.setRefundAmount("0.9");
-        apiWeb.createRefund(createRefundReq);
+        apiPayment.createRefund(createRefundReq);
     }
 
     // todo: test, UNKNOWN_ERROR
@@ -72,7 +72,7 @@ public class ApiWebTest {
     public void testQueryRefund() {
         QueryRefundReq queryRefundReq = new QueryRefundReq();
         queryRefundReq.setRefundRequestId("156123911");
-        apiWeb.queryRefund(queryRefundReq);
+        apiPayment.queryRefund(queryRefundReq);
     }
 
     // todo: where is the api doc ?
@@ -91,7 +91,7 @@ public class ApiWebTest {
         createBatchTransferReq.setName("Larry");
         createBatchTransferReq.setDescription("bonus");
         createBatchTransferReq.setBatchorderList(new BatchOrder[]{ batchOrder });
-        apiWeb.createBatchTransfer(createBatchTransferReq);
+        apiPayment.createBatchTransfer(createBatchTransferReq);
     }
 
     // self test passed
@@ -101,14 +101,14 @@ public class ApiWebTest {
         queryBatchTransferReq.setBatchId("93636743354388480");
         queryBatchTransferReq.setMerchantBatchNo("192392929193391");
         queryBatchTransferReq.setDetailStatus("ALL");
-        apiWeb.queryBatchTransfer(queryBatchTransferReq);
+        apiPayment.queryBatchTransfer(queryBatchTransferReq);
     }
 
     // self test passed
     @Test
     public void testQueryBalance() {
         QueryBalanceReq queryBalanceReq = new QueryBalanceReq();
-        apiWeb.queryBalance(queryBalanceReq);
+        apiPayment.queryBalance(queryBalanceReq);
     }
 
 }

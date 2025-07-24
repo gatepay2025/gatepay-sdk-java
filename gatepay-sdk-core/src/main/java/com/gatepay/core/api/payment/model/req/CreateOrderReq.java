@@ -1,4 +1,4 @@
-package com.gatepay.core.api.web.model.req;
+package com.gatepay.core.api.payment.model.req;
 
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.enums.GatePayApi;

@@ -38,9 +38,8 @@ import com.gatepay.core.api.gift.model.resp.ListTempResp;
 import com.gatepay.core.api.gift.model.resp.QueryResp;
 import com.gatepay.core.api.payment.ApiPayment;
 import com.gatepay.core.api.qrcode.ApiQrCode;
-import com.gatepay.core.api.web.ApiWeb;
-import com.gatepay.core.api.web.model.req.*;
-import com.gatepay.core.api.web.model.resp.*;
+import com.gatepay.core.api.payment.model.req.*;
+import com.gatepay.core.api.payment.model.resp.*;
 import com.gatepay.core.api.withdraw.ApiWithdraw;
 import com.gatepay.core.api.withdraw.model.req.QueryChainsReq;
 import com.gatepay.core.api.withdraw.model.req.QueryStatusReq;
@@ -61,7 +60,7 @@ public class GatePayClient {
     private ApiGift apiGift;
     private ApiPayment apiPayment;
     private ApiQrCode apiQrCode;
-    private ApiWeb apiWeb;
+    private ApiPayment apiPayment;
     private ApiWithdraw apiWithdraw;
 
 
@@ -74,7 +73,7 @@ public class GatePayClient {
         this.apiGift = new ApiGift(gatePayConfig);
         this.apiPayment = new ApiPayment(gatePayConfig);
         this.apiQrCode = new ApiQrCode(gatePayConfig);
-        this.apiWeb = new ApiWeb(gatePayConfig);
+        this.apiPayment = new ApiPayment(gatePayConfig);
         this.apiWithdraw = new ApiWithdraw(gatePayConfig);
     }
 
@@ -250,57 +249,57 @@ public class GatePayClient {
     /**
      * 创建web支付订单
      */
-    public GatePayResp<com.gatepay.core.api.web.model.resp.CreateOrderResp> createWebOrder(com.gatepay.core.api.web.model.req.CreateOrderReq request) {
-        return new GatePayResp<>(this.apiWeb.createOrder(request));
+    public GatePayResp<com.gatepay.core.api.payment.model.resp.CreateOrderResp> createWebOrder(com.gatepay.core.api.payment.model.req.CreateOrderReq request) {
+        return new GatePayResp<>(this.apiPayment.createOrder(request));
     }
 
     /**
      * 查询订单
      */
-    public GatePayResp<com.gatepay.core.api.web.model.resp.QueryOrderResp> queryWebOrder(com.gatepay.core.api.web.model.req.QueryOrderReq request) {
-        return new GatePayResp<>(this.apiWeb.queryOrder(request));
+    public GatePayResp<com.gatepay.core.api.payment.model.resp.QueryOrderResp> queryWebOrder(com.gatepay.core.api.payment.model.req.QueryOrderReq request) {
+        return new GatePayResp<>(this.apiPayment.queryOrder(request));
     }
 
     /**
      * 关闭订单
      */
     public GatePayResp<CloseOrderResp> closeWebOrder(CloseOrderReq request) {
-        return new GatePayResp<>(this.apiWeb.closeOrder(request));
+        return new GatePayResp<>(this.apiPayment.closeOrder(request));
     }
 
     /**
      * 创建退款订单
      */
-    public GatePayResp<com.gatepay.core.api.web.model.resp.CreateRefundResp> createWebRefund(com.gatepay.core.api.web.model.req.CreateRefundReq request) {
-        return new GatePayResp<>(this.apiWeb.createRefund(request));
+    public GatePayResp<com.gatepay.core.api.payment.model.resp.CreateRefundResp> createWebRefund(com.gatepay.core.api.payment.model.req.CreateRefundReq request) {
+        return new GatePayResp<>(this.apiPayment.createRefund(request));
     }
 
     /**
      * 查询退款订单
      */
     public GatePayResp<QueryRefundResp> queryWebRefund(QueryRefundReq request) {
-        return new GatePayResp<>(this.apiWeb.queryRefund(request));
+        return new GatePayResp<>(this.apiPayment.queryRefund(request));
     }
 
     /**
      * 创建批量转账
      */
     public GatePayResp<CreateBatchTransferResp> createBatchTransfer(CreateBatchTransferReq request) {
-        return new GatePayResp<>(this.apiWeb.createBatchTransfer(request));
+        return new GatePayResp<>(this.apiPayment.createBatchTransfer(request));
     }
 
     /**
      * 查询批量转账
      */
     public GatePayPageResp<QueryBatchTransferResp> queryBatchTransfer(QueryBatchTransferReq request) {
-        return new GatePayPageResp<>(this.apiWeb.queryBatchTransfer(request));
+        return new GatePayPageResp<>(this.apiPayment.queryBatchTransfer(request));
     }
 
     /**
      * 查询余额
      */
     public GatePayResp<QueryBalanceResp> queryBalance(QueryBalanceReq request) {
-        return new GatePayResp<>(this.apiWeb.queryBalance(request));
+        return new GatePayResp<>(this.apiPayment.queryBalance(request));
     }
 
     /**

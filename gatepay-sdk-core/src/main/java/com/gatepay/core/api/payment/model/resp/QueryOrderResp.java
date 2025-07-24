@@ -1,7 +1,10 @@
 package com.gatepay.core.api.payment.model.resp;
 
-public class QueryOrderResp {
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.gatepay.common.BaseResponse;
+
+public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
     private String prepayId;
     private long merchantId;
     private String merchantTradeNo;
@@ -13,19 +16,29 @@ public class QueryOrderResp {
     private long createTime;
     private long expireTime;
     private long transactTime;
-    private String orderName;
-    private String payCurrency;
-    private String payAmount;
     private String expectCurrency;
     private String actualCurrency;
     private String actualAmount;
     private String rate;
-    private String payChan;
-    private String payAccount;
     private String appName;
     private String appLogo;
     private String inUsdt;
     private String channelId;
+
+    @JsonProperty("order_name")
+    private String orderName;
+
+    @JsonProperty("pay_currency")
+    private String payCurrency;
+
+    @JsonProperty("pay_amount")
+    private String payAmount;
+
+    @JsonProperty("channel_type")
+    private String channelType;
+
+    @JsonProperty("pay_account")
+    private String payAccount;
 
 
     public String getPrepayId() {
@@ -40,7 +53,7 @@ public class QueryOrderResp {
         return merchantId;
     }
 
-    public void setMerchantId(int merchantId) {
+    public void setMerchantId(long merchantId) {
         this.merchantId = merchantId;
     }
 
@@ -96,7 +109,7 @@ public class QueryOrderResp {
         return createTime;
     }
 
-    public void setCreateTime(int createTime) {
+    public void setCreateTime(long createTime) {
         this.createTime = createTime;
     }
 
@@ -104,7 +117,7 @@ public class QueryOrderResp {
         return expireTime;
     }
 
-    public void setExpireTime(int expireTime) {
+    public void setExpireTime(long expireTime) {
         this.expireTime = expireTime;
     }
 
@@ -112,32 +125,8 @@ public class QueryOrderResp {
         return transactTime;
     }
 
-    public void setTransactTime(int transactTime) {
+    public void setTransactTime(long transactTime) {
         this.transactTime = transactTime;
-    }
-
-    public String getOrderName() {
-        return orderName;
-    }
-
-    public void setOrderName(String orderName) {
-        this.orderName = orderName;
-    }
-
-    public String getPayCurrency() {
-        return payCurrency;
-    }
-
-    public void setPayCurrency(String payCurrency) {
-        this.payCurrency = payCurrency;
-    }
-
-    public String getPayAmount() {
-        return payAmount;
-    }
-
-    public void setPayAmount(String payAmount) {
-        this.payAmount = payAmount;
     }
 
     public String getExpectCurrency() {
@@ -172,22 +161,6 @@ public class QueryOrderResp {
         this.rate = rate;
     }
 
-    public String getPayChan() {
-        return payChan;
-    }
-
-    public void setPayChan(String payChan) {
-        this.payChan = payChan;
-    }
-
-    public String getPayAccount() {
-        return payAccount;
-    }
-
-    public void setPayAccount(String payAccount) {
-        this.payAccount = payAccount;
-    }
-
     public String getAppName() {
         return appName;
     }
@@ -220,4 +193,43 @@ public class QueryOrderResp {
         this.channelId = channelId;
     }
 
+    public String getOrderName() {
+        return orderName;
+    }
+
+    public void setOrderName(String orderName) {
+        this.orderName = orderName;
+    }
+
+    public String getPayCurrency() {
+        return payCurrency;
+    }
+
+    public void setPayCurrency(String payCurrency) {
+        this.payCurrency = payCurrency;
+    }
+
+    public String getPayAmount() {
+        return payAmount;
+    }
+
+    public void setPayAmount(String payAmount) {
+        this.payAmount = payAmount;
+    }
+
+    public String getChannelType() {
+        return channelType;
+    }
+
+    public void setChannelType(String channelType) {
+        this.channelType = channelType;
+    }
+
+    public String getPayAccount() {
+        return payAccount;
+    }
+
+    public void setPayAccount(String payAccount) {
+        this.payAccount = payAccount;
+    }
 }

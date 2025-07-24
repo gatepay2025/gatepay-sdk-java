@@ -1,9 +1,9 @@
-package com.gatepay.core.api.web.model.req;
+package com.gatepay.core.api.payment.model.req;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.enums.GatePayApi;
-import com.gatepay.core.api.web.model.BatchOrder;
+import com.gatepay.core.api.payment.model.BatchOrder;
 
 
 public class CreateBatchTransferReq extends BaseRequest {

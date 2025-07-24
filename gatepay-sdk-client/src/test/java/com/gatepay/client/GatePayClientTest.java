@@ -18,8 +18,8 @@ import com.gatepay.core.api.convert.model.req.QueryPairReq;
 import com.gatepay.core.api.gift.model.req.CreateReq;
 import com.gatepay.core.api.gift.model.req.ListTempReq;
 import com.gatepay.core.api.gift.model.req.QueryReq;
-import com.gatepay.core.api.web.model.BatchOrder;
-import com.gatepay.core.api.web.model.req.*;
+import com.gatepay.core.api.payment.model.BatchOrder;
+import com.gatepay.core.api.payment.model.req.*;
 import com.gatepay.core.api.withdraw.model.Withdraw;
 import com.gatepay.core.api.withdraw.model.req.QueryChainsReq;
 import com.gatepay.core.api.withdraw.model.req.QueryStatusReq;
@@ -402,7 +402,7 @@ public class GatePayClientTest {
         GoodsReq goodsReq = new GoodsReq();
         goodsReq.setGoodsName("25000000元宝");
         goodsReq.setGoodsDetail("充值");
-        com.gatepay.core.api.web.model.req.CreateOrderReq createOrderReq = new com.gatepay.core.api.web.model.req.CreateOrderReq();
+        com.gatepay.core.api.payment.model.req.CreateOrderReq createOrderReq = new com.gatepay.core.api.payment.model.req.CreateOrderReq();
         createOrderReq.setMerchantTradeNo(RandomUtils.generateNonce(14));
         createOrderReq.setCurrency("USDT");
         createOrderReq.setOrderAmount("0.1");
@@ -418,7 +418,7 @@ public class GatePayClientTest {
      */
     @Test
     public void testQueryWebOrder() {
-        com.gatepay.core.api.web.model.req.QueryOrderReq queryOrderReq = new com.gatepay.core.api.web.model.req.QueryOrderReq();
+        com.gatepay.core.api.payment.model.req.QueryOrderReq queryOrderReq = new com.gatepay.core.api.payment.model.req.QueryOrderReq();
         queryOrderReq.setMerchantTradeNo("1688217212j916");
         gatePayClient.queryWebOrder(queryOrderReq);
     }
@@ -438,7 +438,7 @@ public class GatePayClientTest {
      */
     @Test
     public void testCreateWebRefund() {
-        com.gatepay.core.api.web.model.req.CreateRefundReq createRefundReq = new com.gatepay.core.api.web.model.req.CreateRefundReq();
+        com.gatepay.core.api.payment.model.req.CreateRefundReq createRefundReq = new com.gatepay.core.api.payment.model.req.CreateRefundReq();
         createRefundReq.setRefundRequestId("4379824792349592517");
         createRefundReq.setPrepayId("188976582282448896");
         createRefundReq.setRefundAmount("0.9");

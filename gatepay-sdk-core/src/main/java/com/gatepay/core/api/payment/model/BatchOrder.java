@@ -1,4 +1,4 @@
-package com.gatepay.core.api.web.model;
+package com.gatepay.core.api.payment.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
