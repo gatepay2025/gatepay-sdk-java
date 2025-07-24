@@ -3,7 +3,6 @@ package com.gatepay.api.address;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.model.req.EnvReq;
 import com.gatepay.common.model.req.GoodsReq;
-import com.gatepay.api.address.model.req.*;
 import com.gatepay.core.security.Credential;
 import com.gatepay.core.GatePayConfig;
 import com.gatepay.utils.RandomUtils;

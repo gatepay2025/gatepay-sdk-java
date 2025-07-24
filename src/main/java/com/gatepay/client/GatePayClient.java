@@ -1,11 +1,9 @@
 package com.gatepay.core;
 
 import com.gatepay.api.address.ApiAddress;
-import com.gatepay.api.address.model.req.*;
 import com.gatepay.api.address.model.req.CreateOrderReq;
 import com.gatepay.api.address.model.req.CreateRefundReq;
 import com.gatepay.api.address.model.req.QueryOrderReq;
-import com.gatepay.api.address.model.resp.*;
 import com.gatepay.api.address.model.resp.CreateOrderResp;
 import com.gatepay.api.address.model.resp.CreateRefundResp;
 import com.gatepay.api.address.model.resp.QueryOrderResp;
@@ -39,8 +37,6 @@ import com.gatepay.api.gift.model.resp.QueryResp;
 import com.gatepay.api.payment.ApiPayment;
 import com.gatepay.api.qrcode.ApiQrCode;
 import com.gatepay.api.web.ApiWeb;
-import com.gatepay.api.web.model.req.*;
-import com.gatepay.api.web.model.resp.*;
 import com.gatepay.api.withdraw.ApiWithdraw;
 import com.gatepay.api.withdraw.model.req.QueryChainsReq;
 import com.gatepay.api.withdraw.model.req.QueryStatusReq;

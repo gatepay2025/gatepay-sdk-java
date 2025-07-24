@@ -1,8 +1,6 @@
 package com.gatepay.api.web;
 
 import com.gatepay.api.BaseApi;
-import com.gatepay.api.web.model.req.*;
-import com.gatepay.api.web.model.resp.*;
 import com.gatepay.core.GatePayConfig;
 
 

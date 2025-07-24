@@ -1,7 +1,6 @@
 package com.gatepay.api.web;
 
 import com.gatepay.api.web.model.BatchOrder;
-import com.gatepay.api.web.model.req.*;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.model.req.EnvReq;
 import com.gatepay.common.model.req.GoodsReq;
