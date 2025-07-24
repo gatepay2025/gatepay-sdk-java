@@ -10,7 +10,7 @@
     <artifactId>gatepay-sdk-client</artifactId>
     <packaging>jar</packaging>
 
-    <name>client</name>
+    <name>gatepay-sdk-client</name>
     <url>http://maven.apache.org</url>
 
     <properties>
