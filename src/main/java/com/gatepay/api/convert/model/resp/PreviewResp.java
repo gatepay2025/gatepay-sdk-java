@@ -10,6 +10,7 @@ public class PreviewResp extends BaseResponse<PreviewResp> {
     private String buyAmount;  // 购买数量
     private String price;  // 价格
     private String quoteId;  // 报价ID
+    private String rate;
 
     public String getSellCurrency() {
         return sellCurrency;
@@ -57,6 +58,14 @@ public class PreviewResp extends BaseResponse<PreviewResp> {
 
     public void setQuoteId(String quoteId) {
         this.quoteId = quoteId;
+    }
+
+    public String getRate() {
+        return rate;
+    }
+
+    public void setRate(String rate) {
+        this.rate = rate;
     }
 
 }
