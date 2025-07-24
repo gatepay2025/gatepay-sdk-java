@@ -5,8 +5,9 @@ import com.gatepay.api.web.model.req.*;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.model.req.EnvReq;
 import com.gatepay.common.model.req.GoodsReq;
-import com.gatepay.core.Credential;
+import com.gatepay.core.security.Credential;
 import com.gatepay.core.GatePayConfig;
+import com.gatepay.utils.RandomUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -30,7 +31,7 @@ public class ApiWebTest {
         goodsReq.setGoodsName("25000000元宝");
         goodsReq.setGoodsDetail("充值");
         CreateOrderReq createOrderReq = new CreateOrderReq();
-        createOrderReq.setMerchantTradeNo("1688217212j916");
+        createOrderReq.setMerchantTradeNo(RandomUtils.generateNonce(14));
         createOrderReq.setCurrency("USDT");
         createOrderReq.setOrderAmount("0.1");
         createOrderReq.setEnv(envReq);
@@ -81,8 +82,8 @@ public class ApiWebTest {
         batchOrder.setUserId(6790011);
         batchOrder.setAmount("2");
         CreateBatchTransferReq createBatchTransferReq = new CreateBatchTransferReq();
-        createBatchTransferReq.setBatchid("13243243242445");
-        createBatchTransferReq.setMerchantBatchNo("192392929193391");
+        createBatchTransferReq.setBatchid(RandomUtils.generateNonce(14));
+        createBatchTransferReq.setMerchantBatchNo(RandomUtils.generateNonce(24));
         createBatchTransferReq.setBizscene("REWARDS");
         createBatchTransferReq.setMerchantId("10002");
         createBatchTransferReq.setClientId("");

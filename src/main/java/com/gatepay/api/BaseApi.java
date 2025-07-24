@@ -9,7 +9,7 @@ import com.gatepay.common.annotation.GatePayRespData;
 import com.gatepay.common.model.resp.SpecResp;
 import com.gatepay.core.GatePayHttpClient;
 import com.gatepay.core.GatePayConfig;
-import com.gatepay.core.signature.Nonce;
+import com.gatepay.utils.RandomUtils;
 import com.gatepay.utils.StringUtils;
 
 import java.lang.reflect.Field;
@@ -68,7 +68,7 @@ public class BaseApi {
     protected <Req extends BaseRequest, Resp extends BaseResponse> Resp process(Req req, Class<Resp> respClass) {
         try {
             preProcess(req);
-            HttpRequest httpRequest = this.gatePayHttpClient.generateHttpRequest(req, System.currentTimeMillis(), Nonce.generateNonce(9));
+            HttpRequest httpRequest = this.gatePayHttpClient.generateHttpRequest(req, System.currentTimeMillis(), RandomUtils.generateNonce(9));
             HttpResponse<String> httpResponse = this.gatePayHttpClient.getHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println(httpResponse.body().toString());
             return postProcess(httpResponse.body().toString(), respClass);

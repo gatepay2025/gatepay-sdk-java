@@ -25,6 +25,8 @@ import com.gatepay.api.withdraw.model.req.QueryStatusReq;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.model.req.EnvReq;
 import com.gatepay.common.model.req.GoodsReq;
+import com.gatepay.core.security.Credential;
+import com.gatepay.utils.RandomUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -81,7 +83,7 @@ public class GatePayClientTest {
         goodsReq.setGoodsName("测试商品");
         goodsReq.setGoodsDetail("测试商品详情");
         CreateOrderReq createOrderReq = new CreateOrderReq();
-        createOrderReq.setMerchantTradeNo("j4058308409230424822343110");
+        createOrderReq.setMerchantTradeNo(RandomUtils.generateNonce(24));
         createOrderReq.setCurrency("USDT");
         createOrderReq.setOrderAmount("9.9");
         createOrderReq.setEnv(envReq);
@@ -102,8 +104,8 @@ public class GatePayClientTest {
     @Test
     public void testQueryAddressOrder() {
         QueryOrderReq queryOrderReq = new QueryOrderReq();
-        queryOrderReq.setPrepayId("335379804967424000");
-        queryOrderReq.setMerchantTradeNo("7572363776");
+        queryOrderReq.setPrepayId("35035237959467017");
+        // queryOrderReq.setMerchantTradeNo("7572363776");
         gatePayClient.queryAddressOrder(queryOrderReq);
     }
 
@@ -247,7 +249,7 @@ public class GatePayClientTest {
         com.gatepay.api.checkout.model.req.CreateOrderReq request = new com.gatepay.api.checkout.model.req.CreateOrderReq();
         request.setEnv(envReq);
         request.setGoods(goodsReq);
-        request.setMerchantTradeNo("kt40t9i3t34kt0k09t543924");
+        request.setMerchantTradeNo(RandomUtils.generateNonce(24));
         request.setCurrency("USDT");
         request.setOrderAmount("0.9");
         request.setPayCurrency("USDT");
@@ -267,7 +269,7 @@ public class GatePayClientTest {
     public void testCreateCheckoutRefund() {
         com.gatepay.api.checkout.model.req.CreateRefundReq request = new com.gatepay.api.checkout.model.req.CreateRefundReq();
         request.setRefundRequestId("100036668891340");
-        request.setPrepayId("169501752302768128");
+        request.setPrepayId("383221625532014592");
         request.setRefundOrderCurrency("USDT");
         request.setRefundOrderAmount("0.1");
         request.setRefundPayCurrency("USDT");
@@ -316,8 +318,8 @@ public class GatePayClientTest {
     @Test
     public void testCreateConvertOrder() {
         com.gatepay.api.convert.model.req.CreateOrderReq createOrderReq = new com.gatepay.api.convert.model.req.CreateOrderReq();
-        createOrderReq.setQuoteId("PAY-0e39c719");
-        createOrderReq.setClientReqId("11");
+        createOrderReq.setQuoteId("PAY-" + RandomUtils.generateNonce(8)); // PAY-0e39c719
+        createOrderReq.setClientReqId(RandomUtils.generateNonce(11));
         createOrderReq.setPrice("0.04268034");
         createOrderReq.setSellCurrency("USDT");
         createOrderReq.setSellAmount("0.23429989");
@@ -378,7 +380,7 @@ public class GatePayClientTest {
         goodsReq.setGoodsName("NF2T");
         goodsReq.setGoodsDetail("nef-book");
         com.gatepay.api.qrcode.model.req.CreateOrderReq createOrderReq = new com.gatepay.api.qrcode.model.req.CreateOrderReq();
-        createOrderReq.setMerchantTradeNo("040583084092304594");
+        createOrderReq.setMerchantTradeNo(RandomUtils.generateNonce(18));
         createOrderReq.setCurrency("USDT");
         createOrderReq.setOrderAmount("0.9");
         createOrderReq.setEnv(envReq);
@@ -398,7 +400,7 @@ public class GatePayClientTest {
         goodsReq.setGoodsName("25000000元宝");
         goodsReq.setGoodsDetail("充值");
         com.gatepay.api.web.model.req.CreateOrderReq createOrderReq = new com.gatepay.api.web.model.req.CreateOrderReq();
-        createOrderReq.setMerchantTradeNo("1688217212j916");
+        createOrderReq.setMerchantTradeNo(RandomUtils.generateNonce(14));
         createOrderReq.setCurrency("USDT");
         createOrderReq.setOrderAmount("0.1");
         createOrderReq.setEnv(envReq);
@@ -459,11 +461,11 @@ public class GatePayClientTest {
         batchOrder.setUserId(6790011);
         batchOrder.setAmount("2");
         CreateBatchTransferReq createBatchTransferReq = new CreateBatchTransferReq();
-        createBatchTransferReq.setBatchid("13243243242445");
-        createBatchTransferReq.setMerchantBatchNo("192392929193391");
+        createBatchTransferReq.setBatchid(RandomUtils.generateNonce(14));
+        createBatchTransferReq.setMerchantBatchNo(RandomUtils.generateNonce(24));
         createBatchTransferReq.setBizscene("REWARDS");
         createBatchTransferReq.setMerchantId("10002");
-        createBatchTransferReq.setClientId("");
+        createBatchTransferReq.setClientId("mZ96D37oKk-HrWJc");
         createBatchTransferReq.setCurrency("USDT");
         createBatchTransferReq.setName("Larry");
         createBatchTransferReq.setDescription("bonus");
@@ -498,15 +500,15 @@ public class GatePayClientTest {
     @Test
     public void testCreateWithdrawOrder() {
         Withdraw withdraw = new Withdraw();
-        withdraw.setMerchant_withdraw_id("M137394559478075551");
+        withdraw.setMerchant_withdraw_id(RandomUtils.generateNonce(19));
         withdraw.setCurrency("USDT");
-        withdraw.setAmount("1");
+        withdraw.setAmount("0.001");
         withdraw.setChain("ETH");
         withdraw.setAddress("0x1234567890abcdef");
         withdraw.setMemo("Payment for services-1");
         withdraw.setFee_type(1);
         com.gatepay.api.withdraw.model.req.CreateOrderReq createOrderReq = new com.gatepay.api.withdraw.model.req.CreateOrderReq();
-        createOrderReq.setBatch_id("237394559478075352");
+        createOrderReq.setBatch_id(RandomUtils.generateNonce(18));
         createOrderReq.setWithdraw_list(new Withdraw[] { withdraw });
         gatePayClient.createWithdrawOrder(createOrderReq);
     }

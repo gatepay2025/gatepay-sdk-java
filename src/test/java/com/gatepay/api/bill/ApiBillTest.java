@@ -2,7 +2,7 @@ package com.gatepay.api.bill;
 
 import com.gatepay.api.bill.model.req.QueryOrdersReq;
 import com.gatepay.common.GatePayConstants;
-import com.gatepay.core.Credential;
+import com.gatepay.core.security.Credential;
 import com.gatepay.core.GatePayConfig;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package com.gatepay.core.signature;
+package com.gatepay.core.security;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -8,7 +8,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
 
-public class Sign {
+public class Signature {
 
     private static final String HMAC_SHA512 = "HmacSHA512";
     // private static final String HMAC_SHA256 = "HmacSHA256";

@@ -1,4 +1,4 @@
-package com.gatepay.core;
+package com.gatepay.core.security;
 
 public class Credential {
 

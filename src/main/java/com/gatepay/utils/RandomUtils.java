@@ -1,4 +1,4 @@
-package com.gatepay.core.signature;
+package com.gatepay.utils;
 
 import java.security.SecureRandom;
 
@@ -9,7 +9,7 @@ import java.security.SecureRandom;
  * @author ZJ-BE
  *
  */
-public class Nonce {
+public class RandomUtils {
 
     private static final String LETTERS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final SecureRandom RANDOM = new SecureRandom();

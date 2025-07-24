@@ -4,8 +4,9 @@ import com.gatepay.api.qrcode.model.req.CreateOrderReq;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.model.req.EnvReq;
 import com.gatepay.common.model.req.GoodsReq;
-import com.gatepay.core.Credential;
+import com.gatepay.core.security.Credential;
 import com.gatepay.core.GatePayConfig;
+import com.gatepay.utils.RandomUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -29,7 +30,7 @@ public class ApiQrCodeTest {
         goodsReq.setGoodsName("NF2T");
         goodsReq.setGoodsDetail("nef-book");
         CreateOrderReq createOrderReq = new CreateOrderReq();
-        createOrderReq.setMerchantTradeNo("040583084092304594");
+        createOrderReq.setMerchantTradeNo(RandomUtils.generateNonce(18));
         createOrderReq.setCurrency("USDT");
         createOrderReq.setOrderAmount("0.9");
         createOrderReq.setEnv(envReq);

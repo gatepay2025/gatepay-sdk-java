@@ -5,8 +5,9 @@ import com.gatepay.common.model.req.EnvReq;
 import com.gatepay.common.model.req.GoodsReq;
 import com.gatepay.api.checkout.model.req.CreateOrderReq;
 import com.gatepay.api.checkout.model.req.CreateRefundReq;
-import com.gatepay.core.Credential;
+import com.gatepay.core.security.Credential;
 import com.gatepay.core.GatePayConfig;
+import com.gatepay.utils.RandomUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -34,7 +35,7 @@ public class ApiCheckoutTest {
         CreateOrderReq request = new CreateOrderReq();
         request.setEnv(envReq);
         request.setGoods(goodsReq);
-        request.setMerchantTradeNo("kt40t9i3t34kt0k09t543924");
+        request.setMerchantTradeNo(RandomUtils.generateNonce(24));
         request.setCurrency("USDT");
         request.setOrderAmount("0.9");
         request.setPayCurrency("USDT");

@@ -7,7 +7,7 @@ import com.gatepay.api.channelmanage.model.req.ListReq;
 import com.gatepay.api.channelmanage.model.req.SaveReq;
 import com.gatepay.api.channelmanage.model.req.UpdateReq;
 import com.gatepay.common.GatePayConstants;
-import com.gatepay.core.Credential;
+import com.gatepay.core.security.Credential;
 import com.gatepay.core.GatePayConfig;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

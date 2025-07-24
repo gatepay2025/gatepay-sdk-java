@@ -4,7 +4,7 @@ package com.gatepay.common;
 public class GatePayConstants {
 
     // 请求地址相关
-    public static final String END_POINT_DEFAULT = "http://dev.halftrust.xyz/gfpay";  // https://openplatform.gateapi.io
+    public static final String END_POINT_DEFAULT = "http://dev.halftrust.xyz/gfpay";  // "https://openplatform.gateapi.io";  //
     public static final String END_POINT_OPEN_SDK = "/v1/pay/open/sdk";
 
 

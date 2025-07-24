@@ -1,6 +1,7 @@
 package com.gatepay.core;
 
 import com.gatepay.common.GatePayConstants;
+import com.gatepay.core.security.Credential;
 
 import java.time.Duration;
 

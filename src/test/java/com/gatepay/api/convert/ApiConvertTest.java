@@ -2,8 +2,9 @@ package com.gatepay.api.convert;
 
 import com.gatepay.api.convert.model.req.*;
 import com.gatepay.common.GatePayConstants;
-import com.gatepay.core.Credential;
+import com.gatepay.core.security.Credential;
 import com.gatepay.core.GatePayConfig;
+import com.gatepay.utils.RandomUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -51,8 +52,8 @@ public class ApiConvertTest {
     @Test
     public void testCreateOrder() {
         CreateOrderReq createOrderReq = new CreateOrderReq();
-        createOrderReq.setQuoteId("PAY-0e39c719");
-        createOrderReq.setClientReqId("11");
+        createOrderReq.setQuoteId("PAY-" + RandomUtils.generateNonce(8));
+        createOrderReq.setClientReqId(RandomUtils.generateNonce(11));
         createOrderReq.setPrice("0.04268034");
         createOrderReq.setSellCurrency("USDT");
         createOrderReq.setSellAmount("0.23429989");

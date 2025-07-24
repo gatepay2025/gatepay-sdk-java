@@ -4,8 +4,9 @@ import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.model.req.EnvReq;
 import com.gatepay.common.model.req.GoodsReq;
 import com.gatepay.api.address.model.req.*;
-import com.gatepay.core.Credential;
+import com.gatepay.core.security.Credential;
 import com.gatepay.core.GatePayConfig;
+import com.gatepay.utils.RandomUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -54,7 +55,7 @@ public class ApiAddressTest {
         goodsReq.setGoodsName("测试商品");
         goodsReq.setGoodsDetail("测试商品详情");
         CreateOrderReq createOrderReq = new CreateOrderReq();
-        createOrderReq.setMerchantTradeNo("j4058308409230424822343110");
+        createOrderReq.setMerchantTradeNo(RandomUtils.generateNonce(24));
         createOrderReq.setCurrency("USDT");
         createOrderReq.setOrderAmount("9.9");
         createOrderReq.setEnv(envReq);

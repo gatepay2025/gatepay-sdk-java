@@ -4,7 +4,7 @@ import com.gatepay.api.gift.model.req.CreateReq;
 import com.gatepay.api.gift.model.req.ListTempReq;
 import com.gatepay.api.gift.model.req.QueryReq;
 import com.gatepay.common.GatePayConstants;
-import com.gatepay.core.Credential;
+import com.gatepay.core.security.Credential;
 import com.gatepay.core.GatePayConfig;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

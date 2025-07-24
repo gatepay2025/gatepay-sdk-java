@@ -3,8 +3,9 @@ package com.gatepay.api.withdraw;
 import com.gatepay.api.withdraw.model.Withdraw;
 import com.gatepay.api.withdraw.model.req.*;
 import com.gatepay.common.GatePayConstants;
-import com.gatepay.core.Credential;
+import com.gatepay.core.security.Credential;
 import com.gatepay.core.GatePayConfig;
+import com.gatepay.utils.RandomUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -21,16 +22,16 @@ public class ApiWithdrawTest {
     // todo test Parameter format is wrong or parameter transferring doesn't follow the rules
     @Test
     public void testCreateOrder() {
-        CreateOrderReq createOrderReq = new CreateOrderReq();
-        createOrderReq.setBatch_id("237394559478075350");
         Withdraw withdraw = new Withdraw();
-        withdraw.setMerchant_withdraw_id("M137394559478075550");
+        withdraw.setMerchant_withdraw_id(RandomUtils.generateNonce(19));
         withdraw.setCurrency("USDT");
         withdraw.setAmount("1");
         withdraw.setChain("ETH");
         withdraw.setAddress("0x1234567890abcdef");
         withdraw.setMemo("Payment for services-1");
         withdraw.setFee_type(1);
+        CreateOrderReq createOrderReq = new CreateOrderReq();
+        createOrderReq.setBatch_id(RandomUtils.generateNonce(18));
         createOrderReq.setWithdraw_list(new Withdraw[] { withdraw });
         apiWithdraw.createOrder(createOrderReq);
     }
