@@ -133,7 +133,7 @@ public class GatePayClient {
     }
 
     /**
-     *
+     * 获取资金流水账单
      */
     public QueryOrdersResp queryBillOrders(QueryOrdersReq request) {
         return this.apiBill.queryOrders(request);
@@ -244,16 +244,12 @@ public class GatePayClient {
         return this.apiQrCode.createOrder(request);
     }
 
-
-
-
     /**
      * 创建web支付订单
      */
     public com.gatepay.api.web.model.resp.CreateOrderResp createWebOrder(com.gatepay.api.web.model.req.CreateOrderReq request) {
         return this.apiWeb.createOrder(request);
     }
-
 
     /**
      * 查询订单
@@ -262,7 +258,6 @@ public class GatePayClient {
         return this.apiWeb.queryOrder(request);
     }
 
-
     /**
      * 关闭订单
      */
@@ -270,14 +265,12 @@ public class GatePayClient {
         return this.apiWeb.closeOrder(request);
     }
 
-
     /**
      * 创建退款订单
      */
     public com.gatepay.api.web.model.resp.CreateRefundResp createWebRefund(com.gatepay.api.web.model.req.CreateRefundReq request) {
         return this.apiWeb.createRefund(request);
     }
-
 
     /**
      * 查询退款订单
@@ -306,7 +299,6 @@ public class GatePayClient {
     public QueryBalanceResp queryBalance(QueryBalanceReq request) {
         return this.apiWeb.queryBalance(request);
     }
-
 
     /**
      * 创建提现订单
