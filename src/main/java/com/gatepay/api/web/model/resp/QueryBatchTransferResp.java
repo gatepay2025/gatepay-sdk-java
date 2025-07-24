@@ -1,88 +1,115 @@
 package com.gatepay.api.web.model.resp;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.gatepay.common.BaseResponse;
+import com.gatepay.common.BasePageResponse;
 import java.util.Map;
 
 
-public class QueryBatchTransferResp extends BaseResponse<QueryBatchTransferResp> {
+public class QueryBatchTransferResp extends BasePageResponse<QueryBatchTransferResp> {
 
-    @JsonProperty("batch_id")
-    private String batchId;
+    private String bizCode;
+    private String bizMessage;
+    private BizData bizData;
 
-    @JsonProperty("merchant_id")
-    private long merchantId;
+    public class BizData {
+        @JsonProperty("batch_id")
+        private String batchId;
 
-    @JsonProperty("merchant_batch_no")
-    private String merchantBatchNo;
-    private String status;
-    private String currency;
+        @JsonProperty("merchant_id")
+        private long merchantId;
 
-    @JsonProperty("channel_id")
-    private String channelId;
+        @JsonProperty("merchant_batch_no")
+        private String merchantBatchNo;
+        private String status;
+        private String currency;
 
-    @JsonProperty("orders_list")
-    private Map[] ordersList;
+        @JsonProperty("channel_id")
+        private String channelId;
+
+        @JsonProperty("orders_list")
+        private Map[] ordersList;
 
 
+        public String getStatus() {
+            return status;
+        }
 
+        public void setStatus(String status) {
+            this.status = status;
+        }
 
-    @Override
-    public String getStatus() {
-        return status;
+        public String getCurrency() {
+            return currency;
+        }
+
+        public void setCurrency(String currency) {
+            this.currency = currency;
+        }
+
+        public String getBatchId() {
+            return batchId;
+        }
+
+        public void setBatchId(String batchId) {
+            this.batchId = batchId;
+        }
+
+        public long getMerchantId() {
+            return merchantId;
+        }
+
+        public void setMerchantId(long merchantId) {
+            this.merchantId = merchantId;
+        }
+
+        public String getMerchantBatchNo() {
+            return merchantBatchNo;
+        }
+
+        public void setMerchantBatchNo(String merchantBatchNo) {
+            this.merchantBatchNo = merchantBatchNo;
+        }
+
+        public String getChannelId() {
+            return channelId;
+        }
+
+        public void setChannelId(String channelId) {
+            this.channelId = channelId;
+        }
+
+        public Map[] getOrdersList() {
+            return ordersList;
+        }
+
+        public void setOrdersList(Map[] ordersList) {
+            this.ordersList = ordersList;
+        }
     }
 
-    @Override
-    public void setStatus(String status) {
-        this.status = status;
+
+    public String getBizCode() {
+        return bizCode;
     }
 
-    public String getCurrency() {
-        return currency;
+    public void setBizCode(String bizCode) {
+        this.bizCode = bizCode;
     }
 
-    public void setCurrency(String currency) {
-        this.currency = currency;
+    public String getBizMessage() {
+        return bizMessage;
     }
 
-    public String getBatchId() {
-        return batchId;
+    public void setBizMessage(String bizMessage) {
+        this.bizMessage = bizMessage;
     }
 
-    public void setBatchId(String batchId) {
-        this.batchId = batchId;
+    public BizData getBizData() {
+        return bizData;
     }
 
-    public long getMerchantId() {
-        return merchantId;
-    }
-
-    public void setMerchantId(long merchantId) {
-        this.merchantId = merchantId;
-    }
-
-    public String getMerchantBatchNo() {
-        return merchantBatchNo;
-    }
-
-    public void setMerchantBatchNo(String merchantBatchNo) {
-        this.merchantBatchNo = merchantBatchNo;
-    }
-
-    public String getChannelId() {
-        return channelId;
-    }
-
-    public void setChannelId(String channelId) {
-        this.channelId = channelId;
-    }
-
-    public Map[] getOrdersList() {
-        return ordersList;
-    }
-
-    public void setOrdersList(Map[] ordersList) {
-        this.ordersList = ordersList;
+    public void setBizData(BizData bizData) {
+        this.bizData = bizData;
     }
 
 }

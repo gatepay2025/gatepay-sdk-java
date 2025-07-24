@@ -498,7 +498,7 @@ public class GatePayClientTest {
     @Test
     public void testCreateWithdrawOrder() {
         Withdraw withdraw = new Withdraw();
-        withdraw.setMerchant_withdraw_id("M137394559478075550");
+        withdraw.setMerchant_withdraw_id("M137394559478075551");
         withdraw.setCurrency("USDT");
         withdraw.setAmount("1");
         withdraw.setChain("ETH");
@@ -506,7 +506,7 @@ public class GatePayClientTest {
         withdraw.setMemo("Payment for services-1");
         withdraw.setFee_type(1);
         com.gatepay.api.withdraw.model.req.CreateOrderReq createOrderReq = new com.gatepay.api.withdraw.model.req.CreateOrderReq();
-        createOrderReq.setBatch_id("237394559478075350");
+        createOrderReq.setBatch_id("237394559478075352");
         createOrderReq.setWithdraw_list(new Withdraw[] { withdraw });
         gatePayClient.createWithdrawOrder(createOrderReq);
     }
