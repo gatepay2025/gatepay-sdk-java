@@ -38,7 +38,7 @@ public class ApiConvertTest {
         apiConvert.queryPair(queryPairReq);
     }
 
-    // todo: test, quota not enough
+    // self test passed
     @Test
     public void testPreview() {
         PreviewReq previewReq = new PreviewReq();
