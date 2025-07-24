@@ -31,6 +31,7 @@ public class ApiWithdrawTest {
         withdraw.setAddress("0x1234567890abcdef");
         withdraw.setMemo("Payment for services-1");
         withdraw.setFee_type(1);
+        createOrderReq.setWithdraw_list(new Withdraw[] { withdraw });
         apiWithdraw.createOrder(createOrderReq);
     }
 
