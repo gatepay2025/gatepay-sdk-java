@@ -30,8 +30,13 @@ git clone https://github.com/gatepay2025/gatepay-sdk-java
 处理得到响应
 
 大致代码如下：
-GatePayConfig gatePayConfig = new GatePayConfig(GatePayConstants.END_POINT_DEFAULT, 30, "client-id", new Credential("secret-key", "api-key");
-GatePayClient gatePayClient = new GatePayClient(gatePayConfig);
+
 ChainsReq chainsReq = new ChainsReq();
+
 chainsReq.setCurrency("USDT");
+
+GatePayConfig gatePayConfig = new GatePayConfig(GatePayConstants.END_POINT_DEFAULT, 30, "client-id", new Credential("secret-key", "api-key");
+
+GatePayClient gatePayClient = new GatePayClient(gatePayConfig);
+
 gatePayClient.getAddressChains(chainsReq);
