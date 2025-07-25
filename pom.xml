@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>gatepay-sdk-core</module>
+        <module>gatepay-sdk-api</module>
         <module>gatepay-sdk-common</module>
         <module>gatepay-sdk-client</module>
     </modules>
@@ -30,7 +30,7 @@
             </dependency>
             <dependency>
                 <groupId>com.gatepay</groupId>
-                <artifactId>gatepay-sdk-core</artifactId>
+                <artifactId>gatepay-sdk-api</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
 
