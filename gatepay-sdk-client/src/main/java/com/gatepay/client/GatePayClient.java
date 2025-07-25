@@ -60,7 +60,6 @@ public class GatePayClient {
     private ApiGift apiGift;
     private ApiPayment apiPayment;
     private ApiQrCode apiQrCode;
-    private ApiPayment apiPayment;
     private ApiWithdraw apiWithdraw;
 
 
@@ -73,7 +72,6 @@ public class GatePayClient {
         this.apiGift = new ApiGift(gatePayConfig);
         this.apiPayment = new ApiPayment(gatePayConfig);
         this.apiQrCode = new ApiQrCode(gatePayConfig);
-        this.apiPayment = new ApiPayment(gatePayConfig);
         this.apiWithdraw = new ApiWithdraw(gatePayConfig);
     }
 
