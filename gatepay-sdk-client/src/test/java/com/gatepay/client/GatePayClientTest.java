@@ -62,7 +62,7 @@ public class GatePayClientTest {
      */
     @Test
     public void testGetAddressCurrencies() {
-        gatePayClient.getAddressCurrencies();
+        Assertions.assertNotNull(gatePayClient.getAddressCurrencies());
     }
 
     /**
@@ -72,7 +72,7 @@ public class GatePayClientTest {
     public void testGetAddressSupportedConvertCurrencies() {
         SupportedConvertCurrenciesReq supportedConvertCurrenciesReq = new SupportedConvertCurrenciesReq();
         supportedConvertCurrenciesReq.setCurrency("USDT");
-        gatePayClient.getAddressSupportedConvertCurrencies(supportedConvertCurrenciesReq);
+        Assertions.assertNotNull(gatePayClient.getAddressSupportedConvertCurrencies(supportedConvertCurrenciesReq));
     }
 
     /**
@@ -98,7 +98,7 @@ public class GatePayClientTest {
         createOrderReq.setChain("ETH");
         createOrderReq.setFullCurrType("USDT_ETH");
         createOrderReq.setChannelId("");
-        gatePayClient.createAddressOrder(createOrderReq);
+        Assertions.assertNotNull(gatePayClient.createAddressOrder(createOrderReq));
     }
 
     /**
@@ -109,7 +109,7 @@ public class GatePayClientTest {
         QueryOrderReq queryOrderReq = new QueryOrderReq();
         queryOrderReq.setPrepayId("35035237959467017");
         // queryOrderReq.setMerchantTradeNo("7572363776");
-        gatePayClient.queryAddressOrder(queryOrderReq);
+        Assertions.assertNotNull(gatePayClient.queryAddressOrder(queryOrderReq));
     }
 
 
@@ -124,7 +124,7 @@ public class GatePayClientTest {
         createRefundReq.setRefundAmount("19.8");
         createRefundReq.setRefundReason("test refund");
         createRefundReq.setReceiverId(6790011);
-        gatePayClient.createAddressRefund(createRefundReq);
+        Assertions.assertNotNull(gatePayClient.createAddressRefund(createRefundReq));
     }
 
 
@@ -142,7 +142,7 @@ public class GatePayClientTest {
         createRefundConvertReq.setRefundPayAmount("1.02");
         createRefundConvertReq.setRefundReason("refund test");
         createRefundConvertReq.setReceiverId(6790011);
-        gatePayClient.createAddressRefundConvert(createRefundConvertReq);
+        Assertions.assertNotNull(gatePayClient.createAddressRefundConvert(createRefundConvertReq));
     }
 
     /**
@@ -152,7 +152,7 @@ public class GatePayClientTest {
     public void testAddressTransactionDetail() {
         TransactionDetailReq transactionDetailReq = new TransactionDetailReq();
         transactionDetailReq.setPrepayId("132157692839989248");
-        gatePayClient.addressTransactionDetail(transactionDetailReq);
+        Assertions.assertNotNull(gatePayClient.addressTransactionDetail(transactionDetailReq));
     }
 
     @Test
@@ -165,7 +165,7 @@ public class GatePayClientTest {
         queryOrdersReq.setCurrency("USDT");
         queryOrdersReq.setOrderType("1");
         queryOrdersReq.setOrderIdNo("1689667326891627");
-        gatePayClient.queryBillOrders(queryOrdersReq);
+        Assertions.assertNotNull(gatePayClient.queryBillOrders(queryOrdersReq));
     }
 
     /**
@@ -188,7 +188,7 @@ public class GatePayClientTest {
         merchantChannel.setCustomFields(new CustomField[] { customField });
         SaveReq saveReq = new SaveReq();
         saveReq.setMerchantChannelList(new MerchantChannel[] { merchantChannel });
-        gatePayClient.saveChannelManage(saveReq);
+        Assertions.assertNotNull(gatePayClient.saveChannelManage(saveReq));
     }
 
     /**
@@ -202,7 +202,7 @@ public class GatePayClientTest {
         // listReq.setChannelType("0");
         listReq.setPage(1);
         listReq.setCount(3);
-        gatePayClient.listChannelManage(listReq);
+        Assertions.assertNotNull(gatePayClient.listChannelManage(listReq));
     }
 
     /**
@@ -225,7 +225,7 @@ public class GatePayClientTest {
         // merchantChannel.setCustomFields(new CustomField[] { customField });
         UpdateReq updateReq = new UpdateReq();
         updateReq.setMerchantChannelList(new MerchantChannel[] { merchantChannel });
-        gatePayClient.updateChannelManage(updateReq);
+        Assertions.assertNotNull(gatePayClient.updateChannelManage(updateReq));
     }
 
     /**
@@ -235,7 +235,7 @@ public class GatePayClientTest {
     public void testDeleteChannelManage()  {
         DeleteReq deleteReq = new DeleteReq();
         deleteReq.setChannelId("100");
-        gatePayClient.deleteChannelManage(deleteReq);
+        Assertions.assertNotNull(gatePayClient.deleteChannelManage(deleteReq));
     }
 
     /**
@@ -262,7 +262,7 @@ public class GatePayClientTest {
         request.setChain("ETH");
         request.setFullCurrType("USDT_ETH");
         request.setChannelId("123");
-        gatePayClient.createCheckoutOrder(request);
+        Assertions.assertNotNull(gatePayClient.createCheckoutOrder(request));
     }
 
     /**
@@ -279,7 +279,7 @@ public class GatePayClientTest {
         request.setRefundPayAmount("0.1");
         request.setRefundReason("test refund");
         request.setReceiverId(6790011);
-        gatePayClient.createCheckoutRefund(request);
+        Assertions.assertNotNull(gatePayClient.createCheckoutRefund(request));
     }
 
     /**
@@ -289,7 +289,7 @@ public class GatePayClientTest {
     public void testQueryConvertCurrency() {
         QueryCurrencyReq queryCurrencyReq = new QueryCurrencyReq();
         queryCurrencyReq.setSide("sell");
-        gatePayClient.queryConvertCurrency(queryCurrencyReq);
+        Assertions.assertNotNull(gatePayClient.queryConvertCurrency(queryCurrencyReq));
     }
 
     /**
@@ -300,7 +300,7 @@ public class GatePayClientTest {
         QueryPairReq queryPairReq = new QueryPairReq();
         queryPairReq.setCurrency("LLT");
         queryPairReq.setSide("buy");
-        gatePayClient.queryConvertPair(queryPairReq);
+        Assertions.assertNotNull(gatePayClient.queryConvertPair(queryPairReq));
     }
 
     /**
@@ -312,7 +312,7 @@ public class GatePayClientTest {
         previewReq.setBuyCurrency("GT");
         previewReq.setBuyAmount("0.01");
         previewReq.setSellCurrency("USDT");
-        gatePayClient.previewConvert(previewReq);
+        Assertions.assertNotNull(gatePayClient.previewConvert(previewReq));
     }
 
     /**
@@ -328,7 +328,7 @@ public class GatePayClientTest {
         createOrderReq.setSellAmount("0.23429989");
         createOrderReq.setBuyCurrency("GT");
         createOrderReq.setBuyAmount("0.01");
-        gatePayClient.createConvertOrder(createOrderReq);
+        Assertions.assertNotNull(gatePayClient.createConvertOrder(createOrderReq));
     }
 
     /**
@@ -338,7 +338,7 @@ public class GatePayClientTest {
     public void testQueryConvertOrder() {
         com.gatepay.core.api.convert.model.req.QueryOrderReq queryOrderReq = new com.gatepay.core.api.convert.model.req.QueryOrderReq();
         queryOrderReq.setOrderId("326850433152987136");
-        gatePayClient.queryConvertOrder(queryOrderReq);
+        Assertions.assertNotNull(gatePayClient.queryConvertOrder(queryOrderReq));
     }
 
     /**
@@ -351,7 +351,7 @@ public class GatePayClientTest {
         request.setTemplateId("293409440220057600");
         request.setCurrency("USDT");
         request.setAmount("0.99");
-        gatePayClient.createGift(request);
+        Assertions.assertNotNull(gatePayClient.createGift(request));
     }
 
     /**
@@ -360,7 +360,7 @@ public class GatePayClientTest {
     @Test
     public void testListGiftTemp() {
         ListTempReq listTempReq = new ListTempReq();
-        gatePayClient.listGiftTemp(listTempReq);
+        Assertions.assertNotNull(gatePayClient.listGiftTemp(listTempReq));
     }
 
     /**
@@ -369,7 +369,7 @@ public class GatePayClientTest {
     @Test
     public void testQueryGift() {
         QueryReq queryReq = new QueryReq();
-        gatePayClient.queryGift(queryReq);
+        Assertions.assertNotNull(gatePayClient.queryGift(queryReq));
     }
 
     /**
@@ -389,7 +389,7 @@ public class GatePayClientTest {
         createOrderReq.setEnv(envReq);
         createOrderReq.setGoods(goodsReq);
         createOrderReq.setReturnUrl("http://www.baidu.com");
-        gatePayClient.createQrCodeOrder(createOrderReq);
+        Assertions.assertNotNull(gatePayClient.createQrCodeOrder(createOrderReq));
     }
 
     /**
@@ -410,7 +410,7 @@ public class GatePayClientTest {
         createOrderReq.setGoods(goodsReq);
         createOrderReq.setExtendInfo("1_elbt01_16882172126048");
         createOrderReq.setChannelId("123");
-        gatePayClient.createWebOrder(createOrderReq);
+        Assertions.assertNotNull(gatePayClient.createWebOrder(createOrderReq));
     }
 
     /**
@@ -420,7 +420,7 @@ public class GatePayClientTest {
     public void testQueryWebOrder() {
         com.gatepay.core.api.payment.model.req.QueryOrderReq queryOrderReq = new com.gatepay.core.api.payment.model.req.QueryOrderReq();
         queryOrderReq.setMerchantTradeNo("1688217212j916");
-        gatePayClient.queryWebOrder(queryOrderReq);
+        Assertions.assertNotNull(gatePayClient.queryWebOrder(queryOrderReq));
     }
 
     /**
@@ -430,7 +430,7 @@ public class GatePayClientTest {
     public void testCloseWebOrder() {
         CloseOrderReq closeOrderReq = new CloseOrderReq();
         closeOrderReq.setMerchantTradeNo("1688217212j916");
-        gatePayClient.closeWebOrder(closeOrderReq);
+        Assertions.assertNotNull(gatePayClient.closeWebOrder(closeOrderReq));
     }
 
     /**
@@ -442,7 +442,7 @@ public class GatePayClientTest {
         createRefundReq.setRefundRequestId("4379824792349592517");
         createRefundReq.setPrepayId("188976582282448896");
         createRefundReq.setRefundAmount("0.9");
-        gatePayClient.createWebRefund(createRefundReq);
+        Assertions.assertNotNull(gatePayClient.createWebRefund(createRefundReq));
     }
 
     /**
@@ -452,7 +452,7 @@ public class GatePayClientTest {
     public void testQueryWebRefund() {
         QueryRefundReq queryRefundReq = new QueryRefundReq();
         queryRefundReq.setRefundRequestId("156123911");
-        gatePayClient.queryWebRefund(queryRefundReq);
+        Assertions.assertNotNull(gatePayClient.queryWebRefund(queryRefundReq));
     }
 
     /**
@@ -473,7 +473,7 @@ public class GatePayClientTest {
         createBatchTransferReq.setName("Larry");
         createBatchTransferReq.setDescription("bonus");
         createBatchTransferReq.setBatchorderList(new BatchOrder[]{ batchOrder });
-        gatePayClient.createBatchTransfer(createBatchTransferReq);
+        Assertions.assertNotNull(gatePayClient.createBatchTransfer(createBatchTransferReq));
     }
 
     /**
@@ -485,7 +485,7 @@ public class GatePayClientTest {
         queryBatchTransferReq.setBatchId("93636743354388480");
         queryBatchTransferReq.setMerchantBatchNo("192392929193391");
         queryBatchTransferReq.setDetailStatus("ALL");
-        gatePayClient.queryBatchTransfer(queryBatchTransferReq);
+        Assertions.assertNotNull(gatePayClient.queryBatchTransfer(queryBatchTransferReq));
     }
 
     /**
@@ -494,7 +494,7 @@ public class GatePayClientTest {
     @Test
     public void testQueryBalance() {
         QueryBalanceReq queryBalanceReq = new QueryBalanceReq();
-        gatePayClient.queryBalance(queryBalanceReq);
+        Assertions.assertNotNull(gatePayClient.queryBalance(queryBalanceReq));
     }
 
     /**
@@ -513,7 +513,7 @@ public class GatePayClientTest {
         com.gatepay.core.api.withdraw.model.req.CreateOrderReq createOrderReq = new com.gatepay.core.api.withdraw.model.req.CreateOrderReq();
         createOrderReq.setBatch_id(RandomUtils.generateNonce(18));
         createOrderReq.setWithdraw_list(new Withdraw[] { withdraw });
-        gatePayClient.createWithdrawOrder(createOrderReq);
+        Assertions.assertNotNull(gatePayClient.createWithdrawOrder(createOrderReq));
     }
 
     /**
@@ -532,7 +532,7 @@ public class GatePayClientTest {
         com.gatepay.core.api.withdraw.model.req.QueryOrderReq queryOrderReq = new com.gatepay.core.api.withdraw.model.req.QueryOrderReq();
         queryOrderReq.setBatch_id("237394559478075555");
         queryOrderReq.setDetail_status("ALL");
-        gatePayClient.queryWithdrawOrder(queryOrderReq);
+        Assertions.assertNotNull(gatePayClient.queryWithdrawOrder(queryOrderReq));
     }
 
     /**
@@ -542,7 +542,7 @@ public class GatePayClientTest {
     public void testQueryWithdrawChains() {
         QueryChainsReq queryChainsReq = new QueryChainsReq();
         queryChainsReq.setCurrency("GT");
-        gatePayClient.queryWithdrawChains(queryChainsReq);
+        Assertions.assertNotNull(gatePayClient.queryWithdrawChains(queryChainsReq));
     }
 
     /**
@@ -551,7 +551,7 @@ public class GatePayClientTest {
     @Test
     public void testQueryWithdrawBalance() {
         com.gatepay.core.api.withdraw.model.req.QueryBalanceReq queryChainsReq = new com.gatepay.core.api.withdraw.model.req.QueryBalanceReq();
-        gatePayClient.queryWithdrawBalance(queryChainsReq);
+        Assertions.assertNotNull(gatePayClient.queryWithdrawBalance(queryChainsReq));
     }
 
     /**
@@ -561,8 +561,8 @@ public class GatePayClientTest {
     public void testQueryWithdrawStatus() {
         QueryStatusReq queryStatusReq = new QueryStatusReq();
         queryStatusReq.setCurrency("USDT");
-        new GatePayClient(new GatePayConfig(GatePayConstants.END_POINT_OPEN_PLATFORM, 30, "mZ96D37oKk-HrWJc", new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=", "SkZlbKOqPoMwnxhl")))
-                .queryWithdrawStatus(queryStatusReq);
+        Assertions.assertNotNull(new GatePayClient(new GatePayConfig(GatePayConstants.END_POINT_OPEN_PLATFORM, 30, "mZ96D37oKk-HrWJc", new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=", "SkZlbKOqPoMwnxhl")))
+                .queryWithdrawStatus(queryStatusReq));
     }
 
 }
