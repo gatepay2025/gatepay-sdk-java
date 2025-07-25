@@ -289,8 +289,8 @@ public class GatePayClient {
     /**
      * 查询批量转账
      */
-    public GatePayPageResp<QueryBatchTransferResp> queryBatchTransfer(QueryBatchTransferReq request) {
-        return new GatePayPageResp<>(this.apiPayment.queryBatchTransfer(request));
+    public GatePayResp<QueryBatchTransferResp> queryBatchTransfer(QueryBatchTransferReq request) {
+        return new GatePayResp<>(this.apiPayment.queryBatchTransfer(request));
     }
 
     /**

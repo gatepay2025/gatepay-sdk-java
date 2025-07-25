@@ -1,41 +1,118 @@
 package com.gatepay.core.api.payment.model.resp;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.gatepay.common.BasePageResponse;
-import java.util.Map;
+import com.gatepay.common.BaseResponse;
 
 
-public class QueryBatchTransferResp extends BasePageResponse<QueryBatchTransferResp> {
+public class QueryBatchTransferResp extends BaseResponse<QueryBatchTransferResp> {
 
-    private String bizCode;
-    private String bizMessage;
-    private BizData bizData;
+    @JsonProperty("batch_id")
+    private String batchId;
 
-    public class BizData {
-        @JsonProperty("batch_id")
-        private String batchId;
+    @JsonProperty("merchant_id")
+    private long merchantId;
 
-        @JsonProperty("merchant_id")
-        private long merchantId;
+    @JsonProperty("merchant_batch_no")
+    private String merchantBatchNo;
+    private String status;
+    private String currency;
 
-        @JsonProperty("merchant_batch_no")
-        private String merchantBatchNo;
-        private String status;
+    @JsonProperty("channel_id")
+    private String channelId;
+
+    @JsonProperty("orders_list")
+    private Order[] orders;
+
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public String getBatchId() {
+        return batchId;
+    }
+
+    public void setBatchId(String batchId) {
+        this.batchId = batchId;
+    }
+
+    public long getMerchantId() {
+        return merchantId;
+    }
+
+    public void setMerchantId(long merchantId) {
+        this.merchantId = merchantId;
+    }
+
+    public String getMerchantBatchNo() {
+        return merchantBatchNo;
+    }
+
+    public void setMerchantBatchNo(String merchantBatchNo) {
+        this.merchantBatchNo = merchantBatchNo;
+    }
+
+    public String getChannelId() {
+        return channelId;
+    }
+
+    public void setChannelId(String channelId) {
+        this.channelId = channelId;
+    }
+
+    public Order[] getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Order[] orders) {
+        this.orders = orders;
+    }
+
+    public static class Order {
+        @JsonProperty("receiver_id")
+        private long receiverId;
+        private String amount;
         private String currency;
+        private String status;
+
+        @JsonProperty("reward_id")
+        private String rewardId;
+
+        @JsonProperty("transaction_id")
+        private String transactionId;
+
+        @JsonProperty("create_time")
+        private long createTime;
 
         @JsonProperty("channel_id")
         private String channelId;
 
-        @JsonProperty("orders_list")
-        private Map[] ordersList;
-
-
-        public String getStatus() {
-            return status;
+        public long getReceiverId() {
+            return receiverId;
         }
 
-        public void setStatus(String status) {
-            this.status = status;
+        public void setReceiverId(long receiverId) {
+            this.receiverId = receiverId;
+        }
+
+        public String getAmount() {
+            return amount;
+        }
+
+        public void setAmount(String amount) {
+            this.amount = amount;
         }
 
         public String getCurrency() {
@@ -46,28 +123,36 @@ public class QueryBatchTransferResp extends BasePageResponse<QueryBatchTransferR
             this.currency = currency;
         }
 
-        public String getBatchId() {
-            return batchId;
+        public String getStatus() {
+            return status;
         }
 
-        public void setBatchId(String batchId) {
-            this.batchId = batchId;
+        public void setStatus(String status) {
+            this.status = status;
         }
 
-        public long getMerchantId() {
-            return merchantId;
+        public String getRewardId() {
+            return rewardId;
         }
 
-        public void setMerchantId(long merchantId) {
-            this.merchantId = merchantId;
+        public void setRewardId(String rewardId) {
+            this.rewardId = rewardId;
         }
 
-        public String getMerchantBatchNo() {
-            return merchantBatchNo;
+        public String getTransactionId() {
+            return transactionId;
         }
 
-        public void setMerchantBatchNo(String merchantBatchNo) {
-            this.merchantBatchNo = merchantBatchNo;
+        public void setTransactionId(String transactionId) {
+            this.transactionId = transactionId;
+        }
+
+        public long getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(long createTime) {
+            this.createTime = createTime;
         }
 
         public String getChannelId() {
@@ -77,39 +162,6 @@ public class QueryBatchTransferResp extends BasePageResponse<QueryBatchTransferR
         public void setChannelId(String channelId) {
             this.channelId = channelId;
         }
-
-        public Map[] getOrdersList() {
-            return ordersList;
-        }
-
-        public void setOrdersList(Map[] ordersList) {
-            this.ordersList = ordersList;
-        }
-    }
-
-
-    public String getBizCode() {
-        return bizCode;
-    }
-
-    public void setBizCode(String bizCode) {
-        this.bizCode = bizCode;
-    }
-
-    public String getBizMessage() {
-        return bizMessage;
-    }
-
-    public void setBizMessage(String bizMessage) {
-        this.bizMessage = bizMessage;
-    }
-
-    public BizData getBizData() {
-        return bizData;
-    }
-
-    public void setBizData(BizData bizData) {
-        this.bizData = bizData;
     }
 
 }
