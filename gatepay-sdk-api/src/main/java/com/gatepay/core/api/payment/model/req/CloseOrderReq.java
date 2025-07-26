@@ -10,7 +10,7 @@ public class CloseOrderReq extends BaseRequest {
     private String prepayId;
 
     public CloseOrderReq() {
-        this.api = GatePayApi.PAY_CLOSE_ORDER;
+        this.api = GatePayApi.PAYMENT_CLOSE_ORDER;
     }
 
     public String getMerchantTradeNo() {

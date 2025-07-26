@@ -5,6 +5,11 @@
 package com.gatepay.common.enums;
 
 
+/**
+ * @Description GatePayApi 请求地址、请求方法
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public enum GatePayApi {
 
     ADDRESS_CHAINS("/v1/pay/address/chains", "GET"),
@@ -15,14 +20,14 @@ public enum GatePayApi {
     ADDRESS_CREATE_REFUND("/v1/pay/address/refund", "POST"),
     ADDRESS_CREATE_REFUND_CONVERT("/v1/pay/address/refundconvert", "POST"),
     ADDRESS_TRANSACTION_DETAIL("/v1/pay/address/transactiondetail", "GET"),
-    PAY_CREATE_ORDER("/v1/pay/order", "POST"),
-    PAY_CLOSE_ORDER("/v1/pay/order/close", "POST"),
-    PAY_QUERY_ORDER("/v1/pay/order/query", "POST"),
-    PAY_CREATE_REFUND("/v1/pay/order/refund", "POST"),
-    PAY_QUERY_REFUND("/v1/pay/order/refund/query", "POST"),
-    PAY_CREATE_BATCH_TRANSFER("/v1/pay/batch/transfer", "POST"),
-    PAY_QUERY_BATCH_TRANSFER("/v1/pay/batch/transfer/query", "POST"),
-    PAY_QUERY_BALANCE("/v1/pay/balance", "GET"),
+    PAYMENT_CREATE_ORDER("/v1/pay/order", "POST"),
+    PAYMENT_CLOSE_ORDER("/v1/pay/order/close", "POST"),
+    PAYMENT_QUERY_ORDER("/v1/pay/order/query", "POST"),
+    PAYMENT_CREATE_REFUND("/v1/pay/order/refund", "POST"),
+    PAYMENT_QUERY_REFUND("/v1/pay/order/refund/query", "POST"),
+    PAYMENT_CREATE_BATCH_TRANSFER("/v1/pay/batch/transfer", "POST"),
+    PAYMENT_QUERY_BATCH_TRANSFER("/v1/pay/batch/transfer/query", "POST"),
+    PAYMENT_QUERY_BALANCE("/v1/pay/balance", "GET"),
     CHECKOUT_CREATE_ORDER("/v1/pay/checkout/order", "POST"),
     CHECKOUT_CREATE_REFUND("/v1/pay/checkout/refund", "POST"),
     CHANNEL_MANAGE_SAVE("/v1/pay/channelmanage/save", "POST"),

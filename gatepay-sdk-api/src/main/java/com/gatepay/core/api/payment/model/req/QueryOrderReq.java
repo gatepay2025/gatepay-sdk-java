@@ -11,7 +11,7 @@ public class QueryOrderReq extends BaseRequest {
 
 
     public QueryOrderReq() {
-        this.api = GatePayApi.PAY_QUERY_ORDER;
+        this.api = GatePayApi.PAYMENT_QUERY_ORDER;
     }
 
 

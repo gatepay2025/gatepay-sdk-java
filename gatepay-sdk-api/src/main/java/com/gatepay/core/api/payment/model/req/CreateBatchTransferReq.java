@@ -26,7 +26,7 @@ public class CreateBatchTransferReq extends BaseRequest {
 
 
     public CreateBatchTransferReq() {
-        this.api = GatePayApi.PAY_CREATE_BATCH_TRANSFER;
+        this.api = GatePayApi.PAYMENT_CREATE_BATCH_TRANSFER;
     }
 
 

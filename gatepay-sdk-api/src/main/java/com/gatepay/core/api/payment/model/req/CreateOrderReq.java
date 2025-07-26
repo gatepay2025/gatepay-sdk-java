@@ -18,7 +18,7 @@ public class CreateOrderReq extends BaseRequest {
 
 
     public CreateOrderReq() {
-        this.api = GatePayApi.PAY_CREATE_ORDER;
+        this.api = GatePayApi.PAYMENT_CREATE_ORDER;
     }
 
 

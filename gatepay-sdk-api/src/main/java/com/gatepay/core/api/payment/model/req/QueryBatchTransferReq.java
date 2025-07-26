@@ -22,7 +22,7 @@ public class QueryBatchTransferReq extends BaseRequest {
 
 
     public QueryBatchTransferReq() {
-        this.api = GatePayApi.PAY_QUERY_BATCH_TRANSFER;
+        this.api = GatePayApi.PAYMENT_QUERY_BATCH_TRANSFER;
     }
 
 

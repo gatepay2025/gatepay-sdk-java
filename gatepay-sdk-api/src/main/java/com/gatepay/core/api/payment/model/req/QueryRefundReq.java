@@ -11,7 +11,7 @@ public class QueryRefundReq extends BaseRequest {
     private String refundRequestId;
 
     public QueryRefundReq() {
-        this.api = GatePayApi.PAY_QUERY_REFUND;
+        this.api = GatePayApi.PAYMENT_QUERY_REFUND;
     }
 
     public String getRefundRequestId() {
