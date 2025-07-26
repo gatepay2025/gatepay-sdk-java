@@ -59,7 +59,7 @@ public class ApiConvertTest {
         createOrderReq.setSellAmount("0.23429989");
         createOrderReq.setBuyCurrency("GT");
         createOrderReq.setBuyAmount("0.01");
-        // apiConvert.createOrder(createOrderReq);
+        apiConvert.createOrder(createOrderReq);
     }
 
 

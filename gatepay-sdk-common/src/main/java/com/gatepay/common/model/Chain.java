@@ -4,20 +4,27 @@
  */
 package com.gatepay.common.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * @Description 链信息
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class Chain {
 
-    private String chain_type;
+    @JsonProperty("chain_type")
+    private String chainType;
     private String address;
     private String fullCurrType;
 
 
-    public String getChain_type() {
-        return chain_type;
+    public String getChainType() {
+        return chainType;
     }
 
-    public void setChain_type(String chain_type) {
-        this.chain_type = chain_type;
+    public void setChainType(String chainType) {
+        this.chainType = chainType;
     }
 
     public String getAddress() {

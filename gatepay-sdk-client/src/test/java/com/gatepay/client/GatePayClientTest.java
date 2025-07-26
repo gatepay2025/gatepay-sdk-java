@@ -328,7 +328,7 @@ public class GatePayClientTest {
         createOrderReq.setSellAmount("0.23429989");
         createOrderReq.setBuyCurrency("GT");
         createOrderReq.setBuyAmount("0.01");
-        // Assertions.assertNotNull(gatePayClient.createConvertOrder(createOrderReq));
+        Assertions.assertNotNull(gatePayClient.createConvertOrder(createOrderReq));
     }
 
     /**
