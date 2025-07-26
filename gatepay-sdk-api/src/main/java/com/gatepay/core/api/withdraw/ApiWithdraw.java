@@ -9,7 +9,11 @@ import com.gatepay.core.api.withdraw.model.req.*;
 import com.gatepay.core.api.withdraw.model.resp.*;
 import com.gatepay.common.GatePayConfig;
 
-
+/**
+ * @Description 下发api
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class ApiWithdraw extends BaseApi {
 
     public ApiWithdraw(GatePayConfig gatePayConfig) {
@@ -19,7 +23,6 @@ public class ApiWithdraw extends BaseApi {
 
     /**
      * 创建提现订单
-     *
      * @param request
      * @return
      */
@@ -38,6 +41,9 @@ public class ApiWithdraw extends BaseApi {
      * CHECK 审核中子订单
      * FAIL 失败子订单
      * DONE 提现成功子订单
+     *
+     * @param request
+     * @return
      */
     public QueryOrderResp queryOrder(QueryOrderReq request) {
         return super.process(request, QueryOrderResp.class);
@@ -46,7 +52,8 @@ public class ApiWithdraw extends BaseApi {
 
     /**
      * 查询币种支持的链
-     *
+     * @param request
+     * @return
      */
     public QueryChainsResp queryChains(QueryChainsReq request) {
         return super.process(request, QueryChainsResp.class);
@@ -55,7 +62,8 @@ public class ApiWithdraw extends BaseApi {
 
     /**
      * 查询个人账户余额
-     *
+     * @param request
+     * @return
      */
     public QueryBalanceResp queryBalance(QueryBalanceReq request) {
         return super.process(request, QueryBalanceResp.class);
@@ -64,7 +72,8 @@ public class ApiWithdraw extends BaseApi {
 
     /**
      * 查询提现状态
-     *
+     * @param request
+     * @return
      */
     public QueryStatusResp queryStatus(QueryStatusReq request) {
         return super.process(request, QueryStatusResp.class);

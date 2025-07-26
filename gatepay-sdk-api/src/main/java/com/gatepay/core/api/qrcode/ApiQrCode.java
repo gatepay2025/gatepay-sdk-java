@@ -11,8 +11,9 @@ import com.gatepay.common.GatePayConfig;
 
 
 /**
- * 二维码api
- *
+ * @Description 二维码api
+ * @Author ZJ-BE
+ * @Date 2025/07/25
  */
 public class ApiQrCode extends BaseApi {
 
@@ -23,7 +24,8 @@ public class ApiQrCode extends BaseApi {
 
     /**
      * 创建扫码支付订单
-     *
+     * @param request
+     * @return
      */
     public CreateOrderResp createOrder(CreateOrderReq request) {
         return super.process(request, CreateOrderResp.class);

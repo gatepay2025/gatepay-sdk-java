@@ -11,8 +11,9 @@ import com.gatepay.common.GatePayConfig;
 
 
 /**
- * 闪兑接口
- *
+ * @Description 闪兑接口
+ * @Author ZJ-BE
+ * @Date 2025/07/25
  */
 public class ApiConvert extends BaseApi {
 
@@ -23,7 +24,6 @@ public class ApiConvert extends BaseApi {
 
     /**
      * 查询可用闪兑币种
-     *
      * @param request
      * @return
      */
@@ -33,7 +33,8 @@ public class ApiConvert extends BaseApi {
 
     /**
      * 查询可用币种对
-     *
+     * @param request
+     * @return
      */
     public QueryPairResp queryPair(QueryPairReq request) {
         return super.process(request, QueryPairResp.class);
@@ -41,7 +42,8 @@ public class ApiConvert extends BaseApi {
 
     /**
      * 预览报价
-     *
+     * @param request
+     * @return
      */
     public PreviewResp preview(PreviewReq request) {
         return super.process(request, PreviewResp.class);
@@ -49,7 +51,8 @@ public class ApiConvert extends BaseApi {
 
     /**
      * 闪兑下单
-     *
+     * @param request
+     * @return
      */
     public CreateOrderResp createOrder(CreateOrderReq request) {
         return super.process(request, CreateOrderResp.class);
@@ -57,9 +60,8 @@ public class ApiConvert extends BaseApi {
 
     /**
      * 查询闪兑订单
-     *
      * @param request
-     *
+     * @return
      */
     public QueryOrderResp queryOrder(QueryOrderReq request) {
         return super.process(request, QueryOrderResp.class);

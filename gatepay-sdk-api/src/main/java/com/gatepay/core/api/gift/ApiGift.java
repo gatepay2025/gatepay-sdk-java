@@ -15,8 +15,9 @@ import com.gatepay.common.GatePayConfig;
 
 
 /**
- * 礼品卡
- *
+ * @Description 礼品卡
+ * @Author ZJ-BE
+ * @Date 2025/07/25
  */
 public class ApiGift extends BaseApi {
 
@@ -27,6 +28,8 @@ public class ApiGift extends BaseApi {
 
     /**
      * 创建礼品卡
+     * @param request
+     * @return
      */
     public CreateResp create(CreateReq request) {
         return super.process(request, CreateResp.class);
@@ -34,6 +37,8 @@ public class ApiGift extends BaseApi {
 
     /**
      * 列出礼品卡模板
+     * @param request
+     * @return
      */
     public ListTempResp listTemp(ListTempReq request) {
         return super.process(request, ListTempResp.class);
@@ -41,6 +46,8 @@ public class ApiGift extends BaseApi {
 
     /**
      * 查询礼品卡
+     * @param request
+     * @return
      */
     public QueryResp query(QueryReq request) {
         return super.process(request, QueryResp.class);

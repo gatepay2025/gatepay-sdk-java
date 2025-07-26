@@ -23,8 +23,16 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 
+/**
+ * @Description 基础api
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class BaseApi {
 
+    /**
+     * gatePay http客户端
+     */
     private GatePayHttpClient gatePayHttpClient;
 
     public BaseApi(GatePayConfig gatePayConfig) {
@@ -32,6 +40,13 @@ public class BaseApi {
     }
 
 
+    /**
+     * 前置处理
+     * @param req
+     * @param <Req>
+     * @return
+     * @throws IllegalAccessException
+     */
     private <Req extends BaseRequest> boolean preProcess(Req req) throws IllegalAccessException {
         for (Field field : req.getClass().getDeclaredFields()) {
             if (field.isAnnotationPresent(GatePayParam.class) && field.getAnnotation(GatePayParam.class).required()) {
@@ -44,6 +59,18 @@ public class BaseApi {
         return Boolean.TRUE;
     }
 
+    /**
+     * 后置处理
+     * @param json
+     * @param respClass
+     * @return
+     * @param <Resp>
+     * @throws JsonProcessingException
+     * @throws NoSuchMethodException
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     * @throws InvocationTargetException
+     */
     private <Resp extends BaseResponse> Resp postProcess(String json, Class<Resp> respClass) throws JsonProcessingException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
         if (StringUtils.isEmpty(json)) {
             return respClass.getDeclaredConstructor().newInstance();
@@ -70,6 +97,14 @@ public class BaseApi {
         return new ObjectMapper().readValue(json, respClass);
     }
 
+    /**
+     * 处理请求
+     * @param req
+     * @param respClass
+     * @return
+     * @param <Req>
+     * @param <Resp>
+     */
     protected <Req extends BaseRequest, Resp extends BaseResponse> Resp process(Req req, Class<Resp> respClass) {
         try {
             preProcess(req);

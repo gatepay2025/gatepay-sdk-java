@@ -13,10 +13,9 @@ import com.gatepay.common.GatePayConfig;
 
 
 /**
- * 收银台支付接口
- *
+ * @Description 收银台支付接口
  * @author ZJ-BE
- *
+ * @Date 2025/07/25
  */
 public class ApiCheckout extends BaseApi {
 
@@ -27,7 +26,6 @@ public class ApiCheckout extends BaseApi {
 
     /**
      * 创建收银台订单
-     *
      * @param request
      * @return
      */
@@ -38,9 +36,8 @@ public class ApiCheckout extends BaseApi {
 
     /**
      * 创建退款
-     *
      * @param request
-     *
+     * @return
      */
     public CreateRefundResp createRefund(CreateRefundReq request) {
         return super.process(request, CreateRefundResp.class);

@@ -16,10 +16,9 @@ import com.gatepay.core.api.channelmanage.model.resp.UpdateResp;
 import com.gatepay.common.GatePayConfig;
 
 /**
- * 客户渠道管理接口
- *
+ * @Description 客户渠道管理接口
  * @author ZJ-BE
- *
+ * @Date 2025/07/25
  */
 public class ApiChannelManage extends BaseApi {
 
@@ -29,7 +28,8 @@ public class ApiChannelManage extends BaseApi {
 
     /**
      * 新增客户渠道
-     *
+     * @param request
+     * @return
      */
     public SaveResp save(SaveReq request) {
         return super.process(request, SaveResp.class);
@@ -37,7 +37,8 @@ public class ApiChannelManage extends BaseApi {
 
     /**
      * 查询客户渠道列表
-     *
+     * @param request
+     * @return
      */
     public ListResp list(ListReq request)  {
         return super.process(request, ListResp.class);
@@ -45,7 +46,8 @@ public class ApiChannelManage extends BaseApi {
 
     /**
      * 修改客户渠道
-     *
+     * @param request
+     * @return
      */
     public UpdateResp update(UpdateReq request) {
         return super.process(request, UpdateResp.class);
@@ -53,7 +55,8 @@ public class ApiChannelManage extends BaseApi {
 
     /**
      * 删除客户渠道
-     *
+     * @param request
+     * @return
      */
     public DeleteResp delete(DeleteReq request)  {
         return super.process(request, DeleteResp.class);
