@@ -6,7 +6,14 @@ package com.gatepay.common.security;
 
 public class Credential {
 
+    /**
+     * 商户密钥
+     */
     private String secretKey;
+
+    /**
+     * 商户api密钥
+     */
     private String apiKey;
 
     public Credential(String secretKey, String apiKey) {

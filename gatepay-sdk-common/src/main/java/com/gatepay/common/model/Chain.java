@@ -13,9 +13,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Chain {
 
+    /**
+     * 链类型
+     */
     @JsonProperty("chain_type")
     private String chainType;
+
+    /**
+     * 链地址
+     */
     private String address;
+
+    /**
+     * 链币种类型
+     */
     private String fullCurrType;
 
 

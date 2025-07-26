@@ -4,6 +4,11 @@
  */
 package com.gatepay.common;
 
+/**
+ * @Description 基础分页响应
+ * @author zj-be
+ * @Date 2025/07/25
+ */
 public class BasePageResponse<T> extends BaseResponse<T> {
 
     private long page;

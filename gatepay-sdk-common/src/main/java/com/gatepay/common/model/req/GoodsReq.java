@@ -4,10 +4,26 @@
  */
 package com.gatepay.common.model.req;
 
+/**
+ * @Description 商品请求
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class GoodsReq {
 
+    /**
+     * 商品类型
+     */
     private String goodsType;
+
+    /**
+     * 商品名称
+     */
     private String goodsName;
+
+    /**
+     * 商品详情
+     */
     private String goodsDetail;
 
     public String getGoodsType() {

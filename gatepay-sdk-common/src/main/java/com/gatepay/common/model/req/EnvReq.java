@@ -4,9 +4,21 @@
  */
 package com.gatepay.common.model.req;
 
+/**
+ * @Description 环境请求
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class EnvReq {
 
+    /**
+     * 终端类型
+     */
     private String terminalType;
+
+    /**
+     * 场景
+     */
     private String scene;
 
 

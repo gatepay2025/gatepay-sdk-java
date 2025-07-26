@@ -12,6 +12,11 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
 
+/**
+ * @Description 签名工具类
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class Signature {
 
     private static final String HMAC_SHA512 = "HmacSHA512";
@@ -21,7 +26,6 @@ public class Signature {
 
     /**
      * 生成签名
-     *
      * @param timestamp 时间戳
      * @param nonce     随机字符串
      * @param body      请求体
@@ -35,7 +39,6 @@ public class Signature {
 
     /**
      * 对数据进行签名
-     *
      * @param signingData 要签名的数据
      * @param key         密钥
      * @return 签名字符串
@@ -54,7 +57,6 @@ public class Signature {
 
     /**
      * 将十六进制字符串转换为字节数组
-     *
      * @param hexString 十六进制字符串
      * @return 字节数组
      */
@@ -70,7 +72,6 @@ public class Signature {
 
     /**
      * 将字节数组转换为十六进制字符串
-     *
      * @param bytes 字节数组
      * @return 十六进制字符串
      */
@@ -84,7 +85,6 @@ public class Signature {
 
     /**
      * 常量时间比较两个字节数组是否相等，防止时间侧信道攻击
-     *
      * @param a 第一个字节数组
      * @param b 第二个字节数组
      * @return 如果两个字节数组相等返回true，否则返回false
@@ -104,7 +104,6 @@ public class Signature {
 
     /**
      * 验证签名是否有效
-     *
      * @param signingData 签名数据
      * @param signature   签名
      * @param key         密钥

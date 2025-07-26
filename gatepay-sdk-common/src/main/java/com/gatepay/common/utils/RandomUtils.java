@@ -8,10 +8,9 @@ import java.security.SecureRandom;
 
 
 /**
- * 随机数生成器
- *
+ * @Description 随机数生成器
  * @author ZJ-BE
- *
+ * @Date 2025/07/25
  */
 public class RandomUtils {
 
@@ -20,7 +19,6 @@ public class RandomUtils {
 
     /**
      * 生成指定长度的随机字符串
-     *
      * @param length 随机字符串的长度
      * @return 生成的随机字符串
      */
