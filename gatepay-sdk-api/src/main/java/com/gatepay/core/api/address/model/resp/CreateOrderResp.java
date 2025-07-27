@@ -7,6 +7,11 @@ package com.gatepay.core.api.address.model.resp;
 import com.gatepay.common.BaseResponse;
 import com.gatepay.common.model.Chain;
 
+/**
+ * @Description 创建订单响应
+ * @author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class CreateOrderResp extends BaseResponse<CreateOrderResp> {
 
     private String prepayId;

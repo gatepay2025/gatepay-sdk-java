@@ -9,6 +9,11 @@ import com.gatepay.common.BaseResponse;
 import com.gatepay.core.api.address.model.ChainTransactionInfo;
 
 
+/**
+ * @Description 订单查询响应
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
 
     private String prepayId;

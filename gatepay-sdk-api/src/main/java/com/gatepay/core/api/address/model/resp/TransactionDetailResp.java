@@ -8,6 +8,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseResponse;
 import com.gatepay.core.api.address.model.TransactionDetail;
 
+
+/**
+ * @Description 交易详情响应
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class TransactionDetailResp extends BaseResponse<TransactionDetailResp> {
 
     private String prepayId;

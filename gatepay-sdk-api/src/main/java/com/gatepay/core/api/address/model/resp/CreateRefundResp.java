@@ -6,6 +6,12 @@ package com.gatepay.core.api.address.model.resp;
 
 import com.gatepay.common.BaseResponse;
 
+
+/**
+ * @Description 创建退款响应
+ * @author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class CreateRefundResp extends BaseResponse<CreateRefundResp> {
 
     private String refundRequestId;

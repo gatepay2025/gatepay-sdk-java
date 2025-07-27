@@ -4,6 +4,11 @@
  */
 package com.gatepay.core.api.address.model;
 
+/**
+ * @Description 交易详情
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class TxDetail {
 
     private TxDetailStateItem done;

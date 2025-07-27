@@ -7,9 +7,21 @@ package com.gatepay.core.api.address.model.resp;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseResponse;
 
+/**
+ * @Description 查询支持链列表响应
+ * @author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class ChainsResp extends BaseResponse<ChainsResp> {
 
+    /**
+     * 币种
+     */
     private String currency;
+
+    /**
+     * 支持的链列表
+     */
     private ChainNameItem[] chains;
 
 
@@ -30,8 +42,11 @@ public class ChainsResp extends BaseResponse<ChainsResp> {
     }
 
 
-
-
+    /**
+     * @Description 支持的链信息
+     * @Author ZJ-BE
+     * @Date 2025/07/25
+     */
     private static class ChainNameItem {
         private String chain;
         private String currency;
