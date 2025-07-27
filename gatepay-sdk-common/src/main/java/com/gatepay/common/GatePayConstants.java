@@ -4,7 +4,11 @@
  */
 package com.gatepay.common;
 
-
+/**
+ * @Description 常量类
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class GatePayConstants {
 
     // 请求地址相关

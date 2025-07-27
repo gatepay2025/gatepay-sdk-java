@@ -15,7 +15,11 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 
 
-
+/**
+ * @Description GatePay http 客户端
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class GatePayHttpClient {
 
     private GatePayConfig gatePayConfig;
@@ -29,6 +33,16 @@ public class GatePayHttpClient {
                 .build();
     }
 
+    /**
+     * 生成http请求
+     * @param request
+     * @param timestamp
+     * @param nonce
+     * @return
+     * @param <T>
+     * @throws IllegalAccessException
+     * @throws JsonProcessingException
+     */
     public <T extends BaseRequest> HttpRequest generateHttpRequest(T request, long timestamp, String nonce) throws IllegalAccessException, JsonProcessingException {
         HttpRequest.Builder builder = HttpRequest.newBuilder()
                 .header(GatePayConstants.HEADER_CONTENT_TYPE, GatePayConstants.HEADER_APPLICATION_JSON)
@@ -54,6 +68,15 @@ public class GatePayHttpClient {
         return null;
     }
 
+    /**
+     * 填充http请求builder
+     * @param request
+     * @param builder
+     * @param timestamp
+     * @param nonce
+     * @param <T>
+     * @throws IllegalAccessException
+     */
     private <T extends BaseRequest> void populateBuilderForGetDelete(T request, HttpRequest.Builder builder, long timestamp, String nonce) throws IllegalAccessException {
         String paramStr = "";
         Field[] declaredFields = request.getClass().getDeclaredFields();
@@ -70,6 +93,15 @@ public class GatePayHttpClient {
         builder.uri(URI.create(this.gatePayConfig.getEndPoint() + request.getApi().getUrl() + paramStr));
     }
 
+    /**
+     * 填充http请求builder
+     * @param request
+     * @param builder
+     * @param timestamp
+     * @param nonce
+     * @param <T>
+     * @throws JsonProcessingException
+     */
     private <T extends BaseRequest> void populateBuilderForPostPut(T request, HttpRequest.Builder builder, long timestamp, String nonce) throws JsonProcessingException {
         builder.header(GatePayConstants.HEADER_GATEPAY_API_KEY, this.gatePayConfig.getCredential().getApiKey());
         builder.header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Signature.verifySignature(String.valueOf(timestamp), nonce, new ObjectMapper().writeValueAsString(request), this.gatePayConfig.getCredential().getSecretKey()));

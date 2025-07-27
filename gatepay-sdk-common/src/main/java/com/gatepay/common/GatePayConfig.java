@@ -8,7 +8,11 @@ import com.gatepay.common.security.Credential;
 
 import java.time.Duration;
 
-
+/**
+ * @Description GatePay配置类
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class GatePayConfig {
 
     private String scheme;

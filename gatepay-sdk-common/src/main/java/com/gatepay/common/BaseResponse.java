@@ -4,6 +4,12 @@
  */
 package com.gatepay.common;
 
+/**
+ * @Description 基础响应类
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ * @param <T>
+ */
 public class BaseResponse<T> {
 
     private String status;
