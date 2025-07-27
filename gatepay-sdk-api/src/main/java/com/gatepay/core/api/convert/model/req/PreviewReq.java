@@ -8,6 +8,11 @@ import com.gatepay.common.BaseRequest;
 import com.gatepay.common.annotation.GatePayParam;
 import com.gatepay.common.enums.GatePayApi;
 
+/**
+ * @Description 闪兑预览请求
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class PreviewReq extends BaseRequest {
 
     @GatePayParam

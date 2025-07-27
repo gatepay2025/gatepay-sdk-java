@@ -10,7 +10,11 @@ import com.gatepay.common.annotation.GatePayRespData;
 
 import java.math.BigDecimal;
 
-
+/**
+ * @Description 查询闪兑订单
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
 
     @JsonProperty("order_id")

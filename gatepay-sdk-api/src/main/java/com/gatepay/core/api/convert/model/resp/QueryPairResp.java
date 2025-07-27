@@ -6,6 +6,11 @@ package com.gatepay.core.api.convert.model.resp;
 
 import com.gatepay.common.BaseResponse;
 
+/**
+ * @Description 查询可用币种对响应
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class QueryPairResp extends BaseResponse<QueryPairResp[]> {
 
     private String pair;

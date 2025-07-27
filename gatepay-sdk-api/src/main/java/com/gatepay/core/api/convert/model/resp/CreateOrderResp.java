@@ -7,20 +7,63 @@ package com.gatepay.core.api.convert.model.resp;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseResponse;
 
-
+/**
+ * @Description 闪兑下单响应
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class CreateOrderResp extends BaseResponse<CreateOrderResp> {
 
+    /**
+     * 订单ID
+     */
     @JsonProperty("order_id")
-    private String orderId;  // 订单ID
-    private String userId;  // 用户ID
-    private String sellCurrency;  // 出售币种
-    private String buyCurrency;  // 购买币种
-    private String sellAmount;  // 出售数量
-    private String buyAmount;  // 购买数量
-    private String status;  // 状态 1 - 创建成功 3 - 成功 6 - 失败
-    private String rate;  // 价格
-    private String quoteId;  // 报价ID
-    private String createTime;  // 创建时间
+    private String orderId;
+
+    /**
+     * 用户ID
+     */
+    private String userId;
+
+    /**
+     * 出售币种
+     */
+    private String sellCurrency;
+
+    /**
+     * 购买币种
+     */
+    private String buyCurrency;
+
+    /**
+     * 出售数量
+     */
+    private String sellAmount;
+
+    /**
+     * 购买数量
+     */
+    private String buyAmount;
+
+    /**
+     * 状态 1 - 创建成功 3 - 成功 6 - 失败
+     */
+    private String status;
+
+    /**
+     * 价格
+     */
+    private String rate;
+
+    /**
+     * 报价ID
+     */
+    private String quoteId;
+
+    /**
+     * 创建时间
+     */
+    private String createTime;
 
 
     public String getOrderId() {

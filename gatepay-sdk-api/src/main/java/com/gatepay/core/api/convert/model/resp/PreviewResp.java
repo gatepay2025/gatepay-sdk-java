@@ -8,12 +8,35 @@ import com.gatepay.common.BaseResponse;
 
 public class PreviewResp extends BaseResponse<PreviewResp> {
 
-    private String sellCurrency;  // 出售币种
-    private String buyCurrency;  // 购买币种
-    private String sellAmount;  // 出售数量
-    private String buyAmount;  // 购买数量
-    private String price;  // 价格
-    private String quoteId;  // 报价ID
+    /**
+     * 出售币种
+     */
+    private String sellCurrency;
+
+    /**
+     * 购买币种
+     */
+    private String buyCurrency;
+
+    /**
+     * 出售数量
+     */
+    private String sellAmount;
+
+    /**
+     * 购买数量
+     */
+    private String buyAmount;
+
+    /**
+     * 价格
+     */
+    private String price;
+
+    /**
+     * 报价id
+     */
+    private String quoteId;
     private String rate;
 
     public String getSellCurrency() {
