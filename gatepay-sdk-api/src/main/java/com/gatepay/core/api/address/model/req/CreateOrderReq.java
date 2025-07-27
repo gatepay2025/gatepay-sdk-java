@@ -10,13 +10,26 @@ import com.gatepay.common.model.req.EnvReq;
 import com.gatepay.common.model.req.GoodsReq;
 
 
+/**
+ * @Description 创建订单请求
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class CreateOrderReq extends BaseRequest {
 
     private String merchantTradeNo;
     private String currency;
     private String orderAmount;
-    private String payCurrency;           // 非地址支付的payCurrency在实际付款时确定，地址支付的payCurrency在下单时候确定
-    private String actualCurrency;        // merchant actual currency
+
+    /**
+     * 非地址支付的payCurrency在实际付款时确定，地址支付的payCurrency在下单时候确定
+     */
+    private String payCurrency;
+
+    /**
+     * merchant actual currency
+     */
+    private String actualCurrency;
     private EnvReq env;
     private GoodsReq goods;
     private long orderExpireTime;
@@ -25,7 +38,11 @@ public class CreateOrderReq extends BaseRequest {
     private long merchantUserId;
     private String chain;
     private String fullCurrType;
-    private String channelId;             // 客户渠道名称
+
+    /**
+     * 客户渠道名称
+     */
+    private String channelId;
 
 
     public CreateOrderReq() {

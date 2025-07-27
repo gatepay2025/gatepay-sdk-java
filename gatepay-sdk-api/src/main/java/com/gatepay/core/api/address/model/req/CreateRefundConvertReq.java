@@ -8,6 +8,11 @@ import com.gatepay.common.BaseRequest;
 import com.gatepay.common.enums.GatePayApi;
 
 
+/**
+ * @Description 创建闪兑支付单退款请求
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class CreateRefundConvertReq extends BaseRequest {
 
     private String refundRequestId;
