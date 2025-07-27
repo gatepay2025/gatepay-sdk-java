@@ -1,18 +1,64 @@
+/**
+ * @Date 2025/07/25
+ * @Copyright: All rights Reserved, Designed By GatePay
+ */
 package com.gatepay.core.api.withdraw.model.resp;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseResponse;
 
-
+/**
+ * @Description: 查询币种支持的链响应
+ * @Author: ZJ-BE
+ * @Date: 2025/07/25
+ */
 public class QueryChainsResp extends BaseResponse<QueryChainsResp> {
 
-    private String chain;  // 区块链网络名称（如ERC20、TRC20、BEP20等）
-    private String name_cn;  // 区块链网络中文名称（如以太坊、波场等）
-    private String name_en;  // 区块链网络英文名称（如Ethereum、Tron等）
-    private String contract_address;  // 币种智能合约地址（原生币如BTC、ETH主网币为空字符串）
-    private int is_disabled;  // 全局禁用状态：0-启用, 1-禁用
-    private int is_deposit_disabled;  // 充值功能状态: 0-启用, 1-禁用
-    private int is_withdraw_disabled;  // 提现功能状态: 0-启用, 1-禁用
-    private String decimal;  // 提币精度（小数点位数，如BTC为"6"）
+    /**
+     * 区块链网络名称（如ERC20、TRC20、BEP20等）
+     */
+    private String chain;
+
+    /**
+     * 区块链网络中文名称（如以太坊、波场等）
+     */
+    @JsonProperty("name_cn")
+    private String nameCn;
+
+    /**
+     * 区块链网络英文名称（如Ethereum、Tron等）
+     */
+    @JsonProperty("name_en")
+    private String nameEn;
+
+    /**
+     * 币种智能合约地址（原生币如BTC、ETH主网币为空字符串）
+     */
+    @JsonProperty("contract_address")
+    private String contractAddress;
+
+    /**
+     * 全局禁用状态：0-启用, 1-禁用
+     */
+    @JsonProperty("is_disabled")
+    private int isDisabled;
+
+    /**
+     * 充值功能状态: 0-启用, 1-禁用
+     */
+    @JsonProperty("is_deposit_disabled")
+    private int isDepositDisabled;
+
+    /**
+     * 提现功能状态: 0-启用, 1-禁用
+     */
+    @JsonProperty("is_withdraw_disabled")
+    private int isWithdrawDisabled;
+
+    /**
+     * 提币精度（小数点位数，如BTC为"6"）
+     */
+    private String decimal;
 
 
     public String getChain() {
@@ -23,52 +69,52 @@ public class QueryChainsResp extends BaseResponse<QueryChainsResp> {
         this.chain = chain;
     }
 
-    public String getName_cn() {
-        return name_cn;
+    public String getNameCn() {
+        return nameCn;
     }
 
-    public void setName_cn(String name_cn) {
-        this.name_cn = name_cn;
+    public void setNameCn(String nameCn) {
+        this.nameCn = nameCn;
     }
 
-    public String getName_en() {
-        return name_en;
+    public String getNameEn() {
+        return nameEn;
     }
 
-    public void setName_en(String name_en) {
-        this.name_en = name_en;
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn;
     }
 
-    public String getContract_address() {
-        return contract_address;
+    public String getContractAddress() {
+        return contractAddress;
     }
 
-    public void setContract_address(String contract_address) {
-        this.contract_address = contract_address;
+    public void setContractAddress(String contractAddress) {
+        this.contractAddress = contractAddress;
     }
 
-    public int getIs_disabled() {
-        return is_disabled;
+    public int getIsDisabled() {
+        return isDisabled;
     }
 
-    public void setIs_disabled(int is_disabled) {
-        this.is_disabled = is_disabled;
+    public void setIsDisabled(int isDisabled) {
+        this.isDisabled = isDisabled;
     }
 
-    public int getIs_deposit_disabled() {
-        return is_deposit_disabled;
+    public int getIsDepositDisabled() {
+        return isDepositDisabled;
     }
 
-    public void setIs_deposit_disabled(int is_deposit_disabled) {
-        this.is_deposit_disabled = is_deposit_disabled;
+    public void setIsDepositDisabled(int isDepositDisabled) {
+        this.isDepositDisabled = isDepositDisabled;
     }
 
-    public int getIs_withdraw_disabled() {
-        return is_withdraw_disabled;
+    public int getIsWithdrawDisabled() {
+        return isWithdrawDisabled;
     }
 
-    public void setIs_withdraw_disabled(int is_withdraw_disabled) {
-        this.is_withdraw_disabled = is_withdraw_disabled;
+    public void setIsWithdrawDisabled(int isWithdrawDisabled) {
+        this.isWithdrawDisabled = isWithdrawDisabled;
     }
 
     public String getDecimal() {

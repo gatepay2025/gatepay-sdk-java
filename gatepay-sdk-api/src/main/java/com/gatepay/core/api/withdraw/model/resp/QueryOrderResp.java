@@ -1,74 +1,96 @@
+/**
+ * @Date 2025/07/25
+ * @Copyright: All rights Reserved, Designed By GatePay
+ */
 package com.gatepay.core.api.withdraw.model.resp;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.core.api.withdraw.model.Withdraw;
 import com.gatepay.common.BaseResponse;
 
-
+/**
+ * @Description 查询订单响应
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
 
-    private String batch_id;
-    private long merchant_id;
-    private long client_id;
+    @JsonProperty("batch_id")
+    private String batchId;
+
+    @JsonProperty("merchant_id")
+    private long merchantId;
+
+    @JsonProperty("client_id")
+    private long clientId;
+
     private String status;
-    private long create_time;
-    private Withdraw[] withdraw_list;
-    private String channel_id;
 
+    @JsonProperty("create_time")
+    private long createTime;
 
-    public String getBatch_id() {
-        return batch_id;
+    @JsonProperty("withdraw_list")
+    private Withdraw[] withdrawList;
+
+    @JsonProperty("channel_id")
+    private String channelId;
+
+    public String getBatchId() {
+        return batchId;
     }
 
-    public void setBatch_id(String batch_id) {
-        this.batch_id = batch_id;
+    public void setBatchId(String batchId) {
+        this.batchId = batchId;
     }
 
-    public long getMerchant_id() {
-        return merchant_id;
+    public long getMerchantId() {
+        return merchantId;
     }
 
-    public void setMerchant_id(long merchant_id) {
-        this.merchant_id = merchant_id;
+    public void setMerchantId(long merchantId) {
+        this.merchantId = merchantId;
     }
 
-    public long getClient_id() {
-        return client_id;
+    public long getClientId() {
+        return clientId;
     }
 
-    public void setClient_id(long client_id) {
-        this.client_id = client_id;
+    public void setClientId(long clientId) {
+        this.clientId = clientId;
     }
 
+    @Override
     public String getStatus() {
         return status;
     }
 
+    @Override
     public void setStatus(String status) {
         this.status = status;
     }
 
-    public long getCreate_time() {
-        return create_time;
+    public long getCreateTime() {
+        return createTime;
     }
 
-    public void setCreate_time(long create_time) {
-        this.create_time = create_time;
+    public void setCreateTime(long createTime) {
+        this.createTime = createTime;
     }
 
-    public Withdraw[] getWithdraw_list() {
-        return withdraw_list;
+    public Withdraw[] getWithdrawList() {
+        return withdrawList;
     }
 
-    public void setWithdraw_list(Withdraw[] withdraw_list) {
-        this.withdraw_list = withdraw_list;
+    public void setWithdrawList(Withdraw[] withdrawList) {
+        this.withdrawList = withdrawList;
     }
 
-    public String getChannel_id() {
-        return channel_id;
+    public String getChannelId() {
+        return channelId;
     }
 
-    public void setChannel_id(String channel_id) {
-        this.channel_id = channel_id;
+    public void setChannelId(String channelId) {
+        this.channelId = channelId;
     }
 
 }

@@ -1,34 +1,44 @@
+/**
+ * @Date 2025/07/25
+ * @Copyright: All rights Reserved, Designed By GatePay
+ */
 package com.gatepay.core.api.withdraw.model.req;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.enums.GatePayApi;
 
-
+/**
+ * @Description 查询订单请求
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class QueryOrderReq extends BaseRequest {
 
-    private String batch_id;
-    private String detail_status;
+    @JsonProperty("batch_id")
+    private String batchId;
+
+    @JsonProperty("detail_status")
+    private String detailStatus;
 
 
     public QueryOrderReq() {
         this.api = GatePayApi.WITHDRAW_QUERY_ORDER;
     }
 
-
-    public String getBatch_id() {
-        return batch_id;
+    public String getBatchId() {
+        return batchId;
     }
 
-    public void setBatch_id(String batch_id) {
-        this.batch_id = batch_id;
+    public void setBatchId(String batchId) {
+        this.batchId = batchId;
     }
 
-    public String getDetail_status() {
-        return detail_status;
+    public String getDetailStatus() {
+        return detailStatus;
     }
 
-    public void setDetail_status(String detail_status) {
-        this.detail_status = detail_status;
+    public void setDetailStatus(String detailStatus) {
+        this.detailStatus = detailStatus;
     }
-
 }

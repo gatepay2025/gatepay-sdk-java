@@ -1,15 +1,43 @@
+/**
+ * @Date 2025/07/25
+ * @Copyright: All rights Reserved, Designed By GatePay
+ */
 package com.gatepay.core.api.payment.model.resp;
 
 import com.gatepay.common.BaseResponse;
 
 
+/**
+ * @Description: 查询退款响应
+ * @Author: ZJ-BE
+ * @Date: 2025/07/25
+ */
 public class QueryRefundResp extends BaseResponse<QueryRefundResp> {
 
-    private String refundRequestId;  // 商户退款单id，有商户后端生成保证唯一
-    private String prepayId;  // 订单id，GatePay后端生成
-    private String orderAmount;  // 订单金额
-    private String refundAmount;  // 退款金额
-    private String refundStatus;  // 退款单状态 SUCCESS:退款成功 FAIL:退款失败
+    /**
+     * 商户退款单id，有商户后端生成保证唯一
+     */
+    private String refundRequestId;
+
+    /**
+     * 订单id，GatePay后端生成
+     */
+    private String prepayId;
+
+    /**
+     * 订单金额
+     */
+    private String orderAmount;
+
+    /**
+     * 退款金额
+     */
+    private String refundAmount;
+
+    /**
+     * 退款单状态 SUCCESS:退款成功 FAIL:退款失败
+     */
+    private String refundStatus;
     private String channelId;
 
 

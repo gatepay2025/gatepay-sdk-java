@@ -1,8 +1,20 @@
+/**
+ * @Date 2025/07/25
+ * @Copyright: All rights Reserved, Designed By GatePay
+ */
 package com.gatepay.core.api.withdraw.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**
+ * @Description 提现请求参数
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class Withdraw {
 
-    private String merchant_withdraw_id;
+    @JsonProperty("merchant_withdraw_id")
+    private String merchantWithdrawId;
     private String currency;
     private String amount;
     private String chain;
@@ -18,15 +30,15 @@ public class Withdraw {
        0-内扣
        1-外收
     */
-    private int fee_type;
+    @JsonProperty("fee_type")
+    private int feeType;
 
-
-    public String getMerchant_withdraw_id() {
-        return merchant_withdraw_id;
+    public String getMerchantWithdrawId() {
+        return merchantWithdrawId;
     }
 
-    public void setMerchant_withdraw_id(String merchant_withdraw_id) {
-        this.merchant_withdraw_id = merchant_withdraw_id;
+    public void setMerchantWithdrawId(String merchantWithdrawId) {
+        this.merchantWithdrawId = merchantWithdrawId;
     }
 
     public String getCurrency() {
@@ -69,12 +81,11 @@ public class Withdraw {
         this.memo = memo;
     }
 
-    public int getFee_type() {
-        return fee_type;
+    public int getFeeType() {
+        return feeType;
     }
 
-    public void setFee_type(int fee_type) {
-        this.fee_type = fee_type;
+    public void setFeeType(int feeType) {
+        this.feeType = feeType;
     }
-
 }

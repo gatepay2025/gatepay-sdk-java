@@ -1,16 +1,30 @@
+/**
+ * @Date 2025/07/25
+ * @Copyright: All rights Reserved, Designed By GatePay
+ */
 package com.gatepay.core.api.withdraw.model.resp;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseResponse;
 
-
+/**
+ * @Description: 查询余额响应
+ * @Author: ZJ-BE
+ * @Date: 2025/07/25
+ */
 public class QueryBalanceResp extends BaseResponse<QueryBalanceResp> {
 
     private Details details;
-    private Total total;  // 换算成目标币种的账户总额汇总
+
+    /**
+     * 换算成目标币种的账户总额汇总
+     */
+    private Total total;
 
 
     private class Details {
-        private Detail cross_margin;
+        @JsonProperty("cross_margin")
+        private Detail crossMargin;
         private Detail spot;
         private Detail finance;
         private Detail margin;
@@ -24,7 +38,8 @@ public class QueryBalanceResp extends BaseResponse<QueryBalanceResp> {
             private String amount;  // 账户总额数字
             private String currency;  // 目标币种
             private String borrowed;  // 杠杆借贷总和（仅margin/cross_margin账户出现）
-            private String unrealised_pnl;  // 未实现盈亏总和（仅futures/options/delivery/total账户出现）
+            @JsonProperty("unrealised_pnl")
+            private String unrealisedPnl;  // 未实现盈亏总和（仅futures/options/delivery/total账户出现）
 
             public String getAmount() {
                 return amount;
@@ -50,21 +65,21 @@ public class QueryBalanceResp extends BaseResponse<QueryBalanceResp> {
                 this.borrowed = borrowed;
             }
 
-            public String getUnrealised_pnl() {
-                return unrealised_pnl;
+            public String getUnrealisedPnl() {
+                return unrealisedPnl;
             }
 
-            public void setUnrealised_pnl(String unrealised_pnl) {
-                this.unrealised_pnl = unrealised_pnl;
+            public void setUnrealisedPnl(String unrealisedPnl) {
+                this.unrealisedPnl = unrealisedPnl;
             }
         }
 
-        public Detail getCross_margin() {
-            return cross_margin;
+        public Detail getCrossMargin() {
+            return crossMargin;
         }
 
-        public void setCross_margin(Detail cross_margin) {
-            this.cross_margin = cross_margin;
+        public void setCrossMargin(Detail crossMargin) {
+            this.crossMargin = crossMargin;
         }
 
         public Detail getSpot() {
@@ -135,7 +150,8 @@ public class QueryBalanceResp extends BaseResponse<QueryBalanceResp> {
     private class Total {
         private String currency;
         private String amount;
-        private String unrealised_pnl;
+        @JsonProperty("unrealised_pnl")
+        private String unrealisedPnl;
         private String borrowed;
 
         public String getCurrency() {
@@ -154,12 +170,12 @@ public class QueryBalanceResp extends BaseResponse<QueryBalanceResp> {
             this.amount = amount;
         }
 
-        public String getUnrealised_pnl() {
-            return unrealised_pnl;
+        public String getUnrealisedPnl() {
+            return unrealisedPnl;
         }
 
-        public void setUnrealised_pnl(String unrealised_pnl) {
-            this.unrealised_pnl = unrealised_pnl;
+        public void setUnrealisedPnl(String unrealisedPnl) {
+            this.unrealisedPnl = unrealisedPnl;
         }
 
         public String getBorrowed() {

@@ -1,14 +1,24 @@
+/**
+ * @Date 2025/07/25
+ * @Copyright: All rights Reserved, Designed By GatePay
+ */
 package com.gatepay.core.api.qrcode.model.req;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.enums.GatePayApi;
 import com.gatepay.common.model.req.EnvReq;
 import com.gatepay.common.model.req.GoodsReq;
 
-
+/**
+ * @Description 创建订单请求
+ * @Author ZJ-BE
+ * @Date 2025/07/25
+ */
 public class CreateOrderReq extends BaseRequest {
 
-    private String MerchantTradeNo;
+    @JsonProperty("MerchantTradeNo")
+    private String merchantTradeNo;
     private String currency;
     private String orderAmount;
     private EnvReq env;
@@ -22,11 +32,11 @@ public class CreateOrderReq extends BaseRequest {
 
 
     public String getMerchantTradeNo() {
-        return MerchantTradeNo;
+        return merchantTradeNo;
     }
 
     public void setMerchantTradeNo(String merchantTradeNo) {
-        MerchantTradeNo = merchantTradeNo;
+        this.merchantTradeNo = merchantTradeNo;
     }
 
     public String getCurrency() {

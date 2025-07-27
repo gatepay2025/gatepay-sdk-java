@@ -23,16 +23,16 @@ public class ApiWithdrawTest {
     @Test
     public void testCreateOrder() {
         Withdraw withdraw = new Withdraw();
-        withdraw.setMerchant_withdraw_id(RandomUtils.generateNonce(19));
+        withdraw.setMerchantWithdrawId(RandomUtils.generateNonce(19));
         withdraw.setCurrency("USDT");
         withdraw.setAmount("1");
         withdraw.setChain("ETH");
         withdraw.setAddress("0x1234567890abcdef");
         withdraw.setMemo("Payment for services-1");
-        withdraw.setFee_type(1);
+        withdraw.setFeeType(1);
         CreateOrderReq createOrderReq = new CreateOrderReq();
-        createOrderReq.setBatch_id(RandomUtils.generateNonce(18));
-        createOrderReq.setWithdraw_list(new Withdraw[] { withdraw });
+        createOrderReq.setBatchId(RandomUtils.generateNonce(18));
+        createOrderReq.setWithdraws(new Withdraw[] { withdraw });
         apiWithdraw.createOrder(createOrderReq);
     }
 
@@ -40,8 +40,8 @@ public class ApiWithdrawTest {
     @Test
     public void testQueryOrder() {
         QueryOrderReq queryOrderReq = new QueryOrderReq();
-        queryOrderReq.setBatch_id("237394559478075555");
-        queryOrderReq.setDetail_status("ALL");
+        queryOrderReq.setBatchId("237394559478075555");
+        queryOrderReq.setDetailStatus("ALL");
         apiWithdraw.queryOrder(queryOrderReq);
     }
 

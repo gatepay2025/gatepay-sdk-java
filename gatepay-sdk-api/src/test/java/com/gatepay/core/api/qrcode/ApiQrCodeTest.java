@@ -32,7 +32,7 @@ public class ApiQrCodeTest {
         CreateOrderReq createOrderReq = new CreateOrderReq();
         createOrderReq.setMerchantTradeNo(RandomUtils.generateNonce(18));
         createOrderReq.setCurrency("USDT");
-        createOrderReq.setOrderAmount("0.9");
+        createOrderReq.setOrderAmount("0.01");
         createOrderReq.setEnv(envReq);
         createOrderReq.setGoods(goodsReq);
         createOrderReq.setReturnUrl("http://www.baidu.com");
