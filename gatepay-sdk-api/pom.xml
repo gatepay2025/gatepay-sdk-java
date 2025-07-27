@@ -22,6 +22,10 @@
             <groupId>com.gatepay</groupId>
             <artifactId>gatepay-sdk-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.gatepay</groupId>
+            <artifactId>gatepay-sdk-infrastructure</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>

@@ -9,7 +9,7 @@ import com.gatepay.core.api.checkout.model.req.CreateOrderReq;
 import com.gatepay.core.api.checkout.model.req.CreateRefundReq;
 import com.gatepay.core.api.checkout.model.resp.CreateOrderResp;
 import com.gatepay.core.api.checkout.model.resp.CreateRefundResp;
-import com.gatepay.common.GatePayConfig;
+import com.gatepay.infrastructure.GatePayConfig;
 
 
 /**

@@ -12,6 +12,7 @@
         <module>gatepay-sdk-api</module>
         <module>gatepay-sdk-common</module>
         <module>gatepay-sdk-client</module>
+        <module>gatepay-sdk-infrastructure</module>
     </modules>
 
     <properties>
@@ -31,6 +32,11 @@
             <dependency>
                 <groupId>com.gatepay</groupId>
                 <artifactId>gatepay-sdk-api</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gatepay</groupId>
+                <artifactId>gatepay-sdk-infrastructure</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
 

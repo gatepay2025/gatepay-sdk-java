@@ -13,7 +13,7 @@ import com.gatepay.core.api.channelmanage.model.resp.DeleteResp;
 import com.gatepay.core.api.channelmanage.model.resp.ListResp;
 import com.gatepay.core.api.channelmanage.model.resp.SaveResp;
 import com.gatepay.core.api.channelmanage.model.resp.UpdateResp;
-import com.gatepay.common.GatePayConfig;
+import com.gatepay.infrastructure.GatePayConfig;
 
 /**
  * @Description 客户渠道管理接口

@@ -7,7 +7,7 @@ package com.gatepay.core.api.convert;
 import com.gatepay.core.api.BaseApi;
 import com.gatepay.core.api.convert.model.req.*;
 import com.gatepay.core.api.convert.model.resp.*;
-import com.gatepay.common.GatePayConfig;
+import com.gatepay.infrastructure.GatePayConfig;
 
 
 /**

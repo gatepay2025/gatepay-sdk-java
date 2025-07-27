@@ -4,10 +4,10 @@
  */
 package com.gatepay.core.api.bill;
 
-import com.gatepay.common.GatePayConfig;
 import com.gatepay.core.api.BaseApi;
 import com.gatepay.core.api.bill.model.req.QueryOrdersReq;
 import com.gatepay.core.api.bill.model.resp.QueryOrdersResp;
+import com.gatepay.infrastructure.GatePayConfig;
 
 /**
  * @Description 账单api

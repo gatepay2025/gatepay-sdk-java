@@ -6,16 +6,15 @@ package com.gatepay.core.api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gatepay.common.GatePayConfig;
 import com.gatepay.common.BaseRequest;
 import com.gatepay.common.BaseResponse;
-import com.gatepay.common.GatePayHttpClient;
 import com.gatepay.common.annotation.GatePayParam;
 import com.gatepay.common.annotation.GatePayRespData;
 import com.gatepay.common.model.resp.SpecResp;
 import com.gatepay.common.utils.RandomUtils;
 import com.gatepay.common.utils.StringUtils;
-
+import com.gatepay.infrastructure.GatePayConfig;
+import com.gatepay.infrastructure.GatePayHttpClient;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

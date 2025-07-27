@@ -2,11 +2,14 @@
  * @Date 2025/07/25
  * @Copyright: All rights Reserved, Designed By GatePay
  */
-package com.gatepay.common;
+package com.gatepay.infrastructure;
 
-import com.gatepay.common.security.Credential;
+
+import com.gatepay.common.GatePayConstants;
+import com.gatepay.infrastructure.security.Credential;
 
 import java.time.Duration;
+
 
 /**
  * @Description GatePay配置类

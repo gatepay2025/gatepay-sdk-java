@@ -7,7 +7,7 @@ package com.gatepay.core.api.qrcode;
 import com.gatepay.core.api.BaseApi;
 import com.gatepay.core.api.qrcode.model.req.CreateOrderReq;
 import com.gatepay.core.api.qrcode.model.resp.CreateOrderResp;
-import com.gatepay.common.GatePayConfig;
+import com.gatepay.infrastructure.GatePayConfig;
 
 
 /**

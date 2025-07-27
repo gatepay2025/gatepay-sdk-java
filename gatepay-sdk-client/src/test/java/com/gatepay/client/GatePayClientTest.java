@@ -1,6 +1,5 @@
 package com.gatepay.client;
 
-import com.gatepay.common.GatePayConfig;
 import com.gatepay.core.api.address.model.req.*;
 import com.gatepay.core.api.address.model.req.CreateOrderReq;
 import com.gatepay.core.api.address.model.req.CreateRefundReq;
@@ -26,8 +25,9 @@ import com.gatepay.core.api.withdraw.model.req.QueryStatusReq;
 import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.model.req.EnvReq;
 import com.gatepay.common.model.req.GoodsReq;
-import com.gatepay.common.security.Credential;
+import com.gatepay.infrastructure.security.Credential;
 import com.gatepay.common.utils.RandomUtils;
+import com.gatepay.infrastructure.GatePayConfig;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -503,16 +503,16 @@ public class GatePayClientTest {
     @Test
     public void testCreateWithdrawOrder() {
         Withdraw withdraw = new Withdraw();
-        withdraw.setMerchant_withdraw_id(RandomUtils.generateNonce(19));
+        withdraw.setMerchantWithdrawId(RandomUtils.generateNonce(19));
         withdraw.setCurrency("USDT");
         withdraw.setAmount("0.001");
         withdraw.setChain("ETH");
         withdraw.setAddress("0x1234567890abcdef");
         withdraw.setMemo("Payment for services-1");
-        withdraw.setFee_type(1);
+        withdraw.setFeeType(1);
         com.gatepay.core.api.withdraw.model.req.CreateOrderReq createOrderReq = new com.gatepay.core.api.withdraw.model.req.CreateOrderReq();
-        createOrderReq.setBatch_id(RandomUtils.generateNonce(18));
-        createOrderReq.setWithdraw_list(new Withdraw[] { withdraw });
+        createOrderReq.setBatchId(RandomUtils.generateNonce(18));
+        createOrderReq.setWithdraws(new Withdraw[] { withdraw });
         Assertions.assertNotNull(gatePayClient.createWithdrawOrder(createOrderReq));
     }
 
@@ -530,8 +530,8 @@ public class GatePayClientTest {
     @Test
     public void testQueryWithdrawOrder() {
         com.gatepay.core.api.withdraw.model.req.QueryOrderReq queryOrderReq = new com.gatepay.core.api.withdraw.model.req.QueryOrderReq();
-        queryOrderReq.setBatch_id("237394559478075555");
-        queryOrderReq.setDetail_status("ALL");
+        queryOrderReq.setBatchId("237394559478075555");
+        queryOrderReq.setDetailStatus("ALL");
         Assertions.assertNotNull(gatePayClient.queryWithdrawOrder(queryOrderReq));
     }
 

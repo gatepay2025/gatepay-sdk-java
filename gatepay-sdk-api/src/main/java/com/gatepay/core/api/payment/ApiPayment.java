@@ -7,7 +7,7 @@ package com.gatepay.core.api.payment;
 import com.gatepay.core.api.BaseApi;
 import com.gatepay.core.api.payment.model.req.*;
 import com.gatepay.core.api.payment.model.resp.*;
-import com.gatepay.common.GatePayConfig;
+import com.gatepay.infrastructure.GatePayConfig;
 
 /**
  * @Description 普通支付api

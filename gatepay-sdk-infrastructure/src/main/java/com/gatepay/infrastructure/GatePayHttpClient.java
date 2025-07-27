@@ -2,12 +2,14 @@
  * @Date 2025/07/25
  * @Copyright: All rights Reserved, Designed By GatePay
  */
-package com.gatepay.common;
+package com.gatepay.infrastructure;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.gatepay.common.BaseRequest;
+import com.gatepay.common.GatePayConstants;
 import com.gatepay.common.annotation.GatePayParam;
-import com.gatepay.common.security.Signature;
+import com.gatepay.infrastructure.security.Signature;
 
 import java.lang.reflect.Field;
 import java.net.URI;

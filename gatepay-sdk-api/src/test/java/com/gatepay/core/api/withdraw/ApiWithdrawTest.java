@@ -2,10 +2,10 @@ package com.gatepay.core.api.withdraw;
 
 import com.gatepay.core.api.withdraw.model.Withdraw;
 import com.gatepay.common.GatePayConstants;
-import com.gatepay.common.security.Credential;
-import com.gatepay.common.GatePayConfig;
+import com.gatepay.infrastructure.security.Credential;
 import com.gatepay.common.utils.RandomUtils;
 import com.gatepay.core.api.withdraw.model.req.*;
+import com.gatepay.infrastructure.GatePayConfig;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 

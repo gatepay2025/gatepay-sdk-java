@@ -19,6 +19,8 @@ git clone https://github.com/gatepay2025/gatepay-sdk-java
 调用SDK
 业务侧SDK的调用主要分为如下步骤：
 
+引用GatePay Java版本SDK
+
 创建GatePayConfig
 
 创建GatePayClient

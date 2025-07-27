@@ -50,7 +50,7 @@ import com.gatepay.core.api.withdraw.model.req.QueryStatusReq;
 import com.gatepay.core.api.withdraw.model.resp.QueryChainsResp;
 import com.gatepay.core.api.withdraw.model.resp.QueryStatusResp;
 import com.gatepay.common.model.resp.GatePayResp;
-import com.gatepay.common.GatePayConfig;
+import com.gatepay.infrastructure.GatePayConfig;
 
 /**
  * @Description: GatePayClient 客户端

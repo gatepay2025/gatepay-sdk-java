@@ -5,9 +5,9 @@ import com.gatepay.common.model.req.EnvReq;
 import com.gatepay.common.model.req.GoodsReq;
 import com.gatepay.core.api.checkout.model.req.CreateOrderReq;
 import com.gatepay.core.api.checkout.model.req.CreateRefundReq;
-import com.gatepay.common.security.Credential;
-import com.gatepay.common.GatePayConfig;
+import com.gatepay.infrastructure.security.Credential;
 import com.gatepay.common.utils.RandomUtils;
+import com.gatepay.infrastructure.GatePayConfig;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 

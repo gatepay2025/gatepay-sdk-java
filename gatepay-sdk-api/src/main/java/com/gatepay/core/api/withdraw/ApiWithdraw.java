@@ -7,7 +7,7 @@ package com.gatepay.core.api.withdraw;
 import com.gatepay.core.api.BaseApi;
 import com.gatepay.core.api.withdraw.model.req.*;
 import com.gatepay.core.api.withdraw.model.resp.*;
-import com.gatepay.common.GatePayConfig;
+import com.gatepay.infrastructure.GatePayConfig;
 
 /**
  * @Description 下发api

@@ -4,10 +4,10 @@
  */
 package com.gatepay.core.api.address;
 
-import com.gatepay.common.GatePayConfig;
 import com.gatepay.core.api.BaseApi;
 import com.gatepay.core.api.address.model.req.*;
 import com.gatepay.core.api.address.model.resp.*;
+import com.gatepay.infrastructure.GatePayConfig;
 
 
 /**

@@ -11,7 +11,7 @@ import com.gatepay.core.api.gift.model.req.QueryReq;
 import com.gatepay.core.api.gift.model.resp.CreateResp;
 import com.gatepay.core.api.gift.model.resp.ListTempResp;
 import com.gatepay.core.api.gift.model.resp.QueryResp;
-import com.gatepay.common.GatePayConfig;
+import com.gatepay.infrastructure.GatePayConfig;
 
 
 /**

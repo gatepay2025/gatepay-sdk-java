@@ -2,7 +2,7 @@
  * @Date 2025/07/25
  * @Copyright: All rights Reserved, Designed By GatePay
  */
-package com.gatepay.common.security;
+package com.gatepay.infrastructure.security;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -128,6 +128,14 @@ public class Signature {
         }
     }
 
+    /**
+     * 生成签名
+     * @param timestamp
+     * @param nonce
+     * @param body
+     * @param secretKey
+     * @return
+     */
     public static String generateSignature(String timestamp, String nonce, String body, String secretKey) {
         try {
             // Concatenate timestamp, nonce and body
