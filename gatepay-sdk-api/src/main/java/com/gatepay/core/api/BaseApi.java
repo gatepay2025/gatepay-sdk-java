@@ -16,6 +16,7 @@ import com.gatepay.common.utils.StringUtils;
 import com.gatepay.infrastructure.GatePayConfig;
 import com.gatepay.infrastructure.GatePayHttpClient;
 
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.net.http.HttpRequest;
@@ -56,6 +57,20 @@ public class BaseApi {
             }
         }
         return Boolean.TRUE;
+    }
+
+    /**
+     * 处理请求
+     * @param req
+     * @return
+     * @param <Req>
+     * @throws IOException
+     * @throws IllegalAccessException
+     * @throws InterruptedException
+     */
+    private <Req extends BaseRequest> HttpResponse<String> doProcess(Req req) throws IOException, IllegalAccessException, InterruptedException {
+        HttpRequest httpRequest = this.gatePayHttpClient.generateHttpRequest(req, System.currentTimeMillis(), RandomUtils.generateNonce(9));
+        return this.gatePayHttpClient.getHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
     }
 
     /**
@@ -107,10 +122,9 @@ public class BaseApi {
     protected <Req extends BaseRequest, Resp extends BaseResponse> Resp process(Req req, Class<Resp> respClass) {
         try {
             preProcess(req);
-            HttpRequest httpRequest = this.gatePayHttpClient.generateHttpRequest(req, System.currentTimeMillis(), RandomUtils.generateNonce(9));
-            HttpResponse<String> httpResponse = this.gatePayHttpClient.getHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(httpResponse.body().toString());
-            return postProcess(httpResponse.body().toString(), respClass);
+            HttpResponse<String> httpResponse = doProcess(req);
+            System.out.println(httpResponse.body());
+            return postProcess(httpResponse.body(), respClass);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

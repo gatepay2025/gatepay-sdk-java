@@ -82,13 +82,11 @@ public class GatePayHttpClient {
     private <T extends BaseRequest> void populateBuilderForGetDelete(T request, HttpRequest.Builder builder, long timestamp, String nonce) throws IllegalAccessException {
         String paramStr = "";
         Field[] declaredFields = request.getClass().getDeclaredFields();
-        if (declaredFields != null && declaredFields.length > 0)  {
-            for (Field field : declaredFields) {
-                field.setAccessible(Boolean.TRUE);
-                if (field.isAnnotationPresent(GatePayParam.class) && field.get(request) != null) {
-                    paramStr = paramStr == "" ? paramStr + "?" : paramStr + "&";
-                    paramStr = paramStr + field.getName() + "=" + field.get(request);
-                }
+        for (Field field : declaredFields) {
+            field.setAccessible(Boolean.TRUE);
+            if (field.isAnnotationPresent(GatePayParam.class) && field.get(request) != null) {
+                paramStr = paramStr.isEmpty() ? paramStr + "?" : paramStr + "&";
+                paramStr = paramStr + field.getName() + "=" + field.get(request);
             }
         }
         builder.header(GatePayConstants.HEADER_GATEPAY_SIGNATURE, Signature.verifySignature(String.valueOf(timestamp), nonce, "", this.gatePayConfig.getCredential().getSecretKey()));
