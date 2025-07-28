@@ -17,8 +17,19 @@ import com.gatepay.common.model.req.GoodsReq;
  */
 public class CreateOrderReq extends BaseRequest {
 
+    /**
+     * 商户系统中的交易号
+     */
     private String merchantTradeNo;
+
+    /**
+     * 订单币种
+     */
     private String currency;
+
+    /**
+     * 订单金额
+     */
     private String orderAmount;
 
     /**
@@ -27,20 +38,52 @@ public class CreateOrderReq extends BaseRequest {
     private String payCurrency;
 
     /**
-     * merchant actual currency
+     * 真实币种
      */
     private String actualCurrency;
+
+    /**
+     * 交易来源，可选值：APP、WEB、WAP、MINIAPP、OTHERS
+     */
     private EnvReq env;
+
+    /**
+     * 商品
+     */
     private GoodsReq goods;
+
+    /**
+     * 商户指定订单过期时间戳，毫秒为单位
+     */
     private long orderExpireTime;
+
+    /**
+     * 支付完成回调地址
+     */
     private String returnUrl;
+
+    /**
+     * 取消支付回调地址
+     */
     private String cancelUrl;
+
+    /**
+     * 支付者在商户平台注册时的唯一ID
+     */
     private long merchantUserId;
+
+    /**
+     * 所选链名字
+     */
     private String chain;
+
+    /**
+     * 包含链名字的币种字段，对应到具体链的具体币种
+     */
     private String fullCurrType;
 
     /**
-     * 客户渠道名称
+     * 客户名称
      */
     private String channelId;
 

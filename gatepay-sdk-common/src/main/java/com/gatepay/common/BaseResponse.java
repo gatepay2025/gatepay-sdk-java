@@ -12,10 +12,29 @@ package com.gatepay.common;
  */
 public class BaseResponse<T> {
 
+    /**
+     * 状态
+     */
     private String status;
+
+    /**
+     * 编码
+     */
     private String code;
+
+    /**
+     * 报错信息
+     */
     private String errorMessage;
+
+    /**
+     * 标签
+     */
     private String label;
+
+    /**
+     * 数据
+     */
     private T data;
 
     public String getStatus() {
