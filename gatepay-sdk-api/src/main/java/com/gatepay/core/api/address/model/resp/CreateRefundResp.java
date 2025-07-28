@@ -14,9 +14,24 @@ import com.gatepay.common.BaseResponse;
  */
 public class CreateRefundResp extends BaseResponse<CreateRefundResp> {
 
+    /**
+     * 商户退款请求id
+     */
     private String refundRequestId;
+
+    /**
+     * 拟退款的订单id
+     */
     private String prepayId;
+
+    /**
+     * 订单金额
+     */
     private String orderAmount;
+
+    /**
+     * 退款金额
+     */
     private String refundAmount;
 
 

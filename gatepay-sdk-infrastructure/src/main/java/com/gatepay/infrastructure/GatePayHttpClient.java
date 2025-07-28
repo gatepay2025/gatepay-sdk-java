@@ -24,6 +24,9 @@ import java.net.http.HttpRequest;
  */
 public class GatePayHttpClient {
 
+    /**
+     * GatePay配置
+     */
     private GatePayConfig gatePayConfig;
     private HttpClient httpClient;
 

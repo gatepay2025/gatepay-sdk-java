@@ -15,13 +15,44 @@ import java.math.BigDecimal;
  */
 public class CreateRefundConvertResp extends BaseResponse {
 
+    /**
+     * 商户退款请求id
+     */
     private String refundRequestId;
+
+    /**
+     * 拟退款的订单id
+     */
     private String prepayId;
+
+    /**
+     * 订单币种
+     */
     private String orderCurrency;
+
+    /**
+     * 订单金额
+     */
     private BigDecimal orderAmount;
+
+    /**
+     * 对应订单币种的退款金额
+     */
     private BigDecimal refundOrderAmount;
+
+    /**
+     * 用户支付币种
+     */
     private String payCurrency;
+
+    /**
+     * 订单中用户应该支付的金额
+     */
     private BigDecimal payAmount;
+
+    /**
+     * 对应订单用户支付币种的退款金额
+     */
     private BigDecimal refundPayAmount;
 
 

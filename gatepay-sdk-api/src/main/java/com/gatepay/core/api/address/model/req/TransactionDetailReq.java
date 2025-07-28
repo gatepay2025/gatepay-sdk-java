@@ -16,7 +16,7 @@ import com.gatepay.common.enums.GatePayApi;
 public class TransactionDetailReq extends BaseRequest {
 
     /**
-     * 预支付id
+     * 地址支付预支付单id
      */
     @GatePayParam
     private String prepayId;

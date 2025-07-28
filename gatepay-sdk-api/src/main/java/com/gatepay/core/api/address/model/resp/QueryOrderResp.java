@@ -16,29 +16,102 @@ import com.gatepay.core.api.address.model.ChainTransactionInfo;
  */
 public class QueryOrderResp extends BaseResponse<QueryOrderResp> {
 
+    /**
+     * 支付单单号
+     */
     private String prepayId;
+
+    /**
+     * 用于申请商户账号的Gate UID
+     */
     private long merchantId;
+
+    /**
+     * 商户系统交易号
+     */
     private String merchantTradeNo;
+
+    /**
+     * 交易流水号
+     */
     private String transactionId;
+
+    /**
+     * 商品名，商户创建订单时提供
+     */
     private String goodsName;
+
+    /**
+     * 订单币种
+     */
     private String currency;
+
+    /**
+     * 订单金额
+     */
     private String orderAmount;
+
+    /**
+     * 用户实际支付币种，非闪兑单中与订单币种一致
+     */
     private String payCurrency;
+
+    /**
+     * 用户应该支付的金额
+     */
     private String payAmount;
+
+    /**
+     * 订单币种到用户支付币种的汇率，例如，1BTC换20000USDT
+     */
     private String rate;
+
+    /**
+     * 订单状态，PENDING处理中，PROCESS订单有效期内支付足够金额但链上未确认完毕，PAID订单支付成功，EXPIRED订单已过期
+     */
     private String status;
+
+    /**
+     * 订单的创建时间
+     */
     private long createTime;
+
+    /**
+     * 订单的过期时间
+     */
     private long expireTime;
+
+    /**
+     * 订单在Gate内部交易发生时间
+     */
     private long transactTime;
 
+    /**
+     * 订单名称
+     */
     @JsonProperty("order_name")
     private String orderName;
 
+    /**
+     * 订单在链上交易情况总览
+     */
     @JsonProperty("transaction_info")
     private ChainTransactionInfo transactionInfo;
-    private String channelId;         // 客户渠道名称
-    private String address;           // 地址
-    private String chain;             // 网络
+
+    /**
+     * 客户名称
+     */
+    private String channelId;
+
+    /**
+     * 收款地址
+     */
+    private String address;
+
+    /**
+     * 网络
+     */
+    private String chain;
 
 
     public String getPrepayId() {

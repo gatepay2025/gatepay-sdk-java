@@ -15,18 +15,32 @@ import com.gatepay.common.enums.GatePayApi;
  */
 public class CreateRefundReq extends BaseRequest {
 
+    /**
+     * 商户请求退款编号
+     */
     @GatePayParam
     private String refundRequestId;
 
+    /**
+     * 对应支付单订单id
+     */
     @GatePayParam
     private String prepayId;
 
+    /**
+     * 退款金额
+     */
     @GatePayParam
     private String refundAmount;
 
-    @GatePayParam
+    /**
+     * 退款原因
+     */
     private String refundReason;
 
+    /**
+     * 地址支付退款接收人在gate系统的user_id
+     */
     @GatePayParam
     private long receiverId;
 

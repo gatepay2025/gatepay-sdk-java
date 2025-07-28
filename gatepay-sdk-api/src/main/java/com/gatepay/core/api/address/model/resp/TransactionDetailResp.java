@@ -16,24 +16,90 @@ import com.gatepay.core.api.address.model.TransactionDetail;
  */
 public class TransactionDetailResp extends BaseResponse<TransactionDetailResp> {
 
+    /**
+     * 支付单id
+     */
     private String prepayId;
+
+    /**
+     * 用于申请商户账号的Gate UID
+     */
     private long merchantId;
+
+    /**
+     * 商户系统交易号
+     */
     private String merchantTradeNo;
+
+    /**
+     * 交易流水号
+     */
     private String transactionId;
+
+    /**
+     * 商品名称
+     */
     private String goodsName;
+
+    /**
+     * 订单币种
+     */
     private String currency;
+
+    /**
+     * 订单金额
+     */
     private String orderAmount;
+
+    /**
+     * 用户实际支付币种
+     */
     private String payCurrency;
+
+    /**
+     * 订单对应用户实际支付币种的金额
+     */
     private String payAmount;
+
+    /**
+     * 订单状态
+     */
     private String status;
+
+    /**
+     * 订单创建时间的utc表达，例如2023-01-07 14:04:02
+     */
     private String utcCreateTime;
+
+    /**
+     * 订单过期时间的utc表达，例如2023-01-07 14:04:02
+     */
     private String utcExpireTime;
+
+    /**
+     * 订单状态更新时间的utc表达，例如2023-01-07 14:04:02
+     */
     private String utcUpdateTime;
+
+    /**
+     * 订单在后台完成交易的UTC毫秒时间戳
+     */
     private long transactTime;
 
+    /**
+     * 订单名称
+     */
     @JsonProperty("order_name")
     private String orderName;
+
+    /**
+     * 链上交易详情
+     */
     private TransactionDetail transactionDetail;
+
+    /**
+     * 客户名称
+     */
     private String channelId;
 
 

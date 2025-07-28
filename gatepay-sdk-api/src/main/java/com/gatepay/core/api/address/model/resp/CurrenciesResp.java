@@ -14,6 +14,9 @@ import com.gatepay.common.BaseResponse;
  */
 public class CurrenciesResp extends BaseResponse<CurrenciesResp> {
 
+    /**
+     * 可选支付币种列表
+     */
     private String[] currencies;
 
     public String[] getCurrencies() {

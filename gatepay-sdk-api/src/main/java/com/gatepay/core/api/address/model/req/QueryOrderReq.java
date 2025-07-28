@@ -15,10 +15,16 @@ import com.gatepay.common.enums.GatePayApi;
  */
 public class QueryOrderReq extends BaseRequest {
 
-    //@GatePayParam
+    /**
+     * 地址支付预支付单id
+     */
+    @GatePayParam
     private String prepayId;
 
-    //@GatePayParam
+    /**
+     * 商户系统交易号
+     */
+    @GatePayParam
     private String merchantTradeNo;
 
 

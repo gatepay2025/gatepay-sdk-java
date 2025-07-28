@@ -48,19 +48,43 @@ public class ChainsResp extends BaseResponse<ChainsResp> {
      * @Date 2025/07/25
      */
     private static class ChainNameItem {
+
+        /**
+         * Gate链
+         */
         private String chain;
+
+        /**
+         * 拟支付的币种
+         */
         private String currency;
 
+        /**
+         * 含网络信息的币种符号，下单重要参数
+         */
         @JsonProperty("full_curr_type")
         private String fullCurrType;
 
+        /**
+         * 链上交易符号
+         */
         private String symbol;
 
+        /**
+         * 浏览链接，explorer + token_address
+         */
         @JsonProperty("explorer_url")
         private String explorerUrl;
 
+        /**
+         * 链显示名称（英文）
+         */
         @JsonProperty("show_chain_name_en")
         private String showChainNameEn;
+
+        /**
+         * 是否有提现记录
+         */
         private long hasWithdrawMemo;
 
 

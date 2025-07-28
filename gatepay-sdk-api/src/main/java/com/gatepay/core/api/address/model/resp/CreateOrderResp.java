@@ -14,9 +14,24 @@ import com.gatepay.common.model.Chain;
  */
 public class CreateOrderResp extends BaseResponse<CreateOrderResp> {
 
+    /**
+     * 创建的支付单order id
+     */
     private String prepayId;
+
+    /**
+     * 创建订单的终端类型
+     */
     private String terminalType;
+
+    /**
+     * 过期毫秒时间戳
+     */
     private long expireTime;
+
+    /**
+     * 地址支付支付单绑定的链和地址
+     */
     private Chain chain;
 
 
