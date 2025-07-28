@@ -155,6 +155,9 @@ public class GatePayClientTest {
         Assertions.assertNotNull(gatePayClient.addressTransactionDetail(transactionDetailReq));
     }
 
+    /**
+     * 查询资金流水账单
+     */
     @Test
     public void testQueryBillOrders() {
         QueryOrdersReq queryOrdersReq = new QueryOrdersReq();

@@ -20,8 +20,6 @@ public class ApiQrCodeTest {
         apiQrCode = new ApiQrCode(new GatePayConfig(GatePayConstants.END_POINT_DEFAULT, 30, "mZ96D37oKk-HrWJc", new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=", "SkZlbKOqPoMwnxhl")));
     }
 
-
-    // self test passed
     @Test
     public void testCreateOrder() {
         EnvReq envReq = new EnvReq();

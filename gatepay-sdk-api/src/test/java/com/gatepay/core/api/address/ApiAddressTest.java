@@ -22,9 +22,6 @@ public class ApiAddressTest {
         apiAddress = new ApiAddress(new GatePayConfig(GatePayConstants.END_POINT_DEFAULT, 30, "mZ96D37oKk-HrWJc", new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=", "SkZlbKOqPoMwnxhl")));
     }
 
-
-
-    // self test passed
     @Test
     public void testGetAddressChains() {
         ChainsReq chainsReq = new ChainsReq();
@@ -32,13 +29,11 @@ public class ApiAddressTest {
         apiAddress.getAddressChains(chainsReq);
     }
 
-    // self test passed
     @Test
     public void testGetAddressCurrencies() {
         apiAddress.getAddressCurrencies();
     }
 
-    // self test passed
     @Test
     public void testGetSupportedConvertCurrencies() {
         SupportedConvertCurrenciesReq supportedConvertCurrenciesReq = new SupportedConvertCurrenciesReq();
@@ -46,7 +41,6 @@ public class ApiAddressTest {
         apiAddress.getSupportedConvertCurrencies(supportedConvertCurrenciesReq);
     }
 
-    // self test passed
     @Test
     public void testCreateOrder() {
         EnvReq envReq = new EnvReq();
@@ -74,8 +68,6 @@ public class ApiAddressTest {
         }
     }
 
-
-    // self test passed
     @Test
     public void testQueryOrder() {
         QueryOrderReq queryOrderReq = new QueryOrderReq();
@@ -117,8 +109,6 @@ public class ApiAddressTest {
         }
     }
 
-
-    // self test passed
     @Test
     public void testTransactionDetail() {
         TransactionDetailReq transactionDetailReq = new TransactionDetailReq();

@@ -32,7 +32,7 @@ public class BaseApi {
     /**
      * gatePay http客户端
      */
-    private GatePayHttpClient gatePayHttpClient;
+    private final GatePayHttpClient gatePayHttpClient;
 
     public BaseApi(GatePayConfig gatePayConfig) {
         this.gatePayHttpClient = new GatePayHttpClient(gatePayConfig);

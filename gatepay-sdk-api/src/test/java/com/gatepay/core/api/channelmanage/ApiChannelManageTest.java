@@ -75,7 +75,6 @@ public class ApiChannelManageTest {
         apiChannelManage.update(updateReq);
     }
 
-    // self test passed
     @Test
     public void testDelete() {
         DeleteReq deleteReq = new DeleteReq();

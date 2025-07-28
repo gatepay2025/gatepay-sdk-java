@@ -21,8 +21,6 @@ public class ApiPaymentTest {
         apiPayment = new ApiPayment(new GatePayConfig(GatePayConstants.END_POINT_DEFAULT, 30, "mZ96D37oKk-HrWJc", new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=", "SkZlbKOqPoMwnxhl")));
     }
 
-
-    // self test passed
     @Test
     public void testCreateOrder() {
         EnvReq envReq = new EnvReq();
@@ -89,7 +87,6 @@ public class ApiPaymentTest {
         apiPayment.createBatchTransfer(createBatchTransferReq);
     }
 
-    // self test passed
     @Test
     public void testQueryBatchTransfer() {
         QueryBatchTransferReq queryBatchTransferReq = new QueryBatchTransferReq();
@@ -99,7 +96,6 @@ public class ApiPaymentTest {
         apiPayment.queryBatchTransfer(queryBatchTransferReq);
     }
 
-    // self test passed
     @Test
     public void testQueryBalance() {
         QueryBalanceReq queryBalanceReq = new QueryBalanceReq();
