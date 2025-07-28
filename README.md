@@ -8,7 +8,8 @@ GatePay JAVA SDK适用于Java 17及以上版本。
 
 接口SDK：客户端GatePayClient，支持通过HTTP签名发送请求和接收应答。
 
-下载和安装
+
+下载和使用
 
 1.下载地址:
 https://github.com/gatepay2025/gatepay-sdk-java
