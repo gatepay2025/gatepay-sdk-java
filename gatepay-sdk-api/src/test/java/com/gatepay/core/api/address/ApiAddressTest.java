@@ -84,8 +84,6 @@ public class ApiAddressTest {
         apiAddress.queryOrder(queryOrderReq);
     }
 
-
-    // todo: test
     @Test
     public void testCreateRefund() {
         CreateRefundReq createRefundReq = new CreateRefundReq();
@@ -101,8 +99,6 @@ public class ApiAddressTest {
         }
     }
 
-
-    // todo: test
     @Test
     public void testCreateRefundConvert() {
         CreateRefundConvertReq createRefundConvertReq = new CreateRefundConvertReq();

@@ -19,8 +19,6 @@ public class ApiConvertTest {
         apiConvert = new ApiConvert(new GatePayConfig(GatePayConstants.END_POINT_DEFAULT, 30, "mZ96D37oKk-HrWJc", new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=", "SkZlbKOqPoMwnxhl")));
     }
 
-
-    // self test pass
     @Test
     public void testQueryCurrency() {
         QueryCurrencyReq queryCurrencyReq = new QueryCurrencyReq();
@@ -28,8 +26,6 @@ public class ApiConvertTest {
         apiConvert.queryCurrency(queryCurrencyReq);
     }
 
-
-    // self test pass
     @Test
     public void testQueryPair() {
         QueryPairReq queryPairReq = new QueryPairReq();
@@ -38,7 +34,6 @@ public class ApiConvertTest {
         apiConvert.queryPair(queryPairReq);
     }
 
-    // self test passed
     @Test
     public void testPreview() {
         PreviewReq previewReq = new PreviewReq();
@@ -48,7 +43,6 @@ public class ApiConvertTest {
         apiConvert.preview(previewReq);
     }
 
-    // todo: test, quota not enough
     @Test
     public void testCreateOrder() {
         CreateOrderReq createOrderReq = new CreateOrderReq();
@@ -62,8 +56,6 @@ public class ApiConvertTest {
         apiConvert.createOrder(createOrderReq);
     }
 
-
-    // todo: test
     @Test
     public void testQueryOrder() {
         QueryOrderReq queryOrderReq = new QueryOrderReq();

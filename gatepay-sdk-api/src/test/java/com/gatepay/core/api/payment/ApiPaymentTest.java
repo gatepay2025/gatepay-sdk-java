@@ -41,7 +41,6 @@ public class ApiPaymentTest {
         apiPayment.createOrder(createOrderReq);
     }
 
-    // self test passed
     @Test
     public void testQueryOrder() {
         QueryOrderReq queryOrderReq = new QueryOrderReq();
@@ -49,7 +48,6 @@ public class ApiPaymentTest {
         apiPayment.queryOrder(queryOrderReq);
     }
 
-    // todo: test, GATEPAY_INVALID_ORDER_STATUS_EXPIRED
     @Test
     public void testCloseOrder() {
         CloseOrderReq closeOrderReq = new CloseOrderReq();
@@ -57,7 +55,6 @@ public class ApiPaymentTest {
         apiPayment.closeOrder(closeOrderReq);
     }
 
-    // todo: test ORDER_NOT_FOUND
     @Test
     public void testCreateRefund() {
         CreateRefundReq createRefundReq = new CreateRefundReq();
@@ -67,7 +64,6 @@ public class ApiPaymentTest {
         apiPayment.createRefund(createRefundReq);
     }
 
-    // todo: test, UNKNOWN_ERROR
     @Test
     public void testQueryRefund() {
         QueryRefundReq queryRefundReq = new QueryRefundReq();
@@ -75,7 +71,6 @@ public class ApiPaymentTest {
         apiPayment.queryRefund(queryRefundReq);
     }
 
-    // todo: where is the api doc ?
     @Test
     public void testCreateBatchTransfer() {
         BatchOrder batchOrder = new BatchOrder();

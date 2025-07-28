@@ -24,7 +24,6 @@ public class ApiChannelManageTest {
     }
 
 
-    // todo: Parameter format is wrong or parameter transferring doesn't follow the rules
     @Test
     public void testSave() {
         CustomField customField = new CustomField();
@@ -45,7 +44,6 @@ public class ApiChannelManageTest {
         apiChannelManage.save(saveReq);
     }
 
-    // self test passed
     @Test
     public void testList() {
         ListReq listReq = new ListReq();
@@ -57,7 +55,6 @@ public class ApiChannelManageTest {
         apiChannelManage.list(listReq);
     }
 
-    // todo: Parameter format is wrong or parameter transferring doesn't follow the rules
     @Test
     public void testUpdate() {
         CustomField customField = new CustomField();

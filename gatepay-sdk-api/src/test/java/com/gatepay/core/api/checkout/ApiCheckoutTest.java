@@ -48,7 +48,6 @@ public class ApiCheckoutTest {
         apiCheckout.createOrder(request);
     }
 
-    // todo: test
     @Test
     public void testCreateRefund() {
         CreateRefundReq request = new CreateRefundReq();

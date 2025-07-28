@@ -18,8 +18,6 @@ public class ApiWithdrawTest {
         apiWithdraw = new ApiWithdraw(new GatePayConfig(GatePayConstants.END_POINT_DEFAULT, 30, "mZ96D37oKk-HrWJc", new Credential("Mz6M_q4AkDnZCSoTDo03A6OtWzN5ut8_Uix3jyVjxAU=", "SkZlbKOqPoMwnxhl")));
     }
 
-
-    // todo test Parameter format is wrong or parameter transferring doesn't follow the rules
     @Test
     public void testCreateOrder() {
         Withdraw withdraw = new Withdraw();
@@ -36,7 +34,6 @@ public class ApiWithdrawTest {
         apiWithdraw.createOrder(createOrderReq);
     }
 
-    // self test passed
     @Test
     public void testQueryOrder() {
         QueryOrderReq queryOrderReq = new QueryOrderReq();
@@ -45,7 +42,6 @@ public class ApiWithdrawTest {
         apiWithdraw.queryOrder(queryOrderReq);
     }
 
-    // todo: test, INTERNAL_ERROR
     @Test
     public void testQueryChains() {
         QueryChainsReq queryChainsReq = new QueryChainsReq();
@@ -53,7 +49,6 @@ public class ApiWithdrawTest {
         apiWithdraw.queryChains(queryChainsReq);
     }
 
-    // todo: test, no data
     @Test
     public void testQueryBalance() {
         QueryBalanceReq queryChainsReq = new QueryBalanceReq();
@@ -61,7 +56,6 @@ public class ApiWithdrawTest {
         apiWithdraw.queryBalance(queryChainsReq);
     }
 
-    // todo: test, host not found
     @Test
     public void testQueryStatus() {
         QueryStatusReq queryStatusReq = new QueryStatusReq();
